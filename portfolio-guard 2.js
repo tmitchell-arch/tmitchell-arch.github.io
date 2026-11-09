@@ -1,0 +1,7 @@
+(function(){
+if(window.top!==window.self)return;
+function toast(msg){var t=document.createElement('div');t.textContent=msg;t.style.cssText='position:fixed;left:50%;bottom:28px;transform:translateX(-50%);background:#161513;color:#F6F3EE;font:500 14px/1.4 system-ui,sans-serif;padding:12px 18px;border-radius:999px;z-index:2147483647;box-shadow:0 8px 24px rgba(0,0,0,.25)';document.body.appendChild(t);setTimeout(function(){t.remove()},2600)}
+document.addEventListener('click',function(e){var a=e.target.closest&&e.target.closest('a[href]');if(!a)return;var h=a.getAttribute('href');if(!h||/^(https?:|mailto:|tel:|#|javascript:)/i.test(h))return;var u=new URL(h,location.href);if(u.origin!==location.origin)return;if(u.pathname===location.pathname)return;e.preventDefault();fetch(u.href,{method:'HEAD'}).then(function(r){if(r.ok)location.href=u.href;else toast('This page isn\u2019t included in the portfolio preview')}).catch(function(){location.href=u.href})},true);
+function pill(){var a=document.createElement('a');a.href='../';a.textContent='\u2190 All projects';a.style.cssText='position:fixed;left:16px;bottom:16px;z-index:2147483646;background:#161513;color:#F6F3EE;font:600 13px/1 system-ui,sans-serif;letter-spacing:.02em;padding:11px 16px;border-radius:999px;text-decoration:none;box-shadow:0 6px 18px rgba(0,0,0,.22)';document.body.appendChild(a)}
+if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',pill);else pill();
+})();
