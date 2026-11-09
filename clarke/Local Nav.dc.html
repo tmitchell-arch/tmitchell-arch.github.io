@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="stylesheet" href="_ds/clarke-schools-design-system-1c554edb-ddbb-4d62-9b51-89a74f0be5f5/tokens/fonts.css">
+  <link rel="stylesheet" href="_ds/clarke-schools-design-system-1c554edb-ddbb-4d62-9b51-89a74f0be5f5/tokens/colors.css">
+  <link rel="stylesheet" href="_ds/clarke-schools-design-system-1c554edb-ddbb-4d62-9b51-89a74f0be5f5/styles.css">
+  <script src="_ds/clarke-schools-design-system-1c554edb-ddbb-4d62-9b51-89a74f0be5f5/_ds_bundle.js"></script>
+</helmet>
+<nav aria-label="On this page" style="{{ barStyle }}">
+  <div ref="{{ rowRef }}" style="max-width:1360px;margin:0 auto;padding:0 32px;display:flex;align-items:center;gap:20px;height:56px;box-sizing:border-box;font-family:var(--font-brand);color:var(--clarke-navy-900);">
+    <sc-if value="{{ showTitle }}" hint-placeholder-val="{{ true }}">
+      <div style="flex:none;font-size:17px;font-weight:700;letter-spacing:-.012em;white-space:nowrap;">{{ title }}</div>
+    </sc-if>
+    <div ref="{{ wrapRef }}" style="flex:1;min-width:0;overflow-x:auto;scrollbar-width:none;display:flex;justify-content:flex-end;">
+      <div style="position:relative;display:flex;gap:2px;padding:4px;">
+        <span ref="{{ indRef }}" style="position:absolute;left:0;top:4px;bottom:4px;width:0;border-radius:8px;background:rgba(96,16,105,.08);will-change:transform,width;"></span>
+        <sc-for list="{{ links }}" as="j" hint-placeholder-count="5">
+          <a href="{{ j.href }}" ref="{{ j.ref }}" onClick="{{ j.go }}" aria-current="{{ j.current }}" style="{{ j.style }}">{{ j.label }}</a>
+        </sc-for>
+      </div>
+    </div>
+    <sc-if value="{{ hasCta }}" hint-placeholder-val="{{ true }}">
+      <a href="{{ ctaHref }}" style="flex:none;font-weight:700;font-size:13px;color:#fff;background:var(--clarke-purple-800);padding:8px 14px;border-radius:6px;transition:background .2s ease-out, transform .1s ease-out;" style-hover="background:var(--clarke-purple-900);color:#fff;" style-active="transform:scale(.96);">{{ ctaLabel }}</a>
+    </sc-if>
+  </div>
+</nav>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:&quot;1280px&quot;,&quot;height&quot;:&quot;56px&quot;},&quot;title&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;About Clarke&quot;,&quot;tsType&quot;:&quot;string&quot;},&quot;items&quot;:{&quot;editor&quot;:null,&quot;default&quot;:[[&quot;a&quot;,&quot;Section A&quot;],[&quot;b&quot;,&quot;Section B&quot;]],&quot;tsType&quot;:&quot;[string,string][]&quot;},&quot;ctaLabel&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;Contact Us&quot;,&quot;tsType&quot;:&quot;string&quot;},&quot;ctaHref&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;#&quot;,&quot;tsType&quot;:&quot;string&quot;}}">
+class Component extends DCLogic {
+  state = { active: null, narrow: false };
+  els = [];
+  refs = Array.from({ length: 12 }, (_, i) => el => { this.els[i] = el; });
+  get reduced() { return typeof matchMedia !== 'undefined' && matchMedia('(prefers-reduced-motion: reduce)').matches; }
+  makeSpring(apply) {
+    const s = { x: 0, v: 0, target: 0, k: 0, c: 0, raf: 0, last: 0 };
+    const tick = now => {
+      let dt = Math.min(0.064, (now - s.last) / 1000); s.last = now;
+      while (dt > 0) { const h = Math.min(dt, 0.004); s.v += (-s.k * (s.x - s.target) - s.c * s.v) * h; s.x += s.v * h; dt -= h; }
+      if (Math.abs(s.v) < 1 && Math.abs(s.x - s.target) < 0.5) { s.x = s.target; s.v = 0; apply(); s.raf = 0; return; }
+      apply(); s.raf = requestAnimationFrame(tick);
+    };
+    s.to = (t, r = 0.4) => { s.target = t; s.k = Math.pow(2 * Math.PI / r, 2); s.c = 4 * Math.PI / r; if (this.reduced) return s.set(t); if (!s.raf) { s.last = performance.now(); s.raf = requestAnimationFrame(tick); } };
+    s.set = t => { cancelAnimationFrame(s.raf); s.raf = 0; s.x = s.target = t; s.v = 0; apply(); };
+    return s;
+  }
+  paint = () => { if (this.ind) { this.ind.style.transform = 'translateX(' + this.sx.x + 'px)'; this.ind.style.width = this.sw.x + 'px'; } };
+  sx = this.makeSpring(this.paint);
+  sw = this.makeSpring(this.paint);
+  indRef = el => { this.ind = el; };
+  wrapRef = el => { this.wrap = el; };
+  rowRef = el => {
+    if (el && el !== this.row) {
+      this.row = el;
+      this.ro = new ResizeObserver(([e]) => { const n = e.contentRect.width < 900; if (n !== this.state.narrow) this.setState({ narrow: n }); this.place(true); });
+      this.ro.observe(el);
+    }
+  };
+  items() { return this.props.items || []; }
+  place(instant) {
+    const i = this.items().findIndex(it => it[0] === this.state.active), b = this.els[i];
+    if (!b) { this.sw.to(0); return; }
+    if (instant) { this.sx.set(b.offsetLeft); this.sw.set(b.offsetWidth); } else { this.sx.to(b.offsetLeft); this.sw.to(b.offsetWidth); }
+    const w = this.wrap;
+    if (w && w.scrollWidth > w.clientWidth) w.scrollTo({ left: b.offsetLeft - w.clientWidth / 2 + b.offsetWidth / 2, behavior: instant || this.reduced ? 'auto' : 'smooth' });
+  }
+  componentDidMount() {
+    this.spy = new IntersectionObserver(es => {
+      if (this.lock && Date.now() < this.lock) return;
+      es.forEach(e => { if (e.isIntersecting) this.setState({ active: e.target.id }); });
+    }, { rootMargin: '-40% 0px -55% 0px' });
+    setTimeout(() => this.items().forEach(([id]) => { const el = document.getElementById(id); el && this.spy.observe(el); }), 50);
+    if (document.fonts) document.fonts.ready.then(() => this.place(true));
+  }
+  componentDidUpdate(_, prev) { if (prev.active !== this.state.active) this.place(prev.active == null); }
+  componentWillUnmount() { this.ro && this.ro.disconnect(); this.spy && this.spy.disconnect(); }
+  go(id) {
+    const el = document.getElementById(id); if (!el) return;
+    this.lock = Date.now() + 900; this.setState({ active: id });
+    window.scrollTo({ top: el.getBoundingClientRect().top + window.scrollY - 60, behavior: this.reduced ? 'auto' : 'smooth' });
+  }
+  renderVals() {
+    const S = this.state;
+    const solid = typeof matchMedia !== 'undefined' && matchMedia('(prefers-reduced-transparency: reduce)').matches;
+    const blur = solid ? 'none' : 'blur(20px) saturate(180%)';
+    return {
+      rowRef: this.rowRef, wrapRef: this.wrapRef, indRef: this.indRef,
+      title: this.props.title ?? '', showTitle: !S.narrow && !!this.props.title,
+      hasCta: !!this.props.ctaLabel, ctaLabel: this.props.ctaLabel, ctaHref: this.props.ctaHref ?? '#',
+      barStyle: { background: solid ? '#fff' : 'rgba(255,255,255,.8)', backdropFilter: blur, WebkitBackdropFilter: blur, boxShadow: '0 1px 0 rgba(52,51,82,.08)' },
+      links: this.items().map(([id, label], i) => {
+        const on = S.active === id;
+        return { label, href: '#' + id, ref: this.refs[i], current: on ? 'true' : 'false', go: e => { e.preventDefault(); this.go(id); },
+          style: { position: 'relative', zIndex: 1, flex: 'none', padding: '8px 12px', borderRadius: 8, fontSize: 13.5, fontWeight: on ? 700 : 500, whiteSpace: 'nowrap', color: on ? 'var(--clarke-purple-800)' : 'var(--clarke-navy-900)', transition: 'color .2s ease-out' } };
+      })
+    };
+  }
+}
+</script>
+</body>
+</html>

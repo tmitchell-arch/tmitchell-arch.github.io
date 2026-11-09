@@ -1,0 +1,600 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+<script src="../portfolio-guard.js" defer></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="stylesheet" href="_ds/clarke-schools-design-system-1c554edb-ddbb-4d62-9b51-89a74f0be5f5/tokens/fonts.css">
+  <link rel="stylesheet" href="_ds/clarke-schools-design-system-1c554edb-ddbb-4d62-9b51-89a74f0be5f5/tokens/colors.css">
+  <link rel="stylesheet" href="_ds/clarke-schools-design-system-1c554edb-ddbb-4d62-9b51-89a74f0be5f5/tokens/typography.css">
+  <link rel="stylesheet" href="_ds/clarke-schools-design-system-1c554edb-ddbb-4d62-9b51-89a74f0be5f5/tokens/spacing.css">
+  <link rel="stylesheet" href="_ds/clarke-schools-design-system-1c554edb-ddbb-4d62-9b51-89a74f0be5f5/tokens/base.css">
+  <link rel="stylesheet" href="_ds/clarke-schools-design-system-1c554edb-ddbb-4d62-9b51-89a74f0be5f5/styles.css">
+  <script src="_ds/clarke-schools-design-system-1c554edb-ddbb-4d62-9b51-89a74f0be5f5/_ds_bundle.js"></script>
+  <style>
+    body{margin:0;background:#fff;-webkit-font-smoothing:antialiased;}
+    a{color:var(--clarke-purple-800);text-decoration:none;}
+    a:hover{color:var(--clarke-purple-500);}
+  </style>
+</helmet>
+<div style="font-family:var(--font-brand);color:var(--clarke-navy-900);background:#fff;min-width:0;">
+
+  <div data-screen-label="Utility bar" style="background:var(--clarke-navy-900);color:#fff;position:relative;">
+    <div style="max-width:1360px;margin:0 auto;padding:7px 32px;display:flex;flex-wrap:wrap;gap:6px 24px;align-items:center;justify-content:space-between;font-size:12.5px;letter-spacing:.01em;">
+      <div style="font-weight:500;color:var(--clarke-purple-200);">Florida • Massachusetts • New York • Pennsylvania • Teleservices</div>
+      <div style="display:flex;gap:20px;align-items:center;flex-wrap:wrap;">
+        <a href="#" style="color:var(--clarke-green-300);font-weight:700;">Refer a Child</a>
+        <a href="tel:8552037085" style="color:#fff;font-weight:500;">855.203.7085</a>
+        <a href="#" style="color:#fff;font-weight:500;">Search</a>
+      </div>
+    </div>
+  </div>
+
+  <header data-screen-label="Header + mega menu" onMouseLeave="{{ closeMenu }}" style="{{ headerStyle }}">
+    <div ref="{{ headerRef }}" style="max-width:1360px;margin:0 auto;padding:12px 32px;display:flex;align-items:center;justify-content:space-between;gap:16px;box-sizing:border-box;">
+      <a href="#" onMouseEnter="{{ closeMenu }}" style="display:block;flex:none;">
+        <x-import component-from-global-scope="ClarkeSchoolsDesignSystem_1c554e.Logo" height="{{ 42 }}" hint-size="146px,42px"></x-import>
+      </a>
+      <sc-if value="{{ wide }}" hint-placeholder-val="{{ true }}">
+        <nav style="display:flex;gap:2px;align-items:center;font-size:14px;font-weight:500;min-width:0;">
+          <sc-for list="{{ nav }}" as="n" hint-placeholder-count="9">
+            <a href="#" onMouseEnter="{{ n.enter }}" onFocus="{{ n.enter }}" style="{{ n.style }}">{{ n.label }}</a>
+          </sc-for>
+        </nav>
+      </sc-if>
+      <div style="display:flex;gap:10px;align-items:center;flex:none;">
+        <a href="#" onMouseEnter="{{ closeMenu }}" style="font-weight:700;font-size:14px;color:#fff;background:var(--clarke-purple-800);padding:11px 20px;border-radius:6px;transition:background .2s ease-out, transform .1s ease-out;" style-hover="background:var(--clarke-purple-900);color:#fff;" style-active="transform:scale(.97);">Donate</a>
+        <sc-if value="{{ compact }}" hint-placeholder-val="{{ false }}">
+          <button onClick="{{ toggleDrawer }}" aria-label="Menu" aria-expanded="{{ drawerExpanded }}" style="height:44px;padding:0 16px;border:none;background:var(--clarke-gray-100);border-radius:6px;font-family:var(--font-brand);font-weight:700;font-size:14px;color:var(--clarke-navy-900);cursor:pointer;transition:transform .1s ease-out;" style-active="transform:scale(.96);">{{ drawerLabel }}</button>
+        </sc-if>
+      </div>
+    </div>
+
+    <div style="{{ drawerStyle }}">
+      <div style="max-width:1360px;margin:0 auto;padding:8px 32px 28px;display:flex;flex-direction:column;">
+        <sc-for list="{{ drawer }}" as="d" hint-placeholder-count="0">
+          <div style="border-bottom:1px solid rgba(52,51,82,.08);padding:14px 0;display:flex;flex-direction:column;gap:8px;">
+            <a href="#" style="font-size:19px;font-weight:700;letter-spacing:-.01em;color:var(--clarke-navy-900);display:flex;justify-content:space-between;">{{ d.label }}<span style="color:var(--clarke-green-500);">→</span></a>
+            <div style="display:flex;flex-wrap:wrap;gap:6px 18px;">
+              <sc-for list="{{ d.items }}" as="m" hint-placeholder-count="0">
+                <a href="#" style="font-size:14px;font-weight:500;color:var(--clarke-gray-600);">{{ m }}</a>
+              </sc-for>
+            </div>
+          </div>
+        </sc-for>
+      </div>
+    </div>
+
+    <div style="{{ menuStyle }}">
+      <div style="max-width:1360px;margin:0 auto;padding:36px 32px 40px;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,2fr);gap:48px;">
+        <div style="display:flex;flex-direction:column;gap:10px;">
+          <div style="font-size:28px;font-weight:700;letter-spacing:-.02em;color:var(--clarke-purple-800);">{{ menu.label }}</div>
+          <div style="font-size:15px;line-height:1.5;color:var(--clarke-gray-600);max-width:320px;">{{ menu.intro }}</div>
+        </div>
+        <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:2px 24px;">
+          <sc-for list="{{ menu.items }}" as="m" hint-placeholder-count="0">
+            <a href="#" style="display:flex;justify-content:space-between;gap:12px;padding:12px 12px;margin:0 -12px;border-radius:8px;font-size:16px;font-weight:700;color:var(--clarke-navy-900);transition:background .15s ease-out;" style-hover="background:rgba(96,16,105,.06);color:var(--clarke-purple-800);">{{ m }}<span style="color:var(--clarke-green-500);">→</span></a>
+          </sc-for>
+        </div>
+      </div>
+    </div>
+    <sc-if value="{{ showNotes }}" hint-placeholder-val="{{ true }}">
+      <div style="position:absolute;right:8px;top:100%;margin-top:4px;z-index:2;background:#FFF6D6;color:#5A4500;border:1px solid #E8D27A;font:600 11px/1.3 ui-monospace,Menlo,monospace;padding:4px 8px;border-radius:3px;max-width:460px;">Theme Builder › Header · Sticky + Custom CSS: backdrop-filter blur(20px) saturate(180%), shadow only after scroll · Mega Menu panel scales from its trigger</div>
+    </sc-if>
+  </header>
+
+  <section data-screen-label="Hero carousel" onMouseEnter="{{ pause }}" onMouseLeave="{{ resume }}" style="position:relative;max-width:1360px;margin:0 auto;padding:16px 16px 0;box-sizing:border-box;">
+    <div ref="{{ heroRef }}" tabIndex="0" role="region" aria-roledescription="carousel" aria-label="Featured" onPointerDown="{{ heroDown }}" onKeyDown="{{ heroKey }}" onDragStart="{{ noDrag }}" style="position:relative;overflow:hidden;border-radius:28px;height:clamp(540px,74vh,740px);background:var(--clarke-purple-900);touch-action:pan-y;user-select:none;-webkit-user-select:none;cursor:grab;outline:none;isolation:isolate;">
+      <div ref="{{ trackRef }}" style="display:flex;height:100%;will-change:transform;">
+        <sc-for list="{{ slides }}" as="s" hint-placeholder-count="1">
+          <div aria-hidden="{{ s.hidden }}" style="flex:0 0 100%;position:relative;height:100%;display:flex;flex-direction:column;justify-content:center;">
+            <div style="{{ s.photo }}"></div>
+            <div style="position:absolute;inset:0;background:linear-gradient(90deg,rgba(64,10,72,.92) 0%,rgba(96,16,105,.66) 40%,rgba(96,16,105,0) 74%);"></div>
+            <div style="position:relative;padding:0 clamp(28px,6vw,88px);display:flex;flex-direction:column;gap:22px;color:#fff;max-width:760px;">
+              <div style="font-size:13px;font-weight:700;letter-spacing:.16em;color:var(--clarke-green-300);">{{ s.kicker }}</div>
+              <h1 style="margin:0;font-size:clamp(40px,5.6vw,78px);line-height:1.02;letter-spacing:-.028em;font-weight:700;text-shadow:0 2px 20px rgba(0,0,0,.22);text-wrap:balance;">{{ s.title }}</h1>
+              <p style="margin:0;max-width:500px;font-size:clamp(17px,1.4vw,20px);line-height:1.5;color:#fff;text-wrap:pretty;">{{ s.body }}</p>
+              <div style="display:flex;gap:24px;flex-wrap:wrap;align-items:center;margin-top:6px;">
+                <x-import component-from-global-scope="ClarkeSchoolsDesignSystem_1c554e.CTAButton" size="md" href="#" hint-size="220px,56px">{{ s.cta }}</x-import>
+                <a href="#" style="font-weight:700;font-size:16px;color:#fff;">{{ s.link }} →</a>
+              </div>
+            </div>
+          </div>
+        </sc-for>
+      </div>
+      <div style="position:absolute;right:20px;bottom:20px;display:flex;gap:8px;z-index:3;">
+        <button onClick="{{ prev }}" aria-label="Previous slide" style="width:44px;height:44px;border-radius:50%;border:none;background:rgba(255,255,255,.22);backdrop-filter:blur(16px) saturate(180%);-webkit-backdrop-filter:blur(16px) saturate(180%);color:#fff;font-size:18px;font-weight:700;cursor:pointer;transition:transform .1s ease-out, background .2s ease-out;" style-hover="background:rgba(255,255,255,.34);" style-active="transform:scale(.92);">←</button>
+        <button onClick="{{ next }}" aria-label="Next slide" style="width:44px;height:44px;border-radius:50%;border:none;background:rgba(255,255,255,.22);backdrop-filter:blur(16px) saturate(180%);-webkit-backdrop-filter:blur(16px) saturate(180%);color:#fff;font-size:18px;font-weight:700;cursor:pointer;transition:transform .1s ease-out, background .2s ease-out;" style-hover="background:rgba(255,255,255,.34);" style-active="transform:scale(.92);">→</button>
+      </div>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,210px),1fr));gap:4px 24px;padding:18px clamp(12px,4.5vw,72px) 0;">
+      <sc-for list="{{ slides }}" as="s" hint-placeholder-count="4">
+        <button onClick="{{ s.go }}" aria-label="{{ s.short }}" style="position:relative;text-align:left;background:none;border:none;cursor:pointer;padding:16px 0 8px;display:flex;flex-direction:column;gap:5px;font-family:var(--font-brand);transition:transform .1s ease-out;" style-active="transform:scale(.98);">
+          <span style="position:absolute;left:0;top:0;height:3px;width:100%;border-radius:2px;background:var(--clarke-gray-200);overflow:hidden;"><span style="{{ s.bar }}"></span></span>
+          <span style="font-size:11.5px;font-weight:700;letter-spacing:.14em;color:var(--clarke-green-700);">{{ s.kicker }}</span>
+          <span style="{{ s.label }}">{{ s.short }}</span>
+        </button>
+      </sc-for>
+    </div>
+    <sc-if value="{{ showNotes }}" hint-placeholder-val="{{ true }}">
+      <div style="position:absolute;left:24px;top:24px;z-index:5;background:#FFF6D6;color:#5A4500;border:1px solid #E8D27A;font:600 11px/1.3 ui-monospace,Menlo,monospace;padding:4px 8px;border-radius:3px;max-width:460px;">Elementor Pro Slides / Swiper · slide effect, touch drag on, 7s autoplay, pause on hover · labeled progress tabs = custom pagination · this mock adds flick momentum + spring snap</div>
+    </sc-if>
+  </section>
+
+  <section data-screen-label="Find your path" style="position:relative;">
+    <div style="max-width:1360px;margin:0 auto;padding:120px 32px 0;display:flex;flex-direction:column;align-items:center;gap:32px;box-sizing:border-box;">
+      <div style="display:flex;flex-direction:column;align-items:center;gap:12px;text-align:center;">
+        <x-import component-from-global-scope="ClarkeSchoolsDesignSystem_1c554e.Eyebrow" color="var(--clarke-green-700)" hint-size="160px,18px">FIND YOUR PATH</x-import>
+        <h2 style="margin:0;font-size:clamp(34px,4.4vw,60px);line-height:1.04;letter-spacing:-.026em;font-weight:700;text-wrap:balance;">How can we help you today?</h2>
+      </div>
+      <div style="max-width:100%;overflow-x:auto;scrollbar-width:none;">
+        <div ref="{{ segRef }}" role="tablist" style="position:relative;display:inline-flex;padding:4px;border-radius:12px;background:var(--clarke-gray-100);">
+          <span ref="{{ segIndRef }}" style="position:absolute;left:0;top:4px;bottom:4px;width:0;border-radius:9px;background:#fff;box-shadow:0 1px 2px rgba(52,51,82,.10),0 4px 14px rgba(52,51,82,.08);will-change:transform,width;"></span>
+          <sc-for list="{{ tabs }}" as="t" hint-placeholder-count="5">
+            <button role="tab" ref="{{ t.ref }}" aria-selected="{{ t.sel }}" onClick="{{ t.select }}" style="{{ t.style }}">{{ t.label }}</button>
+          </sc-for>
+        </div>
+      </div>
+      <div ref="{{ panelRef }}" style="width:100%;background:var(--clarke-gray-100);border-radius:28px;overflow:hidden;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,440px),1fr));">
+        <div style="padding:clamp(28px,4.5vw,64px);display:flex;flex-direction:column;gap:20px;">
+          <h3 style="margin:0;font-size:clamp(26px,2.6vw,36px);line-height:1.1;letter-spacing:-.02em;font-weight:700;color:var(--clarke-purple-800);text-wrap:balance;">{{ panel.title }}</h3>
+          <p style="margin:0;font-size:17px;line-height:1.55;color:var(--clarke-gray-600);max-width:500px;text-wrap:pretty;">{{ panel.body }}</p>
+          <div style="display:flex;flex-direction:column;margin:4px -14px 0;">
+            <sc-for list="{{ panel.links }}" as="l" hint-placeholder-count="4">
+              <a href="#" style="display:flex;align-items:center;gap:14px;padding:14px;border-radius:12px;color:var(--clarke-navy-900);font-size:17px;font-weight:700;transition:background .15s ease-out, transform .1s ease-out;" style-hover="background:#fff;color:var(--clarke-purple-800);" style-active="transform:scale(.985);">
+                <span style="flex:1;">{{ l }}</span>
+                <span style="color:var(--clarke-green-500);">→</span>
+              </a>
+            </sc-for>
+          </div>
+          <div style="margin-top:8px;">
+            <x-import component-from-global-scope="ClarkeSchoolsDesignSystem_1c554e.CTAButton" size="sm" href="#" hint-size="200px,40px">{{ panel.cta }}</x-import>
+          </div>
+        </div>
+        <div style="{{ panel.photo }}"></div>
+      </div>
+    </div>
+    <sc-if value="{{ showNotes }}" hint-placeholder-val="{{ true }}">
+      <div style="position:absolute;right:8px;top:72px;background:#FFF6D6;color:#5A4500;border:1px solid #E8D27A;font:600 11px/1.3 ui-monospace,Menlo,monospace;padding:4px 8px;border-radius:3px;">Elementor Nested Tabs (core) · tab bar styled as segmented control via Custom CSS</div>
+    </sc-if>
+  </section>
+
+  <section data-screen-label="Our Services" style="position:relative;">
+    <div style="max-width:1360px;margin:0 auto;padding:128px 32px 0;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,380px),1fr));gap:64px;align-items:start;box-sizing:border-box;">
+      <div style="display:flex;flex-direction:column;gap:22px;position:sticky;top:120px;">
+        <x-import component-from-global-scope="ClarkeSchoolsDesignSystem_1c554e.Eyebrow" color="var(--clarke-green-700)" hint-size="160px,18px">OUR SERVICES</x-import>
+        <h2 style="margin:0;font-size:clamp(34px,4vw,54px);line-height:1.04;letter-spacing:-.026em;font-weight:700;"><span style="color:var(--clarke-purple-800);">Support at every stage,</span> <span style="color:var(--clarke-teal-600);">birth through adulthood.</span></h2>
+        <p style="margin:0;font-size:18px;line-height:1.55;color:var(--clarke-gray-600);max-width:460px;text-wrap:pretty;"><b style="color:var(--clarke-navy-900);">Children thrive with the right team around them.</b> Teachers of the deaf, audiologists and speech-language pathologists work together with families — in our schools, in local classrooms, and online.</p>
+        <div style="display:flex;gap:24px;flex-wrap:wrap;">
+          <a href="#" style="font-weight:700;font-size:16px;">Programs by Age →</a>
+          <a href="#" style="font-weight:700;font-size:16px;">Specialized Services →</a>
+        </div>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:28px;">
+        <sc-for list="{{ programGroups }}" as="grp" hint-placeholder-count="2">
+          <div style="display:flex;flex-direction:column;gap:4px;">
+            <div style="font-size:12px;font-weight:700;letter-spacing:.14em;color:var(--clarke-gray-600);padding:0 0 8px;">{{ grp.head }}</div>
+            <sc-for list="{{ grp.items }}" as="g" hint-placeholder-count="3">
+              <a href="#" style="display:flex;align-items:center;gap:20px;padding:20px 22px;margin:0 -22px;border-radius:16px;color:var(--clarke-navy-900);transition:background .2s ease-out, transform .1s ease-out;" style-hover="background:var(--clarke-gray-100);color:var(--clarke-navy-900);" style-active="transform:scale(.99);">
+                <div style="flex:1;display:flex;flex-direction:column;gap:4px;">
+                  <div style="font-size:22px;font-weight:700;letter-spacing:-.012em;">{{ g.name }}</div>
+                  <div style="font-size:15px;line-height:1.45;color:var(--clarke-gray-600);">{{ g.desc }}</div>
+                </div>
+                <span style="flex:none;width:36px;height:36px;border-radius:50%;background:var(--clarke-green-100);color:var(--clarke-green-700);display:flex;align-items:center;justify-content:center;font-weight:700;">→</span>
+              </a>
+            </sc-for>
+          </div>
+        </sc-for>
+      </div>
+    </div>
+  </section>
+
+  <section data-screen-label="Impact" style="position:relative;max-width:1360px;margin:0 auto;padding:128px 16px 0;box-sizing:border-box;">
+    <div style="position:relative;overflow:hidden;border-radius:28px;background:var(--clarke-purple-800);color:#fff;">
+      <img src="assets/logo/clarke-blossom-white.png" alt="" style="position:absolute;right:-90px;top:-70px;width:440px;opacity:.12;pointer-events:none;">
+      <div style="position:relative;padding:clamp(48px,7vw,96px) clamp(28px,6vw,88px);display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,240px),1fr));gap:48px;">
+        <sc-for list="{{ stats }}" as="s" hint-placeholder-count="3">
+          <div style="display:flex;flex-direction:column;gap:12px;">
+            <div style="font-size:clamp(56px,7vw,96px);font-weight:700;line-height:.95;letter-spacing:-.035em;">{{ s.n }}</div>
+            <div style="font-size:17px;line-height:1.45;color:var(--clarke-purple-200);max-width:280px;">{{ s.label }}</div>
+          </div>
+        </sc-for>
+      </div>
+    </div>
+  </section>
+
+  <section data-screen-label="Locations" style="position:relative;">
+    <div style="max-width:1360px;margin:0 auto;padding:128px 32px 0;display:flex;flex-direction:column;gap:32px;box-sizing:border-box;">
+      <div style="display:flex;justify-content:space-between;align-items:flex-end;gap:20px;flex-wrap:wrap;">
+        <h2 style="margin:0;max-width:720px;font-size:clamp(30px,3.4vw,48px);line-height:1.06;letter-spacing:-.024em;font-weight:700;text-wrap:balance;">Campuses along the coast. Support wherever you are.</h2>
+        <div style="display:flex;gap:16px;align-items:center;">
+          <a href="#" style="font-weight:700;font-size:16px;">Explore Locations →</a>
+          <button onClick="{{ railPrev }}" aria-label="Scroll locations left" style="width:44px;height:44px;border-radius:50%;border:none;background:var(--clarke-gray-100);color:var(--clarke-navy-900);font-size:18px;font-weight:700;cursor:pointer;transition:transform .1s ease-out, background .2s ease-out;" style-hover="background:var(--clarke-gray-200);" style-active="transform:scale(.92);">←</button>
+          <button onClick="{{ railNext }}" aria-label="Scroll locations right" style="width:44px;height:44px;border-radius:50%;border:none;background:var(--clarke-gray-100);color:var(--clarke-navy-900);font-size:18px;font-weight:700;cursor:pointer;transition:transform .1s ease-out, background .2s ease-out;" style-hover="background:var(--clarke-gray-200);" style-active="transform:scale(.92);">→</button>
+        </div>
+      </div>
+    </div>
+    <div ref="{{ railRef }}" style="display:flex;gap:16px;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;padding:0 max(32px,calc((100vw - 1296px) / 2)) 8px;scroll-padding:0 max(32px,calc((100vw - 1296px) / 2));margin-top:32px;">
+      <sc-for list="{{ locations }}" as="l" hint-placeholder-count="6">
+        <a href="#" style="position:relative;flex:0 0 clamp(250px,26vw,340px);aspect-ratio:4/5;scroll-snap-align:start;display:flex;flex-direction:column;justify-content:flex-end;border-radius:24px;overflow:hidden;color:#fff;background:var(--clarke-navy-900);transition:transform .25s cubic-bezier(.2,.8,.2,1);" style-hover="color:#fff;" style-active="transform:scale(.98);">
+          <div style="{{ l.imgStyle }}"></div>
+          <div style="{{ l.overlay }}"></div>
+          <div style="position:relative;padding:24px;display:flex;flex-direction:column;gap:4px;">
+            <div style="font-size:24px;font-weight:700;letter-spacing:-.015em;">{{ l.name }}</div>
+            <div style="font-size:14px;line-height:1.4;color:var(--clarke-green-300);font-weight:500;">{{ l.sub }}</div>
+          </div>
+        </a>
+      </sc-for>
+    </div>
+  </section>
+
+  <section data-screen-label="Community" style="position:relative;">
+    <div style="max-width:1360px;margin:0 auto;padding:128px 32px 0;display:flex;flex-direction:column;gap:32px;box-sizing:border-box;">
+      <div style="display:flex;justify-content:space-between;align-items:flex-end;gap:16px;flex-wrap:wrap;">
+        <h2 style="margin:0;font-size:clamp(30px,3.4vw,48px);line-height:1.06;letter-spacing:-.024em;font-weight:700;">Events, stories &amp; news</h2>
+        <a href="#" style="font-weight:700;font-size:16px;">Visit Community →</a>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:24px;">
+        <sc-for list="{{ events }}" as="e" hint-placeholder-count="3">
+          <a href="#" style="display:flex;flex-direction:column;gap:18px;color:var(--clarke-navy-900);transition:transform .1s ease-out;" style-hover="color:var(--clarke-navy-900);" style-active="transform:scale(.985);">
+            <div style="position:relative;aspect-ratio:16/11;border-radius:24px;overflow:hidden;background:var(--clarke-gray-200);">
+              <div style="{{ e.imgStyle }}"></div>
+            </div>
+            <div style="display:flex;flex-direction:column;gap:8px;padding:0 4px;">
+              <div style="font-size:12px;font-weight:700;letter-spacing:.14em;color:var(--clarke-green-700);">{{ e.tag }}</div>
+              <div style="font-size:22px;font-weight:700;line-height:1.2;letter-spacing:-.012em;">{{ e.title }}</div>
+              <div style="font-size:15px;line-height:1.45;color:var(--clarke-gray-600);">{{ e.where }}</div>
+              <div style="font-size:15px;font-weight:700;color:var(--clarke-purple-800);padding-top:4px;">{{ e.cta }} →</div>
+            </div>
+          </a>
+        </sc-for>
+      </div>
+    </div>
+    <sc-if value="{{ showNotes }}" hint-placeholder-val="{{ true }}">
+      <div style="position:absolute;right:8px;top:72px;background:#FFF6D6;color:#5A4500;border:1px solid #E8D27A;font:600 11px/1.3 ui-monospace,Menlo,monospace;padding:4px 8px;border-radius:3px;">Loop Grid ← Events + Posts · image = Featured Image (dynamic tag) · same Loop Item on archives</div>
+    </sc-if>
+  </section>
+
+  <section data-screen-label="Ways to Give" style="position:relative;max-width:1360px;margin:0 auto;padding:128px 16px 16px;box-sizing:border-box;">
+    <div style="position:relative;overflow:hidden;border-radius:28px;background:var(--gradient-purple-green);color:#fff;">
+      <img src="assets/logo/clarke-blossom-white.png" alt="" style="position:absolute;left:-60px;bottom:-100px;width:380px;opacity:.15;pointer-events:none;">
+      <div style="position:relative;padding:clamp(48px,7vw,96px) clamp(28px,6vw,88px);display:flex;flex-direction:column;align-items:center;text-align:center;gap:20px;">
+        <h2 style="margin:0;max-width:820px;font-size:clamp(34px,4.6vw,64px);line-height:1.03;letter-spacing:-.028em;font-weight:700;text-shadow:0 2px 14px rgba(0,0,0,.18);text-wrap:balance;">Help a child hear the world — and answer it.</h2>
+        <p style="margin:0;max-width:540px;font-size:18px;line-height:1.55;color:#fff;text-wrap:pretty;">Your gift opens a world of limitless possibilities for children who are deaf or hard of hearing. Clarke is a 501(c)(3) nonprofit.</p>
+        <div style="display:flex;gap:24px;flex-wrap:wrap;align-items:center;justify-content:center;margin-top:8px;">
+          <x-import component-from-global-scope="ClarkeSchoolsDesignSystem_1c554e.CTAButton" size="md" href="#" hint-size="200px,56px">Donate today</x-import>
+          <a href="#" style="font-weight:700;font-size:16px;color:#fff;">More Ways to Give →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer data-screen-label="Footer" style="background:var(--clarke-navy-900);color:#fff;position:relative;margin-top:112px;">
+    <div style="max-width:1360px;margin:0 auto;padding:72px 32px 32px;display:flex;flex-direction:column;gap:48px;box-sizing:border-box;">
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,190px),1fr));gap:40px;">
+        <div style="display:flex;flex-direction:column;gap:18px;">
+          <div style="display:flex;align-items:flex-start;">
+            <x-import component-from-global-scope="ClarkeSchoolsDesignSystem_1c554e.Logo" tone="white" height="{{ 56 }}" hint-size="190px,56px"></x-import>
+          </div>
+          <p style="margin:0;font-size:14px;line-height:1.55;color:var(--clarke-purple-200);">At Clarke, we unlock the power of listening and spoken language for people who are deaf or hard of hearing, their families, and their communities.</p>
+        </div>
+        <sc-for list="{{ footerCols }}" as="c" hint-placeholder-count="3">
+          <div style="display:flex;flex-direction:column;gap:10px;font-size:15px;">
+            <div style="font-weight:700;color:var(--clarke-green-300);font-size:12px;letter-spacing:.14em;">{{ c.head }}</div>
+            <sc-for list="{{ c.links }}" as="k" hint-placeholder-count="4">
+              <a href="#" style="color:#fff;">{{ k }}</a>
+            </sc-for>
+          </div>
+        </sc-for>
+        <div style="display:flex;flex-direction:column;gap:10px;font-size:15px;">
+          <div style="font-weight:700;color:var(--clarke-green-300);font-size:12px;letter-spacing:.14em;">CONTACT</div>
+          <div>413.584.3450</div>
+          <div>Toll-free 855.203.7085</div>
+          <a href="#" style="color:#fff;">Email our team</a>
+          <x-import component-from-global-scope="ClarkeSchoolsDesignSystem_1c554e.SocialIcons" size="{{ 30 }}" color="var(--clarke-navy-700)" style="{{ socialStyle }}" hint-size="180px,30px"></x-import>
+        </div>
+      </div>
+      <div style="border-top:1px solid var(--clarke-navy-700);padding-top:20px;display:flex;flex-wrap:wrap;gap:8px 24px;justify-content:space-between;font-size:13px;color:var(--clarke-purple-200);">
+        <div style="font-weight:700;color:#fff;">Florida • Massachusetts • New York • Pennsylvania • Teleservices</div>
+        <div>© 2026 Clarke Schools for Hearing and Speech · Privacy · Accessibility</div>
+      </div>
+    </div>
+  </footer>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;showElementorNotes&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Build notes&quot;},&quot;autoplay&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Hero carousel&quot;},&quot;slideSeconds&quot;:{&quot;editor&quot;:&quot;range&quot;,&quot;min&quot;:4,&quot;max&quot;:12,&quot;step&quot;:1,&quot;unit&quot;:&quot;s&quot;,&quot;default&quot;:7,&quot;tsType&quot;:&quot;number&quot;,&quot;section&quot;:&quot;Hero carousel&quot;},&quot;reduceMotion&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:false,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Accessibility preview&quot;}}">
+class Component extends DCLogic {
+  state = { menu: null, lastMenu: 'About', ox: 0, slide: 0, t: 0, paused: false, tab: 0, scrolled: false };
+  N = 4;
+  segBtns = [];
+  segRefs = [0, 1, 2, 3, 4].map(i => el => { this.segBtns[i] = el; });
+
+  get reduced() {
+    if (this.props.reduceMotion) return true;
+    return typeof matchMedia !== 'undefined' && matchMedia('(prefers-reduced-motion: reduce)').matches;
+  }
+
+  // Spring parameterised like Apple's: response (s) + damping ratio. Starts from current value, keeps velocity on re-target.
+  makeSpring(x0, apply) {
+    const s = { x: x0, v: 0, target: x0, k: 0, c: 0, raf: 0, last: 0 };
+    const tick = now => {
+      let dt = Math.min(0.064, (now - s.last) / 1000); s.last = now;
+      while (dt > 0) { const h = Math.min(dt, 0.004); const a = -s.k * (s.x - s.target) - s.c * s.v; s.v += a * h; s.x += s.v * h; dt -= h; }
+      if (Math.abs(s.v) < 1 && Math.abs(s.x - s.target) < 0.5) { s.x = s.target; s.v = 0; apply(s.x); s.raf = 0; return; }
+      apply(s.x); s.raf = requestAnimationFrame(tick);
+    };
+    s.to = (target, o = {}) => {
+      const response = o.response ?? 0.45, damping = o.damping ?? 1;
+      s.target = target; if (o.velocity !== undefined) s.v = o.velocity;
+      s.k = Math.pow(2 * Math.PI / response, 2); s.c = 4 * Math.PI * damping / response;
+      if (this.reduced) { s.set(target); return; }
+      if (!s.raf) { s.last = performance.now(); s.raf = requestAnimationFrame(tick); }
+    };
+    s.set = x => { cancelAnimationFrame(s.raf); s.raf = 0; s.x = x; s.v = 0; s.target = x; apply(x); };
+    s.stop = () => { cancelAnimationFrame(s.raf); s.raf = 0; };
+    return s;
+  }
+
+  hs = this.makeSpring(0, x => { if (this.track) this.track.style.transform = 'translate3d(' + x + 'px,0,0)'; });
+  applySeg = () => { if (this.ind) { this.ind.style.transform = 'translateX(' + this.sx.x + 'px)'; this.ind.style.width = this.sw.x + 'px'; } };
+  sx = this.makeSpring(0, this.applySeg);
+  sw = this.makeSpring(0, this.applySeg);
+
+  headerRef = el => {
+    if (el && el !== this.hEl) {
+      this.ro && this.ro.disconnect();
+      this.hEl = el;
+      this.ro = new ResizeObserver(([e]) => {
+        const compact = e.contentRect.width < 1150;
+        if (compact !== this.state.compact) this.setState({ compact, drawer: false, menu: null });
+      });
+      this.ro.observe(el);
+    }
+  };
+  heroRef = el => {
+    if (el && el !== this.vp) {
+      this.vp = el;
+      this.vro = new ResizeObserver(() => this.hs.set(-this.state.slide * el.clientWidth));
+      this.vro.observe(el);
+    }
+  };
+  trackRef = el => { this.track = el; };
+  segRef = el => {
+    if (el && el !== this.segEl) {
+      this.segEl = el;
+      this.sro = new ResizeObserver(() => this.placeSeg(true));
+      this.sro.observe(el);
+    }
+  };
+  segIndRef = el => { this.ind = el; };
+  panelRef = el => { this.panel = el; };
+  railRef = el => { this.rail = el; };
+
+  placeSeg(instant) {
+    const b = this.segBtns[this.state.tab]; if (!b) return;
+    if (instant) { this.sx.set(b.offsetLeft); this.sw.set(b.offsetWidth); }
+    else { this.sx.to(b.offsetLeft, { response: 0.38 }); this.sw.to(b.offsetWidth, { response: 0.38 }); }
+  }
+
+  goTo(i, o = {}) {
+    const n = this.N; i = ((i % n) + n) % n;
+    this.setState({ slide: i, t: 0 });
+    if (this.vp) this.hs.to(-i * this.vp.clientWidth, { response: 0.55, damping: 1, ...o });
+  }
+
+  rubber(o, dim) { const c = 0.55; return (o * dim * c) / (dim + c * o); }
+
+  heroDown = e => {
+    if (e.button !== 0 || !this.vp) return;
+    this.drag = { x0: e.clientX, y0: e.clientY, start: this.hs.x, W: this.vp.clientWidth, hist: [{ x: e.clientX, t: performance.now() }], active: false };
+    window.addEventListener('pointermove', this.heroMove, { passive: false });
+    window.addEventListener('pointerup', this.heroUp);
+    window.addEventListener('pointercancel', this.heroUp);
+  };
+  heroMove = e => {
+    const d = this.drag; if (!d) return;
+    const dx = e.clientX - d.x0, dy = e.clientY - d.y0;
+    if (!d.active) {
+      if (Math.abs(dy) > 10 && Math.abs(dy) > Math.abs(dx)) return this.endDrag();
+      if (Math.abs(dx) < 10) return;
+      d.active = true; this.hs.stop(); d.start = this.hs.x; d.x0 = e.clientX;
+      this.setState({ dragging: true });
+    }
+    e.preventDefault();
+    let x = d.start + (e.clientX - d.x0);
+    const min = -(this.N - 1) * d.W;
+    if (x > 0) x = this.rubber(x, d.W); else if (x < min) x = min - this.rubber(min - x, d.W);
+    this.hs.set(x);
+    d.hist.push({ x: e.clientX, t: performance.now() }); if (d.hist.length > 6) d.hist.shift();
+  };
+  heroUp = () => {
+    const d = this.drag; this.endDrag(); if (!d || !d.active) return;
+    const a = d.hist[0], b = d.hist[d.hist.length - 1];
+    const v = b.t - a.t > 0 && performance.now() - b.t < 80 ? (b.x - a.x) / (b.t - a.t) * 1000 : 0;
+    const projected = this.hs.x + (v / 1000) * 0.998 / (1 - 0.998);
+    const cur = this.state.slide;
+    let idx = Math.round(-projected / d.W);
+    idx = Math.max(0, Math.min(this.N - 1, Math.max(cur - 1, Math.min(cur + 1, idx))));
+    this.goTo(idx, Math.abs(v) > 200 ? { velocity: v, damping: 0.86, response: 0.45 } : {});
+    const block = ev => { ev.stopPropagation(); ev.preventDefault(); };
+    window.addEventListener('click', block, { capture: true, once: true });
+    setTimeout(() => window.removeEventListener('click', block, { capture: true }), 0);
+    this.setState({ dragging: false });
+  };
+  endDrag() {
+    this.drag = null;
+    window.removeEventListener('pointermove', this.heroMove);
+    window.removeEventListener('pointerup', this.heroUp);
+    window.removeEventListener('pointercancel', this.heroUp);
+  }
+
+  onScroll = () => { const s = window.scrollY > 4; if (s !== this.state.scrolled) this.setState({ scrolled: s }); };
+
+  componentDidMount() {
+    if (window.innerWidth < 1150) this.setState({ compact: true });
+    window.addEventListener('scroll', this.onScroll, { passive: true });
+    requestAnimationFrame(() => this.placeSeg(true));
+    if (document.fonts) document.fonts.ready.then(() => this.placeSeg(true));
+    this.timer = setInterval(() => {
+      if (this.state.paused || this.state.dragging || (this.props.autoplay ?? true) === false || document.hidden) return;
+      const dur = (this.props.slideSeconds ?? 7) * 1000;
+      const t = this.state.t + 100;
+      if (t >= dur) this.goTo(this.state.slide + 1); else this.setState({ t });
+    }, 100);
+  }
+  componentWillUnmount() {
+    clearInterval(this.timer); this.endDrag();
+    window.removeEventListener('scroll', this.onScroll);
+    [this.ro, this.vro, this.sro].forEach(r => r && r.disconnect());
+    [this.hs, this.sx, this.sw].forEach(s => s.stop());
+  }
+
+  selectTab(i) {
+    if (i === this.state.tab) return;
+    this.setState({ tab: i }, () => {
+      this.placeSeg(false);
+      if (this.panel && !this.reduced) this.panel.animate([{ opacity: 0.4, transform: 'translateY(6px)' }, { opacity: 1, transform: 'none' }], { duration: 260, easing: 'cubic-bezier(.2,.8,.2,1)' });
+    });
+  }
+
+  renderVals() {
+    const S = this.state;
+    const solid = typeof matchMedia !== 'undefined' && matchMedia('(prefers-reduced-transparency: reduce)').matches;
+    const MENUS = {
+      'About': { intro: 'Who Clarke is, who leads us, and how we got here.', items: ['Mission & Impact', 'Leadership & Governance', 'History'] },
+      'Our Services': { intro: 'Programs and specialized services for every age and stage.', items: ['Programs by Age', 'Specialized Services', 'Summer Services', 'Support Groups', 'CEE Program', 'Trainings & Workshops'] },
+      'Getting Started': { intro: 'New to hearing loss? Start here for calm, clear next steps.', items: ['Where Do I Begin?', 'Understanding Hearing Loss', 'Find Support', 'Financial & Insurance Basics', 'Frequently Asked Questions'] }
+    };
+    const labels = ['About', 'Our Services', 'Getting Started', 'Professionals', 'Community', 'Resources', 'Ways to Give', 'Locations', 'Careers'];
+    const nav = labels.map(l => {
+      const has = !!MENUS[l], on = S.menu === l;
+      return {
+        label: l,
+        enter: e => {
+          if (!has) return this.setState({ menu: null });
+          const r = e.currentTarget.getBoundingClientRect();
+          this.setState({ menu: l, lastMenu: l, ox: r.left + r.width / 2 });
+        },
+        style: { display: 'flex', alignItems: 'center', padding: '9px 10px', borderRadius: 8, color: on ? 'var(--clarke-purple-800)' : 'var(--clarke-navy-900)', background: on ? 'rgba(96,16,105,.07)' : 'transparent', whiteSpace: 'nowrap', transition: 'background .2s ease-out, color .2s ease-out' }
+      };
+    });
+    const mat = solid ? '#fff' : 'rgba(255,255,255,.78)';
+    const blur = solid ? 'none' : 'blur(20px) saturate(180%)';
+    const menuOn = !S.compact && !!S.menu;
+    const drawerOn = !!S.compact && !!S.drawer;
+    const ease = 'cubic-bezier(.2,.8,.2,1)';
+    const panelBase = { position: 'absolute', left: 0, right: 0, top: '100%', background: solid ? '#fff' : 'rgba(255,255,255,.9)', backdropFilter: blur, WebkitBackdropFilter: blur, boxShadow: '0 24px 48px rgba(52,51,82,.12)', borderTop: '1px solid rgba(52,51,82,.06)' };
+
+    const SL = [
+      { kicker: 'GETTING STARTED', short: 'New to hearing loss? Start here.', title: 'Every child deserves to listen and talk.', body: 'Clarke teaches children who are deaf or hard of hearing to listen and talk — from infancy through the teen years, in our schools, in your home, and online.', cta: 'Where do I begin?', link: 'Understanding hearing loss', img: 'assets/imagery/girl-classroom.png' },
+      { kicker: 'EVENT', short: 'Clarke’s Listening Walk at the Zoo', title: 'Walk with us at the Philadelphia Zoo.', body: 'Join Clarke families, friends and supporters for a morning that funds listening and spoken language programs across Pennsylvania.', cta: 'Register now', link: 'Fundraise for the walk', img: 'assets/imagery/kids-playground.png' },
+      { kicker: 'TELESERVICES', short: 'Expert therapy, from home', title: 'Expert support, wherever you are.', body: 'Our teachers of the deaf and speech-language pathologists bring listening and spoken language sessions to families online.', cta: 'Explore teleservices', link: 'Talk with our team', img: 'assets/imagery/slp-session.png' },
+      { kicker: 'PROFESSIONALS', short: 'Webinar Series for Professionals', title: 'Learn alongside Clarke experts.', body: 'Professional learning for teachers, SLPs and audiologists supporting students who are deaf or hard of hearing.', cta: 'See upcoming webinars', link: 'Refer a child', img: 'assets/imagery/preschool-teacher-play.png' }
+    ];
+    const dur = (this.props.slideSeconds ?? 7) * 1000;
+    const slides = SL.map((s, i) => {
+      const on = i === S.slide;
+      return {
+        ...s, hidden: on ? 'false' : 'true',
+        go: () => this.goTo(i),
+        photo: { position: 'absolute', inset: 0, backgroundImage: 'url(' + s.img + ')', backgroundSize: 'cover', backgroundPosition: 'center right', pointerEvents: 'none' },
+        label: { fontSize: 15, fontWeight: 700, lineHeight: 1.3, color: on ? 'var(--clarke-purple-800)' : 'var(--clarke-navy-900)', transition: 'color .2s ease-out' },
+        bar: { position: 'absolute', left: 0, top: 0, bottom: 0, background: 'var(--clarke-purple-800)', width: on ? Math.min(100, (S.t / dur) * 100) + '%' : (i < S.slide ? '100%' : '0%'), transition: on && S.t > 0 ? 'width .1s linear' : 'none' }
+      };
+    });
+
+    const TABS = [
+      { label: 'New to hearing loss', title: 'Start with a few clear next steps.', body: 'A diagnosis brings more questions than answers. We’ll walk through what it means, what your options are, and who can help — at your pace.', links: ['Where Do I Begin?', 'Understanding Hearing Loss', 'Find Support', 'Financial & Insurance Basics'], cta: 'Talk with our team', img: 'assets/imagery/family-reading.png' },
+      { label: 'Current families', title: 'Find the right program as your child grows.', body: 'From infants and toddlers to school-age students, find programs, specialized services and ongoing support in one place.', links: ['Programs by Age', 'Specialized Services', 'Summer Services', 'Support Groups'], cta: 'Explore Our Services', img: 'assets/imagery/preschool-teacher-play.png' },
+      { label: 'Professionals', title: 'Tools and training for your work.', body: 'Refer a child, build your skills, and connect with Clarke’s teachers of the deaf, audiologists and speech-language pathologists.', links: ['Refer a Child', 'Professional Learning', 'Clinical & Educational Resources', 'Mentoring'], cta: 'Visit Professionals', img: 'assets/imagery/slp-session.png' },
+      { label: 'Supporters', title: 'Help more children listen and talk.', body: 'Compare the ways you, your family or your company can support Clarke children and families.', links: ['Donate', 'Corporate Partnerships', 'Company Match', 'Pennsylvania EITC'], cta: 'See Ways to Give', img: 'assets/imagery/kids-playground.png' },
+      { label: 'Job seekers', title: 'Do meaningful work with a dedicated team.', body: 'Learn about Clarke’s culture and benefits, and find open positions across our campuses and teleservices team.', links: ['View Open Positions', 'Culture & Benefits'], cta: 'Go to Careers', img: 'assets/imagery/girl-classroom.png' }
+    ];
+    const tabs = TABS.map((t, i) => {
+      const on = i === S.tab;
+      return { label: t.label, ref: this.segRefs[i], sel: on ? 'true' : 'false', select: () => this.selectTab(i), style: { position: 'relative', zIndex: 1, fontFamily: 'var(--font-brand)', fontSize: 15, fontWeight: on ? 700 : 500, padding: '11px 20px', borderRadius: 9, cursor: 'pointer', border: 'none', background: 'transparent', whiteSpace: 'nowrap', color: on ? 'var(--clarke-purple-800)' : 'var(--clarke-navy-900)', transition: 'color .2s ease-out' } };
+    });
+    const P = TABS[S.tab];
+    const panel = { ...P, photo: { minHeight: 360, backgroundImage: 'url(' + P.img + ')', backgroundSize: 'cover', backgroundPosition: 'center' } };
+
+    const LOC = [
+      { name: 'Florida', sub: 'Jacksonville campus', img: 'assets/imagery/kids-playground.png' },
+      { name: 'Canton', sub: 'Massachusetts campus', img: 'assets/imagery/preschool-teacher-play.png' },
+      { name: 'Northampton', sub: 'Massachusetts campus', img: 'assets/imagery/girl-classroom.png' },
+      { name: 'New York', sub: 'Campus information', img: 'assets/imagery/family-reading.png' },
+      { name: 'Pennsylvania', sub: 'Campus information', img: 'assets/imagery/slp-session.png' },
+      { name: 'Remote Support', sub: 'Teleservices, wherever you are', img: null }
+    ];
+    const locations = LOC.map(l => ({
+      ...l,
+      imgStyle: l.img ? { position: 'absolute', inset: 0, backgroundImage: 'url(' + l.img + ')', backgroundSize: 'cover', backgroundPosition: 'center' } : { position: 'absolute', inset: 0, background: 'var(--gradient-navy-green)' },
+      overlay: { position: 'absolute', inset: 0, background: l.img ? 'linear-gradient(180deg,rgba(52,51,82,0) 40%,rgba(52,51,82,.9) 100%)' : 'transparent' }
+    }));
+    const railStep = dir => () => {
+      const r = this.rail; if (!r) return;
+      const card = r.firstElementChild; const w = card ? card.getBoundingClientRect().width + 16 : 320;
+      r.scrollBy({ left: dir * w, behavior: this.reduced ? 'auto' : 'smooth' });
+    };
+
+    return {
+      showNotes: false,
+      headerRef: this.headerRef, heroRef: this.heroRef, trackRef: this.trackRef,
+      segRef: this.segRef, segIndRef: this.segIndRef, panelRef: this.panelRef, railRef: this.railRef,
+      headerStyle: { position: 'sticky', top: 0, zIndex: 8, background: mat, backdropFilter: blur, WebkitBackdropFilter: blur, boxShadow: S.scrolled || menuOn ? '0 1px 0 rgba(52,51,82,.08), 0 8px 24px rgba(52,51,82,.06)' : '0 1px 0 rgba(52,51,82,0)', transition: 'box-shadow .25s ease-out' },
+      wide: !S.compact, compact: !!S.compact,
+      drawerExpanded: drawerOn ? 'true' : 'false',
+      drawerLabel: S.drawer ? 'Close' : 'Menu',
+      toggleDrawer: () => this.setState(s => ({ drawer: !s.drawer })),
+      drawer: labels.map(l => ({ label: l, items: MENUS[l] ? MENUS[l].items : [] })),
+      drawerStyle: { ...panelBase, maxHeight: '75vh', overflow: 'auto', transformOrigin: 'top right', opacity: drawerOn ? 1 : 0, transform: drawerOn ? 'none' : 'translateY(-8px) scale(.985)', visibility: drawerOn ? 'visible' : 'hidden', pointerEvents: drawerOn ? 'auto' : 'none', transition: this.reduced ? 'opacity .2s ease, visibility .2s' : `opacity .22s ${ease}, transform .32s ${ease}, visibility .32s` },
+      nav,
+      menu: { label: S.lastMenu, ...MENUS[S.lastMenu] },
+      menuStyle: { ...panelBase, transformOrigin: S.ox + 'px 0', opacity: menuOn ? 1 : 0, transform: menuOn ? 'none' : 'translateY(-6px) scale(.98)', visibility: menuOn ? 'visible' : 'hidden', pointerEvents: menuOn ? 'auto' : 'none', transition: this.reduced ? 'opacity .2s ease, visibility .2s' : `opacity .2s ${ease}, transform .3s ${ease}, visibility .3s` },
+      closeMenu: () => this.setState({ menu: null }),
+      slides,
+      heroDown: this.heroDown,
+      heroKey: e => { if (e.key === 'ArrowRight') this.goTo(S.slide + 1); if (e.key === 'ArrowLeft') this.goTo(S.slide - 1); },
+      noDrag: e => e.preventDefault(),
+      prev: () => this.goTo(S.slide - 1), next: () => this.goTo(S.slide + 1),
+      pause: () => this.setState({ paused: true }), resume: () => this.setState({ paused: false }),
+      tabs, panel, locations,
+      railPrev: railStep(-1), railNext: railStep(1),
+      socialStyle: { marginTop: 8 },
+      programGroups: [
+        { head: 'PROGRAMS BY AGE', items: [
+          { name: 'Infants & Toddlers', desc: 'Home- and center-based coaching for families, birth to age 3.' },
+          { name: 'Preschool & School-Age', desc: 'Classrooms led by teachers of the deaf that build language through play and learning.' },
+          { name: 'Adults & Families', desc: 'Support for caregivers, families and adults.' }
+        ] },
+        { head: 'SPECIALIZED SERVICES', items: [
+          { name: 'Teleservices', desc: 'Listening and spoken language therapy, online.' },
+          { name: 'Audiology', desc: 'Hearing evaluations, hearing aids and cochlear implant care.' },
+          { name: 'Mainstream Services', desc: 'Support for students in local classrooms.' }
+        ] }
+      ],
+      stats: [
+        { n: '1867', label: 'Teaching children to listen and talk for over 150 years' },
+        { n: '1,000+', label: 'Children and families served every year' },
+        { n: '4 + 1', label: 'States along the Eastern Seaboard, plus teleservices' }
+      ],
+      events: [
+        { tag: 'EVENT', title: 'Webinar Series for Families', where: 'Virtual · Free', cta: 'Register', img: 'assets/imagery/family-reading.png' },
+        { tag: 'OUR STORIES', title: 'Clarke’s Listening Walk at the Zoo', where: 'Philadelphia, PA', cta: 'Join the walk', img: 'assets/imagery/kids-playground.png' },
+        { tag: 'SCHOLARSHIPS', title: 'Caroline Yale Scholarship', where: 'For Clarke alumni', cta: 'Learn more', img: 'assets/imagery/girl-classroom.png' }
+      ].map(e => ({ ...e, imgStyle: { position: 'absolute', inset: 0, backgroundImage: 'url(' + e.img + ')', backgroundSize: 'cover', backgroundPosition: 'center', transition: 'transform .6s cubic-bezier(.2,.8,.2,1)' } })),
+      footerCols: [
+        { head: 'START HERE', links: ['Getting Started', 'Our Services', 'Locations', 'Refer a Child'] },
+        { head: 'LEARN', links: ['Resources', 'Professionals', 'Community', 'About'] },
+        { head: 'GET INVOLVED', links: ['Ways to Give', 'Events', 'Careers', 'Alumni'] }
+      ]
+    };
+  }
+}
+</script>
+</body>
+</html>

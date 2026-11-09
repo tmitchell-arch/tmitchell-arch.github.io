@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+<script src="../portfolio-guard.js" defer></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<title>About Us | Mitchell Strategies: Branding, Web Development &amp; Digital Marketing Agency</title>
+<meta name="description" content="Mitchell Strategies is a full-service boutique agency for branding, web development and digital marketing. 80+ clients served and more than 30 years of experience growing brands.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600&family=Roboto+Mono:wght@400;500&display=swap" rel="stylesheet">
+<script src="./image-slot.js"></script>
+<style>
+body{margin:0;background:#FFFFFF;color:#1C2A3E;font-family:Archivo,sans-serif;-webkit-font-smoothing:antialiased}
+a{color:#1C2A3E;text-decoration:none}
+a:hover{color:#2EB2FF}
+*{box-sizing:border-box}
+@keyframes ms-prog{from{transform:scaleX(0)}to{transform:scaleX(1)}}
+</style>
+</helmet>
+
+<div style="background:#FFFFFF;color:#1C2A3E;font-family:Archivo,sans-serif;overflow-x:hidden">
+  <dc-import name="Site Nav" active="About" trigger="{{ navTrigger }}" preview="{{ navPreview }}" hint-size="100%,0px"></dc-import>
+
+  <section data-screen-label="About hero" style="position:relative;background:#F7F9FB">
+    <div style="position:relative;overflow:hidden">
+      <div style="position:absolute;inset:0"><image-slot id="about-hero-bg" shape="rect" src="https://cdn.prod.website-files.com/66a2927aa1f5a550f5c0364d/66b227f54162c6bc7fa7b010_Gal%203.webp" placeholder="Background image or GIF (sits under a color overlay)"></image-slot></div>
+      <div style="position:absolute;inset:0;background:rgba(247,249,251,0.88);pointer-events:none"></div>
+      <div style="position:relative;pointer-events:none;padding:clamp(140px,14vw,200px) clamp(20px,5vw,64px) 0;display:flex;flex-direction:column;align-items:center;text-align:center;gap:28px">
+        <span style="font-family:'Roboto Mono',monospace;font-weight:500;font-size:13px;letter-spacing:0.06em;text-transform:uppercase;color:#4C5A6E">Client stories</span>
+        <h1 style="margin:0;font-family:Archivo,sans-serif;font-weight:500;font-size:clamp(44px,6.6vw,92px);line-height:0.96;letter-spacing:-0.02em;max-width:1080px;text-wrap:balance">Trusted by brands that refuse to blend&nbsp;in</h1>
+        <p style="margin:0;font-size:clamp(17px,1.6vw,20px);line-height:1.6;color:#4C5A6E;max-width:720px;text-wrap:pretty">From federal agencies to first-time founders, 80+ clients use Mitchell Strategies to look sharper, reach the right audience and&nbsp;grow.</p>
+        <div style="display:flex;flex-wrap:wrap;justify-content:center;gap:14px;margin-top:8px;pointer-events:auto">
+          <a href="#" style="font-family:Archivo,sans-serif;font-weight:600;font-size:17px;background:#2EB2FF;color:#1C2A3E;padding:18px 30px;white-space:nowrap" style-hover="background:#1C2A3E;color:#FFFFFF">Let's Talk</a>
+          <a href="#" style="font-family:Archivo,sans-serif;font-weight:600;font-size:17px;background:#FFFFFF;color:#1C2A3E;padding:16px 28px;border:2px solid #1C2A3E;white-space:nowrap" style-hover="background:#1C2A3E;color:#FFFFFF">Get Started</a>
+          <a href="#" style="font-family:Archivo,sans-serif;font-weight:600;font-size:17px;color:#1C2A3E;padding:18px 18px;white-space:nowrap" style-hover="color:#2EB2FF">See our work →</a>
+        </div>
+      </div>
+      <svg width="100%" height="72" viewBox="0 0 1440 72" preserveAspectRatio="none" style="display:block;position:relative;margin-top:72px"><path d="M0 71 H560 C760 71 820 1 1020 1 H1440" fill="none" stroke="#4C5A6E" stroke-width="1.5" vector-effect="non-scaling-stroke"></path></svg>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,340px),1fr));gap:1px;background:#D1DCE6;border-top:1px solid #D1DCE6">
+      <div style="background:#FFFFFF;padding:40px clamp(20px,5vw,64px);display:flex;flex-wrap:wrap;align-items:baseline;gap:8px 20px">
+        <span style="font-family:Archivo,sans-serif;font-weight:500;font-size:clamp(56px,6vw,72px);line-height:1;letter-spacing:-0.02em">80+</span>
+        <span style="font-size:17px;color:#4C5A6E">clients served</span>
+      </div>
+      <div style="background:#FFFFFF;padding:40px clamp(20px,5vw,64px);display:flex;flex-wrap:wrap;align-items:baseline;gap:8px 20px">
+        <span style="font-family:Archivo,sans-serif;font-weight:500;font-size:clamp(56px,6vw,72px);line-height:1;letter-spacing:-0.02em">1.5M+</span>
+        <span style="font-size:17px;color:#4C5A6E">website visits for our&nbsp;clients</span>
+      </div>
+    </div>
+  </section>
+
+  <section data-screen-label="What we offer" onMouseEnter="{{ pause }}" onMouseLeave="{{ resume }}" style="padding:clamp(72px,10vw,120px) clamp(20px,5vw,64px);display:flex;flex-direction:column;gap:clamp(40px,5vw,64px)">
+    <div style="display:flex;flex-wrap:wrap;gap:20px 64px;align-items:flex-end;justify-content:space-between">
+      <div style="flex:1 1 480px;display:flex;flex-direction:column;gap:14px">
+        <span style="font-family:'Roboto Mono',monospace;font-weight:500;font-size:13px;letter-spacing:0.06em;text-transform:uppercase;color:#4C5A6E">What we offer</span>
+        <h2 style="margin:0;max-width:760px;font-family:Archivo,sans-serif;font-weight:500;font-size:clamp(36px,4.6vw,56px);line-height:1.02;letter-spacing:-0.02em;text-wrap:balance">Three disciplines, one team, zero hand-offs between&nbsp;vendors.</h2>
+      </div>
+      <p style="margin:0;flex:1 1 320px;max-width:440px;font-size:17px;line-height:1.65;color:#4C5A6E;text-wrap:pretty">Your graphic design, your website and your marketing all live under one roof, so the strategy carries all the way&nbsp;through.</p>
+    </div>
+
+    <div style="display:flex;flex-wrap:wrap;gap:clamp(32px,4vw,64px);align-items:stretch">
+      <div role="tablist" aria-label="Services" style="flex:1 1 340px;align-self:flex-start;display:flex;flex-direction:column;border-bottom:1px solid #D1DCE6">
+        <sc-for list="{{ services }}" as="s" hint-placeholder-count="3">
+          <button role="tab" aria-selected="{{ s.expanded }}" onClick="{{ s.onClick }}" style="all:unset;cursor:pointer;position:relative;display:flex;flex-direction:column;gap:14px;padding:clamp(22px,2.6vw,32px) 0;border-top:1px solid #D1DCE6">
+            {{ s.bar }}
+            <span style="display:flex;align-items:baseline;gap:18px">
+              <span style="font-family:'Roboto Mono',monospace;font-weight:500;font-size:13px;letter-spacing:0.06em;color:{{ s.numColor }};flex:none;width:28px">{{ s.num }}</span>
+              <span style="font-family:Archivo,sans-serif;font-weight:500;font-size:clamp(26px,3vw,38px);line-height:1.05;letter-spacing:-0.02em;color:{{ s.fg }};transition:color 200ms">{{ s.name }}</span>
+            </span>
+            <sc-if value="{{ s.open }}" hint-placeholder-val="{{ false }}">
+              <span style="padding-left:46px;font-size:17px;line-height:1.6;color:#4C5A6E;text-wrap:pretty">{{ s.desc }}</span>
+            </sc-if>
+          </button>
+        </sc-for>
+      </div>
+
+      <div style="flex:1.5 1 440px;min-width:0;display:flex;flex-direction:column;gap:24px">
+        <div style="position:relative;aspect-ratio:16/11;overflow:hidden;background:#D1DCE6;border-radius:0 clamp(56px,8vw,120px) 0 0">
+          <sc-for list="{{ services }}" as="s" hint-placeholder-count="3">
+            <div aria-hidden="{{ s.hidden }}" style="position:absolute;inset:0;opacity:{{ s.op }};transform:scale({{ s.scale }});transition:opacity 500ms ease, transform 900ms cubic-bezier(.2,.7,.2,1);pointer-events:{{ s.pe }}"><image-slot id="{{ s.slot }}" src="{{ s.img }}" shape="rect" placeholder="Service photo" alt="{{ s.alt }}"></image-slot></div>
+          </sc-for>
+          <div style="position:absolute;left:0;bottom:0;background:#FFFFFF;border-top:1px solid #1C2A3E;border-right:1px solid #1C2A3E;padding:14px 20px;max-width:calc(100% - 24px);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;font-family:'Roboto Mono',monospace;font-weight:500;font-size:13px;letter-spacing:0.06em;text-transform:uppercase">{{ cur.num }} / 03 · {{ cur.name }}</div>
+        </div>
+        <div style="display:flex;flex-wrap:wrap;gap:20px 32px;align-items:center;justify-content:space-between">
+          <div style="display:flex;flex-wrap:wrap;gap:8px;flex:1 1 300px">
+            <sc-for list="{{ cur.tags }}" as="t" hint-placeholder-count="4">
+              <span style="font-size:15px;font-weight:500;padding:8px 14px;border:1px solid #D1DCE6;background:#F7F9FB;white-space:nowrap">{{ t }}</span>
+            </sc-for>
+          </div>
+          <a href="#" style="font-family:Archivo,sans-serif;font-weight:600;font-size:16px;border-bottom:2px solid #2EB2FF;padding-bottom:4px;white-space:nowrap" style-hover="color:#2EB2FF">Explore {{ cur.name }} →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section data-screen-label="Team" style="padding:0 clamp(20px,5vw,64px) clamp(72px,10vw,112px);display:flex;flex-direction:column;gap:clamp(32px,4vw,48px)">
+    <div style="display:flex;flex-wrap:wrap;gap:20px 64px;align-items:flex-end;justify-content:space-between">
+      <div style="flex:1 1 420px;display:flex;flex-direction:column;gap:14px">
+        <span style="font-family:'Roboto Mono',monospace;font-weight:500;font-size:13px;letter-spacing:0.06em;text-transform:uppercase;color:#4C5A6E">Meet the team</span>
+        <h2 style="margin:0;max-width:760px;font-family:Archivo,sans-serif;font-weight:500;font-size:clamp(36px,4.6vw,56px);line-height:1.02;letter-spacing:-0.02em;text-wrap:balance">The people behind the&nbsp;work</h2>
+      </div>
+      <a href="#" style="font-family:Archivo,sans-serif;font-weight:600;font-size:16px;border-bottom:2px solid #2EB2FF;padding-bottom:4px;white-space:nowrap" style-hover="color:#2EB2FF">Join our team →</a>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,240px),1fr));gap:clamp(20px,2.4vw,32px)">
+      <sc-for list="{{ team }}" as="m" hint-placeholder-count="4">
+        <div style="display:flex;flex-direction:column;gap:16px">
+          <div style="position:relative;aspect-ratio:4/5;overflow:hidden;background:#D1DCE6;border-radius:{{ m.r }}"><image-slot id="{{ m.slot }}" shape="rect" placeholder="Headshot"></image-slot></div>
+          <div style="display:flex;flex-direction:column;gap:6px">
+            <h3 style="margin:0;font-family:Archivo,sans-serif;font-weight:600;font-size:22px;letter-spacing:-0.01em">{{ m.name }}</h3>
+            <span style="font-family:'Roboto Mono',monospace;font-weight:500;font-size:13px;letter-spacing:0.06em;text-transform:uppercase;color:#4C5A6E">{{ m.role }}</span>
+          </div>
+        </div>
+      </sc-for>
+    </div>
+  </section>
+
+  <section data-screen-label="Process" style="padding:0 clamp(20px,5vw,64px) clamp(72px,10vw,112px)">
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,460px),1fr));background:#1C2A3E;color:#FFFFFF;border-radius:0 72px 0 0;overflow:hidden">
+      <div style="padding:clamp(40px,6vw,72px) clamp(24px,5vw,64px);display:flex;flex-direction:column;gap:36px">
+        <div style="display:flex;flex-direction:column;gap:18px">
+          <span style="font-family:'Roboto Mono',monospace;font-weight:500;font-size:13px;letter-spacing:0.06em;text-transform:uppercase;color:#2EB2FF">Our process</span>
+          <h2 style="margin:0;font-family:Archivo,sans-serif;font-weight:500;font-size:clamp(34px,4vw,48px);line-height:1.04;letter-spacing:-0.02em;text-wrap:balance">Tailored strategies for unique brand&nbsp;challenges</h2>
+          <p style="margin:0;font-size:17px;line-height:1.65;color:#D1DCE6;text-wrap:pretty">Every brand is different, so every strategy should be too. Our process is part art, part science. Whether we're building a brand, designing a website or planning a marketing strategy, there are no shortcuts to results. Here's how we get&nbsp;there.</p>
+        </div>
+        <div style="display:flex;flex-direction:column">
+          <sc-for list="{{ steps }}" as="st" hint-placeholder-count="3">
+            <div style="border-top:1px solid #4C5A6E">
+              <button onClick="{{ st.onClick }}" aria-expanded="{{ st.expanded }}" style="all:unset;cursor:pointer;width:100%;display:grid;grid-template-columns:40px minmax(0,1fr) 24px;gap:16px;align-items:center;padding:24px 0">
+                <span style="font-family:'Roboto Mono',monospace;font-weight:500;font-size:13px;color:{{ st.numColor }}">{{ st.n }}</span>
+                <h3 style="margin:0;font-family:Archivo,sans-serif;font-weight:600;font-size:22px;color:#FFFFFF;text-wrap:balance">{{ st.t }}</h3>
+                <span style="font-family:Archivo,sans-serif;font-size:24px;color:#2EB2FF;text-align:right">{{ st.sign }}</span>
+              </button>
+              <sc-if value="{{ st.open }}" hint-placeholder-val="{{ false }}">
+                <p style="margin:0;padding:0 clamp(0px,3vw,40px) 28px 56px;font-size:16px;line-height:1.65;color:#D1DCE6;text-wrap:pretty">{{ st.d }}</p>
+              </sc-if>
+            </div>
+          </sc-for>
+        </div>
+      </div>
+      <div style="position:relative;min-height:clamp(320px,50vw,640px);background:#4C5A6E">
+        <image-slot id="about-process" src="https://images.pexels.com/photos/2446930/pexels-photo-2446930.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1600" shape="rect" placeholder="Process photo" alt="Washington, D.C. streets at night from above"></image-slot>
+      </div>
+    </div>
+  </section>
+
+  <section data-screen-label="Clients" style="padding:0 64px 112px;display:flex;flex-direction:column;gap:40px">
+    <h2 style="margin:0;font-family:Archivo,sans-serif;font-weight:500;font-size:40px;letter-spacing:-0.02em;text-align:center;text-wrap:balance">Brands we've had the chance to work with</h2>
+    <div style="display:grid;grid-template-columns:repeat(5,minmax(0,1fr));border-top:1px solid #ECECEC;border-left:1px solid #ECECEC">
+      <sc-for list="{{ logos }}" as="l" hint-placeholder-count="10">
+        <div style="height:140px;display:flex;align-items:center;justify-content:center;padding:24px;border-right:1px solid #ECECEC;border-bottom:1px solid #ECECEC">
+          <img src="{{ l.src }}" alt="{{ l.name }} logo" style="max-height:{{ l.h }};max-width:100%;width:auto;display:block;opacity:0.8">
+        </div>
+      </sc-for>
+    </div>
+  </section>
+
+  <section data-screen-label="FAQs" style="background:#F7F9FB;padding:clamp(72px,10vw,112px) clamp(20px,5vw,64px);display:flex;flex-direction:column;gap:clamp(32px,4vw,48px)">
+    <div style="display:flex;flex-wrap:wrap;gap:20px 64px;align-items:flex-end;justify-content:space-between">
+      <div style="flex:1 1 420px;display:flex;flex-direction:column;gap:14px">
+        <span style="font-family:'Roboto Mono',monospace;font-weight:500;font-size:13px;letter-spacing:0.06em;text-transform:uppercase;color:#4C5A6E">Before you reach out</span>
+        <h2 style="margin:0;font-family:Archivo,sans-serif;font-weight:500;font-size:clamp(34px,4vw,48px);line-height:1.04;letter-spacing:-0.02em;text-wrap:balance">Pick a question, get a straight&nbsp;answer.</h2>
+      </div>
+      <a href="#" style="font-family:Archivo,sans-serif;font-weight:600;font-size:16px;border-bottom:2px solid #2EB2FF;padding-bottom:4px;white-space:nowrap" style-hover="color:#2EB2FF">Ask us something else →</a>
+    </div>
+    <div role="tablist" aria-label="Questions" style="display:flex;flex-wrap:wrap;gap:10px">
+      <sc-for list="{{ faqs }}" as="f" hint-placeholder-count="5">
+        <button role="tab" aria-selected="{{ f.expanded }}" onClick="{{ f.onClick }}" style="all:unset;box-sizing:border-box;cursor:pointer;display:inline-flex;align-items:center;max-width:100%;font-family:Archivo,sans-serif;font-weight:500;font-size:16px;line-height:1.3;padding:12px 18px;text-wrap:balance;border:1.5px solid #1C2A3E;background:{{ f.bg }};color:{{ f.fg }};transition:background 160ms,color 160ms" style-hover="border-color:#2EB2FF">{{ f.chip }}</button>
+      </sc-for>
+    </div>
+    <div style="background:#FFFFFF;border:1px solid #D1DCE6;border-radius:0 clamp(32px,5vw,64px) 0 0;padding:clamp(28px,5vw,64px);display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,320px),1fr));gap:clamp(24px,4vw,64px);align-items:start">
+      <div style="display:flex;flex-direction:column;gap:16px">
+        <span style="font-family:'Roboto Mono',monospace;font-weight:500;font-size:13px;letter-spacing:0.06em;color:#2EB2FF">Q{{ faq.num }} / 0{{ faqCount }}</span>
+        <h3 style="margin:0;font-family:Archivo,sans-serif;font-weight:600;font-size:clamp(24px,2.6vw,32px);line-height:1.15;letter-spacing:-0.01em;text-wrap:balance">{{ faq.q }}</h3>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:28px">
+        <p style="margin:0;font-size:clamp(17px,1.5vw,19px);line-height:1.65;color:#4C5A6E;text-wrap:pretty">{{ faq.a }}</p>
+        <div style="display:flex;gap:10px">
+          <button onClick="{{ prevFaq }}" aria-label="Previous question" style="all:unset;cursor:pointer;width:48px;height:48px;display:flex;align-items:center;justify-content:center;border:1.5px solid #1C2A3E;font-size:20px" style-hover="background:#1C2A3E;color:#FFFFFF">←</button>
+          <button onClick="{{ nextFaq }}" aria-label="Next question" style="all:unset;cursor:pointer;width:48px;height:48px;display:flex;align-items:center;justify-content:center;border:1.5px solid #1C2A3E;font-size:20px" style-hover="background:#1C2A3E;color:#FFFFFF">→</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section data-screen-label="CTA" style="padding:clamp(72px,10vw,112px) clamp(20px,5vw,64px);display:flex;flex-direction:column;gap:36px">
+    <h2 style="margin:0;font-family:Archivo,sans-serif;font-weight:500;font-size:clamp(34px,4vw,48px);letter-spacing:-0.02em;text-align:center;text-wrap:balance">Ready to talk about your&nbsp;project?</h2>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,400px),1fr));gap:24px">
+      <a href="#" style="display:flex;flex-direction:column;gap:14px;background:#2EB2FF;color:#1C2A3E;border-radius:0 48px 0 0;padding:clamp(28px,4vw,48px)" style-hover="transform:translateY(-4px);color:#1C2A3E">
+        <span style="font-family:Archivo,sans-serif;font-weight:500;font-size:clamp(28px,3vw,36px)">Let's Talk →</span>
+        <span style="font-size:18px;line-height:1.55;text-wrap:pretty">Tell us what you're working on and we'll show you how we can&nbsp;help.</span>
+      </a>
+      <a href="#" style="display:flex;flex-direction:column;gap:14px;background:#F7F9FB;border:1px solid #D1DCE6;color:#1C2A3E;border-radius:0 48px 0 0;padding:clamp(28px,4vw,48px)" style-hover="transform:translateY(-4px);color:#1C2A3E">
+        <span style="font-family:Archivo,sans-serif;font-weight:500;font-size:clamp(28px,3vw,36px)">See Our Work →</span>
+        <span style="font-size:18px;line-height:1.55;color:#4C5A6E;text-wrap:pretty">Case studies from federal agencies, associations, campaigns and&nbsp;startups.</span>
+      </a>
+    </div>
+  </section>
+
+  <footer data-screen-label="Footer" style="background:#1C2A3E;color:#D1DCE6;padding:80px clamp(20px,5vw,64px) 40px;display:flex;flex-direction:column;gap:64px">
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:40px">
+      <img src="assets/ms-wordmark-white.png" alt="Mitchell Strategies" style="height:60px;width:auto;display:block">
+      <sc-for list="{{ footerCols }}" as="c" hint-placeholder-count="4">
+        <div style="display:flex;flex-direction:column;gap:14px">
+          <span style="font-family:'Roboto Mono',monospace;font-weight:500;font-size:13px;letter-spacing:0.06em;text-transform:uppercase;color:#FFFFFF">{{ c.h }}</span>
+          <sc-for list="{{ c.links }}" as="lk" hint-placeholder-count="4"><a href="#" style="font-size:15px;color:#D1DCE6" style-hover="color:#2EB2FF">{{ lk }}</a></sc-for>
+        </div>
+      </sc-for>
+    </div>
+    <div style="display:flex;flex-wrap:wrap;gap:12px 24px;justify-content:space-between;font-size:14px;border-top:1px solid #4C5A6E;padding-top:28px"><span>© 2026 Mitchell Strategies</span><span>Privacy · Terms</span></div>
+  </footer>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;autoplay&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;What we offer&quot;},&quot;cycleSeconds&quot;:{&quot;editor&quot;:&quot;range&quot;,&quot;min&quot;:4,&quot;max&quot;:12,&quot;step&quot;:1,&quot;unit&quot;:&quot;s&quot;,&quot;default&quot;:7,&quot;tsType&quot;:&quot;number&quot;,&quot;section&quot;:&quot;What we offer&quot;},&quot;trigger&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;hover&quot;,&quot;click&quot;],&quot;default&quot;:&quot;hover&quot;,&quot;tsType&quot;:&quot;'hover'|'click'&quot;,&quot;section&quot;:&quot;Nav&quot;},&quot;preview&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;live&quot;,&quot;top&quot;,&quot;scrolled&quot;],&quot;default&quot;:&quot;live&quot;,&quot;tsType&quot;:&quot;'live'|'top'|'scrolled'&quot;,&quot;section&quot;:&quot;Nav&quot;}}">
+class Component extends DCLogic {
+  state = { step: 0, faq: 0, svc: 0, tick: 0, paused: false, locked: false };
+  componentDidMount() { this.start(); }
+  componentWillUnmount() { clearInterval(this.t); }
+  start() {
+    clearInterval(this.t);
+    const ms = this.props.cycleSeconds ?? 7;
+    if (!(this.props.autoplay ?? true) || this.state.locked) return;
+    this.t = setInterval(() => { if (!this.state.paused) this.setState(s => ({ svc: (s.svc + 1) % 3, tick: s.tick + 1 })); }, ms * 1000);
+  }
+  renderVals() {
+    const S = this.state, P = this.props;
+    const nb = s => s.replace(/ (\S+)$/, '\u00a0$1');
+    const px = id => 'https://images.pexels.com/photos/' + id + '/pexels-photo-' + id + '.jpeg?auto=compress&cs=tinysrgb&w=1600';
+    const auto = (P.autoplay ?? true) && !S.locked;
+    const secs = P.cycleSeconds ?? 7;
+    const steps = [
+      { n: '01', t: 'Diagnosis & strategic planning', d: "A good strategy starts with an honest diagnosis. We dig into your brand and your data to see what's working, what isn't, and where the untapped opportunities are. From there, our strategic planning framework lays the groundwork to grow your business into a 7- or 8-figure company." },
+      { n: '02', t: 'Test & verify benchmarks', d: "Once you're live, we collect data, find the top-performing variables and keep optimizing. With that data in hand, we set clear target metrics inside your ad funnel, which gives us a path to scale." },
+      { n: '03', t: 'Scale', d: "When we've hit our KPIs, we map your revenue goals and growth path against performance and inventory. Then we raise ad spend and push your brand toward its revenue milestones." }
+    ];
+    const svc = [
+      { num: '01', name: 'Digital Marketing', desc: "Campaigns that grow your online presence and put you in front of the audience you're after, then prove it with the numbers.", img: px(1181431), slot: 'about-svc-1', alt: 'Three women talking around a conference table with a laptop', tags: ['Paid advertising', 'SEO', 'Social media', 'Email marketing', 'Reporting'] },
+      { num: '02', name: 'Web Development', desc: "Custom websites built on current technology. They look sharp, load fast and make it easy for visitors to do what you need them to do.", img: px(8067992), slot: 'about-svc-2', alt: 'Woman working on a laptop in a bright yellow office', tags: ['Custom websites', 'E-commerce', 'Landing pages', 'Site care & updates'] },
+      { num: '03', name: 'Branding & Design', desc: 'Our creative team pairs design skill with strategy, so every visual your audience sees feels like it came from the same brand.', img: px(3002552), slot: 'about-svc-3', alt: 'Three women in bold outfits posing on a city street', tags: ['Brand identity', 'Logo design', 'Graphic design', 'Video editing'] }
+    ];
+    const faqs = [
+      { chip: 'How does unlimited design work?', q: 'How does unlimited graphic design and video editing actually work?', a: "You send requests through our platform whenever you need them. A dedicated team of designers and editors works through them in order and keeps revising until it's right. There's no cap on requests or revisions." },
+      { chip: 'What ROI can I expect from paid ads?', q: 'What kind of return do clients see from the Paid Ads Retainer?', a: 'It varies by industry and campaign, but the trend is clear. One tech startup grew site traffic by 150%, and an education service beat its enrollment target by 60%.' },
+      { chip: 'Can I pause or change my plan?', q: 'Am I locked in if my needs change?', a: "No. Pause, cancel or adjust your plan whenever your business changes. The work should follow your goals and budget, not a contract." },
+      { chip: 'How soon will I see results?', q: 'How long before the work starts paying off?', a: 'That depends on the package and the goal. Most clients see meaningful movement within the first few months, and we report on progress the whole way.' },
+      { chip: 'Why not hire in-house?', q: 'Why work with an agency instead of building a team?', a: "You get strategy, design, development and marketing for a fraction of what an in-house team costs. One partner, one point of contact, no juggling vendors." }
+    ].map(f => ({ ...f, a: nb(f.a) }));
+    const fi = Math.max(0, S.faq);
+    const pick = i => { clearInterval(this.t); this.setState({ svc: i, locked: true }); };
+    return {
+      navTrigger: P.trigger ?? 'hover', navPreview: P.preview ?? 'live',
+      pause: () => { if (auto) this.setState({ paused: true }); },
+      resume: () => { if (auto) { this.setState(s => ({ paused: false, tick: s.tick + 1 })); this.start(); } },
+      services: svc.map((s, i) => {
+        const on = S.svc === i;
+        return { ...s, desc: nb(s.desc), open: on, expanded: String(on), hidden: String(!on), op: on ? 1 : 0, scale: on ? 1 : 1.04, pe: on ? 'auto' : 'none',
+          fg: on ? '#1C2A3E' : '#4C5A6E', numColor: on ? '#2EB2FF' : '#4C5A6E', onClick: () => pick(i),
+          bar: on ? React.createElement('span', { key: S.svc + '-' + S.tick + '-' + S.paused, 'aria-hidden': true, style: { position: 'absolute', left: 0, right: 0, top: -1, height: 2, background: '#2EB2FF', transformOrigin: 'left', animation: auto && !S.paused ? `ms-prog ${secs}s linear forwards` : 'none' } }) : null };
+      }),
+      cur: svc[S.svc],
+      team: ['0 64px 0 0', '0', '0', '0 0 0 64px'].map((r, i) => ({ r, slot: 'about-team-' + (i + 1), name: 'Team member name', role: 'Role / title' })),
+      steps: steps.map((s, i) => ({ ...s, d: nb(s.d), open: S.step === i, expanded: String(S.step === i), sign: S.step === i ? '−' : '+', numColor: S.step === i ? '#2EB2FF' : '#D1DCE6', onClick: () => this.setState(st => ({ step: st.step === i ? -1 : i })) })),
+      faqs: faqs.map((f, i) => ({ ...f, expanded: String(fi === i), bg: fi === i ? '#1C2A3E' : '#FFFFFF', fg: fi === i ? '#FFFFFF' : '#1C2A3E', onClick: () => this.setState({ faq: i }) })),
+      faq: { ...faqs[fi], num: '0' + (fi + 1) }, faqCount: faqs.length,
+      prevFaq: () => this.setState(s => ({ faq: (s.faq - 1 + faqs.length) % faqs.length })),
+      nextFaq: () => this.setState(s => ({ faq: (s.faq + 1) % faqs.length })),
+      logos: [
+        { name: 'U.S. Department of Energy', src: 'assets/clients/c0.png', h: '48px' }, { name: 'PSI', src: 'assets/clients/c1.png', h: '40px' },
+        { name: 'AABE', src: 'assets/clients/c2.png', h: '48px' }, { name: 'Eleanor Holmes Norton for Congress', src: 'assets/clients/c3.png', h: '44px' },
+        { name: 'AppleTree', src: 'assets/clients/c4.png', h: '40px' }, { name: 'Torrey Project', src: 'assets/clients/c5.png', h: '48px' },
+        { name: 'internXL', src: 'assets/clients/c6.png', h: '36px' }, { name: 'VYCE', src: 'assets/clients/c7.png', h: '48px' },
+        { name: 'Coco B Productions', src: 'assets/clients/c8.png', h: '72px' }, { name: 'Douglas County Georgia', src: 'assets/clients/c9.png', h: '80px' }
+      ],
+      footerCols: [
+        { h: 'Services', links: ['Branding & Creative', 'Web Development', 'Digital Marketing'] },
+        { h: 'Plans', links: ['Unlimited Creative', 'Digital Marketing Bundle', 'Paid Advertising'] },
+        { h: 'Resources', links: ['Digital District', 'Shop', "FAQ's", 'Reviews'] },
+        { h: 'Company', links: ['About us', 'Work', 'Careers', 'Contact us'] }
+      ]
+    };
+  }
+}
+</script>
+</body>
+</html>

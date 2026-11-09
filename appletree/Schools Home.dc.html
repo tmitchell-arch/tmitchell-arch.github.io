@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+<script src="../portfolio-guard.js" defer></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Raleway:wght@600;700;800;900&family=Source+Sans+3:wght@400;600;700&display=swap">
+<style>
+html,body{margin:0;background:#fff;color:#141414;font-family:'Source Sans 3',system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+*{box-sizing:border-box}
+a{color:#B50900;text-decoration:none}
+a:hover{color:#8A0700}
+h1,h2,h3{text-wrap:balance}
+p{text-wrap:pretty}
+::selection{background:#F9C706;color:#141414}
+:focus-visible{outline:3px solid #238EA2;outline-offset:3px}
+@media (prefers-reduced-motion: reduce){*{transition-duration:.01ms!important;animation:none!important}}
+</style>
+</helmet>
+
+<header style="position:sticky;top:0;z-index:30;background:#fff;display:flex;align-items:center;justify-content:space-between;gap:20px;padding:14px clamp(20px,4vw,56px);flex-wrap:wrap">
+  <a href="AppleTree.dc.html" aria-label="AppleTree home" style="display:flex"><img src="assets/logo-wide.png" alt="AppleTree" style="height:30px;width:auto;display:block"></a>
+  <nav style="white-space:nowrap;display:flex;align-items:center;gap:clamp(14px,2.2vw,28px);flex-wrap:wrap;font-size:17px;font-weight:700">
+    <a href="#day" style="color:#141414" style-hover="color:#B50900">A day here</a>
+    <a href="#start" style="color:#141414" style-hover="color:#B50900">Start date</a>
+    <a href="Campuses.dc.html" style="color:#141414" style-hover="color:#B50900">Campuses</a>
+    <a href="Curriculum.dc.html" style="color:#141414" style-hover="color:#B50900">Curriculum</a>
+    <a href="Mission%20and%20History.dc.html" style="color:#141414" style-hover="color:#B50900">About</a>
+    <a href="Institute%20Home.dc.html" style="color:#141414" style-hover="color:#B50900">Institute</a>
+    <a href="Enroll.dc.html" style="background:#B50900;color:#fff;padding:12px 22px;white-space:nowrap;border-radius:16px;transition:transform .12s ease-out" style-hover="color:#fff;background:#8A0700" style-active="transform:scale(.95)">Enroll</a>
+  </nav>
+</header>
+
+<section data-screen-label="01 Hero" style="max-width:1600px;margin:0 auto;padding:clamp(24px,4vw,64px) clamp(20px,4vw,56px) clamp(64px,8vw,128px);display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,500px),1fr));gap:clamp(32px,5vw,80px);align-items:center">
+  <div style="display:flex;flex-direction:column;gap:28px">
+    <h1 style="margin:0;font-family:Raleway,sans-serif;font-size:clamp(52px,6.4vw,108px);line-height:.94;letter-spacing:-.045em;font-weight:900">Big days for little learners.</h1>
+    <p style="margin:0;font-size:clamp(19px,1.6vw,23px);line-height:1.45;max-width:36ch">Early childhood education isn’t just part of what we do. It’s everything we do: free public preschool for three- and four-year-olds at nine DC campuses.</p>
+    <div style="display:flex;gap:12px;flex-wrap:wrap">
+      <a href="Enroll.dc.html" style="background:#B50900;color:#fff;padding:18px 28px;white-space:nowrap;border-radius:18px;font-size:18px;font-weight:700;transition:transform .12s ease-out" style-hover="color:#fff;background:#8A0700" style-active="transform:scale(.95)">Enroll for 2027–28</a>
+      <a href="#day" style="background:#F9C706;color:#141414;padding:18px 28px;white-space:nowrap;border-radius:18px;font-size:18px;font-weight:700;transition:transform .12s ease-out" style-hover="color:#141414;background:#FFD633" style-active="transform:scale(.95)">See a day at AppleTree</a>
+    </div>
+    <div style="display:flex;align-items:center;gap:16px"><img src="assets/badge-2024.png" alt="Best Preschool in DC 2024, Washington Parent Picks" style="width:84px;height:auto;display:block"><p style="margin:0;font-size:17px;font-weight:600;max-width:30ch">Named DC’s Best Preschool by Washington Parent. Go on, pick up a block.</p></div>
+  </div>
+  <div ref="{{ stageRef }}" onPointerMove="{{ hover }}" onPointerLeave="{{ leave }}" style="position:relative;width:100%;aspect-ratio:1/1;max-width:720px;justify-self:center;touch-action:none">
+    <sc-for list="{{ shapes }}" as="s" hint-placeholder-count="7">
+      <div data-shape="{{ $index }}" onPointerDown="{{ s.down }}" style="position:absolute;left:{{ s.l }};top:{{ s.t }};width:{{ s.w }};aspect-ratio:{{ s.ar }};border-radius:{{ s.br }};overflow:hidden;background:{{ s.bg }};cursor:grab;will-change:transform;transform:scale(0);z-index:{{ s.z }}">
+        <sc-if value="{{ s.img }}" hint-placeholder-val="{{ false }}">
+          <img src="{{ s.img }}" alt="{{ s.alt }}" draggable="false" style="width:100%;height:100%;object-fit:cover;display:block;pointer-events:none;user-select:none">
+        </sc-if>
+      </div>
+    </sc-for>
+  </div>
+</section>
+
+<section id="day" ref="{{ dayRef }}" data-screen-label="02 A day" style="position:relative;height:{{ dayH }}">
+  <div ref="{{ dayStage }}" style="position:sticky;top:0;height:100vh;min-height:620px;overflow:hidden;background:{{ slot.tint }};transition:background-color .7s cubic-bezier(.2,.8,.2,1);display:flex;flex-direction:column">
+    <div style="max-width:1600px;width:100%;margin:0 auto;padding:clamp(80px,10vh,112px) clamp(20px,4vw,56px) 0;flex:1;min-height:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,440px),1fr));gap:clamp(24px,4vw,64px);align-items:center">
+      <div style="display:flex;flex-direction:column;gap:18px">
+        <h2 style="margin:0;font-family:Raleway,sans-serif;font-size:clamp(24px,2vw,30px);font-weight:800;letter-spacing:-.015em">A day at AppleTree</h2>
+        <p aria-live="polite" style="margin:0;font-family:Raleway,sans-serif;font-size:clamp(88px,14vw,220px);line-height:.82;letter-spacing:-.06em;font-weight:900;font-variant-numeric:tabular-nums;color:{{ slot.ink }}">{{ slot.time }}</p>
+        <h3 style="margin:8px 0 0;font-family:Raleway,sans-serif;font-size:clamp(28px,3vw,48px);line-height:1;letter-spacing:-.03em;font-weight:900">{{ slot.title }}</h3>
+        <p style="margin:0;font-size:clamp(18px,1.4vw,21px);line-height:1.5;max-width:40ch">{{ slot.d }}</p>
+      </div>
+      <div style="position:relative;width:100%;height:min(56vh,560px)">
+        <sc-for list="{{ day }}" as="d" hint-placeholder-count="1">
+          <img src="{{ d.img }}" alt="{{ d.alt }}" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;border-radius:36px;opacity:{{ d.op }};transform:{{ d.tf }};transition:opacity .5s ease,transform .7s cubic-bezier(.34,1.4,.64,1)">
+        </sc-for>
+      </div>
+    </div>
+    <div style="max-width:1600px;width:100%;margin:0 auto;padding:24px clamp(20px,4vw,56px) clamp(24px,4vh,40px)">
+      <div style="position:relative;display:flex;gap:6px;height:22px">
+        <sc-for list="{{ day }}" as="d" hint-placeholder-count="8">
+          <button onClick="{{ d.go }}" aria-label="Jump to {{ d.time }}, {{ d.title }}" style="flex:1;border:0;padding:0;border-radius:999px;background:{{ d.seg }};opacity:{{ d.segOp }};cursor:pointer;transition:opacity .3s,transform .12s ease-out" style-active="transform:scaleY(.8)"></button>
+        </sc-for>
+        <span ref="{{ sunRef }}" aria-hidden="true" style="position:absolute;top:50%;left:0;width:40px;height:40px;margin:-20px 0 0 -20px;border-radius:50%;background:#F9C706;border:6px solid #141414;pointer-events:none"></span>
+      </div>
+      <div style="display:flex;justify-content:space-between;margin-top:14px;font-size:15px;font-weight:700"><span>Drop-off 7:45am</span><span>The Every Child Ready day</span><span>Pickup 3:15pm</span></div>
+    </div>
+  </div>
+</section>
+
+<section data-screen-label="02b Unique" style="max-width:1600px;margin:0 auto;padding:clamp(96px,10vw,176px) clamp(20px,4vw,56px) 0;display:flex;flex-direction:column;gap:40px">
+  <h2 data-r="0" style="margin:0;font-family:Raleway,sans-serif;font-size:clamp(40px,4.6vw,76px);line-height:.98;letter-spacing:-.04em;font-weight:900">Four things that make us unique</h2>
+  <ol style="list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:24px">
+    <li style="position:sticky;top:calc(96px + 0px);background:#B50900;color:#fff;border-radius:40px;padding:clamp(24px,3.5vw,48px);display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,340px),1fr));gap:clamp(24px,4vw,56px);align-items:center;min-height:min(64vh,520px)">
+      <div style="display:flex;flex-direction:column;gap:18px">
+        <h3 style="margin:0;font-family:Raleway,sans-serif;font-size:clamp(34px,3.6vw,60px);line-height:1;letter-spacing:-.035em;font-weight:900">How we rank</h3>
+        <ul style="margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:12px">
+          <li style="display:grid;grid-template-columns:22px 1fr;gap:14px;align-items:start;font-size:clamp(18px,1.4vw,21px);line-height:1.45"><span aria-hidden="true" style="width:22px;height:22px;margin-top:3px;border-radius:50%;background:#fff;border:6px solid #141414"></span>Our schools are consistently rated Strong and Exceptional, meeting the highest performance standards.</li>
+          <li style="display:grid;grid-template-columns:22px 1fr;gap:14px;align-items:start;font-size:clamp(18px,1.4vw,21px);line-height:1.45"><span aria-hidden="true" style="width:22px;height:22px;margin-top:3px;border-radius:50%;background:#fff;border:6px solid #141414"></span>We are the largest public preschool program in DC, serving the community since 2005.</li>
+        </ul>
+      </div>
+      <img src="assets/photos/p02.jpg" alt="" style="width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:40px;display:block">
+    </li>
+    <li style="position:sticky;top:calc(96px + 24px);background:#F9C706;color:#141414;border-radius:40px;padding:clamp(24px,3.5vw,48px);display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,340px),1fr));gap:clamp(24px,4vw,56px);align-items:center;min-height:min(64vh,520px)">
+      <div style="display:flex;flex-direction:column;gap:18px">
+        <h3 style="margin:0;font-family:Raleway,sans-serif;font-size:clamp(34px,3.6vw,60px);line-height:1;letter-spacing:-.035em;font-weight:900">How we learn</h3>
+        <ul style="margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:12px">
+          <li style="display:grid;grid-template-columns:22px 1fr;gap:14px;align-items:start;font-size:clamp(18px,1.4vw,21px);line-height:1.45"><span aria-hidden="true" style="width:22px;height:22px;margin-top:3px;border-radius:50%;background:#fff;border:6px solid #141414"></span>Every Chance and Every Opportunity to make Every Child Ready for a successful academic life.</li>
+          <li style="display:grid;grid-template-columns:22px 1fr;gap:14px;align-items:start;font-size:clamp(18px,1.4vw,21px);line-height:1.45"><span aria-hidden="true" style="width:22px;height:22px;margin-top:3px;border-radius:50%;background:#fff;border:6px solid #141414"></span>Children learn through exploration and purposeful play.</li>
+          <li style="display:grid;grid-template-columns:22px 1fr;gap:14px;align-items:start;font-size:clamp(18px,1.4vw,21px);line-height:1.45"><span aria-hidden="true" style="width:22px;height:22px;margin-top:3px;border-radius:50%;background:#fff;border:6px solid #141414"></span>Every Child Ready focuses on social-emotional learning, language, literacy and STEM.</li>
+        </ul>
+      </div>
+      <img src="assets/photos/p08.jpg" alt="" style="width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:999px 999px 40px 40px;display:block">
+    </li>
+    <li style="position:sticky;top:calc(96px + 48px);background:#238EA2;color:#fff;border-radius:40px;padding:clamp(24px,3.5vw,48px);display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,340px),1fr));gap:clamp(24px,4vw,56px);align-items:center;min-height:min(64vh,520px)">
+      <div style="display:flex;flex-direction:column;gap:18px">
+        <h3 style="margin:0;font-family:Raleway,sans-serif;font-size:clamp(34px,3.6vw,60px);line-height:1;letter-spacing:-.035em;font-weight:900">Where we are</h3>
+        <ul style="margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:12px">
+          <li style="display:grid;grid-template-columns:22px 1fr;gap:14px;align-items:start;font-size:clamp(18px,1.4vw,21px);line-height:1.45"><span aria-hidden="true" style="width:22px;height:22px;margin-top:3px;border-radius:50%;background:#fff;border:6px solid #141414"></span>Campuses are a metro ride from most homes and businesses in the DC area.</li>
+          <li style="display:grid;grid-template-columns:22px 1fr;gap:14px;align-items:start;font-size:clamp(18px,1.4vw,21px);line-height:1.45"><span aria-hidden="true" style="width:22px;height:22px;margin-top:3px;border-radius:50%;background:#fff;border:6px solid #141414"></span>We are in the NE, NW, SW and SE quadrants, in Wards 1, 3, 5, 6, 7 and 8.</li>
+        </ul>
+      </div>
+      <img src="assets/photos/p03.jpg" alt="" style="width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:40px 40px 40px 160px;display:block">
+    </li>
+    <li style="position:sticky;top:calc(96px + 72px);background:#3A9973;color:#fff;border-radius:40px;padding:clamp(24px,3.5vw,48px);display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,340px),1fr));gap:clamp(24px,4vw,56px);align-items:center;min-height:min(64vh,520px)">
+      <div style="display:flex;flex-direction:column;gap:18px">
+        <h3 style="margin:0;font-family:Raleway,sans-serif;font-size:clamp(34px,3.6vw,60px);line-height:1;letter-spacing:-.035em;font-weight:900">What we do</h3>
+        <ul style="margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:12px">
+          <li style="display:grid;grid-template-columns:22px 1fr;gap:14px;align-items:start;font-size:clamp(18px,1.4vw,21px);line-height:1.45"><span aria-hidden="true" style="width:22px;height:22px;margin-top:3px;border-radius:50%;background:#fff;border:6px solid #141414"></span>A nationally acclaimed curriculum designed only for three- and four-year-olds.</li>
+          <li style="display:grid;grid-template-columns:22px 1fr;gap:14px;align-items:start;font-size:clamp(18px,1.4vw,21px);line-height:1.45"><span aria-hidden="true" style="width:22px;height:22px;margin-top:3px;border-radius:50%;background:#fff;border:6px solid #141414"></span>Extensive research on how three- and four-year-olds learn makes us a leading expert in early learning.</li>
+          <li style="display:grid;grid-template-columns:22px 1fr;gap:14px;align-items:start;font-size:clamp(18px,1.4vw,21px);line-height:1.45"><span aria-hidden="true" style="width:22px;height:22px;margin-top:3px;border-radius:50%;background:#fff;border:6px solid #141414"></span>Small classes, so your child gets the attention they deserve.</li>
+        </ul>
+      </div>
+      <img src="assets/photos/p11.jpg" alt="" style="width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:50%;display:block">
+    </li>
+  </ol>
+</section>
+
+<section id="start" data-screen-label="03 Start date" style="max-width:1600px;margin:0 auto;padding:clamp(96px,10vw,176px) clamp(20px,4vw,56px);display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,440px),1fr));gap:clamp(40px,6vw,96px);align-items:end">
+  <div style="display:flex;flex-direction:column;gap:22px">
+    <h2 data-r="0" style="margin:0;font-family:Raleway,sans-serif;font-size:clamp(40px,4.6vw,76px);line-height:.98;letter-spacing:-.04em;font-weight:900">Build their path to kindergarten</h2>
+    <p data-r="1" style="margin:0;font-size:19px;line-height:1.55;max-width:42ch">Enter your child's birthday and we'll stack up the years: PK3, PK4, then kindergarten.</p>
+    <label data-r="2" style="display:flex;flex-direction:column;gap:10px;font-size:17px;font-weight:700;max-width:360px">Child's birthday
+      <input type="date" value="{{ dob }}" onChange="{{ onDob }}" min="2018-01-01" max="2026-11-03" style="font:inherit;font-size:22px;font-weight:600;padding:14px 18px;border:3px solid #141414;border-radius:18px;background:#fff;color:#141414;width:100%">
+    </label>
+    <p aria-live="polite" style="margin:0;font-family:Raleway,sans-serif;font-size:clamp(24px,2.2vw,32px);line-height:1.15;letter-spacing:-.02em;font-weight:800;max-width:24ch">{{ result.headline }}</p>
+    <sc-if value="{{ result.cta }}" hint-placeholder-val="{{ true }}">
+      <a href="https://www.myschooldc.org" style="align-self:flex-start;background:#B50900;color:#fff;padding:16px 26px;white-space:nowrap;border-radius:18px;font-size:18px;font-weight:700;transition:transform .12s ease-out" style-hover="color:#fff;background:#8A0700" style-active="transform:scale(.95)">Apply on My School DC</a>
+    </sc-if>
+  </div>
+  <div ref="{{ towerRef }}" style="display:flex;flex-direction:column-reverse;align-items:center;gap:8px;min-height:420px;justify-content:flex-start">
+    <sc-for list="{{ result.steps }}" as="s" hint-placeholder-count="3">
+      <div data-block="1" style="width:{{ s.w }};background:{{ s.c }};color:{{ s.fg }};border-radius:24px;padding:22px 28px;display:flex;justify-content:space-between;align-items:baseline;gap:16px;flex-wrap:wrap">
+        <span style="font-family:Raleway,sans-serif;font-size:clamp(26px,2.4vw,38px);font-weight:900;letter-spacing:-.025em">{{ s.what }}</span>
+        <span style="font-size:18px;font-weight:700">{{ s.when }}</span>
+      </div>
+    </sc-for>
+  </div>
+</section>
+
+<section id="campuses" data-screen-label="04 Campuses" style="background:#141414;color:#fff;position:relative;overflow:hidden">
+  <div style="max-width:1600px;margin:0 auto;padding:clamp(96px,10vw,176px) clamp(20px,4vw,56px);display:flex;flex-direction:column;gap:48px">
+    <div style="display:flex;justify-content:space-between;align-items:end;gap:24px;flex-wrap:wrap">
+      <div style="display:flex;flex-direction:column;gap:14px"><h2 data-r="0" style="margin:0;font-family:Raleway,sans-serif;font-size:clamp(40px,4.6vw,76px);line-height:.98;letter-spacing:-.04em;font-weight:900">Nine campuses, every quadrant</h2><a href="Campuses.dc.html" style="color:#F9C706;font-size:18px;font-weight:700">See them on the campus map</a></div>
+      <div role="group" aria-label="Filter by quadrant" style="display:flex;gap:8px;flex-wrap:wrap">
+        <sc-for list="{{ quads }}" as="q" hint-placeholder-count="5">
+          <button onClick="{{ q.pick }}" aria-pressed="{{ q.on }}" style="font:inherit;font-size:16px;font-weight:700;min-width:60px;padding:12px 18px;border:0;border-radius:16px;cursor:pointer;background:{{ q.bg }};color:{{ q.fg }};transition:transform .12s ease-out" style-active="transform:scale(.94)">{{ q.label }}</button>
+        </sc-for>
+      </div>
+    </div>
+    <div onPointerMove="{{ listMove }}" onPointerLeave="{{ listLeave }}" style="display:flex;flex-direction:column">
+      <sc-for list="{{ campusList }}" as="c" hint-placeholder-count="9">
+        <a href="{{ c.url }}" onPointerEnter="{{ c.enter }}" onFocus="{{ c.enter }}" style="display:grid;grid-template-columns:{{ rowCols }};gap:16px 32px;align-items:center;padding:22px 0;color:#fff;border-radius:20px;transition:padding .3s cubic-bezier(.2,.8,.2,1),color .2s" style-hover="color:#F9C706;padding-left:16px">
+          <sc-if value="{{ narrow }}" hint-placeholder-val="{{ false }}">
+            <img src="{{ c.img }}" alt="" style="width:96px;aspect-ratio:1/1;object-fit:cover;border-radius:20px;display:block">
+          </sc-if>
+          <span style="font-family:Raleway,sans-serif;font-size:clamp(28px,3.4vw,56px);line-height:1;letter-spacing:-.035em;font-weight:900">{{ c.name }}</span>
+          <span style="grid-column:{{ addrCol }};font-size:17px;line-height:1.45;color:#fff">Ward {{ c.ward }} · {{ c.addr }}<br>{{ c.phone }}</span>
+        </a>
+      </sc-for>
+    </div>
+  </div>
+  <div ref="{{ floatRef }}" aria-hidden="true" style="position:fixed;left:0;top:0;width:320px;aspect-ratio:4/3;border-radius:28px;overflow:hidden;pointer-events:none;opacity:0;z-index:25;transition:opacity .25s;will-change:transform">
+    <img src="{{ hoverImg }}" alt="" style="width:100%;height:100%;object-fit:cover;display:block">
+  </div>
+</section>
+
+<section data-screen-label="05 Parents" style="background:#563884;color:#fff">
+  <div style="max-width:1600px;margin:0 auto;padding:clamp(96px,10vw,176px) clamp(20px,4vw,56px);display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,420px),1fr));gap:clamp(40px,6vw,96px);align-items:center">
+    <img data-r="0" src="assets/photos/p01.jpg" alt="An AppleTree girl with beaded braids listening in class" style="width:100%;aspect-ratio:1/1;object-fit:cover;border-radius:50%;display:block">
+    <div style="display:flex;flex-direction:column;gap:28px">
+      <h2 data-r="0" style="margin:0;font-family:Raleway,sans-serif;font-size:clamp(32px,3.4vw,56px);line-height:1;letter-spacing:-.035em;font-weight:900">From our parents</h2>
+      <blockquote data-r="1" aria-live="polite" style="margin:0;display:flex;flex-direction:column;gap:18px;min-height:200px">
+        <p style="margin:0;font-family:Raleway,sans-serif;font-size:clamp(24px,2.4vw,36px);line-height:1.2;letter-spacing:-.015em;font-weight:700">{{ quote.q }}</p>
+        <footer style="font-size:18px;font-weight:700">{{ quote.who }}, AppleTree parent</footer>
+      </blockquote>
+      <div role="group" aria-label="Choose a parent" style="display:flex;gap:8px;flex-wrap:wrap">
+        <sc-for list="{{ quotes }}" as="t" hint-placeholder-count="3">
+          <button onClick="{{ t.pick }}" aria-pressed="{{ t.on }}" style="font:inherit;font-size:16px;font-weight:700;padding:11px 18px;min-height:44px;border:0;border-radius:16px;cursor:pointer;background:{{ t.bg }};color:{{ t.fg }};transition:transform .12s ease-out" style-active="transform:scale(.94)">{{ t.who }}</button>
+        </sc-for>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section data-screen-label="06 Visit" style="max-width:1600px;margin:0 auto;padding:clamp(96px,10vw,176px) clamp(20px,4vw,56px);display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,400px),1fr));gap:20px">
+  <div data-r="0" style="background:#F9C706;border-radius:36px;padding:clamp(28px,4vw,56px);display:flex;flex-direction:column;gap:20px;min-height:420px;justify-content:flex-end">
+    <h2 style="margin:0;font-family:Raleway,sans-serif;font-size:clamp(32px,3.4vw,56px);line-height:1;letter-spacing:-.035em;font-weight:900">Come to an open house</h2>
+    <p style="margin:0;font-size:19px;line-height:1.5;max-width:40ch">Meet the teachers and see the classrooms. Open houses run all year at every campus.</p>
+    <a href="tel:+12024483330" style="align-self:flex-start;background:#141414;color:#fff;padding:16px 26px;white-space:nowrap;border-radius:18px;font-size:18px;font-weight:700;transition:transform .12s ease-out" style-hover="color:#fff;background:#000" style-active="transform:scale(.95)">Call (202) 448-3330</a>
+  </div>
+  <div data-r="1" style="position:relative;border-radius:36px;overflow:hidden;min-height:420px;display:flex;align-items:flex-end">
+    <img src="assets/photos/p12.jpg" alt="An AppleTree teacher and her students raising their hands" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover">
+    <div style="position:relative;margin:16px;background:#fff;border-radius:26px;padding:clamp(22px,3vw,36px);display:flex;flex-direction:column;gap:12px">
+      <h2 style="margin:0;font-family:Raleway,sans-serif;font-size:clamp(28px,2.6vw,40px);line-height:1;letter-spacing:-.03em;font-weight:900">Teach with us</h2>
+      <p style="margin:0;font-size:18px;line-height:1.5">Our paid two-year Teacher Residency trains new preschool teachers. 60% of our mentors started as residents.</p>
+      <a href="https://www.appletreeinstitute.org/teacher-residency" style="font-size:18px;font-weight:700">See the residency</a><a href="https://www.appletreeinstitute.org/join-our-team" style="font-size:18px;font-weight:700">View open positions</a>
+    </div>
+  </div>
+</section>
+
+<section id="interest" data-screen-label="06b Interest form" style="background:#141414;color:#fff;position:relative;overflow:hidden">
+  <img src="assets/photos/p17.jpg" alt="" aria-hidden="true" style="position:absolute;right:0;top:0;width:60%;height:100%;object-fit:cover;opacity:.4;-webkit-mask-image:linear-gradient(to left,#000 25%,transparent 100%);mask-image:linear-gradient(to left,#000 25%,transparent 100%)">
+  <div style="position:relative;max-width:1600px;margin:0 auto;padding:clamp(96px,10vw,176px) clamp(20px,4vw,56px);display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,440px),1fr));gap:clamp(40px,6vw,96px);align-items:start">
+    <div style="display:flex;flex-direction:column;gap:22px">
+      <h2 data-r="0" style="margin:0;font-family:Raleway,sans-serif;font-size:clamp(40px,4.6vw,76px);line-height:.98;letter-spacing:-.04em;font-weight:900">Looking for the right preschool?</h2>
+      <p data-r="1" style="margin:0;font-size:19px;line-height:1.55;max-width:42ch">We’re here to help. Tell us a little about your family to learn more about AppleTree, explore campuses and stay up to date on family and neighborhood events.</p>
+      <p data-r="2" style="margin:0;font-size:19px;line-height:1.55">Prefer to talk now? Call the enrollment team at <a href="tel:+12024483330" style="color:#F9C706;font-weight:700">(202) 448-3330</a>.</p>
+    </div>
+    <form data-r="1" onSubmit="{{ onInterest }}" style="background:#fff;color:#141414;border-radius:36px;padding:clamp(24px,3vw,40px);display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:14px">
+      <label style="display:flex;flex-direction:column;gap:8px;font-size:16px;font-weight:700">Your name<input required autocomplete="name" style="font:inherit;font-size:18px;padding:14px 16px;border:0;border-radius:14px;background:#F4F6F7;color:#141414"></label>
+      <label style="display:flex;flex-direction:column;gap:8px;font-size:16px;font-weight:700">Phone<input type="tel" autocomplete="tel" style="font:inherit;font-size:18px;padding:14px 16px;border:0;border-radius:14px;background:#F4F6F7;color:#141414"></label>
+      <label style="grid-column:1/-1;display:flex;flex-direction:column;gap:8px;font-size:16px;font-weight:700">Email<input type="email" required autocomplete="email" style="font:inherit;font-size:18px;padding:14px 16px;border:0;border-radius:14px;background:#F4F6F7;color:#141414"></label>
+      <label style="display:flex;flex-direction:column;gap:8px;font-size:16px;font-weight:700">Child’s birthday<input type="date" style="font:inherit;font-size:18px;padding:12px 16px;border:0;border-radius:14px;background:#F4F6F7;color:#141414"></label>
+      <label style="display:flex;flex-direction:column;gap:8px;font-size:16px;font-weight:700">Campus of interest<select style="font:inherit;font-size:18px;padding:14px 16px;border:0;border-radius:14px;background:#F4F6F7;color:#141414"><option>Not sure yet</option><option>Achievement Prep</option><option>Columbia Heights</option><option>Douglas Knoll</option><option>Lincoln Park</option><option>Oklahoma Avenue</option><option>Parklands @ THEARC</option><option>Southwest</option><option>Spring Valley</option><option>Waterfront</option></select></label>
+      <button type="submit" style="justify-self:start;font:inherit;font-size:18px;font-weight:700;padding:16px 26px;border:0;border-radius:16px;background:#B50900;color:#fff;cursor:pointer;white-space:nowrap;transition:transform .12s ease-out" style-active="transform:scale(.95)">{{ interestLabel }}</button>
+    </form>
+  </div>
+</section>
+
+<section data-screen-label="06c News" style="max-width:1600px;margin:0 auto;padding:clamp(96px,10vw,176px) clamp(20px,4vw,56px);display:flex;flex-direction:column;gap:48px">
+  <div style="display:flex;justify-content:space-between;align-items:end;gap:24px;flex-wrap:wrap">
+    <h2 data-r="0" style="margin:0;font-family:Raleway,sans-serif;font-size:clamp(40px,4.6vw,76px);line-height:.98;letter-spacing:-.04em;font-weight:900">Recent news</h2>
+    <a data-r="1" href="https://www.appletreeinstitute.org/news" style="font-size:19px;font-weight:700">All news</a>
+  </div>
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,320px),1fr));gap:20px">
+    <a data-r="1" href="https://www.appletreeinstitute.org/news-posts/were-proud-to-partner-with-the-family-place-to-support-multigenerational-learning-in-dc" style="display:flex;flex-direction:column;gap:16px;color:#141414;transition:transform .25s cubic-bezier(.34,1.56,.64,1)" style-hover="color:#141414;transform:translateY(-6px)" style-active="transform:scale(.98)"><img src="assets/web/web-family-place.jpg" alt="AppleTree and The Family Place staff together" style="width:100%;aspect-ratio:3/2;object-fit:cover;border-radius:32px;display:block"><h3 style="margin:0;font-family:Raleway,sans-serif;font-size:24px;line-height:1.1;font-weight:900;letter-spacing:-.02em">Partnering with The Family Place</h3><p style="margin:0;font-size:17px;line-height:1.5">Supporting multigenerational learning in DC: high-quality preschool for children while parents continue their own education.</p></a>
+    <a data-r="2" href="https://www.appletreeinstitute.org/news-posts/appletree-early-learning-public-charter-school-named-top-preschool-in-washington-dc-for-2024" style="display:flex;flex-direction:column;gap:16px;color:#141414;transition:transform .25s cubic-bezier(.34,1.56,.64,1)" style-hover="color:#141414;transform:translateY(-6px)" style-active="transform:scale(.98)"><div style="width:100%;aspect-ratio:3/2;border-radius:999px 999px 32px 32px;background:#F9C706;display:flex;align-items:center;justify-content:center"><img src="assets/badge-2024.png" alt="Best Preschool in DC 2024 badge" style="width:42%;height:auto"></div><h3 style="margin:0;font-family:Raleway,sans-serif;font-size:24px;line-height:1.1;font-weight:900;letter-spacing:-.02em">Named top preschool in Washington, DC for 2024</h3><p style="margin:0;font-size:17px;line-height:1.5">Washington Parent Magazine readers chose AppleTree Early Learning PCS.</p></a>
+    <a data-r="3" href="https://www.appletreeinstitute.org/news-posts/reading-with-robert-at-appletree-spring-valley" style="display:flex;flex-direction:column;gap:16px;color:#141414;transition:transform .25s cubic-bezier(.34,1.56,.64,1)" style-hover="color:#141414;transform:translateY(-6px)" style-active="transform:scale(.98)"><img src="assets/web/web-reading-robert.png" alt="Reading With Robert storytelling at Spring Valley" style="width:100%;aspect-ratio:3/2;object-fit:cover;border-radius:32px 32px 32px 120px;display:block"><h3 style="margin:0;font-family:Raleway,sans-serif;font-size:24px;line-height:1.1;font-weight:900;letter-spacing:-.02em">Reading With Robert at Spring Valley</h3><p style="margin:0;font-size:17px;line-height:1.5">Interactive storytelling to promote literacy among our youngest learners.</p></a>
+  </div>
+</section>
+
+<footer data-screen-label="07 Footer" style="background:#B50900;color:#fff">
+  <div style="max-width:1600px;margin:0 auto;padding:clamp(64px,7vw,104px) clamp(20px,4vw,56px) 40px;display:flex;flex-direction:column;gap:48px">
+    <div style="display:flex;gap:40px 64px;flex-wrap:wrap;font-size:17px;line-height:1.6">
+      <div style="display:flex;flex-direction:column;gap:4px"><span style="font-weight:700">AppleTree Early Learning PCS</span><span>1801 Mississippi Avenue SE, Washington, DC 20020</span><span>Schools (202) 526-1503 · Enrollment (202) 448-3330</span></div>
+      <div style="display:flex;flex-direction:column;gap:4px"><a href="Mission%20and%20History.dc.html" style="color:#fff">Mission and history</a><a href="Enroll.dc.html" style="color:#fff">Enroll</a><a href="Curriculum.dc.html" style="color:#fff">Curriculum</a><a href="Institute%20Home.dc.html" style="color:#fff">AppleTree Institute</a><a href="https://dcpcsb.org" style="color:#fff">DC Public Charter School Board</a></div>
+      <div style="display:flex;flex-direction:column;gap:4px"><a href="https://www.instagram.com/appletree_dc_org/" style="color:#fff">Instagram</a><a href="https://www.facebook.com/AppleTreeDC/" style="color:#fff">Facebook</a><a href="https://www.linkedin.com/company/appletree-early-learning-public-charter-school/" style="color:#fff">LinkedIn</a></div>
+    </div>
+    <p aria-hidden="true" style="margin:0;font-family:Raleway,sans-serif;font-size:clamp(64px,16vw,280px);line-height:.8;letter-spacing:-.05em;font-weight:900">AppleTree</p>
+    <span style="font-size:15px">© 2026 AppleTree Early Learning Public Charter School</span>
+  </div>
+</footer>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  state = { slot: 0, dob: '', quad: 'All', qi: 0, hov: 0, narrow: false };
+  stageRef = React.createRef(); dayRef = React.createRef(); dayStage = React.createRef(); sunRef = React.createRef(); towerRef = React.createRef(); floatRef = React.createRef();
+  shapeDefs = [
+    { l: '4%', t: '4%', w: '44%', ar: '1/1', br: '50%', img: 'p19', alt: 'A smiling girl with purple bows', d: .9, z: 2 },
+    { l: '52%', t: '0%', w: '40%', ar: '4/5', br: '999px 999px 28px 28px', img: 'p20', alt: 'A girl playing with bubbles', d: .6, z: 2 },
+    { l: '8%', t: '54%', w: '40%', ar: '1/1', br: '32px', img: 'p08', alt: 'A boy building a block tower', d: .5, z: 2 },
+    { l: '52%', t: '52%', w: '44%', ar: '1/1', br: '100% 28px 28px 28px', img: 'p03', alt: 'Friends walking down a school hallway', d: .8, z: 2 },
+    { l: '38%', t: '38%', w: '20%', ar: '1/1', br: '50%', bg: '#F9C706', d: 1.4, z: 3 },
+    { l: '0%', t: '44%', w: '17%', ar: '2/1', br: '999px', bg: '#9BDCE8', d: 1.2, z: 3 },
+    { l: '76%', t: '40%', w: '20%', ar: '2/1', br: '999px 999px 0 0', bg: '#69C49B', d: 1.1, z: 3 }
+  ];
+  dayData = [
+    ['AM', 'Morning welcome', 'Children start the day with group activities that introduce new ideas and build community.', 'p12', 'A teacher and children at morning circle', '#FBE3E1', '#B50900', '#141414'],
+    ['AM', 'Learning centers', 'Children rotate through hands-on learning centers that encourage discovery and growth.', 'p08', 'A boy building a block tower', '#FDE7D3', '#F58020', '#141414'],
+    ['Noon', 'Outdoor play', 'Daily outdoor play keeps children active and gives them time to practice social skills.', 'p13', 'A boy playing with a yellow parachute', '#E5F3EC', '#3A9973', '#141414'],
+    ['Noon', 'Snack and rest', 'Nutritious snacks, then quiet time to recharge for the afternoon.', 'p22', 'A boy resting on the rug', '#E2F5F8', '#238EA2', '#141414'],
+    ['PM', 'Afternoon creative play', 'The day wraps up with engaging activities and a look back at what we learned.', 'p11', 'A teacher reading a story', '#EEE8F6', '#7A5BAC', '#141414']
+  ];
+  campusData = [
+    ['Spring Valley', 'NW', '3', '4900 Massachusetts Avenue NW', '(202) 929-0190', 'sv', 'spring-valley'],
+    ['Columbia Heights', 'NW', '1', '2750 14th Street NW', '(771) 210-3999', 'columbia', 'columbia-heights'],
+    ['Lincoln Park', 'NE', '6', '138 12th Street NE', '(202) 621-6581', 'lincoln', 'lincoln-park'],
+    ['Oklahoma Avenue', 'NE', '7', '330 21st Street NE', '(771) 210-4260', 'okla', 'oklahoma-avenue'],
+    ['Southwest', 'SW', '6', '488 Virginia Avenue SW', '(202) 978-2910', 'sw', 'southwest'],
+    ['Waterfront', 'SW', '6', '330 Maple Drive SW', '(202) 988-3780', 'waterfront', 'waterfront'],
+    ['Parklands @ THEARC', 'SE', '8', '1801 Mississippi Avenue SE', '(202) 506-1890', 'parklands', 'parklands-thearc'],
+    ['Douglas Knoll', 'SE', '8', '2031 Savannah Terrace SE', '(771) 210-2142', 'douglas', 'douglas-knoll'],
+    ['Achievement Prep', 'SE', '8', '908 Wahler Place SE', '(202) 562-1214', 'aprep', 'appletree-achievement-prep']
+  ].map(([name, quad, ward, addr, phone, img, slug]) => ({ name, quad, ward, addr, phone, img: `assets/hd/campus-${img}.jpg`, url: `https://www.appletreeinstitute.org/${slug}` }));
+  quotesData = [
+    { who: 'Tiffany Parker', q: '“Mrs. West and staff made everyone feel welcome and like family.”' },
+    { who: 'Alexandra Alvear', q: '“It’s a caring and warm environment for my little one. My child is happy to attend school daily.”' },
+    { who: 'Kimberly Cleveland', q: '“The school sets high goals for my daughter and challenges her thinking in a positive way.”' }
+  ];
+  componentDidMount() {
+    this.reduced = matchMedia('(prefers-reduced-motion: reduce)').matches;
+    this.sh = this.shapeDefs.map((d, i) => ({ s: this.reduced ? 1 : 0, sv: 0, x: 0, vx: 0, y: 0, vy: 0, r: 0, delay: 150 + i * 90 }));
+    this.mouse = { x: 0, y: 0 }; this.t0 = performance.now(); this.fx = 0; this.fy = 0; this.ftx = 0; this.fty = 0;
+    this.onResize = () => this.setState({ narrow: innerWidth < 760 }); this.onResize(); addEventListener('resize', this.onResize);
+    let last = performance.now();
+    const loop = now => {
+      const dt = Math.min(0.032, (now - last) / 1000); last = now;
+      const els = this.stageRef.current ? this.stageRef.current.querySelectorAll('[data-shape]') : [];
+      this.sh.forEach((s, i) => {
+        const def = this.shapeDefs[i], el = els[i]; if (!el) return;
+        const ts = now - this.t0 > s.delay ? 1 : 0;
+        const k1 = 260, c1 = 16; s.sv += (-k1 * (s.s - ts) - c1 * s.sv) * dt; s.s += s.sv * dt;
+        if (this.drag && this.drag.i === i) { s.x = this.drag.px - this.drag.ox; s.y = this.drag.py - this.drag.oy; }
+        else { const tx = this.reduced ? 0 : this.mouse.x * def.d * 24, ty = this.reduced ? 0 : this.mouse.y * def.d * 24; const k = 180, c = 14; s.vx += (-k * (s.x - tx) - c * s.vx) * dt; s.vy += (-k * (s.y - ty) - c * s.vy) * dt; s.x += s.vx * dt; s.y += s.vy * dt; }
+        const rot = Math.max(-12, Math.min(12, s.vx * 0.01));
+        el.style.transform = `translate3d(${s.x}px,${s.y}px,0) rotate(${rot}deg) scale(${this.reduced ? 1 : s.s})`;
+      });
+      this.dayTick();
+      const f = this.floatRef.current; if (f) { this.fx += (this.ftx - this.fx) * 0.18; this.fy += (this.fty - this.fy) * 0.18; f.style.transform = `translate3d(${this.fx - 160}px,${this.fy - 120}px,0) rotate(${(this.ftx - this.fx) * 0.03}deg)`; }
+      this.raf = requestAnimationFrame(loop);
+    };
+    this.raf = requestAnimationFrame(loop);
+    this.onUp = () => { if (!this.drag) return; const s = this.sh[this.drag.i]; s.vx = this.drag.vx || 0; s.vy = this.drag.vy || 0; this.drag = null; };
+    this.onMove = e => { const d = this.drag; if (!d) return; const now = performance.now(), dtm = Math.max(1, now - d.t) / 1000; d.vx = (e.clientX - d.px) / dtm; d.vy = (e.clientY - d.py) / dtm; d.px = e.clientX; d.py = e.clientY; d.t = now; };
+    addEventListener('pointermove', this.onMove); addEventListener('pointerup', this.onUp); addEventListener('pointercancel', this.onUp);
+    if (!this.reduced && 'IntersectionObserver' in window) {
+      const io = new IntersectionObserver(es => es.forEach(e => { if (!e.isIntersecting) return; const el = e.target, d = (+el.dataset.r || 0) * 80; el.style.transition = `opacity .7s cubic-bezier(.2,.8,.2,1) ${d}ms, transform .9s cubic-bezier(.2,.8,.2,1) ${d}ms`; el.style.opacity = 1; el.style.transform = 'none'; io.unobserve(el); }), { threshold: 0.12 });
+      document.querySelectorAll('[data-r]').forEach(el => { el.style.opacity = 0; el.style.transform = 'translateY(24px)'; io.observe(el); });
+      this.io = io;
+    }
+  }
+  componentWillUnmount() { cancelAnimationFrame(this.raf); removeEventListener('pointermove', this.onMove); removeEventListener('pointerup', this.onUp); removeEventListener('pointercancel', this.onUp); removeEventListener('resize', this.onResize); this.io && this.io.disconnect(); }
+  componentDidUpdate(pp, ps) {
+    if (ps.dob !== this.state.dob && this.towerRef.current && !this.reduced) {
+      this.towerRef.current.querySelectorAll('[data-block]').forEach((b, i) => b.animate([{ transform: 'translateY(-260px) rotate(-6deg)', opacity: 0 }, { transform: 'translateY(0) rotate(0)', opacity: 1 }], { duration: 700, delay: i * 120, easing: 'cubic-bezier(.34,1.45,.64,1)', fill: 'both' }));
+    }
+  }
+  dayTick() {
+    const s = this.dayRef.current; if (!s) return;
+    const r = s.getBoundingClientRect(), span = s.offsetHeight - innerHeight; if (span <= 0) return;
+    const p = Math.min(1, Math.max(0, -r.top / span)), N = this.dayData.length;
+    const sun = this.sunRef.current; if (sun) sun.style.left = `${p * 100}%`;
+    const i = Math.min(N - 1, Math.floor(p * N)); if (i !== this.state.slot) this.setState({ slot: i });
+  }
+  goSlot(i) { const s = this.dayRef.current; const top = s.getBoundingClientRect().top + scrollY, span = s.offsetHeight - innerHeight; scrollTo({ top: top + ((i + 0.5) / this.dayData.length) * span, behavior: this.reduced ? 'auto' : 'smooth' }); }
+  compute() {
+    const now = new Date(), Y = now.getMonth() >= 6 ? now.getFullYear() + 1 : now.getFullYear(), yr = y => `Fall ${y}`;
+    const B = { PK3: ['#F58020', '#141414', '72%'], PK4: ['#3A9973', '#fff', '86%'], Kindergarten: ['#238EA2', '#fff', '100%'] };
+    const S = (w, x) => ({ when: yr(w), what: x, c: B[x][0], fg: B[x][1], w: B[x][2] });
+    if (!this.state.dob) return { headline: 'Two years with us, then off to kindergarten.', steps: [S(Y, 'PK3'), S(Y + 1, 'PK4'), S(Y + 2, 'Kindergarten')], cta: false };
+    const b = new Date(this.state.dob + 'T12:00:00');
+    const ageOn = y => { const d = new Date(y, 8, 30); let a = d.getFullYear() - b.getFullYear(); if (d < new Date(d.getFullYear(), b.getMonth(), b.getDate())) a--; return a; };
+    const a = ageOn(Y);
+    if (a >= 5) return { headline: `Kindergarten age by fall ${Y}. AppleTree is for three- and four-year-olds.`, steps: [S(Y, 'Kindergarten')], cta: false };
+    if (a === 4) return { headline: `Your child starts PK4 in fall ${Y}.`, steps: [S(Y, 'PK4'), S(Y + 1, 'Kindergarten')], cta: true };
+    if (a === 3) return { headline: `Your child starts PK3 in fall ${Y}.`, steps: [S(Y, 'PK3'), S(Y + 1, 'PK4'), S(Y + 2, 'Kindergarten')], cta: true };
+    let s = Y; while (ageOn(s) < 3) s++;
+    return { headline: `Still little! Their first AppleTree year is fall ${s}.`, steps: [S(s, 'PK3'), S(s + 1, 'PK4'), S(s + 2, 'Kindergarten')], cta: false };
+  }
+  renderVals() {
+    const { slot, quad, qi, narrow } = this.state;
+    const cur = this.dayData[slot];
+    return {
+      interestLabel: this.state.sent ? 'Thanks, we’ll be in touch' : 'Send', onInterest: e => { e.preventDefault(); this.setState({ sent: true }); },
+      stageRef: this.stageRef, dayRef: this.dayRef, dayStage: this.dayStage, sunRef: this.sunRef, towerRef: this.towerRef, floatRef: this.floatRef,
+      shapes: this.shapeDefs.map((d, i) => ({ ...d, img: d.img ? `assets/photos/${d.img}.jpg` : '', bg: d.bg || '#F4F6F7', down: e => { e.preventDefault(); const s = this.sh[i]; this.drag = { i, ox: e.clientX - s.x, oy: e.clientY - s.y, px: e.clientX, py: e.clientY, t: performance.now(), vx: 0, vy: 0 }; } })),
+      hover: e => { const r = e.currentTarget.getBoundingClientRect(); this.mouse = { x: (e.clientX - r.left) / r.width - 0.5, y: (e.clientY - r.top) / r.height - 0.5 }; },
+      leave: () => { this.mouse = { x: 0, y: 0 }; },
+      dayH: `${this.dayData.length * 75 + 100}vh`,
+      slot: { time: cur[0], title: cur[1], d: cur[2], tint: cur[5], ink: cur[7] },
+      day: this.dayData.map((d, i) => ({ time: d[0], title: d[1], img: `assets/photos/${d[3]}.jpg`, alt: d[4], seg: d[6], segOp: i === slot ? 1 : 0.35, op: i === slot ? 1 : 0, tf: i === slot ? 'scale(1) rotate(0deg)' : (i < slot ? 'scale(.92) rotate(-4deg)' : 'scale(.92) rotate(4deg)'), go: () => this.goSlot(i) })),
+      dob: this.state.dob, onDob: e => this.setState({ dob: e.target.value }), result: this.compute(),
+      quads: ['All', 'NE', 'NW', 'SE', 'SW'].map(l => ({ label: l, on: l === quad, bg: l === quad ? '#F9C706' : '#2A2A2A', fg: l === quad ? '#141414' : '#fff', pick: () => this.setState({ quad: l }) })),
+      campusList: this.campusData.filter(c => quad === 'All' || c.quad === quad).map(c => ({ ...c, enter: () => { this.setState({ hov: this.campusData.indexOf(c) }); } })),
+      narrow, addrCol: narrow ? '2' : 'auto', rowCols: narrow ? '96px minmax(0,1fr)' : 'minmax(0,1.3fr) minmax(0,1fr)',
+      hoverImg: this.campusData[this.state.hov].img,
+      listMove: e => { if (narrow || e.pointerType === 'touch') return; this.ftx = e.clientX; this.fty = e.clientY; const f = this.floatRef.current; if (f) f.style.opacity = '1'; },
+      listLeave: () => { const f = this.floatRef.current; if (f) f.style.opacity = '0'; },
+      quote: this.quotesData[qi],
+      quotes: this.quotesData.map((t, i) => { const on = i === qi; return { who: t.who, on, bg: on ? '#F9C706' : '#fff', fg: '#141414', pick: () => this.setState({ qi: i }) }; })
+    };
+  }
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,5 @@
+/* Minimal element defaults so consumers get brand type and link colors out of the box. */
+:root{color:var(--text-body);font-family:var(--font-body);-webkit-font-smoothing:antialiased}
+a{color:var(--text-accent);text-decoration:none;text-underline-offset:3px}
+a:hover{color:var(--action-primary-hover);text-decoration:underline}
+::selection{background:rgba(201,169,104,.35)}

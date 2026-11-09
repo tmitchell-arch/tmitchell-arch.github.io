@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+<script src="../portfolio-guard.js" defer></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600&family=Roboto+Mono:wght@400;500&display=swap" rel="stylesheet">
+<script src="./image-slot.js"></script>
+<style>
+body{margin:0;background:#FFFFFF;color:#1C2A3E;font-family:Archivo,sans-serif;-webkit-font-smoothing:antialiased}
+a{color:#1C2A3E;text-decoration:none}
+a:hover{color:#2EB2FF}
+*{box-sizing:border-box}
+@keyframes ms-marquee{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+</style>
+</helmet>
+
+<div style="background:#FFFFFF;color:#1C2A3E;font-family:Archivo,sans-serif;min-width:1100px">
+
+  <dc-import name="Site Nav" trigger="{{ navTrigger }}" preview="{{ navPreview }}" hint-size="100%,0px"></dc-import>
+
+  <div data-screen-label="Hero" style="position:relative;background:#F7F9FB;overflow:hidden">
+    <div style="position:absolute;inset:0"><image-slot id="{{ hero.bgSlot }}" src="{{ hero.bg }}" shape="rect" placeholder="Background image or GIF for this slide"></image-slot></div>
+    <div style="position:absolute;inset:0;background:rgba(247,249,251,0.9);pointer-events:none"></div>
+    <div style="position:relative;pointer-events:none;padding:192px 64px 0;display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,1fr);gap:64px;align-items:center;min-height:716px">
+      <div style="display:flex;flex-direction:column;gap:28px">
+        <span style="font-family:'Roboto Mono',monospace;font-weight:500;font-size:13px;letter-spacing:0.06em;text-transform:uppercase;color:#4C5A6E">{{ hero.num }} / 04 · {{ hero.eyebrow }}</span>
+        <h1 style="margin:0;font-family:Archivo,sans-serif;font-weight:500;font-size:88px;line-height:0.96;letter-spacing:-0.02em;text-wrap:balance;min-height:170px">{{ hero.title }}</h1>
+        <p style="margin:0;font-size:20px;line-height:1.6;color:#4C5A6E;max-width:560px;text-wrap:pretty;min-height:96px">{{ hero.sub }}</p>
+        <div style="display:flex;gap:14px;pointer-events:auto">
+          <a href="#" style="font-family:Archivo,sans-serif;font-weight:600;font-size:17px;background:#2EB2FF;color:#1C2A3E;padding:18px 30px;white-space:nowrap" style-hover="background:#1C2A3E;color:#FFFFFF">{{ hero.cta }}</a>
+          <a href="#" style="font-family:Archivo,sans-serif;font-weight:600;font-size:17px;background:#FFFFFF;color:#1C2A3E;padding:16px 28px;border:2px solid #1C2A3E;white-space:nowrap" style-hover="background:#1C2A3E;color:#FFFFFF">Let's Talk</a>
+        </div>
+      </div>
+      <div style="position:relative;height:520px;overflow:hidden;background:#D1DCE6;border-radius:0 160px 0 0;pointer-events:auto"><image-slot id="{{ hero.cardSlot }}" src="{{ hero.card }}" shape="rect" placeholder="Slide image"></image-slot>
+        <div style="position:absolute;left:0;bottom:0;background:#FFFFFF;border-top:1px solid #1C2A3E;border-right:1px solid #1C2A3E;padding:18px 22px;display:flex;flex-direction:column;gap:4px;pointer-events:none"><span style="font-family:Archivo,sans-serif;font-weight:500;font-size:36px;line-height:1;letter-spacing:-0.02em">{{ hero.stat }}</span><span style="font-size:13px;color:#4C5A6E">{{ hero.statLabel }}</span></div>
+      </div>
+    </div>
+    <div style="position:relative;padding:56px 64px 0;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:24px">
+      <sc-for list="{{ heroTabs }}" as="ht" hint-placeholder-count="4">
+        <button onClick="{{ ht.onClick }}" style="all:unset;cursor:pointer;display:flex;flex-direction:column;gap:10px;padding:18px 0 28px;border-top:3px solid {{ ht.bar }}">
+          <span style="font-family:'Roboto Mono',monospace;font-weight:500;font-size:12px;letter-spacing:0.06em;color:#4C5A6E">{{ ht.num }}</span>
+          <span style="font-family:Archivo,sans-serif;font-weight:600;font-size:19px;color:{{ ht.fg }}">{{ ht.label }}</span>
+        </button>
+      </sc-for>
+    </div>
+    <svg width="100%" height="72" viewBox="0 0 1440 72" preserveAspectRatio="none" style="display:block;position:relative"><path d="M0 71 H560 C760 71 820 1 1020 1 H1440" fill="none" stroke="#4C5A6E" stroke-width="1.5" vector-effect="non-scaling-stroke"></path></svg>
+  </div>
+  <div style="padding:30px 0;background:#FFFFFF;border-bottom:1px solid #ECECEC;overflow:hidden">{{ marquee }}</div>
+
+  <div data-screen-label="Featured story" style="padding:112px 64px;display:flex;flex-direction:column;gap:32px">
+    <div style="display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);background:#1C2A3E;color:#FFFFFF;border-radius:0 72px 0 0;overflow:hidden;min-height:560px">
+      <div style="padding:64px;display:flex;flex-direction:column;gap:24px">
+        <span style="font-family:Archivo,sans-serif;font-weight:500;font-size:120px;line-height:0.85;letter-spacing:-0.02em">{{ cur.stat }}</span>
+        <div style="font-size:18px;color:#D1DCE6;max-width:360px">{{ cur.statLabel }}</div>
+        <div style="height:1px;background:#4C5A6E;margin:12px 0"></div>
+        <div style="font-family:Archivo,sans-serif;font-weight:600;font-size:20px;letter-spacing:-0.01em;color:#2EB2FF">{{ cur.client }}</div>
+        <h2 style="margin:0;font-family:Archivo,sans-serif;font-weight:500;font-size:40px;line-height:1.08;letter-spacing:-0.015em;text-wrap:balance">{{ cur.title }}</h2>
+        <p style="margin:0;font-size:17px;line-height:1.6;color:#D1DCE6;text-wrap:pretty">{{ cur.desc }}</p>
+        <a href="#" style="margin-top:auto;font-family:Archivo,sans-serif;font-weight:600;font-size:17px;color:#1C2A3E;background:#FFFFFF;padding:15px 26px;align-self:flex-start;white-space:nowrap" style-hover="background:#2EB2FF">Read client story</a>
+      </div>
+      <div style="position:relative;background:#4C5A6E"><image-slot id="{{ cur.slot }}" src="{{ cur.img }}" shape="rect" placeholder="Client project photo"></image-slot></div>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px">
+      <sc-for list="{{ tabsA }}" as="t" hint-placeholder-count="3">
+        <button onClick="{{ t.onClick }}" style="all:unset;cursor:pointer;display:flex;flex-direction:column;gap:12px;padding-top:18px;border-top:3px solid {{ t.bar }}">
+          <span style="font-family:'Roboto Mono',monospace;font-weight:500;font-size:13px;letter-spacing:0.06em;text-transform:uppercase;color:#4C5A6E">{{ t.industry }}</span>
+          <span style="font-family:Archivo,sans-serif;font-weight:600;font-size:20px;color:{{ t.fg }}">{{ t.client }}</span>
+        </button>
+      </sc-for>
+    </div>
+  </div>
+
+  <div data-screen-label="Testimonials" style="background:#F7F9FB;padding:112px 64px;display:flex;flex-direction:column;gap:48px">
+    <div style="display:flex;flex-direction:column;gap:14px">
+      <span style="font-family:'Roboto Mono',monospace;font-weight:500;font-size:13px;letter-spacing:0.06em;text-transform:uppercase;color:#2EB2FF">Their words</span>
+      <h2 style="margin:0;font-family:Archivo,sans-serif;font-weight:500;font-size:56px;letter-spacing:-0.02em">What clients say about us</h2>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px">
+      <sc-for list="{{ quotes }}" as="q" hint-placeholder-count="2">
+        <div style="background:#FFFFFF;border:1px solid #ECECEC;border-radius:0 48px 0 0;padding:48px;display:flex;flex-direction:column;gap:32px">
+          <div style="font-family:Archivo,sans-serif;font-weight:600;font-size:22px;color:#4C5A6E">{{ q.client }}</div>
+          <div style="font-size:21px;line-height:1.55;color:#1C2A3E;text-wrap:pretty">“{{ q.text }}”</div>
+          <div style="display:flex;flex-direction:column;gap:2px;margin-top:auto"><span style="font-family:Archivo,sans-serif;font-weight:600;font-size:18px">{{ q.name }}</span><span style="font-size:14px;color:#4C5A6E">{{ q.role }}</span></div>
+        </div>
+      </sc-for>
+    </div>
+  </div>
+
+  <div data-screen-label="Tools" style="padding:112px 64px;display:grid;grid-template-columns:420px minmax(0,1fr);gap:80px;align-items:center">
+    <div style="display:flex;flex-direction:column;gap:22px">
+      <h2 style="margin:0;font-family:Archivo,sans-serif;font-weight:500;font-size:48px;line-height:1.04;letter-spacing:-0.02em;text-wrap:balance">Built on the tools you already use.</h2>
+      <p style="margin:0;font-size:17px;line-height:1.65;color:#4C5A6E">We build across platforms and plug into how your team already works, Slack included, so updates are real-time and nothing gets lost in email.</p>
+      <a href="#" style="font-family:Archivo,sans-serif;font-weight:600;font-size:17px;color:#1C2A3E;border-bottom:2px solid #2EB2FF;padding-bottom:4px;align-self:flex-start" style-hover="color:#2EB2FF">See our full stack →</a>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:14px">
+      <sc-for list="{{ tools }}" as="tl" hint-placeholder-count="10">
+        <div style="height:108px;border:1px solid #ECECEC;border-radius:0 28px 0 0;display:flex;align-items:center;justify-content:center;font-family:Archivo,sans-serif;font-weight:600;font-size:17px;color:#4C5A6E;background:#FFFFFF" style-hover="border-color:#2EB2FF;color:#1C2A3E">{{ tl }}</div>
+      </sc-for>
+    </div>
+  </div>
+
+  <div data-screen-label="Process" style="padding:0 64px 112px">
+    <div style="display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);background:#F7F9FB;border-radius:0 72px 0 0;overflow:hidden">
+      <div style="min-height:480px;position:relative;background:#D1DCE6"><image-slot id="3f-process" src="https://images.pexels.com/photos/4623511/pexels-photo-4623511.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1600" shape="rect" placeholder="Candid team photo: workshop / whiteboard"></image-slot></div>
+      <div style="padding:72px 64px;display:flex;flex-direction:column;justify-content:center;gap:22px">
+        <h2 style="margin:0;font-family:Archivo,sans-serif;font-weight:500;font-size:56px;letter-spacing:-0.02em">Strategy by design</h2>
+        <p style="margin:0;font-size:18px;line-height:1.65;color:#4C5A6E;text-wrap:pretty">Our process is both an art and a science. We diagnose what's working, test against clear benchmarks, then scale what wins. There are no shortcuts to results.</p>
+        <a href="#" style="font-family:Archivo,sans-serif;font-weight:600;font-size:17px;background:#1C2A3E;color:#FFFFFF;padding:16px 28px;align-self:flex-start;white-space:nowrap" style-hover="background:#2EB2FF;color:#1C2A3E">How we work</a>
+      </div>
+    </div>
+  </div>
+
+  <div data-screen-label="CTA" style="padding:0 64px 112px;display:flex;flex-direction:column;gap:36px">
+    <h2 style="margin:0;font-family:Archivo,sans-serif;font-weight:500;font-size:48px;letter-spacing:-0.02em;text-align:center">See what's possible with us.</h2>
+    <div style="display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px">
+      <a href="#" style="display:flex;flex-direction:column;gap:14px;background:#2EB2FF;color:#1C2A3E;border-radius:0 48px 0 0;padding:48px" style-hover="transform:translateY(-4px)">
+        <span style="font-family:Archivo,sans-serif;font-weight:500;font-size:36px">Let's Talk →</span>
+        <span style="font-size:18px;line-height:1.55">Reach out today to discuss your project and how we can help.</span>
+      </a>
+      <a href="#" style="display:flex;flex-direction:column;gap:14px;background:#F7F9FB;border:1px solid #D1DCE6;color:#1C2A3E;border-radius:0 48px 0 0;padding:48px" style-hover="transform:translateY(-4px)">
+        <span style="font-family:Archivo,sans-serif;font-weight:500;font-size:36px">Get Started →</span>
+        <span style="font-size:18px;line-height:1.55;color:#4C5A6E">Pick a service or a monthly plan and get a team that works as an extension of yours.</span>
+      </a>
+    </div>
+  </div>
+
+  <footer data-screen-label="Footer" style="background:#1C2A3E;color:#D1DCE6;padding:80px 64px 40px;display:flex;flex-direction:column;gap:64px">
+    <div style="display:grid;grid-template-columns:1.4fr repeat(4,minmax(0,1fr));gap:40px">
+      <img src="assets/ms-wordmark-white.png" alt="Mitchell Strategies" style="height:60px;width:auto;display:block">
+      <sc-for list="{{ footerCols }}" as="c" hint-placeholder-count="4">
+        <div style="display:flex;flex-direction:column;gap:14px">
+          <span style="font-family:'Roboto Mono',monospace;font-weight:500;font-size:13px;letter-spacing:0.06em;text-transform:uppercase;color:#FFFFFF">{{ c.h }}</span>
+          <sc-for list="{{ c.links }}" as="lk" hint-placeholder-count="4"><a href="#" style="font-size:15px;color:#D1DCE6" style-hover="color:#2EB2FF">{{ lk }}</a></sc-for>
+        </div>
+      </sc-for>
+    </div>
+    <div style="display:flex;justify-content:space-between;font-size:14px;border-top:1px solid #4C5A6E;padding-top:28px"><span>© 2026 Mitchell Strategies</span><span>Privacy · Terms</span></div>
+  </footer>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;trigger&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;hover&quot;,&quot;click&quot;],&quot;default&quot;:&quot;hover&quot;,&quot;tsType&quot;:&quot;'hover'|'click'&quot;,&quot;section&quot;:&quot;Nav&quot;},&quot;preview&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;live&quot;,&quot;top&quot;,&quot;scrolled&quot;],&quot;default&quot;:&quot;live&quot;,&quot;tsType&quot;:&quot;'live'|'top'|'scrolled'&quot;,&quot;section&quot;:&quot;Nav&quot;},&quot;autoplay&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Hero&quot;}}">
+class Component extends DCLogic {
+  state = { a: 0, hs: 0 };
+  componentDidMount() {
+    if (this.props.autoplay ?? true) {
+      this.t = setInterval(() => this.setState(s => ({ a: (s.a + 1) % 3 })), 6000);
+      this.ht = setInterval(() => this.setState(s => ({ hs: (s.hs + 1) % 4 })), 7000);
+    }
+  }
+  componentWillUnmount() {
+    clearInterval(this.t); clearInterval(this.ht); clearTimeout(this.ct);
+  }
+  renderVals() {
+    const S = this.state, P = this.props;
+    const I = {"h1":"https://cdn.prod.website-files.com/66a2927aa1f5a550f5c0364d/66a40234fd684878330163ec_Hero%201%20-%201.webp","h2":"https://cdn.prod.website-files.com/66a2927aa1f5a550f5c0364d/66a40232fd684878330162dd_Hero%201%20-%202.webp","h3":"https://cdn.prod.website-files.com/66a2927aa1f5a550f5c0364d/66a40234fd684878330163a6_Hero%201%20-%203.webp","h4":"https://cdn.prod.website-files.com/66a2927aa1f5a550f5c0364d/66a40233fd6848783301630c_Hero%201%20-%204.webp","h6":"https://cdn.prod.website-files.com/66a2927aa1f5a550f5c0364d/66a40235fd6848783301640b_Hero%201%20-%206.webp","g3":"https://cdn.prod.website-files.com/66a2927aa1f5a550f5c0364d/66b227f54162c6bc7fa7b010_Gal%203.webp","g4":"https://cdn.prod.website-files.com/66a2927aa1f5a550f5c0364d/66b227f64162c6bc7fa7b0ee_Gal%204.webp","g5":"https://cdn.prod.website-files.com/66a2927aa1f5a550f5c0364d/66b227f74162c6bc7fa7b136_Gal%205.webp","a1":"https://cdn.prod.website-files.com/66a2927aa1f5a550f5c0364d/66a2927aa1f5a550f5c0377f_about-image-01.webp"};
+    const feat = [
+      { client: 'Tech startup', service: 'Paid Advertising Plan', stat: '+150%', statLabel: 'increase in site traffic', title: 'How a tech startup grew site traffic 150% with paid ads', desc: 'A data-driven paid ads retainer: test the variables, find the winners, then scale spend behind them.', img: I.h1 },
+      { client: 'Education service', service: 'Paid Advertising Plan', stat: '+60%', statLabel: 'above enrollment goals', title: 'How an education service beat its enrollment goals by 60%', desc: 'Clear target metrics inside the ad funnel turned a seasonal enrollment push into a record intake.', img: I.h4 },
+      { client: 'Bigered', service: 'Unlimited Creative Plan', stat: '1 team', statLabel: "running all of Bigered's marketing", title: 'How Bigered got an entire marketing team in one partner', desc: 'Complex web pages, high-converting landing pages, technical setup and design, all from one team.', img: I.h6 }
+    ].map((s, i) => ({ ...s, slot: 'story-' + (i + 1) }));
+    const logos = [
+      { name: 'U.S. Department of Energy', src: 'assets/clients/c0.png', h: '40px' }, { name: 'PSI', src: 'assets/clients/c1.png', h: '34px' },
+      { name: 'AABE', src: 'assets/clients/c2.png', h: '40px' }, { name: 'Eleanor Holmes Norton for Congress', src: 'assets/clients/c3.png', h: '36px' },
+      { name: 'AppleTree', src: 'assets/clients/c4.png', h: '34px' }, { name: 'Torrey Project', src: 'assets/clients/c5.png', h: '40px' },
+      { name: 'internXL', src: 'assets/clients/c6.png', h: '30px' }, { name: 'VYCE', src: 'assets/clients/c7.png', h: '40px' },
+      { name: 'Coco B Productions', src: 'assets/clients/c8.png', h: '64px' }, { name: 'Douglas County Georgia', src: 'assets/clients/c9.png', h: '72px' }
+    ];
+    const marquee = React.createElement('div', { style: { display: 'flex', alignItems: 'center', width: 'max-content', animation: 'ms-marquee 40s linear infinite' } },
+      logos.concat(logos).map((l, i) => React.createElement('div', { key: i, style: { display: 'flex', alignItems: 'center', padding: '0 44px', height: 72 } }, React.createElement('img', { src: l.src, alt: l.name, style: { maxHeight: l.h, width: 'auto', display: 'block', opacity: 0.8 } }))));
+    const heroSlides = [
+      { label: 'Branding & Creative', title: 'Brands people remember.', sub: 'Complete design and branding that blends creative flair with strategy, from logo to launch.', cta: 'Explore branding', stat: '125+', statLabel: 'projects completed', bg: I.g3, card: I.h3 },
+      { label: 'Web Development', title: 'Websites that look sharp and convert.', sub: 'Custom sites on the platform that fits you, built to look exceptional and feel seamless.', cta: 'Explore web development', stat: '1.5M+', statLabel: 'website visits for clients', bg: I.g4, card: I.h2 },
+      { label: 'Digital Marketing', title: 'Reach your exact audience.', sub: 'Paid, social and search programs that turn prospects into loyal customers.', cta: 'Explore digital marketing', stat: '+150%', statLabel: 'site traffic for a tech startup', bg: I.g5, card: I.h4 },
+      { label: 'Case Studies', title: 'Our work speaks for itself.', sub: 'From federal agencies to first-time founders, see how 80+ clients grew with Mitchell Strategies.', cta: 'Read case studies', stat: '95%', statLabel: 'client satisfaction', bg: I.a1, card: I.h1 }
+    ];
+    const hs = heroSlides[S.hs];
+    return {
+      navTrigger: P.trigger ?? 'hover', navPreview: P.preview ?? 'live',
+      hero: { ...hs, eyebrow: hs.label, num: '0' + (S.hs + 1), bgSlot: '3f-bg-' + S.hs, cardSlot: '3f-card-' + S.hs },
+      heroTabs: heroSlides.map((x, i) => ({ label: x.label, num: '0' + (i + 1), bar: i === S.hs ? '#2EB2FF' : '#D1DCE6', fg: i === S.hs ? '#1C2A3E' : '#4C5A6E', onClick: () => { clearInterval(this.ht); this.setState({ hs: i }); } })),
+      marquee,
+      cur: feat[S.a],
+      tabsA: feat.map((f, i) => ({ client: f.client, industry: f.service, bar: i === S.a ? '#2EB2FF' : '#ECECEC', fg: i === S.a ? '#1C2A3E' : '#4C5A6E', onClick: () => { clearInterval(this.t); this.setState({ a: i }); } })),
+      quotes: [
+        { client: 'GeoPharma', text: "I'm so happy we discovered Mitchell Strategies during the rebranding phase of NattoPharma. The team was instrumental in making the new website a success.", name: 'Arlene Miles', role: 'VP Global Marketing, GeoPharma', slot: 'q-1' },
+        { client: 'Manageroo', text: 'Mitchell Strategies was just what we needed in a technical design partner. They provide strategic insights, quality designs and a super cool website. Most importantly, it was a relief to have a team that was reliable to produce consistent quality results.', name: 'Luke Jhonson', role: 'Founder, Manageroo', slot: 'q-2' }
+      ],
+      tools: ['Webflow', 'WordPress', 'Shopify', 'Slack', 'HubSpot', 'Meta Ads', 'Google Ads', 'GA4', 'Mailchimp', 'Adobe CC'],
+      footerCols: [
+        { h: 'Services', links: ['Branding & Creative', 'Web Development', 'Digital Marketing'] },
+        { h: 'Plans', links: ['Unlimited Creative', 'Digital Marketing Bundle', 'Paid Advertising'] },
+        { h: 'Resources', links: ['Digital District', 'Shop', "FAQ's", 'Reviews'] },
+        { h: 'Company', links: ['About us', 'Work', 'Careers', 'Contact us'] }
+      ]
+    };
+  }
+}
+</script>
+</body>
+</html>

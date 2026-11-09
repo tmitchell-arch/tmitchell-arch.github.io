@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="stylesheet" href="_ds/clarke-schools-design-system-1c554edb-ddbb-4d62-9b51-89a74f0be5f5/tokens/fonts.css">
+  <link rel="stylesheet" href="_ds/clarke-schools-design-system-1c554edb-ddbb-4d62-9b51-89a74f0be5f5/tokens/colors.css">
+  <link rel="stylesheet" href="_ds/clarke-schools-design-system-1c554edb-ddbb-4d62-9b51-89a74f0be5f5/styles.css">
+  <script src="_ds/clarke-schools-design-system-1c554edb-ddbb-4d62-9b51-89a74f0be5f5/_ds_bundle.js"></script>
+</helmet>
+<div onMouseLeave="{{ closeMenu }}" style="{{ rootStyle }}">
+  <div style="{{ utilStyle }}">
+    <div style="max-width:1360px;margin:0 auto;padding:7px 32px;display:flex;flex-wrap:wrap;gap:6px 24px;align-items:center;justify-content:space-between;font-size:12.5px;box-sizing:border-box;">
+      <div style="font-weight:500;color:var(--clarke-purple-200);">Florida • Massachusetts • New York • Pennsylvania • Teleservices</div>
+      <div style="display:flex;gap:20px;align-items:center;flex-wrap:wrap;">
+        <a href="#" style="color:var(--clarke-green-300);font-weight:700;">Refer a Child</a>
+        <a href="#" style="color:#fff;font-weight:500;">Request Services</a>
+        <a href="tel:8552037085" style="color:#fff;font-weight:500;">855.203.7085</a>
+      </div>
+    </div>
+  </div>
+  <div ref="{{ rowRef }}" style="max-width:1360px;margin:0 auto;padding:12px 32px;display:flex;align-items:center;justify-content:space-between;gap:16px;box-sizing:border-box;">
+    <a href="Clarke Homepage v3.dc.html" onMouseEnter="{{ closeMenu }}" style="display:block;flex:none;">
+      <x-import component-from-global-scope="ClarkeSchoolsDesignSystem_1c554e.Logo" tone="{{ logoTone }}" height="{{ 42 }}" hint-size="146px,42px"></x-import>
+    </a>
+    <sc-if value="{{ wide }}" hint-placeholder-val="{{ true }}">
+      <nav style="display:flex;gap:2px;align-items:center;font-size:14px;font-weight:500;min-width:0;">
+        <sc-for list="{{ nav }}" as="n" hint-placeholder-count="9">
+          <a href="{{ n.href }}" onMouseEnter="{{ n.enter }}" onFocus="{{ n.enter }}" aria-current="{{ n.current }}" style="{{ n.style }}">{{ n.label }}</a>
+        </sc-for>
+      </nav>
+    </sc-if>
+    <div style="display:flex;gap:10px;align-items:center;flex:none;">
+      <a href="#" onMouseEnter="{{ closeMenu }}" style="font-weight:700;font-size:14px;color:#fff;background:var(--clarke-purple-800);padding:11px 20px;border-radius:6px;transition:background .2s ease-out, transform .1s ease-out;" style-hover="background:var(--clarke-purple-900);color:#fff;" style-active="transform:scale(.97);">Donate</a>
+      <sc-if value="{{ compact }}" hint-placeholder-val="{{ false }}">
+        <button onClick="{{ toggleDrawer }}" aria-expanded="{{ drawerExpanded }}" style="height:44px;padding:0 16px;border:none;background:var(--clarke-gray-100);border-radius:6px;font-family:var(--font-brand);font-weight:700;font-size:14px;color:var(--clarke-navy-900);cursor:pointer;transition:transform .1s ease-out;" style-active="transform:scale(.96);">{{ drawerLabel }}</button>
+      </sc-if>
+    </div>
+  </div>
+  <div style="{{ drawerStyle }}">
+    <div style="max-width:1360px;margin:0 auto;padding:8px 32px 28px;display:flex;flex-direction:column;box-sizing:border-box;">
+      <sc-for list="{{ drawer }}" as="d" hint-placeholder-count="0">
+        <div style="border-bottom:1px solid rgba(52,51,82,.08);padding:14px 0;display:flex;flex-direction:column;gap:8px;">
+          <a href="{{ d.href }}" style="font-size:19px;font-weight:700;letter-spacing:-.01em;color:var(--clarke-navy-900);display:flex;justify-content:space-between;">{{ d.label }}<span style="color:var(--clarke-green-500);">→</span></a>
+          <div style="display:flex;flex-wrap:wrap;gap:6px 18px;">
+            <sc-for list="{{ d.items }}" as="m" hint-placeholder-count="0">
+              <a href="#" style="font-size:14px;font-weight:500;color:var(--clarke-gray-600);">{{ m }}</a>
+            </sc-for>
+          </div>
+        </div>
+      </sc-for>
+    </div>
+  </div>
+  <div style="{{ menuStyle }}">
+    <div style="max-width:1360px;margin:0 auto;padding:36px 32px 40px;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,2fr);gap:48px;box-sizing:border-box;">
+      <div style="display:flex;flex-direction:column;gap:10px;">
+        <div style="font-size:28px;font-weight:700;letter-spacing:-.02em;color:var(--clarke-purple-800);">{{ menu.label }}</div>
+        <div style="font-size:15px;line-height:1.5;color:var(--clarke-gray-600);max-width:320px;">{{ menu.intro }}</div>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:2px 24px;">
+        <sc-for list="{{ menu.items }}" as="m" hint-placeholder-count="0">
+          <a href="#" style="display:flex;justify-content:space-between;gap:12px;padding:12px;margin:0 -12px;border-radius:8px;font-size:16px;font-weight:700;color:var(--clarke-navy-900);transition:background .15s ease-out;" style-hover="background:rgba(96,16,105,.06);color:var(--clarke-purple-800);">{{ m }}<span style="color:var(--clarke-green-500);">→</span></a>
+        </sc-for>
+      </div>
+    </div>
+  </div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:&quot;1280px&quot;,&quot;height&quot;:&quot;120px&quot;},&quot;active&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;About&quot;,&quot;Our Services&quot;,&quot;Getting Started&quot;,&quot;Professionals&quot;,&quot;Community&quot;,&quot;Resources&quot;,&quot;Ways to Give&quot;,&quot;Locations&quot;,&quot;Careers&quot;],&quot;default&quot;:&quot;About&quot;,&quot;tsType&quot;:&quot;string&quot;}}">
+class Component extends DCLogic {
+  state = { menu: null, lastMenu: 'About', ox: 0, compact: false, drawer: false };
+  rowRef = el => {
+    if (el && el !== this.row) {
+      this.ro && this.ro.disconnect();
+      this.row = el;
+      this.ro = new ResizeObserver(([e]) => {
+        const compact = e.contentRect.width < 1150;
+        if (compact !== this.state.compact) this.setState({ compact, drawer: false, menu: null });
+      });
+      this.ro.observe(el);
+    }
+  };
+  componentDidMount() { if (window.innerWidth < 1150) this.setState({ compact: true }); }
+  componentWillUnmount() { this.ro && this.ro.disconnect(); }
+  get reduced() { return typeof matchMedia !== 'undefined' && matchMedia('(prefers-reduced-motion: reduce)').matches; }
+  renderVals() {
+    const S = this.state, active = this.props.active;
+    const MENUS = {
+      'About': { intro: 'Who Clarke is, who leads us, and how we got here.', items: ['Mission', 'Philosophy', 'History', 'Clarke Leads', 'Impact', 'Board of Trustees', 'Leadership Councils', 'Clarke Leadership'] },
+      'Our Services': { intro: 'Programs and specialized services for every age and stage.', items: ['Infants', 'Toddlers', 'Preschoolers', 'School-Age Students', 'Adults & Families', 'Teleservices', 'Audiology Services', 'Summer Services'] },
+      'Getting Started': { intro: 'New to hearing loss? Start here for calm, clear next steps.', items: ['New Diagnosis?', 'About Infant Hearing Loss', 'About Hearing Technology', 'Find Programs for Your Child', 'Webinar Series for Families', 'LSL Strategies at Home'] }
+    };
+    const HREF = { 'About': 'Clarke About.dc.html', 'Our Services': 'Clarke Services.dc.html', 'Getting Started': 'Clarke For Families.dc.html', 'Professionals': 'Clarke Professionals.dc.html', 'Community': 'Clarke Community.dc.html' };
+    const labels = ['About', 'Our Services', 'Getting Started', 'Professionals', 'Community', 'Resources', 'Ways to Give', 'Locations', 'Careers'];
+    const nav = labels.map(l => {
+      const has = !!MENUS[l], hov = S.menu === l, cur = active === l, ov = this.props.tone === 'overlay';
+      return {
+        label: l, href: HREF[l] || '#', current: cur ? 'page' : 'false',
+        enter: e => {
+          if (!has) return this.setState({ menu: null });
+          const r = e.currentTarget.getBoundingClientRect();
+          this.setState({ menu: l, lastMenu: l, ox: r.left + r.width / 2 });
+        },
+        style: { display: 'flex', alignItems: 'center', padding: '9px 10px', borderRadius: 8, whiteSpace: 'nowrap', fontWeight: cur ? 700 : 500, color: ov ? '#fff' : (hov || cur ? 'var(--clarke-purple-800)' : 'var(--clarke-navy-900)'), background: hov || cur ? (ov ? 'rgba(255,255,255,.18)' : 'rgba(96,16,105,.07)') : 'transparent', textShadow: ov ? '0 1px 8px rgba(0,0,0,.25)' : 'none', transition: 'background .2s ease-out, color .2s ease-out' }
+      };
+    });
+    const ease = 'cubic-bezier(.2,.8,.2,1)';
+    const solid = typeof matchMedia !== 'undefined' && matchMedia('(prefers-reduced-transparency: reduce)').matches;
+    const blur = solid ? 'none' : 'blur(20px) saturate(180%)';
+    const panel = { position: 'absolute', left: 0, right: 0, top: '100%', background: solid ? '#fff' : 'rgba(255,255,255,.92)', backdropFilter: blur, WebkitBackdropFilter: blur, boxShadow: '0 24px 48px rgba(52,51,82,.12)', borderTop: '1px solid rgba(52,51,82,.06)' };
+    const show = (on, origin) => ({ transformOrigin: origin, opacity: on ? 1 : 0, transform: on ? 'none' : 'translateY(-6px) scale(.98)', visibility: on ? 'visible' : 'hidden', pointerEvents: on ? 'auto' : 'none', transition: this.reduced ? 'opacity .2s ease, visibility .2s' : `opacity .2s ${ease}, transform .3s ${ease}, visibility .3s` });
+    const menuOn = !S.compact && !!S.menu, drawerOn = S.compact && S.drawer;
+    return {
+      rootStyle: this.props.tone === 'overlay' ? { position: 'relative', zIndex: 9, fontFamily: 'var(--font-brand)', color: '#fff', background: 'linear-gradient(180deg,rgba(36,8,42,.55) 0%,rgba(36,8,42,0) 100%)' } : { position: 'relative', zIndex: 9, fontFamily: 'var(--font-brand)', color: 'var(--clarke-navy-900)', background: '#fff' },
+      utilStyle: this.props.tone === 'overlay' ? { background: 'rgba(36,35,58,.35)', color: '#fff' } : { background: 'var(--clarke-navy-900)', color: '#fff' },
+      logoTone: this.props.tone === 'overlay' ? 'white' : 'color',
+      rowRef: this.rowRef, nav, wide: !S.compact, compact: S.compact,
+      drawerExpanded: drawerOn ? 'true' : 'false', drawerLabel: S.drawer ? 'Close' : 'Menu',
+      toggleDrawer: () => this.setState(s => ({ drawer: !s.drawer })),
+      drawer: labels.map(l => ({ label: l, href: HREF[l] || '#', items: MENUS[l] ? MENUS[l].items : [] })),
+      drawerStyle: { ...panel, maxHeight: '75vh', overflow: 'auto', ...show(drawerOn, 'top right') },
+      menu: { label: S.lastMenu, ...MENUS[S.lastMenu] },
+      menuStyle: { ...panel, ...show(menuOn, S.ox + 'px 0') },
+      closeMenu: () => this.setState({ menu: null })
+    };
+  }
+}
+</script>
+</body>
+</html>

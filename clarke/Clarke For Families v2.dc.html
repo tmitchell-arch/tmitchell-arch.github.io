@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+<script src="../portfolio-guard.js" defer></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="stylesheet" href="_ds/clarke-schools-design-system-1c554edb-ddbb-4d62-9b51-89a74f0be5f5/tokens/fonts.css">
+  <link rel="stylesheet" href="_ds/clarke-schools-design-system-1c554edb-ddbb-4d62-9b51-89a74f0be5f5/tokens/colors.css">
+  <link rel="stylesheet" href="_ds/clarke-schools-design-system-1c554edb-ddbb-4d62-9b51-89a74f0be5f5/tokens/typography.css">
+  <link rel="stylesheet" href="_ds/clarke-schools-design-system-1c554edb-ddbb-4d62-9b51-89a74f0be5f5/tokens/spacing.css">
+  <link rel="stylesheet" href="_ds/clarke-schools-design-system-1c554edb-ddbb-4d62-9b51-89a74f0be5f5/tokens/base.css">
+  <link rel="stylesheet" href="_ds/clarke-schools-design-system-1c554edb-ddbb-4d62-9b51-89a74f0be5f5/styles.css">
+  <script src="_ds/clarke-schools-design-system-1c554edb-ddbb-4d62-9b51-89a74f0be5f5/_ds_bundle.js"></script>
+  <style>
+    body{margin:0;background:#fff;-webkit-font-smoothing:antialiased;}
+    a{color:var(--clarke-purple-800);text-decoration:none;}
+    a:hover{color:var(--clarke-purple-500);}
+  </style>
+</helmet>
+<div style="font-family:var(--font-brand);color:var(--clarke-navy-900);background:var(--clarke-gray-100);min-width:0;">
+  <dc-import name="Site Header" active="Getting Started" tone="overlay" style="position:absolute;top:0;left:0;right:0;z-index:9;display:block;" hint-size="100%,100px"></dc-import>
+
+  <section data-screen-label="Hero" style="position:relative;min-height:min(920px,100vh);display:flex;align-items:flex-end;overflow:hidden;background:var(--clarke-purple-900);">
+    <div style="position:absolute;inset:0;background-image:url(assets/imagery/family-reading.png);background-size:cover;background-position:center 35%;"></div>
+    <div style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(36,8,42,.35) 0%,rgba(64,10,72,.15) 35%,rgba(48,8,56,.92) 100%);"></div>
+    <div style="position:relative;width:100%;max-width:1360px;margin:0 auto;padding:180px 32px clamp(28px,5vw,56px);display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,440px),1fr));gap:40px;align-items:end;box-sizing:border-box;">
+      <div style="color:#fff;min-width:0;display:flex;flex-direction:column;gap:18px;">
+        <div style="display:flex;flex-wrap:wrap;gap:8px;font-size:14px;font-weight:500;color:var(--clarke-purple-200);"><a href="Clarke Homepage v3.dc.html" style="color:var(--clarke-purple-200);">Home</a><span aria-hidden="true">/</span><span style="color:#fff;font-weight:700;">For Families</span></div>
+        <h1 style="margin:0;max-width:14em;font-size:clamp(36px,4.6vw,64px);line-height:1.02;letter-spacing:-.032em;font-weight:700;text-shadow:0 2px 20px rgba(0,0,0,.25);text-wrap:balance;">Family-focused listening and spoken language programs and services for children who are deaf or hard of hearing</h1>
+        <p style="margin:0;max-width:34em;font-size:clamp(17px,1.4vw,20px);line-height:1.5;color:#fff;text-wrap:pretty;">Clarke’s continuum of deaf and hard of hearing programs provides customized education and care to people with hearing loss, from newborns to seniors.</p>
+      </div>
+      <div style="position:relative;justify-self:end;width:100%;max-width:520px;padding:11px;border-radius:28px;box-shadow:0 30px 80px rgba(0,0,0,.35);isolation:isolate;">
+        <div aria-hidden="true" style="position:absolute;inset:0;z-index:-1;border-radius:28px;background:rgba(255,255,255,.16);backdrop-filter:blur(28px) saturate(170%);-webkit-backdrop-filter:blur(28px) saturate(170%);border:1px solid rgba(255,255,255,.28);"></div>
+        <div style="padding:8px 10px 10px;color:#fff;font-size:13px;font-weight:700;letter-spacing:.02em;">I’m looking for support for…</div>
+        <div role="tablist" aria-label="Age" style="display:flex;gap:2px;padding:4px;border-radius:12px;background:rgba(0,0,0,.24);">
+          <sc-for list="{{ ages }}" as="b" hint-placeholder-count="4">
+            <button role="tab" aria-selected="{{ b.sel }}" onClick="{{ b.pick }}" style="{{ b.style }}" style-active="transform:scale(.96);">{{ b.label }}</button>
+          </sc-for>
+        </div>
+        <div ref="{{ cardRef }}" style="padding:20px 12px 8px;color:#fff;">
+          <div style="font-size:12px;font-weight:700;letter-spacing:.14em;color:var(--clarke-green-300);">{{ age.kicker }}</div>
+          <p style="margin:8px 0 16px;font-size:16px;line-height:1.5;color:#fff;">{{ age.body }}</p>
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;">
+            <a href="Clarke Services.dc.html" style="grid-column:1 / -1;display:flex;justify-content:space-between;align-items:center;padding:16px 18px;border-radius:16px;background:#fff;color:var(--clarke-purple-800);font-weight:700;font-size:15px;transition:transform .1s ease-out;" style-hover="color:var(--clarke-purple-900);" style-active="transform:scale(.98);"><span>Find programs for your child</span><span style="color:var(--clarke-green-500);">→</span></a>
+            <sc-for list="{{ quick }}" as="q" hint-placeholder-count="4">
+              <a href="#" style="padding:14px 16px;border-radius:16px;background:rgba(255,255,255,.14);color:#fff;font-weight:700;font-size:14px;line-height:1.25;transition:background .2s ease-out, transform .1s ease-out;" style-hover="background:rgba(255,255,255,.24);color:#fff;" style-active="transform:scale(.97);">{{ q }}</a>
+            </sc-for>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <dc-import name="Local Nav" title="For Families" items="{{ jump }}" cta-label="Contact Us" cta-href="#" style="position:sticky;top:0;z-index:8;display:block;" hint-size="100%,56px"></dc-import>
+
+  <section id="designed" data-screen-label="Designed with families in mind" style="background:#fff;scroll-margin-top:56px;">
+    <div style="max-width:1360px;margin:0 auto;padding:clamp(80px,10vw,140px) 32px;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,420px),1fr));gap:clamp(40px,6vw,88px);align-items:center;box-sizing:border-box;">
+      <div style="display:flex;flex-direction:column;gap:20px;">
+        <x-import component-from-global-scope="ClarkeSchoolsDesignSystem_1c554e.Eyebrow" color="var(--clarke-green-700)" hint-size="140px,18px">FOR FAMILIES</x-import>
+        <h2 style="margin:0;font-size:clamp(34px,4.4vw,60px);line-height:1.02;letter-spacing:-.03em;font-weight:700;color:var(--clarke-purple-800);">Designed with families in mind</h2>
+        <div style="display:flex;flex-direction:column;gap:16px;font-size:17px;line-height:1.6;color:var(--clarke-gray-600);">
+          <p style="margin:0;"><b style="color:var(--clarke-navy-900);">Clarke’s listening and spoken language (LSL) services and deaf and hard of hearing programs offer an array of educational opportunities, coaching, support groups and teleservices to meet the unique LSL needs of each family.</b> Our programs for children build skills in listening, spoken language and literacy, while also cultivating the individual social, emotional and cognitive tools each child needs to succeed.</p>
+          <p style="margin:0;">Thanks to early detection, advanced hearing technology and education at listening and spoken language schools like Clarke, children who are deaf or hard of hearing can thrive alongside their peers with typical hearing.</p>
+          <p style="margin:0;">Clarke’s expert team of teachers of the deaf, speech-language pathologists, audiologists and education support specialists works closely with families, ensuring they have the information they need to make informed decisions about their child’s education and sharing the essential tools and strategies necessary to create a language-rich environment at home. And when our Clarke alums head off to their mainstream neighborhood schools, we also provide personalized guidance for that important and exciting transition.</p>
+        </div>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;min-width:0;">
+        <div style="aspect-ratio:3/4;border-radius:28px;background-image:url(assets/imagery/preschool-teacher-play.png);background-size:cover;background-position:center;"></div>
+        <div style="aspect-ratio:3/4;border-radius:28px;background-image:url(assets/imagery/slp-session.png);background-size:cover;background-position:center;transform:translateY(40px);"></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="explore" data-screen-label="Explore programs" style="scroll-margin-top:56px;">
+    <div style="max-width:1360px;margin:0 auto;padding:clamp(80px,10vw,140px) 32px 0;box-sizing:border-box;">
+      <div style="text-align:center;display:flex;flex-direction:column;align-items:center;gap:14px;">
+        <x-import component-from-global-scope="ClarkeSchoolsDesignSystem_1c554e.Eyebrow" color="var(--clarke-green-700)" hint-size="200px,18px">VISIT CLARKE</x-import>
+        <h2 style="margin:0;font-size:clamp(34px,4.4vw,56px);line-height:1.02;letter-spacing:-.03em;font-weight:700;color:var(--clarke-purple-800);">Explore Clarke’s programs and services</h2>
+        <p style="margin:0;max-width:40em;font-size:18px;line-height:1.55;color:var(--clarke-gray-600);">Families are invited to tour our sites, where you will meet Clarke professionals and learn more about our programs and services.</p>
+      </div>
+      <ol style="list-style:none;margin:48px 0 0;padding:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,240px),1fr));gap:24px;">
+        <sc-for list="{{ steps }}" as="s" hint-placeholder-count="3">
+          <li style="{{ s.style }}">
+            <div style="font-size:13px;font-weight:700;color:var(--clarke-green-700);">{{ s.n }}</div>
+            <div style="margin-top:6px;font-size:20px;font-weight:700;letter-spacing:-.015em;color:var(--clarke-navy-900);">{{ s.title }}</div>
+            <div style="margin-top:6px;font-size:15px;line-height:1.5;color:var(--clarke-gray-600);">{{ s.body }}</div>
+          </li>
+        </sc-for>
+      </ol>
+    </div>
+  </section>
+
+  <section id="programs" data-screen-label="Programs list" style="scroll-margin-top:56px;">
+    <div style="max-width:1360px;margin:0 auto;padding:clamp(72px,8vw,112px) 32px 0;box-sizing:border-box;">
+      <div style="display:flex;justify-content:space-between;align-items:flex-end;gap:16px;flex-wrap:wrap;margin-bottom:32px;">
+        <h2 style="margin:0;font-size:clamp(30px,3.6vw,46px);line-height:1.04;letter-spacing:-.026em;font-weight:700;">Clarke programs and services</h2>
+        <a href="Clarke Services.dc.html" style="font-weight:700;font-size:16px;">Learn More →</a>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,290px),1fr));gap:12px;">
+        <sc-for list="{{ programs }}" as="p" hint-placeholder-count="12">
+          <a href="#" style="display:flex;gap:16px;align-items:center;padding:14px;border-radius:22px;background:#fff;color:var(--clarke-navy-900);transition:transform .12s ease-out, box-shadow .2s ease-out;" style-hover="color:var(--clarke-purple-800);box-shadow:0 10px 30px rgba(52,51,82,.08);" style-active="transform:scale(.98);">
+            <span style="{{ p.thumb }}"></span>
+            <span style="flex:1;font-size:17px;font-weight:700;letter-spacing:-.01em;line-height:1.25;">{{ p.label }}</span>
+            <span style="color:var(--clarke-green-500);font-weight:700;padding-right:6px;">→</span>
+          </a>
+        </sc-for>
+      </div>
+    </div>
+  </section>
+
+  <section id="webinars" data-screen-label="Webinars" style="scroll-margin-top:56px;max-width:1360px;margin:0 auto;padding:clamp(72px,8vw,112px) 32px 0;box-sizing:border-box;">
+    <div style="position:relative;overflow:hidden;display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:28px;padding:clamp(36px,5vw,64px);border-radius:32px;background:var(--clarke-purple-800);color:#fff;">
+      <img src="assets/logo/clarke-blossom-white.png" alt="" style="position:absolute;right:-60px;top:-80px;width:340px;opacity:.12;pointer-events:none;">
+      <div style="position:relative;max-width:640px;">
+        <div style="font-size:12px;font-weight:700;letter-spacing:.16em;color:var(--clarke-green-300);">FREE · VIRTUAL</div>
+        <h2 style="margin:12px 0 0;font-size:clamp(32px,4vw,52px);line-height:1.02;letter-spacing:-.03em;font-weight:700;">Clarke’s Webinar Series for Families</h2>
+        <p style="margin:16px 0 0;font-size:18px;line-height:1.5;color:var(--clarke-purple-200);">Join Clarke experts for webinars designed to help families grow their skills and knowledge.</p>
+      </div>
+      <div style="position:relative;"><x-import component-from-global-scope="ClarkeSchoolsDesignSystem_1c554e.CTAButton" size="md" href="#" hint-size="200px,56px">Learn More</x-import></div>
+    </div>
+  </section>
+
+  <section id="voices" data-screen-label="What families are saying" style="scroll-margin-top:56px;">
+    <div style="max-width:1100px;margin:0 auto;padding:clamp(88px,10vw,150px) 32px 0;text-align:center;display:flex;flex-direction:column;align-items:center;gap:24px;box-sizing:border-box;">
+      <div style="font-size:14px;font-weight:700;color:var(--clarke-green-700);">What are families saying?</div>
+      <img src="assets/logo/clarke-blossom-color.png" alt="" style="width:52px;height:auto;">
+      <blockquote style="margin:0;font-size:clamp(28px,3.6vw,48px);line-height:1.18;letter-spacing:-.022em;font-weight:500;color:var(--clarke-purple-800);text-wrap:balance;">“To think, when Addyson entered Clarke she was only babbling and you could only understand a few words. She’s come so far and is using what she’s learned to help others.”</blockquote>
+      <div style="font-size:15px;font-weight:700;color:var(--clarke-gray-600);">— Caregiver of a Clarke alum</div>
+    </div>
+  </section>
+
+  <section id="outcomes" data-screen-label="Outcomes" style="scroll-margin-top:56px;">
+    <div style="max-width:1360px;margin:0 auto;padding:clamp(88px,10vw,150px) 32px 0;box-sizing:border-box;">
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,420px),1fr));gap:clamp(24px,5vw,80px);align-items:end;margin-bottom:44px;">
+        <div>
+          <x-import component-from-global-scope="ClarkeSchoolsDesignSystem_1c554e.Eyebrow" color="var(--clarke-green-700)" hint-size="120px,18px">OUTCOMES</x-import>
+          <h2 style="margin:14px 0 0;font-size:clamp(34px,4.2vw,56px);line-height:1.02;letter-spacing:-.03em;font-weight:700;color:var(--clarke-purple-800);">A supportive team for every child</h2>
+        </div>
+        <p style="margin:0;max-width:30em;font-size:18px;line-height:1.55;color:var(--clarke-gray-600);">Families form partnerships with Clarke’s experienced staff to create a supportive team dedicated to the success and development of each child.</p>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,290px),1fr));gap:12px;">
+        <sc-for list="{{ outcomes }}" as="o" hint-placeholder-count="8">
+          <div style="background:#fff;border-radius:24px;padding:28px;display:flex;flex-direction:column;gap:14px;">
+            <x-import component-from-global-scope="ClarkeSchoolsDesignSystem_1c554e.BrandIcon" name="{{ o.icon }}" size="{{ 52 }}" bg="{{ o.bg }}" hint-size="52px,52px"></x-import>
+            <h3 style="margin:0;font-size:19px;font-weight:700;letter-spacing:-.012em;line-height:1.2;">{{ o.title }}</h3>
+            <p style="margin:0;font-size:15px;line-height:1.5;color:var(--clarke-gray-600);">{{ o.body }}</p>
+          </div>
+        </sc-for>
+      </div>
+    </div>
+  </section>
+
+  <section data-screen-label="Questions" style="max-width:1360px;margin:0 auto;padding:clamp(72px,8vw,112px) 32px 0;box-sizing:border-box;">
+    <div style="display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:20px 32px;padding:clamp(24px,3vw,36px) clamp(24px,4vw,44px);border-radius:24px;background:#fff;">
+      <div style="display:flex;flex-direction:column;gap:6px;">
+        <div style="font-size:clamp(22px,2.4vw,30px);font-weight:700;letter-spacing:-.018em;">Questions?</div>
+        <div style="font-size:16px;line-height:1.5;color:var(--clarke-gray-600);">Please contact us. We are here to help. Call <b style="color:var(--clarke-navy-900);">855.203.7085</b> or email <b style="color:var(--clarke-navy-900);">info@clarkeschools.org</b>.</div>
+      </div>
+      <x-import component-from-global-scope="ClarkeSchoolsDesignSystem_1c554e.CTAButton" size="sm" href="#" hint-size="160px,40px">Contact Us</x-import>
+    </div>
+  </section>
+
+  <dc-import name="Site Footer" hint-size="100%,720px"></dc-import>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  state = { age: 0 };
+  A = [
+    { label: 'Infants & Toddlers', kicker: 'INFANTS & TODDLERS', body: 'We work with families to begin their baby’s listening and spoken language journey — with compassion, expertise and play — and provide individualized education for toddlers, along with coaching for their families.' },
+    { label: 'Preschoolers', kicker: 'PRESCHOOLERS', body: 'We serve preschool-aged children who are deaf or hard of hearing and their families, with customized programs to fit various needs.' },
+    { label: 'School-Age', kicker: 'SCHOOL-AGE STUDENTS', body: 'We serve children in mainstream classrooms; offer programs for socialization and leadership-building; and provide audiological services for maximizing access to sound.' },
+    { label: 'Adults', kicker: 'ADULTS & FAMILIES', body: 'We offer educational and social opportunities for families, and audiological services for individuals of all ages with hearing loss, as well as trainings and workshops.' }
+  ];
+  cardRef = el => { this.card = el; };
+  pick(i) {
+    if (i === this.state.age) return;
+    this.setState({ age: i }, () => {
+      const rm = typeof matchMedia !== 'undefined' && matchMedia('(prefers-reduced-motion: reduce)').matches;
+      if (this.card && !rm) this.card.animate([{ opacity: 0.3, transform: 'translateY(6px)' }, { opacity: 1, transform: 'none' }], { duration: 260, easing: 'cubic-bezier(.2,.8,.2,1)' });
+    });
+  }
+  renderVals() {
+    const s = this.state.age;
+    const P = 'var(--clarke-purple-800)', G = 'var(--clarke-green-500)', T = 'var(--clarke-teal-600)', N = 'var(--clarke-navy-900)';
+    const imgs = ['family-reading.png', 'slp-session.png', 'preschool-teacher-play.png', 'kids-playground.png', 'student-alphabet.png', 'classroom-book.png', 'fl-outdoors.jpg', 'clinic-table.png', 'girl-classroom.png', 'boys-peace.png', 'nyc-classroom.jpg', 'toddler-cutout.png'];
+    const PR = ['Birth to Age Three Program', 'Teleservices Program', 'Preschool / Early Childhood Program', 'Preschool / Early Elementary Program', 'Integrated Preschool Program', 'Mainstream Services', 'Summer Services', 'Audiology Services', 'Auditory, Speech and Language Services', 'Clarke Hearing Center', 'Support Groups', 'Trainings & Workshops'];
+    const tints = ['#E7D6EA', '#DDEBD2', '#D5E4E6', '#DCDCE6'];
+    const stepRule = ['var(--clarke-purple-800)', 'var(--clarke-purple-300, #B091B8)', 'var(--clarke-green-500)'];
+    return {
+      jump: [['designed', 'Our Approach'], ['explore', 'Visit'], ['programs', 'Programs'], ['webinars', 'Webinars'], ['voices', 'Families'], ['outcomes', 'Outcomes']],
+      cardRef: this.cardRef,
+      ages: this.A.map((b, i) => { const on = i === s; return { label: b.label, sel: String(on), pick: () => this.pick(i),
+        style: { flex: 1, border: 0, cursor: 'pointer', padding: '11px 8px', borderRadius: 9, background: on ? '#fff' : 'transparent', boxShadow: on ? '0 2px 10px rgba(0,0,0,.18)' : 'none', fontFamily: 'var(--font-brand)', fontSize: 13.5, fontWeight: 700, lineHeight: 1.1, whiteSpace: 'nowrap', color: on ? 'var(--clarke-purple-800)' : '#fff', transition: 'background 220ms, color 220ms, transform 100ms ease-out' } }; }),
+      age: this.A[s],
+      quick: ['New Diagnosis?', 'About Infant Hearing Loss', 'About Hearing Technology', 'LSL Strategies at Home'],
+      steps: [
+        { n: 'Step 1', title: 'Tour a Clarke site', body: 'Visit one of our locations in Florida, Massachusetts, New York or Pennsylvania.' },
+        { n: 'Step 2', title: 'Meet Clarke professionals', body: 'Teachers of the deaf, speech-language pathologists and audiologists.' },
+        { n: 'Step 3', title: 'Learn about our programs', body: 'Call 855.203.7085 or email info@clarkeschools.org to learn more about any of our offerings.' }
+      ].map((x, i) => ({ ...x, style: { paddingTop: 20, borderTop: '3px solid ' + stepRule[i] } })),
+      programs: PR.map((label, i) => ({ label, thumb: { width: 64, height: 64, flex: 'none', borderRadius: 14, backgroundColor: tints[i % 4], backgroundImage: 'url(assets/imagery/' + imgs[i] + ')', backgroundSize: 'cover', backgroundPosition: 'center' } })),
+      outcomes: [
+        { icon: 'support', bg: P, title: 'Optimized home environment', body: 'Caregivers are coached to provide their child with an optimized home learning environment as early as possible.' },
+        { icon: 'goals', bg: G, title: 'Critical skill-building', body: 'Children with hearing loss demonstrate listening and spoken language skills on par with peers who have typical hearing.' },
+        { icon: 'graduation', bg: T, title: 'Enter mainstream schools ready', body: 'Many children with hearing loss enter mainstream schools ready to learn by kindergarten.' },
+        { icon: 'evaluation', bg: N, title: 'Audiological support', body: 'Through state-of-the-art hearing testing and hearing aid fittings, our audiology services team can help children and adults get more out of life.' },
+        { icon: 'achievement', bg: P, title: 'Achieve learning goals', body: 'Children meet goals set forth in their Individualized Family Service Plan (IFSP) and Individualized Education Program (IEP).' },
+        { icon: 'confidence', bg: G, title: 'Confidence in academics and life', body: 'Caregivers are guided in their child’s listening and spoken language development and coached in advocating for their child’s inclusion in mainstream schools. Caregivers gain confidence that their child will have access to the full range of educational, social and vocational choices in life.' },
+        { icon: 'training', bg: T, title: 'Experienced mainstream support', body: 'Mainstream educators are trained and prepared to support children with hearing loss.' },
+        { icon: 'excellence', bg: N, title: 'Excellence', body: 'Clarke strives to help each child reach their full listening and spoken language potential.' }
+      ]
+    };
+  }
+}
+</script>
+</body>
+</html>

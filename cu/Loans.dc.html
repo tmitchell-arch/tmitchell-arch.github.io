@@ -1,0 +1,572 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+<script src="../portfolio-guard.js" defer></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="stylesheet" href="_ds/nslfcu-design-system-3e632845-1717-47ca-a74f-a3c01359ef72/tokens/fonts.css">
+  <link rel="stylesheet" href="_ds/nslfcu-design-system-3e632845-1717-47ca-a74f-a3c01359ef72/tokens/colors.css">
+  <link rel="stylesheet" href="_ds/nslfcu-design-system-3e632845-1717-47ca-a74f-a3c01359ef72/tokens/typography.css">
+  <link rel="stylesheet" href="_ds/nslfcu-design-system-3e632845-1717-47ca-a74f-a3c01359ef72/tokens/spacing.css">
+  <link rel="stylesheet" href="_ds/nslfcu-design-system-3e632845-1717-47ca-a74f-a3c01359ef72/tokens/base.css">
+  <link rel="stylesheet" href="_ds/nslfcu-design-system-3e632845-1717-47ca-a74f-a3c01359ef72/styles.css">
+  <script src="_ds/nslfcu-design-system-3e632845-1717-47ca-a74f-a3c01359ef72/_ds_bundle.js"></script>
+  <style>
+    body{margin:0;background:#fff;}
+    a{color:#7A2049;}
+    a:hover{color:#65193C;}
+  </style>
+</helmet>
+<template id="__bundler_thumbnail"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><rect width="100" height="100" fill="#3A1420"></rect><text x="50" y="66" text-anchor="middle" font-family="Manrope, sans-serif" font-weight="800" font-size="44" fill="#C9A968">N</text></svg></template>
+<div data-res="" aria-hidden="true" style="display:none;"><img src="assets/pexels/loan-mortgage-first.jpg" alt=""></div>
+
+<div style="background:#fff;color:var(--nsl-ink);font-family:var(--font-body);">
+  <!-- NAV -->
+  <header data-screen-label="Nav" onMouseLeave="{{ closeSoon }}" style="position:fixed;top:0;left:0;right:0;z-index:50;padding:{{ outerPad }};transition:padding 320ms cubic-bezier(.2,.7,.2,1);pointer-events:none;">
+    <div style="position:relative;margin:0 auto;max-width:{{ barMax }};pointer-events:auto;transition:max-width 320ms cubic-bezier(.2,.7,.2,1);">
+      <div style="display:flex;align-items:center;gap:28px;height:{{ barH }};padding:{{ barPad }};background:{{ barBg }};border-radius:{{ barRadius }};box-shadow:{{ barShadow }};border-bottom:{{ barRule }};transition:all 320ms cubic-bezier(.2,.7,.2,1);">
+
+        <a href="https://www.nslfcu.org/" aria-label="None Suffer Lack Federal Credit Union — home" style="position:relative;display:block;flex:none;width:{{ logoBoxW }};height:40px;transition:width 320ms cubic-bezier(.2,.7,.2,1);">
+          <img src="assets/logos/logo-primary-reverse.svg" alt="" style="position:absolute;left:0;top:50%;transform:translateY(-50%);height:36px;width:auto;opacity:{{ logoReverseOp }};transition:opacity 200ms;">
+          <img src="assets/logos/logo-primary.svg" alt="" style="position:absolute;left:0;top:50%;transform:translateY(-50%);height:36px;width:auto;opacity:{{ logoPrimaryOp }};transition:opacity 200ms;">
+          <img src="assets/logos/logo-mark.svg" alt="" style="position:absolute;left:0;top:50%;transform:translateY(-50%);height:32px;width:auto;opacity:{{ logoMarkOp }};transition:opacity 200ms;">
+        </a>
+
+        <sc-if value="{{ desktop }}" hint-placeholder-val="{{ true }}">
+          <nav aria-label="Main" style="display:flex;align-items:center;gap:clamp(18px,2.4vw,36px);flex:1;min-width:0;">
+            <sc-for list="{{ items }}" as="it" hint-placeholder-count="5">
+              <div onMouseEnter="{{ it.onEnter }}" style="position:relative;">
+                <a href="{{ it.href }}" onClick="{{ it.onClick }}" aria-expanded="{{ it.expanded }}" aria-haspopup="{{ it.hasMenu }}" aria-current="{{ it.current }}" style="display:block;padding:10px 0;font:600 15px/1 var(--font-body);white-space:nowrap;text-decoration:none;color:{{ it.color }};transition:color 160ms;">{{ it.label }}</a>
+                <span aria-hidden="true" style="position:absolute;left:0;right:0;bottom:2px;height:2px;border-radius:2px;background:var(--nsl-gold);transform-origin:left;transform:{{ it.lineScale }};transition:transform 220ms cubic-bezier(.2,.7,.2,1);"></span>
+              </div>
+            </sc-for>
+          </nav>
+          <div style="display:flex;align-items:center;gap:10px;flex:none;">
+            <sc-if value="{{ solid }}" hint-placeholder-val="{{ false }}">
+              <x-import component-from-global-scope="NSLFCUDesignSystem_3e6328.Button" variant="secondary" size="md" href="https://digital.nslfcu.org/" hint-size="96px,40px">Sign in</x-import>
+              <x-import component-from-global-scope="NSLFCUDesignSystem_3e6328.Button" size="md" href="https://nslfcu.bankjoy.com/apply" hint-size="110px,40px">Join Now</x-import>
+            </sc-if>
+            <sc-if value="{{ light }}" hint-placeholder-val="{{ true }}">
+              <x-import component-from-global-scope="NSLFCUDesignSystem_3e6328.Button" variant="accent-outline" size="md" href="https://digital.nslfcu.org/" hint-size="96px,40px">Sign in</x-import>
+              <x-import component-from-global-scope="NSLFCUDesignSystem_3e6328.Button" variant="accent" size="md" href="https://nslfcu.bankjoy.com/apply" hint-size="110px,40px">Join Now</x-import>
+            </sc-if>
+          </div>
+        </sc-if>
+
+        <sc-if value="{{ mobile }}" hint-placeholder-val="{{ false }}">
+          <div style="flex:1;"></div>
+          <button onClick="{{ toggleMobile }}" aria-expanded="{{ mobileOpen }}" style="height:44px;padding:0 20px;border-radius:999px;border:1px solid {{ menuBtnBorder }};background:transparent;color:{{ menuBtnColor }};font:600 15px/1 var(--font-body);cursor:pointer;">{{ menuBtnLabel }}</button>
+        </sc-if>
+      </div>
+
+      <!-- MEGA · Accounts -->
+      <div role="region" aria-label="Accounts menu" onMouseEnter="{{ keepOpen }}" style="position:absolute;left:0;right:0;top:100%;padding-top:10px;opacity:{{ accountsOp }};visibility:{{ accountsVis }};transform:{{ accountsY }};transition:opacity 200ms, transform 240ms cubic-bezier(.2,.7,.2,1), visibility 200ms;">
+        <div style="max-width:1120px;margin:0 auto;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.05fr);background:#fff;border-radius:16px;overflow:hidden;box-shadow:0 30px 60px -24px rgba(36,16,25,.35), 0 0 0 1px rgba(36,16,25,.06);">
+          <div style="padding:32px 28px 28px;display:grid;gap:6px;align-content:start;">
+            <div style="font:600 12px/1.2 var(--font-body);letter-spacing:.2em;text-transform:uppercase;color:var(--nsl-maroon);padding:0 14px 12px;">Accounts</div>
+            <a href="https://www.nslfcu.org/accounts" style="display:grid;gap:4px;padding:14px;border-radius:12px;text-decoration:none;transition:background 160ms;" style-hover="background:var(--nsl-parchment-soft);">
+              <span style="font:700 17px/1.3 var(--font-display);color:var(--nsl-ink);">Checking Accounts</span>
+              <span style="font:400 14px/1.5 var(--font-body);color:var(--nsl-ink-soft);">Everyday banking with a VISA debit card and full online access.</span>
+            </a>
+            <a href="https://www.nslfcu.org/accounts" style="display:grid;gap:4px;padding:14px;border-radius:12px;text-decoration:none;transition:background 160ms;" style-hover="background:var(--nsl-parchment-soft);">
+              <span style="font:700 17px/1.3 var(--font-display);color:var(--nsl-ink);">Savings Accounts</span>
+              <span style="font:400 14px/1.5 var(--font-body);color:var(--nsl-ink-soft);">A secure place to grow your money, starting with as little as $50.</span>
+            </a>
+            <a href="https://www.nslfcu.org/accounts" style="display:grid;gap:4px;padding:14px;border-radius:12px;text-decoration:none;transition:background 160ms;" style-hover="background:var(--nsl-parchment-soft);">
+              <span style="font:700 17px/1.3 var(--font-display);color:var(--nsl-ink);">Certificates of Deposit</span>
+              <span style="font:400 14px/1.5 var(--font-body);color:var(--nsl-ink-soft);">Set money aside for a term that fits your goals.</span>
+            </a>
+            <a href="https://www.nslfcu.org/accounts" style="display:inline-flex;gap:6px;padding:14px;font:600 15px/1 var(--font-body);color:var(--nsl-maroon);text-decoration:none;">Explore all accounts →</a>
+          </div>
+          <div style="background:var(--nsl-parchment-soft);padding:32px;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px;align-content:start;">
+            <a href="https://www.nslfcu.org/premium-checking" style="display:grid;gap:12px;text-decoration:none;align-content:start;" style-hover="opacity:.85;">
+              <img src="assets/photos/digital-banking.jpg" alt="" style="width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:12px;display:block;">
+              <span style="font:600 12px/1.2 var(--font-body);letter-spacing:.2em;text-transform:uppercase;color:var(--nsl-maroon);">New</span>
+              <span style="font:700 16px/1.3 var(--font-display);color:var(--nsl-ink);">Premium Checking — the account that pays you back</span>
+              <span style="font:600 14px/1 var(--font-body);color:var(--nsl-maroon);">See Premium Checking →</span>
+            </a>
+            <a href="https://www.nslfcu.org/accounts" style="display:grid;gap:12px;text-decoration:none;align-content:start;" style-hover="opacity:.85;">
+              <img src="assets/site/mountains.jpg" alt="" style="width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:12px;display:block;">
+              <span style="font:600 12px/1.2 var(--font-body);letter-spacing:.2em;text-transform:uppercase;color:var(--nsl-maroon);">Certificates</span>
+              <span style="font:700 16px/1.3 var(--font-display);color:var(--nsl-ink);">Lock in your savings and watch them grow</span>
+              <span style="font:600 14px/1 var(--font-body);color:var(--nsl-maroon);">Explore CDs →</span>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- MEGA · News & Resources -->
+      <div role="region" aria-label="News & Resources menu" onMouseEnter="{{ keepOpen }}" style="position:absolute;left:0;right:0;top:100%;padding-top:10px;opacity:{{ newsOp }};visibility:{{ newsVis }};transform:{{ newsY }};transition:opacity 200ms, transform 240ms cubic-bezier(.2,.7,.2,1), visibility 200ms;">
+        <div style="max-width:1120px;margin:0 auto;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.05fr);background:#fff;border-radius:16px;overflow:hidden;box-shadow:0 30px 60px -24px rgba(36,16,25,.35), 0 0 0 1px rgba(36,16,25,.06);">
+          <div style="padding:32px 28px 28px;display:grid;gap:6px;align-content:start;">
+            <div style="font:600 12px/1.2 var(--font-body);letter-spacing:.2em;text-transform:uppercase;color:var(--nsl-maroon);padding:0 14px 12px;">News & Resources</div>
+            <a href="https://www.nslfcu.org/news-and-resources" style="display:grid;gap:4px;padding:14px;border-radius:12px;text-decoration:none;transition:background 160ms;" style-hover="background:var(--nsl-parchment-soft);">
+              <span style="font:700 17px/1.3 var(--font-display);color:var(--nsl-ink);">Latest News</span>
+              <span style="font:400 14px/1.5 var(--font-body);color:var(--nsl-ink-soft);">Updates and announcements from your credit union.</span>
+            </a>
+            <a href="https://www.nslfcu.org/news-and-resources" style="display:grid;gap:4px;padding:14px;border-radius:12px;text-decoration:none;transition:background 160ms;" style-hover="background:var(--nsl-parchment-soft);">
+              <span style="font:700 17px/1.3 var(--font-display);color:var(--nsl-ink);">Free Member Guides</span>
+              <span style="font:400 14px/1.5 var(--font-body);color:var(--nsl-ink-soft);">Plain-language guides for every money milestone.</span>
+            </a>
+            <a href="https://www.nslfcu.org/news-and-resources" style="display:inline-flex;gap:6px;padding:14px;font:600 15px/1 var(--font-body);color:var(--nsl-maroon);text-decoration:none;">See all news &amp; resources →</a>
+          </div>
+          <div style="background:var(--nsl-parchment-soft);padding:32px 32px 28px;display:grid;gap:2px;align-content:start;">
+            <div style="font:600 12px/1.2 var(--font-body);letter-spacing:.2em;text-transform:uppercase;color:var(--nsl-maroon);padding:0 0 12px;">Free member guides</div>
+            <a href="https://www.nslfcu.org/news-and-resources" style="display:grid;grid-template-columns:132px minmax(0,1fr);gap:18px;align-items:center;padding:10px 0;text-decoration:none;" style-hover="opacity:.85;">
+              <img src="assets/site/guide-budgeting.jpg" alt="" style="width:132px;height:92px;object-fit:cover;border-radius:12px;display:block;">
+              <span style="display:grid;gap:4px;"><span style="font:700 16px/1.3 var(--font-display);color:var(--nsl-ink);">Budgeting That Actually Works</span><span style="font:400 14px/1.5 var(--font-body);color:var(--nsl-ink-soft);">A no-guilt, no-jargon guide to taking control.</span></span>
+            </a>
+            <a href="https://www.nslfcu.org/news-and-resources" style="display:grid;grid-template-columns:132px minmax(0,1fr);gap:18px;align-items:center;padding:10px 0;text-decoration:none;" style-hover="opacity:.85;">
+              <img src="assets/site/guide-debt.jpg" alt="" style="width:132px;height:92px;object-fit:cover;border-radius:12px;display:block;">
+              <span style="display:grid;gap:4px;"><span style="font:700 16px/1.3 var(--font-display);color:var(--nsl-ink);">Debt Freedom Strategy Guide</span><span style="font:400 14px/1.5 var(--font-body);color:var(--nsl-ink-soft);">A clear, honest path forward — no shame required.</span></span>
+            </a>
+            <a href="https://www.nslfcu.org/news-and-resources" style="display:inline-flex;gap:6px;padding:14px 0 0;font:600 15px/1 var(--font-body);color:var(--nsl-maroon);text-decoration:none;">See more →</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- MEGA · Loans -->
+      <div role="region" aria-label="Loans menu" onMouseEnter="{{ keepOpen }}" style="position:absolute;left:0;right:0;top:100%;padding-top:10px;opacity:{{ loansOp }};visibility:{{ loansVis }};transform:{{ loansY }};transition:opacity 200ms, transform 240ms cubic-bezier(.2,.7,.2,1), visibility 200ms;">
+        <div style="max-width:1120px;margin:0 auto;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.05fr);background:#fff;border-radius:16px;overflow:hidden;box-shadow:0 30px 60px -24px rgba(36,16,25,.35), 0 0 0 1px rgba(36,16,25,.06);">
+          <div style="padding:32px 28px 28px;display:grid;gap:6px;align-content:start;">
+            <div style="font:600 12px/1.2 var(--font-body);letter-spacing:.2em;text-transform:uppercase;color:var(--nsl-maroon);padding:0 14px 12px;">Loans</div>
+            <a href="https://www.nslfcu.org/mortgage-loans" style="display:grid;gap:4px;padding:14px;border-radius:12px;text-decoration:none;transition:background 160ms;" style-hover="background:var(--nsl-parchment-soft);">
+              <span style="font:700 17px/1.3 var(--font-display);color:var(--nsl-ink);">Mortgage Loans</span>
+              <span style="font:400 14px/1.5 var(--font-body);color:var(--nsl-ink-soft);">Buy, refinance or build equity — with guidance every step of the way.</span>
+            </a>
+            <a href="https://www.nslfcu.org/auto-loans" style="display:grid;gap:4px;padding:14px;border-radius:12px;text-decoration:none;transition:background 160ms;" style-hover="background:var(--nsl-parchment-soft);">
+              <span style="font:700 17px/1.3 var(--font-display);color:var(--nsl-ink);">Auto Loans</span>
+              <span style="font:400 14px/1.5 var(--font-body);color:var(--nsl-ink-soft);">Purchase or refinance a vehicle with flexible terms.</span>
+            </a>
+            <a href="https://www.nslfcu.org/personal-loans" style="display:grid;gap:4px;padding:14px;border-radius:12px;text-decoration:none;transition:background 160ms;" style-hover="background:var(--nsl-parchment-soft);">
+              <span style="font:700 17px/1.3 var(--font-display);color:var(--nsl-ink);">Personal Loans</span>
+              <span style="font:400 14px/1.5 var(--font-body);color:var(--nsl-ink-soft);">Consolidate debt or cover the unexpected, with clear terms and predictable payments.</span>
+            </a>
+            <a href="https://www.nslfcu.org/loans" style="display:inline-flex;gap:6px;padding:14px;font:600 15px/1 var(--font-body);color:var(--nsl-maroon);text-decoration:none;">Explore all loans →</a>
+          </div>
+          <div style="background:var(--nsl-parchment-soft);padding:32px 32px 28px;display:grid;gap:6px;align-content:start;">
+            <div style="font:600 12px/1.2 var(--font-body);letter-spacing:.2em;text-transform:uppercase;color:var(--nsl-maroon);padding:0 0 12px;">Calculators</div>
+            <a href="https://www.nslfcu.org/calculators" style="display:grid;grid-template-columns:132px minmax(0,1fr);gap:18px;align-items:center;padding:10px 0;text-decoration:none;" style-hover="opacity:.85;">
+              <img src="assets/site/house.jpg" alt="" style="width:132px;height:92px;object-fit:cover;border-radius:12px;display:block;">
+              <span style="display:grid;gap:4px;"><span style="font:700 16px/1.3 var(--font-display);color:var(--nsl-ink);">Mortgage Calculator</span><span style="font:400 14px/1.5 var(--font-body);color:var(--nsl-ink-soft);">Estimate your monthly payment before you buy or refinance.</span></span>
+            </a>
+            <a href="https://www.nslfcu.org/calculators" style="display:grid;grid-template-columns:132px minmax(0,1fr);gap:18px;align-items:center;padding:10px 0;text-decoration:none;" style-hover="opacity:.85;">
+              <img src="assets/site/auto-loan.jpg" alt="" style="width:132px;height:92px;object-fit:cover;border-radius:12px;display:block;">
+              <span style="display:grid;gap:4px;"><span style="font:700 16px/1.3 var(--font-display);color:var(--nsl-ink);">Auto Loan Calculator</span><span style="font:400 14px/1.5 var(--font-body);color:var(--nsl-ink-soft);">See what fits your budget before you visit the lot.</span></span>
+            </a>
+            <a href="https://www.nslfcu.org/calculators" style="display:grid;grid-template-columns:132px minmax(0,1fr);gap:18px;align-items:center;padding:10px 0;text-decoration:none;" style-hover="opacity:.85;">
+              <img src="assets/site/personal-loan.jpg" alt="" style="width:132px;height:92px;object-fit:cover;border-radius:12px;display:block;">
+              <span style="display:grid;gap:4px;"><span style="font:700 16px/1.3 var(--font-display);color:var(--nsl-ink);">Personal Loan Calculator</span><span style="font:400 14px/1.5 var(--font-body);color:var(--nsl-ink-soft);">Plug in an amount and term to see your payment.</span></span>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- MEGA · About -->
+      <div role="region" aria-label="About us menu" onMouseEnter="{{ keepOpen }}" style="position:absolute;left:0;right:0;top:100%;padding-top:10px;opacity:{{ aboutOp }};visibility:{{ aboutVis }};transform:{{ aboutY }};transition:opacity 200ms, transform 240ms cubic-bezier(.2,.7,.2,1), visibility 200ms;">
+        <div style="max-width:1120px;margin:0 auto;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.05fr);background:#fff;border-radius:16px;overflow:hidden;box-shadow:0 30px 60px -24px rgba(36,16,25,.35), 0 0 0 1px rgba(36,16,25,.06);">
+          <div style="padding:32px 28px 28px;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:6px;align-content:start;">
+            <div style="grid-column:1/-1;font:600 12px/1.2 var(--font-body);letter-spacing:.2em;text-transform:uppercase;color:var(--nsl-maroon);padding:0 14px 12px;">About us</div>
+            <a href="https://www.nslfcu.org/about" style="display:grid;gap:4px;padding:14px;border-radius:12px;text-decoration:none;align-content:start;" style-hover="background:var(--nsl-parchment-soft);">
+              <span style="font:700 17px/1.3 var(--font-display);color:var(--nsl-ink);">Our Story</span>
+              <span style="font:400 14px/1.5 var(--font-body);color:var(--nsl-ink-soft);">Member-owned and here to serve our church family.</span>
+            </a>
+            <a href="https://www.nslfcu.org/meet-the-team" style="display:grid;gap:4px;padding:14px;border-radius:12px;text-decoration:none;align-content:start;" style-hover="background:var(--nsl-parchment-soft);">
+              <span style="font:700 17px/1.3 var(--font-display);color:var(--nsl-ink);">Meet the Team</span>
+              <span style="font:400 14px/1.5 var(--font-body);color:var(--nsl-ink-soft);">Our staff, board and open positions.</span>
+            </a>
+            <a href="https://www.nslfcu.org/contact-us" style="display:grid;gap:4px;padding:14px;border-radius:12px;text-decoration:none;align-content:start;" style-hover="background:var(--nsl-parchment-soft);">
+              <span style="font:700 17px/1.3 var(--font-display);color:var(--nsl-ink);">Contact Us</span>
+              <span style="font:400 14px/1.5 var(--font-body);color:var(--nsl-ink-soft);">Call, email or visit us in Suitland.</span>
+            </a>
+            <a href="https://www.nslfcu.org/important-forms" style="display:grid;gap:4px;padding:14px;border-radius:12px;text-decoration:none;align-content:start;" style-hover="background:var(--nsl-parchment-soft);">
+              <span style="font:700 17px/1.3 var(--font-display);color:var(--nsl-ink);">Important Forms</span>
+              <span style="font:400 14px/1.5 var(--font-body);color:var(--nsl-ink-soft);">Account and loan forms in one place.</span>
+            </a>
+          </div>
+          <div style="background:var(--nsl-parchment-soft);padding:32px;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px;align-content:start;">
+            <a href="https://www.nslfcu.org/meet-the-team" style="display:grid;gap:12px;text-decoration:none;align-content:start;" style-hover="opacity:.85;">
+              <img src="assets/photos/ministry-portrait.jpg" alt="" style="width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:12px;display:block;">
+              <span style="font:700 16px/1.3 var(--font-display);color:var(--nsl-ink);">The people behind your credit union</span>
+              <span style="font:600 14px/1 var(--font-body);color:var(--nsl-maroon);">Meet the team →</span>
+            </a>
+            <a href="https://tidycal.com/nslfcuschedule" style="display:grid;gap:12px;text-decoration:none;align-content:start;" style-hover="opacity:.85;">
+              <img src="assets/site/keys.jpg" alt="" style="width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:12px;display:block;">
+              <span style="font:700 16px/1.3 var(--font-display);color:var(--nsl-ink);">Talk it through with us, one on one</span>
+              <span style="font:600 14px/1 var(--font-body);color:var(--nsl-maroon);">Book a call →</span>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- MOBILE PANEL -->
+      <sc-if value="{{ mobilePanel }}" hint-placeholder-val="{{ false }}">
+        <div style="position:absolute;left:0;right:0;top:100%;padding:{{ mPanelPad }};">
+          <div style="background:#fff;border-radius:16px;box-shadow:0 30px 60px -24px rgba(36,16,25,.35), 0 0 0 1px rgba(36,16,25,.06);padding:12px 20px 20px;max-height:{{ mPanelMax }};overscroll-behavior:contain;overflow:auto;display:grid;">
+            <a href="https://www.nslfcu.org/" style="padding:14px 0;border-bottom:1px solid var(--nsl-rule);font:700 18px/1.3 var(--font-display);color:var(--nsl-ink);text-decoration:none;">Home</a>
+            <div style="padding:14px 0;border-bottom:1px solid var(--nsl-rule);display:grid;gap:10px;">
+              <span style="font:700 18px/1.3 var(--font-display);color:var(--nsl-ink);">Accounts</span>
+              <div style="display:grid;gap:2px;padding-left:2px;">
+                <a href="https://www.nslfcu.org/accounts" style="padding:10px 0;font:500 16px/1.3 var(--font-body);color:var(--nsl-ink-soft);text-decoration:none;">Checking Accounts</a>
+                <a href="https://www.nslfcu.org/premium-checking" style="padding:10px 0;font:500 16px/1.3 var(--font-body);color:var(--nsl-ink-soft);text-decoration:none;">Premium Checking</a>
+                <a href="https://www.nslfcu.org/accounts" style="padding:10px 0;font:500 16px/1.3 var(--font-body);color:var(--nsl-ink-soft);text-decoration:none;">Savings Accounts</a>
+                <a href="https://www.nslfcu.org/accounts" style="padding:10px 0;font:500 16px/1.3 var(--font-body);color:var(--nsl-ink-soft);text-decoration:none;">Certificates of Deposit</a>
+              </div>
+            </div>
+            <div style="padding:14px 0;border-bottom:1px solid var(--nsl-rule);display:grid;gap:10px;">
+              <span style="font:700 18px/1.3 var(--font-display);color:var(--nsl-ink);">Loans</span>
+              <div style="display:grid;gap:2px;padding-left:2px;">
+                <a href="https://www.nslfcu.org/mortgage-loans" style="padding:10px 0;font:500 16px/1.3 var(--font-body);color:var(--nsl-ink-soft);text-decoration:none;">Mortgage Loans</a>
+                <a href="https://www.nslfcu.org/auto-loans" style="padding:10px 0;font:500 16px/1.3 var(--font-body);color:var(--nsl-ink-soft);text-decoration:none;">Auto Loans</a>
+                <a href="https://www.nslfcu.org/personal-loans" style="padding:10px 0;font:500 16px/1.3 var(--font-body);color:var(--nsl-ink-soft);text-decoration:none;">Personal Loans</a>
+                <a href="https://www.nslfcu.org/calculators" style="padding:10px 0;font:500 16px/1.3 var(--font-body);color:var(--nsl-ink-soft);text-decoration:none;">Calculators</a>
+                <a href="https://www.nslfcu.org/loans" style="padding:10px 0;font:600 16px/1.3 var(--font-body);color:var(--nsl-maroon);text-decoration:none;">Explore all loans →</a>
+              </div>
+            </div>
+            <div style="padding:14px 0;border-bottom:1px solid var(--nsl-rule);display:grid;gap:10px;">
+              <span style="font:700 18px/1.3 var(--font-display);color:var(--nsl-ink);">News &amp; Resources</span>
+              <div style="display:grid;gap:2px;padding-left:2px;">
+                <a href="https://www.nslfcu.org/news-and-resources" style="padding:10px 0;font:500 16px/1.3 var(--font-body);color:var(--nsl-ink-soft);text-decoration:none;">Latest News</a>
+                <a href="https://www.nslfcu.org/news-and-resources" style="padding:10px 0;font:500 16px/1.3 var(--font-body);color:var(--nsl-ink-soft);text-decoration:none;">Free Member Guides</a>
+              </div>
+            </div>
+            <div style="padding:14px 0;display:grid;gap:10px;">
+              <span style="font:700 18px/1.3 var(--font-display);color:var(--nsl-ink);">About us</span>
+              <div style="display:grid;gap:2px;padding-left:2px;">
+                <a href="https://www.nslfcu.org/about" style="padding:10px 0;font:500 16px/1.3 var(--font-body);color:var(--nsl-ink-soft);text-decoration:none;">Our Story</a>
+                <a href="https://www.nslfcu.org/meet-the-team" style="padding:10px 0;font:500 16px/1.3 var(--font-body);color:var(--nsl-ink-soft);text-decoration:none;">Meet the Team</a>
+                <a href="https://www.nslfcu.org/contact-us" style="padding:10px 0;font:500 16px/1.3 var(--font-body);color:var(--nsl-ink-soft);text-decoration:none;">Contact Us</a>
+                <a href="https://www.nslfcu.org/important-forms" style="padding:10px 0;font:500 16px/1.3 var(--font-body);color:var(--nsl-ink-soft);text-decoration:none;">Important Forms</a>
+              </div>
+            </div>
+            <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:8px;">
+              <x-import component-from-global-scope="NSLFCUDesignSystem_3e6328.Button" variant="secondary" size="lg" href="https://digital.nslfcu.org/" hint-size="100%,50px">Sign in</x-import>
+              <x-import component-from-global-scope="NSLFCUDesignSystem_3e6328.Button" size="lg" href="https://nslfcu.bankjoy.com/apply" hint-size="100%,50px">Join Now</x-import>
+            </div>
+          </div>
+        </div>
+      </sc-if>
+    </div>
+  </header>
+
+
+  <section data-screen-label="01 Hero" style="background:#fff;padding:{{ hubHeroPad }};">
+    <div style="max-width:1200px;margin:0 auto;display:grid;gap:clamp(36px,5vw,56px);">
+      <div style="display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-end;gap:28px 64px;">
+        <div style="flex:1 1 520px;min-width:0;display:grid;gap:20px;">
+          <x-import component-from-global-scope="NSLFCUDesignSystem_3e6328.Eyebrow" rule="{{ true }}" hint-size="300px,16px">Loans · Mortgage · Auto · Personal</x-import>
+          <h1 style="margin:0;font:800 clamp(42px,6.4vw,84px)/1.02 var(--font-display);letter-spacing:-.02em;color:#7A2049;text-wrap:balance;">Unlock Your Financial Future.</h1>
+        </div>
+        <div style="flex:1 1 360px;max-width:460px;min-width:0;display:grid;gap:22px;">
+          <p style="margin:0;font:400 clamp(17px,1.4vw,19px)/1.6 var(--font-body);color:var(--nsl-ink-soft);text-wrap:pretty;">Eyeing a new vehicle, dreaming of a home of your own or need a financial boost? We have a loan for it — and a neighbor to walk you through it.</p>
+          <div style="display:flex;flex-wrap:wrap;gap:12px;width:{{ btnRowW }};">
+            <x-import component-from-global-scope="NSLFCUDesignSystem_3e6328.Button" size="lg" arrow="{{ true }}" full-width="{{ narrow }}" href="https://tidycal.com/nslfcuschedule" hint-size="220px,52px">Talk to a Loan Expert</x-import>
+            <x-import component-from-global-scope="NSLFCUDesignSystem_3e6328.Button" variant="secondary" size="lg" full-width="{{ narrow }}" href="https://nslfcu.bankjoy.com/loan-apply" hint-size="140px,52px">Apply Now</x-import>
+          </div>
+        </div>
+      </div>
+      <div style="display:grid;grid-template-columns:{{ doorCols }};gap:20px;">
+        <sc-for list="{{ doors }}" as="d" hint-placeholder-count="3">
+          <a href="{{ d.href }}" style="position:relative;display:block;aspect-ratio:{{ doorRatio }};border-radius:24px;overflow:hidden;background:#3A1420;text-decoration:none;transition:transform 240ms cubic-bezier(.2,.7,.2,1), box-shadow 240ms cubic-bezier(.2,.7,.2,1);" style-hover="transform:translateY(-2px);box-shadow:0 24px 48px -24px rgba(36,16,25,.45);">
+            <img src="{{ d.img }}" alt="{{ d.alt }}" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:{{ d.pos }};">
+            <div style="position:absolute;left:14px;right:14px;bottom:14px;background:#fff;border-radius:16px;padding:22px 22px 20px;display:grid;gap:8px;">
+              <div style="display:flex;justify-content:space-between;align-items:baseline;gap:12px;">
+                <span style="font:800 15px/1 var(--font-display);color:#7A2049;">{{ d.n }}</span>
+                <span style="font:600 13px/1.2 var(--font-body);color:var(--nsl-ink-soft);text-align:right;">{{ d.meta }}</span>
+              </div>
+              <span style="font:800 clamp(22px,2vw,26px)/1.15 var(--font-display);color:#7A2049;">{{ d.title }}</span>
+              <span style="font:400 15px/1.55 var(--font-body);color:var(--nsl-ink-soft);text-wrap:pretty;">{{ d.body }}</span>
+              <span style="font:600 15px/1 var(--font-body);color:#7A2049;padding-top:6px;">{{ d.cta }} →</span>
+            </div>
+          </a>
+        </sc-for>
+      </div>
+      <x-import component-from-global-scope="NSLFCUDesignSystem_3e6328.NCUAStatement" size="{{ 14 }}" hint-size="180px,20px"></x-import>
+    </div>
+  </section>
+
+  <section id="compare" data-screen-label="02 Compare" style="scroll-margin-top:96px;padding:clamp(48px,7vw,96px) 24px 0;">
+    <div style="max-width:1200px;margin:0 auto;display:grid;gap:36px;">
+      <div style="display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-end;gap:24px;">
+        <div style="display:grid;gap:14px;max-width:640px;">
+          <x-import component-from-global-scope="NSLFCUDesignSystem_3e6328.Eyebrow" rule="{{ true }}" hint-size="160px,16px">At a glance</x-import>
+          <h2 style="margin:0;font:800 clamp(32px,3.6vw,46px)/1.1 var(--font-display);color:#7A2049;text-wrap:balance;">Find the Loan That Fits.</h2>
+        </div>
+        <p style="margin:0;font:400 16px/1.6 var(--font-body);color:var(--nsl-ink-soft);max-width:420px;text-wrap:pretty;">Not sure which one you need? Tell us what you're working toward and we'll help you choose.</p>
+      </div>
+      <div style="overflow-x:auto;margin:0 -4px;padding:0 4px;">
+        <div style="min-width:760px;">
+          <x-import component-from-global-scope="NSLFCUDesignSystem_3e6328.DataTable" columns="{{ compareCols }}" rows="{{ compareRows }}" hint-size="100%,280px"></x-import>
+        </div>
+      </div>
+      <a href="#disclosures" style="font:500 14px/1.4 var(--font-body);color:#7A2049;margin-top:-12px;">*See rate details below</a>
+    </div>
+  </section>
+
+  <section data-screen-label="03 Premium discount" style="padding:clamp(56px,8vw,104px) clamp(12px,2vw,24px) 0;">
+    <div style="max-width:1248px;margin:0 auto;background:var(--nsl-parchment-soft);border-radius:24px;padding:clamp(32px,5vw,64px) clamp(20px,5vw,72px);display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:28px 56px;">
+      <div style="display:flex;flex-wrap:wrap;align-items:center;gap:20px 40px;flex:1 1 560px;min-width:0;">
+        <span style="font:800 clamp(52px,6vw,80px)/1 var(--font-display);letter-spacing:-.02em;color:#7A2049;">0.50% off</span>
+        <div style="display:grid;gap:8px;flex:1 1 300px;min-width:0;">
+          <span style="font:700 clamp(20px,1.8vw,24px)/1.3 var(--font-display);color:var(--nsl-ink);">Premium Checking members save on every loan.‡</span>
+          <span style="font:400 16px/1.6 var(--font-body);color:var(--nsl-ink-soft);text-wrap:pretty;">Car, home or debt consolidation — your rate drops automatically when you have an open Premium Checking account.</span>
+        </div>
+      </div>
+      <x-import component-from-global-scope="NSLFCUDesignSystem_3e6328.Button" variant="secondary" size="lg" full-width="{{ narrow }}" href="https://www.nslfcu.org/premium-checking" hint-size="220px,52px">See Premium Checking</x-import>
+    </div>
+  </section>
+
+  <section data-screen-label="04 Talk to an expert" style="padding:clamp(64px,9vw,120px) 24px 0;">
+    <div style="max-width:1200px;margin:0 auto;display:flex;flex-wrap:wrap;gap:clamp(40px,6vw,80px);align-items:center;">
+      <div style="flex:1 1 420px;min-width:0;">
+        <img src="assets/pexels/loan-hero.jpg" alt="A couple reviewing paperwork together at a table" style="width:100%;aspect-ratio:5/4;object-fit:cover;object-position:center 40%;border-radius:24px;display:block;">
+      </div>
+      <div style="flex:1 1 460px;min-width:0;display:grid;gap:28px;">
+        <div style="display:grid;gap:14px;">
+          <x-import component-from-global-scope="NSLFCUDesignSystem_3e6328.Eyebrow" rule="{{ true }}" hint-size="200px,16px">Talk to a loan expert</x-import>
+          <h2 style="margin:0;font:800 clamp(32px,3.6vw,46px)/1.1 var(--font-display);color:#7A2049;text-wrap:balance;">Let's Talk It Through, One on One.</h2>
+          <p style="margin:0;font:400 18px/1.6 var(--font-body);color:var(--nsl-ink-soft);text-wrap:pretty;">Book a call with one of our loan officers. We'll look at your goals, answer your questions and help you pick a path — no pressure.</p>
+        </div>
+        <div style="display:grid;">
+          <sc-for list="{{ consults }}" as="k" hint-placeholder-count="3">
+            <a href="{{ k.href }}" style="display:flex;justify-content:space-between;align-items:center;gap:16px;padding:18px 0;border-bottom:1px solid rgba(36,16,25,.12);text-decoration:none;" style-hover="opacity:.8;">
+              <span style="display:grid;gap:4px;"><span style="font:700 18px/1.3 var(--font-display);color:var(--nsl-ink);">{{ k.t }}</span><span style="font:400 15px/1.5 var(--font-body);color:var(--nsl-ink-soft);">{{ k.b }}</span></span>
+              <span style="font:600 15px/1 var(--font-body);color:#7A2049;white-space:nowrap;">{{ k.cta }} →</span>
+            </a>
+          </sc-for>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section data-screen-label="05 Why NSLFCU" style="position:relative;background:#3A1420;overflow:hidden;padding:clamp(64px,9vw,120px) 24px;margin-top:clamp(64px,9vw,120px);">
+    <img src="assets/logos/logo-mark-reverse.svg" alt="" style="position:absolute;left:-6%;top:-20%;height:120%;opacity:.07;pointer-events:none;">
+    <div style="position:relative;max-width:1200px;margin:0 auto;display:grid;gap:56px;">
+      <div style="display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-end;gap:24px;">
+        <div style="display:grid;gap:14px;max-width:640px;">
+          <x-import component-from-global-scope="NSLFCUDesignSystem_3e6328.Eyebrow" tone="gold" rule="{{ true }}" hint-size="180px,16px">Why NSLFCU</x-import>
+          <h2 style="margin:0;font:800 clamp(32px,3.6vw,46px)/1.1 var(--font-display);color:#F7ECD6;text-wrap:balance;">Why Borrow From Your Credit Union?</h2>
+        </div>
+        <x-import component-from-global-scope="NSLFCUDesignSystem_3e6328.Button" variant="accent" size="lg" arrow="{{ true }}" full-width="{{ narrow }}" href="https://nslfcu.bankjoy.com/loan-apply" hint-size="170px,52px">Apply Today</x-import>
+      </div>
+      <div style="display:grid;grid-template-columns:{{ cols3 }};gap:24px;">
+        <sc-for list="{{ why }}" as="w" hint-placeholder-count="3">
+          <div style="display:grid;gap:14px;align-content:start;padding:28px;border-radius:16px;background:rgba(247,236,214,.06);border:1px solid rgba(201,169,104,.3);">
+            <span style="font:800 40px/1 var(--font-display);color:#C9A968;">{{ w.n }}</span>
+            <span style="font:700 21px/1.25 var(--font-display);color:#F7ECD6;">{{ w.t }}</span>
+            <span style="font:400 16px/1.6 var(--font-body);color:#F7ECD6;text-wrap:pretty;">{{ w.b }}</span>
+          </div>
+        </sc-for>
+      </div>
+    </div>
+  </section>
+
+  <section id="disclosures" data-screen-label="Disclosures" style="scroll-margin-top:96px;padding:clamp(40px,5vw,56px) 24px;">
+    <div style="max-width:1200px;margin:0 auto;display:grid;gap:12px;">
+      <div style="font:600 12px/1.2 var(--font-body);letter-spacing:.2em;text-transform:uppercase;color:var(--nsl-maroon);">Important loan information</div>
+      <sc-for list="{{ footnotes }}" as="fn" hint-placeholder-count="3">
+        <p style="margin:0;font:400 14px/1.55 var(--font-body);color:var(--nsl-ink-soft);text-wrap:pretty;">{{ fn }}</p>
+      </sc-for>
+    </div>
+  </section>
+  <footer data-screen-label="09 Footer" style="position:relative;background:#3A1420;color:#F7ECD6;overflow:hidden;padding:clamp(56px,7vw,88px) 24px 32px;">
+    <div style="position:relative;max-width:1200px;margin:0 auto;display:grid;gap:48px;">
+      <div style="display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-end;gap:24px;padding-bottom:40px;border-bottom:1px solid rgba(247,236,214,.18);">
+        <div style="display:grid;gap:10px;">
+          <div style="font:800 clamp(30px,3.4vw,44px)/1.1 var(--font-display);color:#F7ECD6;">Together, We Grow.</div>
+          <div style="font:400 17px/1.6 var(--font-body);color:#F7ECD6;max-width:560px;">Whether you're financing a vehicle, buying a home or growing your future — your credit union is here for the journey.</div>
+        </div>
+        <x-import component-from-global-scope="NSLFCUDesignSystem_3e6328.Button" variant="accent" size="lg" arrow="{{ true }}" full-width="{{ narrow }}" href="https://nslfcu.bankjoy.com/apply" hint-size="170px,52px">Join Today</x-import>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,200px),1fr));gap:40px;">
+        <div style="display:grid;gap:16px;align-content:start;grid-column:span 2;min-width:0;">
+          <img src="assets/logos/logo-primary-reverse.svg" alt="None Suffer Lack Federal Credit Union" style="height:44px;width:auto;align-self:start;justify-self:start;">
+          <x-import component-from-global-scope="NSLFCUDesignSystem_3e6328.NCUAStatement" tone="dark" size="{{ 15 }}" hint-size="190px,20px"></x-import>
+          <div style="display:grid;gap:6px;font:400 15px/1.6 var(--font-body);">
+            <a href="https://share.google/fofRfrUaxD5O8ecvw" style="color:#F7ECD6;text-decoration:none;">4929 Allentown Rd, Suitland, MD 20746</a>
+            <span>Routing Number: 055080376</span>
+            <a href="tel:3018990300" style="color:#F7ECD6;text-decoration:none;">(301) 899-0300</a>
+            <a href="mailto:hello@nslfcu.org" style="color:#F7ECD6;text-decoration:none;">hello@nslfcu.org</a>
+          </div>
+        </div>
+        <div style="display:grid;gap:12px;align-content:start;">
+          <div style="font:600 13px/1 var(--font-body);letter-spacing:.2em;text-transform:uppercase;color:#C9A968;margin-bottom:4px;">NSLFCU</div>
+          <a href="https://www.nslfcu.org/about" style="font:500 15px/1.4 var(--font-body);color:#F7ECD6;text-decoration:none;">Welcome</a>
+          <a href="https://www.nslfcu.org/about" style="font:500 15px/1.4 var(--font-body);color:#F7ECD6;text-decoration:none;">How to Join</a>
+          <a href="https://www.nslfcu.org/meet-the-team" style="font:500 15px/1.4 var(--font-body);color:#F7ECD6;text-decoration:none;">Meet the Team</a>
+          <a href="https://www.nslfcu.org/disclosure" style="font:500 15px/1.4 var(--font-body);color:#F7ECD6;text-decoration:none;">Disclosures</a>
+          <a href="https://www.nslfcu.org/contact-us" style="font:500 15px/1.4 var(--font-body);color:#F7ECD6;text-decoration:none;">Contact Us</a>
+        </div>
+        <div style="display:grid;gap:12px;align-content:start;">
+          <div style="font:600 13px/1 var(--font-body);letter-spacing:.2em;text-transform:uppercase;color:#C9A968;margin-bottom:4px;">Loan info</div>
+          <a href="https://www.nslfcu.org/personal-loans" style="font:500 15px/1.4 var(--font-body);color:#F7ECD6;text-decoration:none;">Personal Loans</a>
+          <a href="https://www.nslfcu.org/loans" style="font:500 15px/1.4 var(--font-body);color:#F7ECD6;text-decoration:none;">Loan Rate Sheet</a>
+          <a href="https://www.nslfcu.org/auto-loans" style="font:500 15px/1.4 var(--font-body);color:#F7ECD6;text-decoration:none;">Auto Loans &amp; Rates</a>
+          <a href="https://www.nslfcu.org/mortgage-loans" style="font:500 15px/1.4 var(--font-body);color:#F7ECD6;text-decoration:none;">Mortgage Loans</a>
+          <a href="https://www.nslfcu.org/calculators" style="font:500 15px/1.4 var(--font-body);color:#F7ECD6;text-decoration:none;">Calculators</a>
+        </div>
+      </div>
+      <div style="display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:16px 32px;padding-top:24px;border-top:1px solid rgba(247,236,214,.18);font:400 14px/1.5 var(--font-body);color:#F7ECD6;">
+        <span>© 2026 None Suffer Lack Federal Credit Union · Equal Housing Opportunity</span>
+        <div style="display:flex;flex-wrap:wrap;gap:24px;">
+          <a href="https://cdn.prod.website-files.com/67ed719289bf6af9b4c6cd57/6a27ead3cffa8b5c748fff20_NSLFCU_Privacy_Policy%20(1).pdf" style="color:#F7ECD6;">Privacy Policy</a>
+          <a href="https://cdn.prod.website-files.com/67ed719289bf6af9b4c6cd57/6a27eae6d40dabeb916fa87f_NSLFCU_Terms_and_Conditions%20(1).pdf" style="color:#F7ECD6;">Terms of Service</a>
+          <a href="https://www.linkedin.com/company/nslfcu/" style="color:#F7ECD6;">LinkedIn</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;trigger&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;hover&quot;,&quot;click&quot;],&quot;default&quot;:&quot;hover&quot;,&quot;tsType&quot;:&quot;'hover'|'click'&quot;,&quot;section&quot;:&quot;Nav&quot;}}">
+class Component extends DCLogic {
+  navSolid = true;
+  state = { scrolled: false, open: null, mobile: false, mobileOpen: false, narrow: false, mid: false, tPage: 0 };
+  componentDidMount() {
+    this.onScroll = () => { const s = window.scrollY > 24; if (s !== this.state.scrolled) this.setState({ scrolled: s }); };
+    this.mq = window.matchMedia('(max-width: 960px)');
+    this.onMq = () => this.setState({ mobile: this.mq.matches, open: null, mobileOpen: false });
+    this.onKey = e => { if (e.key === 'Escape') this.setState({ open: null, mobileOpen: false }); };
+    this.onDoc = e => { if (!e.target.closest('header')) this.setState({ open: null }); };
+    window.addEventListener('scroll', this.onScroll, { passive: true });
+    this.mq.addEventListener('change', this.onMq);
+    document.addEventListener('keydown', this.onKey);
+    document.addEventListener('click', this.onDoc);
+    this.onScroll(); this.onMq(); setTimeout(() => this.forceUpdate(), 0);
+    this.mq2 = window.matchMedia('(max-width: 640px)');
+    this.onMq2 = () => this.setState({ narrow: this.mq2.matches, tPage: 0 });
+    this.mq2.addEventListener('change', this.onMq2); this.onMq2();
+    this.mq3 = window.matchMedia('(max-width: 1100px)');
+    this.onMq3 = () => this.setState({ mid: this.mq3.matches });
+    this.mq3.addEventListener('change', this.onMq3); this.onMq3();
+  }
+  componentDidUpdate() {
+    document.documentElement.style.overflow = this.state.mobile && this.state.mobileOpen ? 'hidden' : '';
+  }
+  componentWillUnmount() {
+    document.documentElement.style.overflow = '';
+    window.removeEventListener('scroll', this.onScroll);
+    this.mq.removeEventListener('change', this.onMq);
+    document.removeEventListener('keydown', this.onKey);
+    document.removeEventListener('click', this.onDoc);
+    clearTimeout(this.t);
+  }
+  pageVals() {
+    const narrow = this.state.narrow, mid = this.state.mid;
+    const c = {
+      narrow, mid,
+      btnRowW: narrow ? '100%' : 'auto',
+      cols3: mid ? 'minmax(0,1fr)' : 'repeat(3,minmax(0,1fr))',
+      cols2: narrow ? 'minmax(0,1fr)' : 'repeat(2,minmax(0,1fr))',
+    };
+    return { ...c,
+      hubHeroPad: narrow ? '112px 20px 48px' : '148px 24px 0',
+      doorCols: narrow ? 'minmax(0,1fr)' : 'repeat(3,minmax(0,1fr))',
+      doorRatio: narrow ? '4/5' : (mid ? '3/4.4' : '4/5'),
+      doors: [
+        { n: '01', title: 'Mortgage Loans', meta: 'Fixed or adjustable', body: 'Buy your first home, refinance or tap into the equity you’ve built.', cta: 'Explore mortgages', href: 'https://www.nslfcu.org/mortgage-loans', img: 'assets/pexels/loan-mortgage-first.jpg', alt: 'A smiling couple receiving the keys to their new home', pos: '30% center' },
+        { n: '02', title: 'Auto Loans', meta: 'As low as 3.99% APR*', body: 'New, used or refinance — with flexible terms up to 84 months.', cta: 'Explore auto loans', href: 'https://www.nslfcu.org/auto-loans', img: 'assets/site/auto-loan.jpg', alt: 'A car on the road', pos: 'center' },
+        { n: '03', title: 'Personal Loans', meta: 'As low as 6.99% APR*', body: 'Consolidate debt or cover life’s expenses with predictable payments.', cta: 'Explore personal loans', href: 'https://www.nslfcu.org/personal-loans', img: 'assets/site/personal-loan.jpg', alt: 'A member planning finances', pos: 'center' }
+      ],
+      compareCols: [
+        { key: 'loan', label: 'Loan', width: '18%' },
+        { key: 'for', label: 'Good for', width: '32%' },
+        { key: 'amt', label: 'Amounts' },
+        { key: 'term', label: 'Terms' },
+        { key: 'rate', label: 'Rate' }
+      ],
+      compareRows: [
+        { loan: 'Mortgage', for: 'Buying, refinancing or home equity', amt: 'Talk to us', term: 'Fixed or adjustable', rate: 'Call for current rates' },
+        { loan: 'Auto', for: 'New, used or refinanced vehicles', amt: 'From $5,000', term: 'Up to 84 months', rate: 'As low as 3.99% APR*' },
+        { loan: 'Personal Signature', for: 'Debt consolidation, expenses or projects', amt: '$500 – $25,000', term: 'Up to 60 months', rate: 'As low as 6.99% APR*' },
+        { loan: 'Share Secured', for: 'A lower rate, backed by your savings', amt: 'From $500', term: '6 – 60 months', rate: 'Share rate + 3.00%' },
+        { loan: 'Cash in a Flash', for: 'Short-term needs', amt: 'Talk to us', term: 'Up to 6 months', rate: 'Call (301) 899-0300' }
+      ],
+      consults: [
+        { t: 'Auto loan consultation', b: 'Talk through vehicle options and terms.', cta: 'Book', href: 'https://tidycal.com/team/none-suffer-lack-fcu/auto-loan-consultation' },
+        { t: 'Mortgage consultation', b: 'Buying, refinancing or home equity.', cta: 'Book', href: 'https://tidycal.com/team/none-suffer-lack-fcu/mortgage' },
+        { t: 'Personal loan consultation', b: 'Find the right loan for what you need.', cta: 'Book', href: 'https://tidycal.com/team/none-suffer-lack-fcu/personalloan' },
+        { t: 'Loan calculators', b: 'Estimate a payment before you apply.', cta: 'Calculate', href: 'https://www.nslfcu.org/calculators' }
+      ],
+      why: [
+        { n: '01', t: 'A trusted advisor', b: 'Clear, practical guidance from loan officers who explain every step.' },
+        { n: '02', t: 'Your goals first', b: 'We listen, then tailor a loan to your budget and your life.' },
+        { n: '03', t: 'Community-focused', b: 'Member-owned and built on faith — when our members grow, our community grows.' }
+      ],
+      footnotes: [
+        '*APR = Annual Percentage Rate. Rates shown are the lowest available, are effective as of 10/01/2026 and are subject to change without notice. Your actual APR is based on your application and credit history and is set at the time of disbursement. Not all applicants will qualify for the lowest rate.',
+        '‡The 0.50% discount applies to the rate on all NSLFCU loans for members with an open Premium Checking account.',
+        'All loans are subject to credit approval. Contact the credit union for full terms and conditions.'
+      ]
+    };
+  }
+  renderVals() {
+    const P = this.props;
+    const preview = 'live';
+    const trigger = P.trigger ?? 'hover';
+    const active = 'Loans';
+    const scrolled = preview === 'scrolled' || (preview === 'live' && this.state.scrolled);
+    const { open, mobile, mobileOpen } = this.state;
+    const solid = scrolled || !!open || mobileOpen || !!this.navSolid;
+    const light = !solid;
+    const setOpen = k => { clearTimeout(this.t); if (this.state.open !== k) this.setState({ open: k }); };
+    const defs = [
+      { label: 'Home', href: 'https://www.nslfcu.org/' },
+      { label: 'Accounts', href: 'https://www.nslfcu.org/accounts', menu: 'accounts' },
+      { label: 'Loans', href: 'https://www.nslfcu.org/loans', menu: 'loans' },
+      { label: 'News & Resources', href: 'https://www.nslfcu.org/news-and-resources', menu: 'news' },
+      { label: 'About us', href: 'https://www.nslfcu.org/about', menu: 'about' },
+    ];
+    const items = defs.map(d => {
+      const isActive = d.label === active, isOpen = d.menu && open === d.menu;
+      return {
+        label: d.label, href: d.href,
+        hasMenu: d.menu ? 'true' : undefined,
+        expanded: d.menu ? String(!!isOpen) : undefined,
+        current: isActive ? 'page' : undefined,
+        color: light ? 'var(--nsl-parchment)' : (isActive || isOpen ? 'var(--nsl-maroon)' : 'var(--nsl-ink)'),
+        lineScale: isActive || isOpen ? 'scaleX(1)' : 'scaleX(0)',
+        onEnter: () => { if (trigger === 'hover') setOpen(d.menu || null); },
+        onClick: e => { if (d.menu) { e.preventDefault(); setOpen(this.state.open === d.menu ? null : d.menu); } },
+      };
+    });
+    const show = k => open === k && !mobile;
+    return {
+      ...this.pageVals(),
+      items, solid, light, desktop: !mobile, mobile, mobileOpen: String(mobileOpen), mobilePanel: mobile && mobileOpen,
+      outerPad: scrolled ? '14px 16px 0' : '0px 0px 0',
+      barMax: scrolled ? '1120px' : '100%',
+      barH: scrolled ? (mobile ? '60px' : '66px') : (mobile ? '72px' : '88px'),
+      barPad: scrolled ? (mobile ? '0 8px 0 16px' : '0 14px 0 22px') : '0 clamp(20px,3vw,40px)',
+      mPanelPad: scrolled ? '10px 0 0' : '10px 12px 0',
+      mPanelMax: scrolled ? 'calc(100dvh - 104px)' : 'calc(100dvh - 94px)',
+      barBg: solid ? '#ffffff' : 'rgba(255,255,255,0)',
+      barRadius: scrolled ? '16px' : '0px',
+      barShadow: scrolled ? '0 18px 40px -18px rgba(36,16,25,.28), 0 0 0 1px rgba(36,16,25,.06)' : 'none',
+      barRule: solid && !scrolled ? '1px solid rgba(36,16,25,.08)' : '1px solid transparent',
+      logoBoxW: scrolled ? '34px' : '190px',
+      logoReverseOp: light ? 1 : 0,
+      logoPrimaryOp: solid && !scrolled ? 1 : 0,
+      logoMarkOp: scrolled ? 1 : 0,
+      accountsOp: show('accounts') ? 1 : 0, accountsVis: show('accounts') ? 'visible' : 'hidden', accountsY: show('accounts') ? 'translateY(0)' : 'translateY(-6px)',
+      newsOp: show('news') ? 1 : 0, newsVis: show('news') ? 'visible' : 'hidden', newsY: show('news') ? 'translateY(0)' : 'translateY(-6px)',
+      loansOp: show('loans') ? 1 : 0, loansVis: show('loans') ? 'visible' : 'hidden', loansY: show('loans') ? 'translateY(0)' : 'translateY(-6px)',
+      aboutOp: show('about') ? 1 : 0, aboutVis: show('about') ? 'visible' : 'hidden', aboutY: show('about') ? 'translateY(0)' : 'translateY(-6px)',
+      closeSoon: () => { if (trigger !== 'hover') return; clearTimeout(this.t); this.t = setTimeout(() => this.setState({ open: null }), 160); },
+      keepOpen: () => clearTimeout(this.t),
+      toggleMobile: () => this.setState(s => ({ mobileOpen: !s.mobileOpen })),
+      menuBtnLabel: mobileOpen ? 'Close' : 'Menu',
+      menuBtnColor: light ? 'var(--nsl-parchment)' : 'var(--nsl-maroon)',
+      menuBtnBorder: light ? 'rgba(247,236,214,.5)' : 'var(--nsl-maroon)',
+    };
+  }
+}
+</script>
+</body>
+</html>

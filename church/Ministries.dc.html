@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+<script src="../portfolio-guard.js" defer></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<title>Ministries | From the Heart Church Ministries of Tulsa</title>
+<meta name="description" content="Serve at From the Heart Church Ministries of Tulsa. Explore 14 ministries, from Choirs and Children's Church to Membership Care, the Food Pantry and Intercessory Prayer.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+body{margin:0;background:#FFFFFF;color:#111111;font-family:'Manrope',system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+a{color:#7A2140;text-decoration:none}a:hover{color:#111111}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:100px}
+@media (prefers-reduced-motion: reduce){*{transition:none !important}}
+</style>
+<script src="./image-slot.js"></script>
+</helmet>
+<template id="__bundler_thumbnail"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><rect width="100" height="100" fill="#0B0B0B"></rect><text x="50" y="64" text-anchor="middle" font-family="Georgia, serif" font-size="40" fill="#C9A45C">FtH</text></svg></template>
+
+<div style="background:#FFFFFF;min-height:100vh">
+
+<header data-screen-label="Nav" onMouseLeave="{{ closeSoon }}" style="position:fixed;top:0;left:0;right:0;z-index:50;padding:{{ outerPad }};transition:padding 320ms cubic-bezier(.2,.7,.2,1);pointer-events:none">
+    <div style="position:relative;margin:0 auto;max-width:{{ barMax }};pointer-events:auto;transition:max-width 320ms cubic-bezier(.2,.7,.2,1)">
+      <div style="display:flex;align-items:center;gap:{{ barGap }};height:{{ barH }};padding:{{ barPad }};background:{{ barBg }};border-radius:{{ barRadius }};box-shadow:{{ barShadow }};border-bottom:{{ barRule }};transition:all 320ms cubic-bezier(.2,.7,.2,1)">
+        <a href="Homepage E - Harmony v2.dc.html" aria-label="From the Heart Church Ministries of Tulsa, home" style="position:relative;display:block;flex:none;width:{{ logoBoxW }};height:40px;transition:width 320ms cubic-bezier(.2,.7,.2,1)">
+          <img src="assets/logo-white.png" alt="" style="position:absolute;left:0;top:50%;transform:translateY(-50%);height:{{ logoH }};width:auto;opacity:{{ logoReverseOp }};transition:opacity 200ms,height 320ms cubic-bezier(.2,.7,.2,1)">
+          <img src="assets/logo-black.png" alt="" style="position:absolute;left:0;top:50%;transform:translateY(-50%);height:{{ logoH }};width:auto;opacity:{{ logoPrimaryOp }};transition:opacity 200ms,height 320ms cubic-bezier(.2,.7,.2,1)">
+          <img src="assets/icon-black.png" alt="" style="position:absolute;left:0;top:50%;transform:translateY(-50%);height:32px;width:auto;opacity:{{ logoMarkOp }};transition:opacity 200ms">
+        </a>
+        <sc-if value="{{ desktop }}" hint-placeholder-val="{{ true }}">
+          <nav aria-label="Main" style="display:flex;align-items:center;gap:clamp(18px,2.4vw,36px);flex:1;min-width:0">
+            <sc-for list="{{ items }}" as="it" hint-placeholder-count="4">
+              <div onMouseEnter="{{ it.onEnter }}" style="position:relative">
+                <a href="{{ it.href }}" onClick="{{ it.onClick }}" aria-expanded="{{ it.expanded }}" aria-haspopup="{{ it.hasMenu }}" style="display:block;padding:10px 0;font-size:15px;font-weight:600;line-height:1;white-space:nowrap;text-decoration:none;color:{{ it.color }};transition:color 160ms">{{ it.label }}</a>
+                <span aria-hidden="true" style="position:absolute;left:0;right:0;bottom:2px;height:2px;background:#C9A45C;transform-origin:left;transform:{{ it.lineScale }};transition:transform 220ms cubic-bezier(.2,.7,.2,1)"></span>
+              </div>
+            </sc-for>
+          </nav>
+          <div style="display:flex;align-items:center;gap:10px;flex:none">
+            <a href="Livestream.dc.html" style="white-space:nowrap;font-size:14px;font-weight:700;color:{{ outlineFg }};border:1px solid {{ outlineBorder }};padding:11px 18px;border-radius:0;transition:transform 120ms ease-out,color 200ms" style-active="transform:scale(0.96)">Watch live</a>
+            <a href="Give.dc.html" style="white-space:nowrap;font-size:14px;font-weight:700;background:#C9A45C;color:#0B0B0B;padding:12px 20px;border-radius:999px;transition:transform 120ms ease-out" style-active="transform:scale(0.96)" style-hover="color:#0B0B0B;background:#D6B26A">Give</a>
+          </div>
+        </sc-if>
+        <sc-if value="{{ mobile }}" hint-placeholder-val="{{ false }}">
+          <div style="flex:1"></div>
+          <button onClick="{{ toggleMobile }}" aria-expanded="{{ mobileOpen }}" aria-label="{{ menuBtnLabel }}" style="flex:none;display:flex;align-items:center;gap:10px;height:44px;padding:0 16px;border-radius:0;border:1px solid {{ outlineBorder }};background:transparent;color:{{ outlineFg }};font:inherit;font-size:15px;font-weight:700;cursor:pointer;transition:transform 120ms ease-out" style-active="transform:scale(0.96)"><span style="position:relative;display:block;width:18px;height:12px"><span style="position:absolute;left:0;right:0;top:{{ m1Top }};height:2px;background:currentColor;transform:{{ m1Rot }};transition:all 260ms cubic-bezier(.2,.7,.2,1)"></span><span style="position:absolute;left:0;right:0;top:{{ m2Top }};height:2px;background:currentColor;transform:{{ m2Rot }};transition:all 260ms cubic-bezier(.2,.7,.2,1)"></span></span>{{ menuBtnLabel }}</button>
+        </sc-if>
+      </div>
+
+      <div role="region" aria-label="I'm New menu" onMouseEnter="{{ keepOpen }}" style="position:absolute;left:0;right:0;top:100%;padding-top:10px;opacity:{{ newOp }};visibility:{{ newVis }};transform:{{ newY }};transition:opacity 200ms, transform 240ms cubic-bezier(.2,.7,.2,1), visibility 200ms">
+        <div style="max-width:1120px;margin:0 auto;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.05fr);background:#FFFFFF;border-radius:0 28px 0 28px;overflow:hidden;box-shadow:0 30px 60px -24px rgba(10,10,10,.35),0 0 0 1px rgba(10,10,10,.06)">
+          <div style="padding:32px 28px 28px;display:grid;gap:4px;align-content:start">
+            <div style="font-size:12px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:#7A2140;padding:0 14px 12px">I'm New</div>
+            <a href="Plan a Visit.dc.html#expect" style="display:grid;gap:4px;padding:14px;border-radius:0;text-decoration:none;transition:background 160ms" style-hover="background:#F4F4F4"><span style="font-family:'Newsreader',serif;font-size:20px;line-height:1.2;color:#111111">What to expect</span><span style="font-size:14px;line-height:1.5;color:#555555">Spirit-filled worship, Christ-centered teaching, come as you are.</span></a>
+            <a href="Plan a Visit.dc.html#times" style="display:grid;gap:4px;padding:14px;border-radius:0;text-decoration:none;transition:background 160ms" style-hover="background:#F4F4F4"><span style="font-family:'Newsreader',serif;font-size:20px;line-height:1.2;color:#111111">Service times</span><span style="font-size:14px;line-height:1.5;color:#555555">Sunday Church School 10:00 a.m., Worship 11:00 a.m.</span></a>
+            <a href="Homepage E - Harmony v2.dc.html#salvation" style="display:grid;gap:4px;padding:14px;border-radius:0;text-decoration:none;transition:background 160ms" style-hover="background:#F4F4F4"><span style="font-family:'Newsreader',serif;font-size:20px;line-height:1.2;color:#111111">Plan of salvation</span><span style="font-size:14px;line-height:1.5;color:#555555">What it means to begin a life with Jesus Christ.</span></a>
+            <a href="Plan a Visit.dc.html#location" style="display:grid;gap:4px;padding:14px;border-radius:0;text-decoration:none;transition:background 160ms" style-hover="background:#F4F4F4"><span style="font-family:'Newsreader',serif;font-size:20px;line-height:1.2;color:#111111">Get directions</span><span style="font-size:14px;line-height:1.5;color:#555555">2211 North Harvard Ave., Tulsa, OK 74115.</span></a>
+            <a href="Plan a Visit.dc.html" style="display:inline-flex;gap:6px;padding:14px;font-size:15px;font-weight:700;color:#7A2140;text-decoration:none">Plan a visit <span style="display:inline-block;transform:rotate(-45deg);color:#C9A45C">→</span></a>
+          </div>
+          <div style="background:#F4F4F4;padding:32px;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px;align-content:start">
+            <a href="Plan a Visit.dc.html" style="display:grid;gap:12px;text-decoration:none;align-content:start" style-hover="opacity:.85"><img src="assets/family-welcome.png" alt="" style="width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:999px 999px 0 0;display:block"><span style="font-size:12px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:#7A2140">First Sunday</span><span style="font-family:'Newsreader',serif;font-size:19px;line-height:1.25;color:#111111">Your first Sunday, made simple</span><span style="font-size:14px;font-weight:700;color:#111111">Plan a visit <span style="display:inline-block;transform:rotate(-45deg);color:#C9A45C">→</span></span></a>
+            <a href="Plan a Visit.dc.html#expect" style="display:grid;gap:12px;text-decoration:none;align-content:start" style-hover="opacity:.85"><img src="assets/greeter-door.png" alt="" style="width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:0 0 40px 0;display:block"><span style="font-size:12px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:#7A2140">Questions</span><span style="font-family:'Newsreader',serif;font-size:19px;line-height:1.25;color:#111111">What to wear, where to park, kids and more</span><span style="font-size:14px;font-weight:700;color:#111111">What to expect <span style="display:inline-block;transform:rotate(-45deg);color:#C9A45C">→</span></span></a>
+          </div>
+        </div>
+      </div>
+
+      <div role="region" aria-label="About menu" onMouseEnter="{{ keepOpen }}" style="position:absolute;left:0;right:0;top:100%;padding-top:10px;opacity:{{ aboutOp }};visibility:{{ aboutVis }};transform:{{ aboutY }};transition:opacity 200ms, transform 240ms cubic-bezier(.2,.7,.2,1), visibility 200ms">
+        <div style="max-width:1120px;margin:0 auto;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.05fr);background:#FFFFFF;border-radius:0 28px 0 28px;overflow:hidden;box-shadow:0 30px 60px -24px rgba(10,10,10,.35),0 0 0 1px rgba(10,10,10,.06)">
+          <div style="padding:32px 28px 28px;display:grid;gap:4px;align-content:start">
+            <div style="font-size:12px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:#7A2140;padding:0 14px 12px">About</div>
+            <a href="Our Church.dc.html" style="display:grid;gap:4px;padding:14px;border-radius:0;text-decoration:none;transition:background 160ms" style-hover="background:#F4F4F4"><span style="font-family:'Newsreader',serif;font-size:20px;line-height:1.2;color:#111111">Our church</span><span style="font-size:14px;line-height:1.5;color:#555555">Who we are, what drives us and our story since 2002.</span></a>
+            <a href="Our Pastor.dc.html" style="display:grid;gap:4px;padding:14px;border-radius:0;text-decoration:none;transition:background 160ms" style-hover="background:#F4F4F4"><span style="font-family:'Newsreader',serif;font-size:20px;line-height:1.2;color:#111111">Our pastor</span><span style="font-size:14px;line-height:1.5;color:#555555">Pastor Michael A. Langham and First Lady Sharon Langham.</span></a>
+            <a href="Statement of Faith.dc.html" style="display:grid;gap:4px;padding:14px;border-radius:0;text-decoration:none;transition:background 160ms" style-hover="background:#F4F4F4"><span style="font-family:'Newsreader',serif;font-size:20px;line-height:1.2;color:#111111">Statement of faith</span><span style="font-size:14px;line-height:1.5;color:#555555">What we believe, simply and scripturally.</span></a>
+            <a href="https://www.fthcm.org" style="display:grid;gap:4px;padding:14px;border-radius:0;text-decoration:none;transition:background 160ms" style-hover="background:#F4F4F4"><span style="font-family:'Newsreader',serif;font-size:20px;line-height:1.2;color:#111111">Parent church</span><span style="font-size:14px;line-height:1.5;color:#555555">From the Heart Church Ministries Worldwide.</span></a>
+            <a href="News and Events.dc.html" style="display:grid;gap:4px;padding:14px;border-radius:0;text-decoration:none;transition:background 160ms" style-hover="background:#F4F4F4"><span style="font-family:'Newsreader',serif;font-size:20px;line-height:1.2;color:#111111">News &amp; events</span><span style="font-size:14px;line-height:1.5;color:#555555">Upcoming events and church family news.</span></a>
+            <a href="Contact.dc.html" style="display:grid;gap:4px;padding:14px;border-radius:0;text-decoration:none;transition:background 160ms" style-hover="background:#F4F4F4"><span style="font-family:'Newsreader',serif;font-size:20px;line-height:1.2;color:#111111">Contact us</span><span style="font-size:14px;line-height:1.5;color:#555555">Call, email or send the office a message.</span></a>
+            <a href="Our Church.dc.html" style="display:inline-flex;gap:6px;padding:14px;font-size:15px;font-weight:700;color:#7A2140;text-decoration:none">More about us <span style="display:inline-block;transform:rotate(-45deg);color:#C9A45C">→</span></a>
+          </div>
+          <div style="background:#F4F4F4;padding:32px;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px;align-content:start">
+            <a href="Our Pastor.dc.html" style="display:grid;gap:12px;text-decoration:none;align-content:start" style-hover="opacity:.85"><img src="assets/preaching-2.png" alt="" style="width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:999px 999px 0 0;display:block"><span style="font-size:12px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:#7A2140">Our pastor</span><span style="font-family:'Newsreader',serif;font-size:19px;line-height:1.25;color:#111111">Pastor Michael A. Langham</span><span style="font-size:14px;font-weight:700;color:#111111">Read his story <span style="display:inline-block;transform:rotate(-45deg);color:#C9A45C">→</span></span></a>
+            <a href="Our Church.dc.html#history" style="display:grid;gap:12px;text-decoration:none;align-content:start" style-hover="opacity:.85"><img src="assets/lobby-hugs.png" alt="" style="width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:0 0 40px 0;display:block"><span style="font-size:12px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:#7A2140">Our story</span><span style="font-family:'Newsreader',serif;font-size:19px;line-height:1.25;color:#111111">A family church where love abounds</span><span style="font-size:14px;font-weight:700;color:#111111">Our history <span style="display:inline-block;transform:rotate(-45deg);color:#C9A45C">→</span></span></a>
+          </div>
+        </div>
+      </div>
+
+      <div role="region" aria-label="Ministries menu" onMouseEnter="{{ keepOpen }}" style="position:absolute;left:0;right:0;top:100%;padding-top:10px;opacity:{{ ministriesOp }};visibility:{{ ministriesVis }};transform:{{ ministriesY }};transition:opacity 200ms, transform 240ms cubic-bezier(.2,.7,.2,1), visibility 200ms">
+        <div style="max-width:1120px;margin:0 auto;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.05fr);background:#FFFFFF;border-radius:0 28px 0 28px;overflow:hidden;box-shadow:0 30px 60px -24px rgba(10,10,10,.35),0 0 0 1px rgba(10,10,10,.06)">
+          <div style="padding:32px 28px 28px;display:grid;gap:4px;align-content:start">
+            <div style="font-size:12px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:#7A2140;padding:0 14px 12px">Ministries</div>
+            <a href="Ministries.dc.html#choirs" style="display:grid;gap:4px;padding:14px;border-radius:0;text-decoration:none;transition:background 160ms" style-hover="background:#F4F4F4"><span style="font-family:'Newsreader',serif;font-size:20px;line-height:1.2;color:#111111">Choirs</span><span style="font-size:14px;line-height:1.5;color:#555555">Adult, Men's and Young Adult choirs.</span></a>
+            <a href="Ministries.dc.html#childrens-church" style="display:grid;gap:4px;padding:14px;border-radius:0;text-decoration:none;transition:background 160ms" style-hover="background:#F4F4F4"><span style="font-family:'Newsreader',serif;font-size:20px;line-height:1.2;color:#111111">Children's Church</span><span style="font-size:14px;line-height:1.5;color:#555555">Christ-centered teaching for kids under 9.</span></a>
+            <a href="Ministries.dc.html#membership-care" style="display:grid;gap:4px;padding:14px;border-radius:0;text-decoration:none;transition:background 160ms" style-hover="background:#F4F4F4"><span style="font-family:'Newsreader',serif;font-size:20px;line-height:1.2;color:#111111">Membership Care</span><span style="font-size:14px;line-height:1.5;color:#555555">New member care and the Food Pantry.</span></a>
+            <a href="Ministries.dc.html#intercessory-prayer" style="display:grid;gap:4px;padding:14px;border-radius:0;text-decoration:none;transition:background 160ms" style-hover="background:#F4F4F4"><span style="font-family:'Newsreader',serif;font-size:20px;line-height:1.2;color:#111111">Intercessory Prayer</span><span style="font-size:14px;line-height:1.5;color:#555555">Praying for our pastor, members and families.</span></a>
+            <a href="Ministries.dc.html#directory" style="display:inline-flex;gap:6px;padding:14px;font-size:15px;font-weight:700;color:#7A2140;text-decoration:none">All 14 ministries <span style="display:inline-block;transform:rotate(-45deg);color:#C9A45C">→</span></a>
+          </div>
+          <div style="background:#F4F4F4;padding:32px;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px;align-content:start">
+            <a href="Ministries.dc.html#membership-care" style="display:grid;gap:12px;text-decoration:none;align-content:start" style-hover="opacity:.85"><img src="assets/food-pantry.png" alt="" style="width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:999px 999px 0 0;display:block"><span style="font-size:12px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:#7A2140">Outreach</span><span style="font-family:'Newsreader',serif;font-size:19px;line-height:1.25;color:#111111">The From the Heart Food Pantry</span><span style="font-size:14px;font-weight:700;color:#111111">Learn more <span style="display:inline-block;transform:rotate(-45deg);color:#C9A45C">→</span></span></a>
+            <a href="Ministries.dc.html#serve" style="display:grid;gap:12px;text-decoration:none;align-content:start" style-hover="opacity:.85"><img src="assets/praise-team.png" alt="" style="width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:0 0 40px 0;display:block"><span style="font-size:12px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:#7A2140">Serve</span><span style="font-family:'Newsreader',serif;font-size:19px;line-height:1.25;color:#111111">Find your place to serve</span><span style="font-size:14px;font-weight:700;color:#111111">Get involved <span style="display:inline-block;transform:rotate(-45deg);color:#C9A45C">→</span></span></a>
+          </div>
+        </div>
+      </div>
+      <sc-if value="{{ mobilePanel }}" hint-placeholder-val="{{ false }}">
+        <div style="position:absolute;left:0;right:0;top:100%;padding:{{ mPanelPad }}">
+          <div style="background:#FFFFFF;border-radius:0 0 28px 28px;box-shadow:0 30px 60px -24px rgba(10,10,10,.35),0 0 0 1px rgba(10,10,10,.06);padding:12px 20px 20px;max-height:{{ mPanelMax }};overscroll-behavior:contain;overflow:auto;display:grid">
+            <div style="padding:14px 0;border-bottom:1px solid #E5E5E5;display:grid;gap:8px"><span style="font-family:'Newsreader',serif;font-size:22px;color:#111111">I'm New</span><div style="display:grid;gap:2px">
+              <a href="Plan a Visit.dc.html#expect" onClick="{{ closeMobile }}" style="padding:10px 0;font-size:16px;font-weight:500;color:#555555;text-decoration:none">What to expect</a>
+              <a href="Plan a Visit.dc.html#times" onClick="{{ closeMobile }}" style="padding:10px 0;font-size:16px;font-weight:500;color:#555555;text-decoration:none">Service times</a>
+              <a href="Homepage E - Harmony v2.dc.html#salvation" onClick="{{ closeMobile }}" style="padding:10px 0;font-size:16px;font-weight:500;color:#555555;text-decoration:none">Plan of salvation</a>
+              <a href="Plan a Visit.dc.html#location" onClick="{{ closeMobile }}" style="padding:10px 0;font-size:16px;font-weight:500;color:#555555;text-decoration:none">Get directions</a>
+            </div></div>
+            <div style="padding:14px 0;border-bottom:1px solid #E5E5E5;display:grid;gap:8px"><span style="font-family:'Newsreader',serif;font-size:22px;color:#111111">About</span><div style="display:grid;gap:2px">
+              <a href="Our Church.dc.html" onClick="{{ closeMobile }}" style="padding:10px 0;font-size:16px;font-weight:500;color:#555555;text-decoration:none">Our church</a>
+              <a href="Our Pastor.dc.html" onClick="{{ closeMobile }}" style="padding:10px 0;font-size:16px;font-weight:500;color:#555555;text-decoration:none">Our pastor</a>
+              <a href="Statement of Faith.dc.html" onClick="{{ closeMobile }}" style="padding:10px 0;font-size:16px;font-weight:500;color:#555555;text-decoration:none">Statement of faith</a>
+              <a href="https://www.fthcm.org" onClick="{{ closeMobile }}" style="padding:10px 0;font-size:16px;font-weight:500;color:#555555;text-decoration:none">Parent church</a>
+              <a href="News and Events.dc.html" onClick="{{ closeMobile }}" style="padding:10px 0;font-size:16px;font-weight:500;color:#555555;text-decoration:none">News &amp; events</a>
+              <a href="Contact.dc.html" onClick="{{ closeMobile }}" style="padding:10px 0;font-size:16px;font-weight:500;color:#555555;text-decoration:none">Contact us</a>
+            </div></div>
+            <div style="padding:14px 0;border-bottom:1px solid #E5E5E5;display:grid;gap:8px"><span style="font-family:'Newsreader',serif;font-size:22px;color:#111111">Ministries</span><div style="display:grid;gap:2px">
+              <a href="Ministries.dc.html#choirs" onClick="{{ closeMobile }}" style="padding:10px 0;font-size:16px;font-weight:500;color:#555555;text-decoration:none">Choirs</a>
+              <a href="Ministries.dc.html#childrens-church" onClick="{{ closeMobile }}" style="padding:10px 0;font-size:16px;font-weight:500;color:#555555;text-decoration:none">Children's Church</a>
+              <a href="Ministries.dc.html#membership-care" onClick="{{ closeMobile }}" style="padding:10px 0;font-size:16px;font-weight:500;color:#555555;text-decoration:none">Membership Care</a>
+              <a href="Ministries.dc.html#intercessory-prayer" onClick="{{ closeMobile }}" style="padding:10px 0;font-size:16px;font-weight:500;color:#555555;text-decoration:none">Intercessory Prayer</a>
+            </div></div>
+            <a href="News and Events.dc.html" onClick="{{ closeMobile }}" style="padding:16px 0;border-bottom:1px solid #E5E5E5;font-family:'Newsreader',serif;font-size:22px;color:#111111;text-decoration:none">News &amp; Events</a>
+            <a href="Livestream.dc.html" onClick="{{ closeMobile }}" style="padding:16px 0;border-bottom:1px solid #E5E5E5;font-family:'Newsreader',serif;font-size:22px;color:#111111;text-decoration:none">Livestream</a>
+            <a href="Shop.dc.html" onClick="{{ closeMobile }}" style="padding:16px 0;border-bottom:1px solid #E5E5E5;font-family:'Newsreader',serif;font-size:22px;color:#111111;text-decoration:none">Shop</a>
+            <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:16px">
+              <a href="Livestream.dc.html" onClick="{{ closeMobile }}" style="text-align:center;font-size:15px;font-weight:700;color:#111111;border:1px solid #111111;padding:15px 0;border-radius:0">Watch live</a>
+              <a href="Give.dc.html" style="text-align:center;font-size:15px;font-weight:700;background:#C9A45C;color:#0B0B0B;padding:15px 0;border-radius:999px">Give</a>
+            </div>
+          </div>
+        </div>
+      </sc-if>
+    </div>
+  </header>
+
+<section data-screen-label="Hero" style="position:relative;min-height:78vh;display:flex;flex-direction:column;overflow:hidden;color:#FFFFFF;background:#0B0B0B">
+  <img src="assets/praise-team.png" alt="Praise team leading worship at From the Heart Church in Tulsa" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 35%">
+  <div style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(10,10,10,0.72) 0%,rgba(10,10,10,0.9) 100%)"></div>
+  <div style="height:88px;flex:none"></div>
+  <div style="position:relative;flex:1;display:flex;flex-direction:column;justify-content:flex-end;max-width:1280px;width:100%;margin:0 auto;padding:120px 32px 72px">
+    <p style="margin:0;font-size:12px;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:#C9A45C">Ministries</p>
+    <h1 style="margin:18px 0 0;font-family:'Newsreader',serif;font-weight:400;font-size:clamp(44px,7vw,104px);line-height:0.96;letter-spacing:-0.03em;max-width:13ch;text-wrap:balance">Your gifts, in the service of the Lord.</h1>
+    <div style="margin-top:48px;padding-top:28px;border-top:1px solid rgba(201,164,92,0.45);display:flex;justify-content:space-between;align-items:flex-end;gap:32px;flex-wrap:wrap">
+      <p style="margin:0;font-size:19px;line-height:1.55;color:#DDDDDD;max-width:46ch;text-wrap:pretty">Fourteen ministries keep From the Heart going, from the choir stand to the Food Pantry. Your share is important, necessary and sufficient.</p>
+      <div style="display:flex;gap:12px;flex-wrap:wrap">
+        <a href="#directory" style="background:#C9A45C;color:#2A0F1A;padding:15px 26px;border-radius:999px;font-weight:700;font-size:15px;transition:transform 120ms ease-out" style-active="transform:scale(0.96)" style-hover="color:#2A0F1A;background:#D6B26A">Find your ministry →</a>
+        <a href="#serve" style="border:1px solid rgba(201,164,92,0.7);color:#FFFFFF;padding:15px 26px;border-radius:0;font-weight:700;font-size:15px;transition:transform 120ms ease-out" style-active="transform:scale(0.96)" style-hover="color:#fff">Sign up to serve</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="directory" data-screen-label="Directory" style="max-width:1280px;margin:0 auto;padding:110px 32px 0;scroll-margin-top:90px">
+  <div style="display:flex;justify-content:space-between;align-items:end;gap:32px;flex-wrap:wrap">
+    <h2 style="margin:0;font-size:clamp(36px,4.4vw,56px);font-weight:500;letter-spacing:-0.04em;line-height:1.02;text-transform:uppercase;color:#111111">Find your place<br><span style="color:#A3A3A6">14 ways to serve</span></h2>
+    <p style="margin:0;font-size:16px;line-height:1.55;color:#555555;max-width:38ch">Filter by the kind of work you love. Tap a ministry to read more, or add it to your sign-up.</p>
+  </div>
+  <div role="tablist" aria-label="Filter ministries" style="display:flex;gap:8px;margin-top:40px;overflow-x:auto;scrollbar-width:none;padding-bottom:4px">
+    <sc-for list="{{ filters }}" as="f" hint-placeholder-count="4">
+      <button role="tab" aria-selected="{{ f.sel }}" onClick="{{ f.pick }}" style="flex:none;display:flex;align-items:center;gap:8px;font:inherit;font-size:15px;font-weight:600;padding:12px 18px;border-radius:999px;border:1px solid {{ f.bd }};background:{{ f.bg }};color:{{ f.fg }};cursor:pointer;white-space:nowrap;transition:all 160ms" style-active="transform:scale(0.96)">{{ f.label }}<span style="font-size:13px;font-weight:700;color:{{ f.cnt }}">{{ f.count }}</span></button>
+    </sc-for>
+  </div>
+  <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,320px),1fr));gap:64px 28px;margin-top:48px">
+    <sc-for list="{{ ministries }}" as="m" hint-placeholder-count="6">
+      <article id="{{ m.id }}" style="display:flex;flex-direction:column;scroll-margin-top:100px">
+        <div style="position:relative;aspect-ratio:4/3;border-radius:{{ m.radius }};overflow:hidden;background:#F4F4F4">
+          <image-slot id="{{ m.slotId }}" shape="rect" placeholder="{{ m.ph }}" style="position:absolute;inset:0;width:100%;height:100%"></image-slot>
+        </div>
+        <div style="display:flex;justify-content:space-between;align-items:baseline;gap:12px;margin-top:22px;padding-top:14px;border-top:1px solid #C9A45C">
+          <span style="font-size:13px;font-weight:700;color:#B08A3E">{{ m.n }}</span>
+          <span style="font-size:12px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:#7A2140">{{ m.catLabel }}</span>
+        </div>
+        <h3 style="margin:12px 0 0;font-family:'Newsreader',serif;font-weight:400;font-size:30px;line-height:1.08;letter-spacing:-0.015em;color:#111111">{{ m.title }}</h3>
+        <p style="margin:10px 0 0;font-size:16px;line-height:1.55;color:#555555;text-wrap:pretty">{{ m.summary }}</p>
+        <div style="display:grid;grid-template-rows:{{ m.rows }};transition:grid-template-rows 320ms cubic-bezier(0.32,0.72,0,1)"><div style="overflow:hidden"><p style="margin:14px 0 0;padding:16px 0 0;border-top:1px solid #E5E5E5;font-size:15px;line-height:1.65;color:#333333;text-wrap:pretty">{{ m.full }}</p></div></div>
+        <div style="display:flex;gap:16px;flex-wrap:wrap;align-items:center;margin-top:auto;padding-top:22px">
+          <button onClick="{{ m.join }}" aria-pressed="{{ m.pressed }}" style="font:inherit;font-size:14px;font-weight:700;padding:12px 18px;border-radius:999px;border:1px solid {{ m.joinBd }};background:{{ m.joinBg }};color:{{ m.joinFg }};cursor:pointer;transition:all 160ms" style-active="transform:scale(0.96)">{{ m.joinLabel }}</button>
+          <button onClick="{{ m.toggle }}" aria-expanded="{{ m.expanded }}" style="display:flex;align-items:center;gap:8px;font:inherit;font-size:14px;font-weight:600;padding:12px 0;border:0;background:none;color:#111111;cursor:pointer"><span style="color:#C9A45C;font-size:24px;font-weight:800;line-height:0.6;transition:transform 300ms cubic-bezier(0.32,0.72,0,1);transform:{{ m.rot }}">+</span>{{ m.moreLabel }}</button>
+        </div>
+      </article>
+    </sc-for>
+  </div>
+</section>
+
+<section id="serve" data-screen-label="Sign up" style="background:#0B0B0B;color:#FFFFFF;margin-top:130px;scroll-margin-top:80px">
+  <div style="max-width:1280px;margin:0 auto;padding:110px 32px;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,400px),1fr));gap:64px;align-items:start">
+    <div>
+      <p style="margin:0;font-size:12px;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:#C9A45C">Sign up to serve</p>
+      <h2 style="margin:16px 0 0;font-family:'Newsreader',serif;font-weight:400;font-size:clamp(48px,6vw,80px);letter-spacing:-0.02em;line-height:0.96">Ready to serve?<br>Tell us where.</h2>
+      <p style="margin:24px 0 0;font-size:18px;line-height:1.6;color:#DDDDDD;max-width:42ch">Pick one ministry or a few. A ministry leader will reach out with next steps. Not sure yet? Leave it open and we'll help you find your fit.</p>
+      <div style="margin-top:40px;position:relative;aspect-ratio:16/10;border-radius:999px 999px 0 0;overflow:hidden;max-width:480px">
+        <img src="assets/handshake-outside.png" alt="Members greeting one another outside the church" style="width:100%;height:100%;object-fit:cover;display:block">
+      </div>
+      <div style="margin-top:28px;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px;max-width:480px">
+        <div style="border-top:1px solid #C9A45C;padding-top:14px"><div style="font-size:13px;font-weight:700;color:#C9A45C">Call the office</div><a href="tel:9188958272" style="display:block;margin-top:6px;font-size:16px;font-weight:700;color:#FFFFFF">918-895-8272</a></div>
+        <div style="border-top:1px solid #C9A45C;padding-top:14px"><div style="font-size:13px;font-weight:700;color:#C9A45C">Email us</div><a href="mailto:office@fthcmoftulsa.org" style="display:block;margin-top:6px;font-size:16px;font-weight:700;color:#FFFFFF;overflow-wrap:anywhere">office@fthcmoftulsa.org</a></div>
+      </div>
+    </div>
+    <div style="background:#FFFFFF;color:#111111;border-radius:0 48px 0 48px;padding:clamp(28px,4vw,48px)">
+      <sc-if value="{{ formOpen }}" hint-placeholder-val="{{ true }}">
+        <form onSubmit="{{ submit }}" style="display:grid;gap:18px">
+          <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,180px),1fr));gap:16px">
+            <label style="display:grid;gap:8px;font-size:13px;font-weight:700;color:#333333">First name<input name="first" required="required" autocomplete="given-name" style="width:100%;font:inherit;font-size:16px;color:#111111;background:#FFFFFF;border:1px solid #D4D4D4;border-radius:0;padding:14px 16px;outline:none" style-focus="border-color:#111111"></label>
+            <label style="display:grid;gap:8px;font-size:13px;font-weight:700;color:#333333">Last name<input name="last" autocomplete="family-name" style="width:100%;font:inherit;font-size:16px;color:#111111;background:#FFFFFF;border:1px solid #D4D4D4;border-radius:0;padding:14px 16px;outline:none" style-focus="border-color:#111111"></label>
+          </div>
+          <label style="display:grid;gap:8px;font-size:13px;font-weight:700;color:#333333">Email<input name="email" type="email" required="required" autocomplete="email" style="width:100%;font:inherit;font-size:16px;color:#111111;background:#FFFFFF;border:1px solid #D4D4D4;border-radius:0;padding:14px 16px;outline:none" style-focus="border-color:#111111"></label>
+          <label style="display:grid;gap:8px;font-size:13px;font-weight:700;color:#333333">Phone (optional)<input name="phone" type="tel" autocomplete="tel" style="width:100%;font:inherit;font-size:16px;color:#111111;background:#FFFFFF;border:1px solid #D4D4D4;border-radius:0;padding:14px 16px;outline:none" style-focus="border-color:#111111"></label>
+          <div style="display:grid;gap:10px;font-size:13px;font-weight:700;color:#333333"><span>Where would you like to serve? <span style="font-weight:600;color:#7A2140">{{ pickCount }}</span></span>
+            <div style="display:flex;flex-wrap:wrap;gap:8px">
+              <sc-for list="{{ chips }}" as="c" hint-placeholder-count="14">
+                <button type="button" onClick="{{ c.pick }}" aria-pressed="{{ c.pressed }}" style="font:inherit;font-size:14px;font-weight:600;padding:9px 14px;border-radius:999px;border:1px solid {{ c.bd }};background:{{ c.bg }};color:{{ c.fg }};cursor:pointer;transition:all 160ms">{{ c.label }}</button>
+              </sc-for>
+            </div>
+          </div>
+          <label style="display:grid;gap:8px;font-size:13px;font-weight:700;color:#333333">Anything we should know? (optional)<textarea name="note" rows="4" style="width:100%;font:inherit;font-size:16px;color:#111111;background:#FFFFFF;border:1px solid #D4D4D4;border-radius:0;padding:14px 16px;outline:none;resize:vertical;line-height:1.5" style-focus="border-color:#111111"></textarea></label>
+          <button type="submit" style="justify-self:start;background:#C9A45C;color:#0B0B0B;border:0;padding:16px 28px;border-radius:999px;font:inherit;font-size:15px;font-weight:700;cursor:pointer;transition:transform 120ms ease-out" style-active="transform:scale(0.96)" style-hover="background:#D6B26A">Send my sign-up</button>
+        </form>
+      </sc-if>
+      <sc-if value="{{ sent }}" hint-placeholder-val="{{ false }}">
+        <div style="padding:40px 0;display:grid;gap:16px">
+          <img src="assets/icon-black.png" alt="" style="width:40px;height:40px">
+          <h3 style="margin:0;font-family:'Newsreader',serif;font-weight:400;font-size:40px;line-height:1.05">Thank you, {{ sentName }}.</h3>
+          <p style="margin:0;font-size:17px;line-height:1.6;color:#444444;max-width:42ch">{{ sentMsg }}</p>
+          <button onClick="{{ reset }}" style="justify-self:start;background:none;border:1px solid #111111;padding:13px 22px;border-radius:0;font:inherit;font-size:15px;font-weight:700;cursor:pointer;color:#111111">Send another</button>
+        </div>
+      </sc-if>
+    </div>
+  </div>
+</section>
+
+<footer style="background:#0B0B0B;color:#BBBBBB;margin-top:0">
+  <div style="max-width:1280px;margin:0 auto;padding:72px 32px 40px;display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:40px;font-size:15px">
+    <div style="display:flex;flex-direction:column;gap:16px"><img src="assets/logo-white.png" alt="From the Heart Church Ministries of Tulsa" style="width:230px;height:auto"><span>A Family Church Where Love Abounds.</span></div>
+    <div style="display:flex;flex-direction:column;gap:10px"><span style="font-size:12px;letter-spacing:0.16em;text-transform:uppercase;font-weight:700;color:#C9A45C">Visit</span><a href="https://goo.gl/maps/hcRnZHW9dxPtTtWm8" style="color:#BBBBBB">2211 North Harvard Ave.<br>Tulsa, OK 74115</a><a href="tel:9188958272" style="color:#BBBBBB">918-895-8272</a><a href="mailto:office@fthcmoftulsa.org" style="color:#BBBBBB">office@fthcmoftulsa.org</a></div>
+    <div style="display:flex;flex-direction:column;gap:10px"><span style="font-size:12px;letter-spacing:0.16em;text-transform:uppercase;font-weight:700;color:#C9A45C">Times</span><span>Sun 10:00 a.m. Church School</span><span>Sun 11:00 a.m. Worship</span><span>Wed 12:00 p.m. Noon Day Prayer</span><span>Wed 7:00 p.m. Bible Study</span></div>
+    <div style="display:flex;flex-direction:column;gap:10px"><span style="font-size:12px;letter-spacing:0.16em;text-transform:uppercase;font-weight:700;color:#C9A45C">Connect</span><a href="Contact.dc.html" style="color:#BBBBBB">Contact us</a><a href="Homepage E - Harmony v2.dc.html#prayer" style="color:#BBBBBB">Prayer request</a><a href="News and Events.dc.html" style="color:#BBBBBB">News &amp; events</a><a href="Give.dc.html" style="color:#BBBBBB">Give</a><a href="https://onrealm.org/fthcmoftulsa" style="color:#BBBBBB">Member login</a><a href="https://www.fthcm.org" style="color:#BBBBBB">Parent church</a></div>
+  </div>
+  <div style="max-width:1280px;margin:0 auto;padding:24px 32px 36px;border-top:1px solid rgba(255,255,255,0.08);font-size:13px;color:#888888;display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px"><span>© 2026 From the Heart Church Ministries of Tulsa</span><span>Romans 6:17</span></div>
+</footer>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;trigger&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;hover&quot;,&quot;click&quot;],&quot;default&quot;:&quot;hover&quot;,&quot;tsType&quot;:&quot;'hover'|'click'&quot;,&quot;section&quot;:&quot;Nav&quot;}}">
+class Component extends DCLogic {
+  state = { scrolled: false, menu: null, mobile: false, mobileOpen: false, filter: 'all', openId: null, picks: [], sent: false, sentName: '', sentMsg: '' };
+  componentDidMount() {
+    this.onScroll = () => { const s = window.scrollY > 24; if (s !== this.state.scrolled) this.setState({ scrolled: s }); };
+    this.mq = window.matchMedia('(max-width: 1120px)');
+    this.onMq = () => this.setState({ mobile: this.mq.matches, menu: null, mobileOpen: false });
+    this.onKey = e => { if (e.key === 'Escape') this.setState({ menu: null, mobileOpen: false }); };
+    this.onDoc = e => { if (!e.target.closest('header')) this.setState({ menu: null }); };
+    window.addEventListener('scroll', this.onScroll, { passive: true });
+    this.mq.addEventListener('change', this.onMq);
+    document.addEventListener('keydown', this.onKey);
+    document.addEventListener('click', this.onDoc);
+    this.onScroll(); this.onMq();
+  }
+  componentDidUpdate() { document.documentElement.style.overflow = this.state.mobile && this.state.mobileOpen ? 'hidden' : ''; }
+  componentWillUnmount() {
+    document.documentElement.style.overflow = '';
+    window.removeEventListener('scroll', this.onScroll); this.mq.removeEventListener('change', this.onMq);
+    document.removeEventListener('keydown', this.onKey); document.removeEventListener('click', this.onDoc); clearTimeout(this.t);
+  }
+  navVals() {
+    const trigger = this.props.trigger ?? 'hover';
+    const { scrolled, menu, mobile, mobileOpen } = this.state;
+    const solid = scrolled || !!menu || mobileOpen, light = !solid;
+    const setOpen = k => { clearTimeout(this.t); if (this.state.menu !== k) this.setState({ menu: k }); };
+    const defs = [
+      { label: "I'm New", href: 'Homepage E - Harmony v2.dc.html#paths', menu: 'new' }, { label: 'About', href: 'Homepage E - Harmony v2.dc.html#about', menu: 'about' },
+      { label: 'Ministries', href: '#directory', menu: 'ministries' }, { label: 'News & Events', href: 'News and Events.dc.html' }, { label: 'Livestream', href: 'Livestream.dc.html' }, { label: 'Shop', href: 'Shop.dc.html' }
+    ];
+    const items = defs.map(d => { const on = d.menu && menu === d.menu; return {
+      label: d.label, href: d.href, hasMenu: d.menu ? 'true' : undefined, expanded: d.menu ? String(!!on) : undefined,
+      color: light ? '#FFFFFF' : (on ? '#7A2140' : '#111111'), lineScale: on ? 'scaleX(1)' : 'scaleX(0)',
+      onEnter: () => { if (trigger === 'hover') setOpen(d.menu || null); },
+      onClick: e => { if (d.menu) { e.preventDefault(); setOpen(this.state.menu === d.menu ? null : d.menu); } else setOpen(null); } }; });
+    const show = k => menu === k && !mobile, o = {};
+    ['new', 'about', 'ministries'].forEach(k => { o[k + 'Op'] = show(k) ? 1 : 0; o[k + 'Vis'] = show(k) ? 'visible' : 'hidden'; o[k + 'Y'] = show(k) ? 'translateY(0)' : 'translateY(-6px)'; });
+    return { ...o, items, desktop: !mobile, mobile, mobileOpen: String(mobileOpen), mobilePanel: mobile && mobileOpen,
+      outerPad: scrolled ? '14px 16px 0' : '0px 0px 0', barMax: scrolled ? '1120px' : '100%',
+      barH: scrolled ? (mobile ? '60px' : '66px') : (mobile ? '72px' : '88px'),
+      barPad: scrolled ? (mobile ? '0 8px 0 16px' : '0 14px 0 22px') : '0 clamp(20px,3vw,40px)',
+      mPanelPad: scrolled ? '10px 0 0' : '10px 12px 0', mPanelMax: scrolled ? 'calc(100dvh - 104px)' : 'calc(100dvh - 94px)',
+      barBg: solid ? '#FFFFFF' : 'rgba(255,255,255,0)', barRadius: scrolled ? '0 24px 0 24px' : '0px',
+      barShadow: scrolled ? '0 18px 40px -18px rgba(10,10,10,.28), 0 0 0 1px rgba(10,10,10,.06)' : 'none',
+      barRule: solid && !scrolled ? '1px solid rgba(10,10,10,.08)' : '1px solid transparent',
+      logoBoxW: scrolled ? '34px' : (mobile ? '170px' : '240px'), logoH: scrolled ? '28px' : (mobile ? '32px' : '44px'), barGap: mobile ? '12px' : '28px', logoReverseOp: light ? 1 : 0, logoPrimaryOp: solid && !scrolled ? 1 : 0, logoMarkOp: scrolled ? 1 : 0,
+      outlineFg: light ? '#FFFFFF' : '#111111', outlineBorder: light ? 'rgba(201,164,92,0.7)' : '#111111',
+      closeSoon: () => { if (trigger !== 'hover') return; clearTimeout(this.t); this.t = setTimeout(() => this.setState({ menu: null }), 160); },
+      keepOpen: () => clearTimeout(this.t),
+      toggleMobile: () => this.setState(s => ({ mobileOpen: !s.mobileOpen })), closeMobile: () => this.setState({ mobileOpen: false }),
+      menuBtnLabel: mobileOpen ? 'Close' : 'Menu',
+      m1Top: mobileOpen ? '5px' : '0px', m2Top: mobileOpen ? '5px' : '10px', m1Rot: mobileOpen ? 'rotate(45deg)' : 'none', m2Rot: mobileOpen ? 'rotate(-45deg)' : 'none' };
+  }
+  pageVals() {
+    const cats = { worship: 'Worship & teaching', care: 'Care & outreach', welcome: 'Welcome & hospitality' };
+    const M = [
+      { id: 'altar', cat: 'worship', title: 'Altar Ministry', summary: 'Prepares the altar for baptisms, unions and weddings, and runs the Clothing Center.', full: 'Prepares the altar and elements for Baptismal Services, Spiritual Unions and Weddings, and assists the Office of the Pastor as requested. Also operates and manages the From the Heart Clothing Center, available to members.' },
+      { id: 'bookstore', cat: 'worship', title: 'Bookstore Ministry', summary: 'Duplicates each message on CD and DVD and runs the church Bookstore.', full: 'Duplicates and distributes CDs and DVDs after Worship Services, and operates the church Bookstore.' },
+      { id: 'childrens-church', cat: 'worship', title: "Children's Church", summary: 'Teaches our little ones the Word in a safe, creative room.', full: 'Teaches our little ones the Word of God in a simple, Christ-centered way, at their level of learning, and provides a safe and creative environment to learn in.' },
+      { id: 'choirs', cat: 'worship', title: 'Choirs', summary: "Adult, Men's and Young Adult choirs lead the congregation in song.", full: 'Leads the congregation in song during Worship and Holy Communion Services, and at other programs as requested.' },
+      { id: 'church-school', cat: 'worship', title: 'Church School', summary: 'Bible learning for members and the community, Sundays at 10:00 a.m.', full: "Supports the overall Biblical learning of From the Heart of Tulsa. Through a variety of engaging experiences, members and the community increase in the knowledge of God and of Jesus Christ our Lord, so that God's grace and peace may abound." },
+      { id: 'community-outreach', cat: 'care', title: 'Community Outreach', summary: 'Shares the Gospel in the neighborhood around the church.', full: 'Witnesses the Gospel of the Lord Jesus Christ throughout the community around the church, to lead neighbors to salvation and help them get involved in a Bible-believing, Bible-teaching church.' },
+      { id: 'courtesy', cat: 'welcome', title: 'Courtesy Committee', summary: 'Prepares and serves food for fellowships and celebrations.', full: 'Prepares and serves natural nourishment (food) for all fellowships, celebrations and special occasions, as requested by the Pastor.' },
+      { id: 'expressions-of-joy', cat: 'welcome', title: 'Expressions of Joy', summary: 'Fills the church with a visual atmosphere of joy.', full: 'Provides a visual atmosphere of joy in the church through decorations.' },
+      { id: 'health-recovery', cat: 'care', title: 'Health and Recovery', summary: 'Health education and help with medical needs, with compassion.', full: 'Assists the church in Health Education and medical needs, with care and compassion.' },
+      { id: 'intercessory-prayer', cat: 'care', title: 'Intercessory Prayer', summary: 'Prays for the pastor, members, families and the Body of Christ.', full: 'Intercedes in prayer for the pastor, the membership and family members of the church, as well as the overall Body of Christ. Need prayer? Send a request from our homepage.' },
+      { id: 'membership-care', cat: 'care', title: 'Membership Care', summary: 'Welcomes new members, checks on our church family and runs the Food Pantry.', full: 'Receives new members when they join and encourages them toward full membership. Follows up with new converts to help them keep their commitment to the Lord Jesus Christ. On behalf of the pastor, checks on the spiritual, emotional and physical well-being of the membership, and makes sure members and their families can access membership benefits and services. Also operates and manages the From the Heart Food Pantry, available to members.' },
+      { id: 'multimedia', cat: 'worship', title: 'Multimedia', summary: 'Audio and video that carry the Gospel beyond our walls.', full: 'Builds the technology that helps spread the Gospel beyond the church building, in support of the vision of the church. Provides audio and video coverage of Worship Services and special events.' },
+      { id: 'physical-stewardship', cat: 'welcome', title: 'Physical Stewardship', summary: 'Keeps our building clean, maintained and beautiful.', full: 'Provides maintenance and cleaning support for the beautification of ministry facilities.' },
+      { id: 'usher', cat: 'welcome', title: 'Usher Ministry', summary: 'Greets every guest, helps with seating and collects tithes and offerings.', full: 'Greets all members, guests and visitors, helps with seating and directions to different parts of the building, and collects the tithes and offerings.' }
+    ];
+    const { filter, openId, picks } = this.state, pad = i => String(i + 1).padStart(2, '0');
+    const radii = ['0 0 40px 0', '999px 999px 0 0', '40px 0 40px 0'];
+    const add = id => this.setState(s => ({ picks: s.picks.includes(id) ? s.picks.filter(x => x !== id) : [...s.picks, id] }));
+    const toServe = () => { const el = document.getElementById('serve'); if (el) window.scrollTo({ top: el.getBoundingClientRect().top + window.scrollY - 80, behavior: 'smooth' }); };
+    const list = M.filter(m => filter === 'all' || m.cat === filter);
+    return {
+      filters: [['all', 'All ministries'], ...Object.entries(cats)].map(([k, label]) => { const on = filter === k; return { label, count: k === 'all' ? M.length : M.filter(m => m.cat === k).length, sel: String(on), bg: on ? '#111111' : '#FFFFFF', fg: on ? '#FFFFFF' : '#111111', bd: on ? '#111111' : '#D4D4D4', cnt: on ? '#C9A45C' : '#8A8A8A', pick: () => this.setState({ filter: k, openId: null }) }; }),
+      ministries: list.map((m, i) => { const open = openId === m.id, on = picks.includes(m.id); return { ...m, n: pad(M.indexOf(m)), catLabel: cats[m.cat], slotId: 'ministry-' + m.id, ph: 'Photo: ' + m.title, radius: radii[i % 3],
+        rows: open ? '1fr' : '0fr', rot: open ? 'rotate(45deg)' : 'rotate(0deg)', expanded: String(open), moreLabel: open ? 'Less' : 'More', toggle: () => this.setState({ openId: open ? null : m.id }),
+        pressed: String(on), joinLabel: on ? 'Added ✓' : 'I want to serve here', joinBg: on ? '#111111' : '#FFFFFF', joinFg: on ? '#FFFFFF' : '#111111', joinBd: '#111111',
+        join: () => { add(m.id); if (!on) setTimeout(toServe, 120); } }; }),
+      chips: M.map(m => { const on = picks.includes(m.id); return { label: m.title, pressed: String(on), bg: on ? '#111111' : '#FFFFFF', fg: on ? '#FFFFFF' : '#111111', bd: on ? '#111111' : '#D4D4D4', pick: () => add(m.id) }; }),
+      pickCount: picks.length ? '(' + picks.length + ' selected)' : '',
+      formOpen: !this.state.sent, sent: this.state.sent, sentName: this.state.sentName, sentMsg: this.state.sentMsg,
+      submit: e => { e.preventDefault(); const f = new FormData(e.currentTarget); const names = M.filter(m => picks.includes(m.id)).map(m => m.title);
+        const msg = names.length ? 'We received your interest in ' + (names.length > 1 ? names.slice(0, -1).join(', ') + ' and ' + names.slice(-1) : names[0]) + '. A ministry leader will reach out soon.' : "We'll reach out soon to help you find the right ministry for your gifts.";
+        this.setState({ sent: true, sentName: (f.get('first') || 'friend').toString().trim(), sentMsg: msg }); },
+      reset: () => this.setState({ sent: false, picks: [] })
+    };
+  }
+  renderVals() { return { ...this.navVals(), ...this.pageVals() }; }
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+<script src="../portfolio-guard.js" defer></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Raleway:wght@700;800;900&family=Source+Sans+3:wght@400;600;700&display=swap">
+<style>
+h1,h2,h3,h4,blockquote{text-wrap:balance}
+p,li,figcaption,footer span,label{text-wrap:pretty}
+
+html,body{margin:0;background:#fff;color:#141414;font-family:'Source Sans 3',system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+*{box-sizing:border-box}
+a{color:#B50900;text-decoration:none}
+a:hover{color:#8A0700}
+::selection{background:#B50900;color:#fff}
+:focus-visible{outline:3px solid #B50900;outline-offset:3px}
+@media (prefers-reduced-motion: reduce){*{transition:none!important;scroll-behavior:auto!important}}
+</style>
+<script>(function(){var SEL='h1,h2,h3,h4,p,blockquote,li,label,footer span,article span';function fix(){document.querySelectorAll(SEL).forEach(function(el){var w=document.createTreeWalker(el,NodeFilter.SHOW_TEXT),last=null,n;while(n=w.nextNode()){if(/\S/.test(n.nodeValue))last=n}if(!last)return;var v=last.nodeValue,m=v.match(/^([\s\S]*\S)[ \t\n]+(\S+\s*)$/);if(m&&m[2].trim().length<16&&(el.textContent.trim().split(/\s+/).length>2))last.nodeValue=m[1]+'\u00A0'+m[2]})}var t;function q(){clearTimeout(t);t=setTimeout(fix,60)}document.addEventListener('DOMContentLoaded',function(){fix();new MutationObserver(q).observe(document.body,{subtree:true,childList:true,characterData:true})});window.addEventListener('load',fix)})();</script>
+</helmet>
+
+<header style="position:sticky;top:0;z-index:20;background:#fff;display:flex;align-items:center;justify-content:space-between;gap:24px;padding:16px clamp(20px,4vw,56px);flex-wrap:wrap">
+  <a href="AppleTree.dc.html" aria-label="AppleTree home" style="display:flex;align-items:center"><img src="assets/logo-wide.png" alt="AppleTree" style="height:30px;width:auto;display:block"></a>
+  <nav style="white-space:nowrap;display:flex;align-items:center;gap:clamp(14px,2.2vw,28px);flex-wrap:wrap;font-size:17px;font-weight:700">
+    <a href="#values" style="color:#141414" style-hover="color:#B50900">Values</a>
+    <a href="#journey" style="color:#141414" style-hover="color:#B50900">Our journey</a>
+    <a href="Schools%20Home.dc.html" style="color:#141414" style-hover="color:#B50900">Schools</a>
+    <a href="Campuses.dc.html" style="color:#141414" style-hover="color:#B50900">Campuses</a>
+    <a href="Curriculum.dc.html" style="color:#141414" style-hover="color:#B50900">Curriculum</a>
+    <a href="Institute%20Home.dc.html" style="color:#141414" style-hover="color:#B50900">Institute</a>
+    <a href="Enroll.dc.html" style="background:#B50900;color:#fff;padding:12px 22px;border-radius:16px;transition:transform .12s ease-out" style-hover="background:#8A0700;color:#fff" style-active="transform:scale(.95)">Enroll</a>
+  </nav>
+</header>
+
+<section data-screen-label="01 Mission" style="max-width:1600px;margin:0 auto;padding:clamp(56px,7vw,112px) clamp(20px,4vw,56px) clamp(72px,8vw,120px);display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,520px),1fr));gap:clamp(40px,6vw,96px);align-items:end">
+  <div style="display:flex;flex-direction:column;gap:32px">
+    <h1 data-r="0" style="margin:0;font-family:Raleway,sans-serif;font-size:clamp(56px,8.4vw,136px);line-height:.92;letter-spacing:-.045em;font-weight:900">Our mission</h1>
+    <p data-r="1" style="margin:0;font-size:clamp(24px,2.2vw,34px);line-height:1.22;letter-spacing:-.015em;font-weight:600;max-width:26ch;text-wrap:pretty">To give young children the social, emotional and cognitive foundations that will let them succeed in school.</p>
+    <a data-r="2" href="#journey" style="align-self:flex-start;background:#141414;color:#fff;padding:18px 28px;border-radius:18px;white-space:nowrap;font-size:18px;font-weight:700;transition:transform .12s ease-out" style-hover="color:#fff;background:#000" style-active="transform:scale(.97)">Thirty years in DC</a>
+  </div>
+  <div style="position:relative;width:100%;aspect-ratio:5/4">
+    <img data-r="1" src="assets/photos/p17.jpg" alt="AppleTree preschoolers celebrating during circle time" style="position:absolute;left:0;top:0;width:72%;height:78%;object-fit:cover;border-radius:999px 999px 36px 36px;display:block">
+    <img data-r="2" src="assets/photos/p01.jpg" alt="A girl with beaded braids listening closely" style="position:absolute;right:0;bottom:0;width:44%;aspect-ratio:1/1;object-fit:cover;border-radius:50%;display:block;border:10px solid #fff">
+    <span data-r="3" aria-hidden="true" style="position:absolute;left:6%;bottom:2%;width:20%;aspect-ratio:2/1;border-radius:999px 999px 0 0;background:#F9C706"></span>
+  </div>
+</section>
+
+<section id="values" data-screen-label="02 Values" style="background:#F9C706;color:#141414">
+  <div style="max-width:1600px;margin:0 auto;padding:clamp(96px,11vw,176px) clamp(20px,4vw,56px);display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,420px),1fr));gap:clamp(48px,6vw,96px);align-items:start">
+    <div style="position:sticky;top:120px;display:flex;flex-direction:column;gap:24px">
+      <h2 data-r="0" style="margin:0;font-family:Raleway,sans-serif;font-size:clamp(40px,5vw,80px);line-height:.98;letter-spacing:-.04em;font-weight:900">Five things we hold to</h2>
+      <p data-r="1" style="margin:0;font-size:19px;line-height:1.55;max-width:36ch">The same five values guide a PK3 classroom on Savannah Terrace and a curriculum contract in Texas.</p>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:56px">
+      <sc-for list="{{ values }}" as="v" hint-placeholder-count="5">
+        <div data-r="1" style="display:grid;grid-template-columns:52px 1fr;gap:20px;align-items:start">
+          <span aria-hidden="true" style="width:52px;height:18px;margin-top:12px;border-radius:999px;background:{{ v.c }}"></span>
+          <div style="display:flex;flex-direction:column;gap:10px"><h3 style="margin:0;font-family:Raleway,sans-serif;font-size:clamp(30px,3vw,44px);line-height:1;letter-spacing:-.03em;font-weight:900">{{ v.t }}</h3>
+          <p style="margin:0;font-size:18px;line-height:1.55;max-width:52ch">{{ v.d }}</p></div>
+        </div>
+      </sc-for>
+    </div>
+  </div>
+</section>
+
+<section id="journey" ref="{{ secRef }}" data-screen-label="03 Journey" style="position:relative;height:960vh;background:#141414">
+  <div ref="{{ stageRef }}" style="position:sticky;top:0;height:100vh;overflow:hidden;background:#141414;color:#fff;display:flex;flex-direction:column">
+    <img ref="{{ bgRef }}" src="assets/hd/campus-lincoln.jpg" alt="" aria-hidden="true" style="position:absolute;top:0;right:0;width:78%;height:100%;object-fit:cover;opacity:.55;transform:scale(1.12);transform-origin:right center;will-change:transform;-webkit-mask-image:linear-gradient(to left,#000 35%,transparent 100%);mask-image:linear-gradient(to left,#000 35%,transparent 100%);pointer-events:none">
+    <span ref="{{ yearRef }}" aria-hidden="true" style="position:absolute;right:clamp(12px,3vw,48px);bottom:clamp(64px,10vh,120px);font-family:Raleway,sans-serif;font-size:clamp(140px,24vw,400px);line-height:.8;letter-spacing:-.06em;font-weight:900;color:#fff;opacity:.14;font-variant-numeric:tabular-nums;pointer-events:none">1996</span>
+    <div style="position:relative;padding:clamp(88px,11vh,120px) clamp(20px,4vw,56px) 0;display:flex;justify-content:space-between;align-items:end;gap:24px;flex-wrap:wrap">
+      <div style="display:flex;flex-direction:column;gap:12px">
+        <h2 style="margin:0;font-family:Raleway,sans-serif;font-size:clamp(36px,4.4vw,72px);line-height:.98;letter-spacing:-.04em;font-weight:900">Our journey, 1996 to now</h2>
+        <p style="margin:0;font-size:18px;line-height:1.5;max-width:46ch">From an institute incubating charter schools to DC's largest public preschool. Keep scrolling.</p>
+      </div>
+      <p ref="{{ countRef }}" aria-live="polite" style="margin:0;font-size:18px;font-weight:700;font-variant-numeric:tabular-nums">1 of 17</p>
+    </div>
+    <div ref="{{ viewRef }}" style="position:relative;flex:1;min-height:0;display:flex;align-items:center;overflow:hidden">
+      <div ref="{{ trackRef }}" style="position:relative;display:flex;gap:24px;padding:44px clamp(20px,4vw,56px) 0;will-change:transform">
+        <span aria-hidden="true" style="position:absolute;left:0;right:0;top:14px;height:16px;border-radius:999px;background:#B50900"></span>
+        <sc-for list="{{ events }}" as="e" hint-placeholder-count="3">
+          <article data-card="{{ $index }}" style="position:relative;flex:0 0 min(78vw,380px);background:#fff;color:#141414;border-radius:28px;display:flex;flex-direction:column;transform-origin:left center;will-change:transform,opacity">
+            <span aria-hidden="true" style="position:absolute;left:28px;top:-42px;width:40px;height:40px;border-radius:50%;background:#fff;border:8px solid #141414"></span>
+            <img src="{{ e.img }}" alt="{{ e.alt }}" style="width:100%;aspect-ratio:2/1;max-height:26vh;object-fit:cover;object-position:center top;display:block;border-radius:28px 28px 0 0">
+            <div style="padding:20px 24px 28px;display:flex;flex-direction:column;gap:10px">
+              <span style="font-family:Raleway,sans-serif;font-size:clamp(44px,4vw,60px);line-height:.85;letter-spacing:-.05em;font-weight:900;color:#B50900;font-variant-numeric:tabular-nums">{{ e.y }}</span>
+              <p style="margin:0;font-size:17px;line-height:1.45;text-wrap:pretty">{{ e.t }}</p>
+            </div>
+          </article>
+        </sc-for>
+      </div>
+    </div>
+    <div style="position:relative;padding:0 clamp(20px,4vw,56px) clamp(24px,4vh,40px);display:flex;flex-direction:column;gap:14px">
+      <div style="position:relative;height:12px;border-radius:999px;background:#3A3A3A;overflow:hidden">
+        <div ref="{{ fillRef }}" style="position:absolute;inset:0;background:#B50900;transform-origin:left center;transform:scaleX(0)"></div>
+      </div>
+      <div ref="{{ ticksRef }}" style="display:flex;justify-content:space-between;gap:4px;overflow-x:auto;scrollbar-width:none">
+        <sc-for list="{{ events }}" as="e" hint-placeholder-count="6">
+          <button data-tick="{{ $index }}" onClick="{{ e.go }}" aria-label="Jump to {{ e.y }}" style="font:inherit;font-size:14px;font-weight:700;font-variant-numeric:tabular-nums;padding:8px 4px;min-height:44px;border:0;background:transparent;color:#fff;opacity:.5;cursor:pointer;transition:opacity .2s,transform .12s ease-out" style-active="transform:scale(.92)">{{ e.y }}</button>
+        </sc-for>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section data-screen-label="04 Next" style="background:#563884;color:#fff;position:relative;overflow:hidden">
+  <div style="position:relative;max-width:1600px;margin:0 auto;padding:clamp(96px,11vw,176px) clamp(20px,4vw,56px) 0;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,460px),1fr));gap:clamp(40px,6vw,96px);align-items:end">
+    <div style="display:flex;flex-direction:column;gap:28px;padding-bottom:clamp(96px,11vw,176px)">
+      <h2 data-r="0" style="margin:0;font-family:Raleway,sans-serif;font-size:clamp(40px,5vw,80px);line-height:.98;letter-spacing:-.04em;font-weight:900;text-wrap:balance">Be part of the next chapter</h2>
+      <p data-r="1" style="margin:0;font-size:19px;line-height:1.55;max-width:42ch">Enroll your child, teach with us, or give so more DC families get a strong start.</p>
+      <div data-r="2" style="display:flex;gap:12px;flex-wrap:wrap">
+        <a href="Enroll.dc.html" style="background:#F9C706;color:#141414;padding:18px 28px;border-radius:18px;white-space:nowrap;font-size:18px;font-weight:700;transition:transform .12s ease-out" style-hover="color:#141414;background:#FFD633" style-active="transform:scale(.95)">Enroll your child</a>
+        <a href="https://www.appletreeinstitute.org/donate" style="background:#fff;color:#141414;padding:18px 28px;border-radius:18px;white-space:nowrap;font-size:18px;font-weight:700;transition:transform .12s ease-out" style-hover="color:#141414;background:#F4F6F7" style-active="transform:scale(.95)">Donate</a>
+      </div>
+    </div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;padding-bottom:clamp(96px,11vw,176px)">
+      <img data-r="1" src="assets/photos/p21.jpg" alt="Smiling girls with colorful braids" style="width:100%;aspect-ratio:1/1;object-fit:cover;border-radius:50%;display:block">
+      <img data-r="2" src="assets/photos/p13.jpg" alt="A boy playing with a yellow parachute" style="width:100%;aspect-ratio:1/1;object-fit:cover;border-radius:999px 999px 28px 28px;display:block">
+    </div>
+  </div>
+</section>
+
+<footer data-screen-label="05 Footer" style="background:#B50900;color:#fff">
+  <div aria-hidden="true" style="display:flex;flex-direction:column;gap:10px;padding-top:40px"><span style="height:14px;background:#F9C706;border-radius:0 999px 999px 0;width:72%"></span><span style="height:14px;background:#3A9973;border-radius:0 999px 999px 0;width:58%"></span><span style="height:14px;background:#9BDCE8;border-radius:0 999px 999px 0;width:44%"></span></div>
+  <div style="max-width:1600px;margin:0 auto;padding:clamp(64px,7vw,104px) clamp(20px,4vw,56px) 40px;display:flex;flex-direction:column;gap:56px">
+    <div style="display:flex;gap:40px 64px;flex-wrap:wrap;font-size:17px;line-height:1.6">
+      <div style="display:flex;flex-direction:column;gap:6px"><span style="font-weight:700">Visit</span><span>1801 Mississippi Avenue SE<br>Washington, DC 20020</span><span>Institute (202) 488-3990<br>Schools (202) 526-1503</span></div>
+      <div style="display:flex;flex-direction:column;gap:6px"><a href="Schools%20Home.dc.html" style="color:#fff">AppleTree Schools</a><a href="Campuses.dc.html" style="color:#fff">Campuses</a><a href="Institute%20Home.dc.html" style="color:#fff">AppleTree Institute</a><a href="Policy.dc.html" style="color:#fff">Policy</a></div>
+      <div style="display:flex;flex-direction:column;gap:6px"><a href="https://dcpcsb.org" style="color:#fff">DC Public Charter School Board</a><a href="https://www.appletreeinstitute.org/procurement" style="color:#fff">Procurement</a><a href="https://www.appletreeinstitute.org/contact-us" style="color:#fff">Contact us</a></div>
+    </div>
+    <p aria-hidden="true" style="margin:0;font-family:Raleway,sans-serif;font-size:clamp(64px,16vw,280px);line-height:.8;letter-spacing:-.05em;font-weight:900">AppleTree</p>
+    <div style="display:flex;gap:24px;flex-wrap:wrap;font-size:15px"><span>© 2026 AppleTree</span><a href="https://www.appletreeinstitute.org/privacy-policy" style="color:#fff">Privacy</a><a href="https://www.appletreeinstitute.org/disclaimer" style="color:#fff">Disclaimer</a></div>
+  </div>
+</footer>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  secRef = React.createRef(); stageRef = React.createRef(); viewRef = React.createRef(); trackRef = React.createRef();
+  yearRef = React.createRef(); bgRef = React.createRef(); fillRef = React.createRef(); ticksRef = React.createRef(); countRef = React.createRef();
+  values = [
+    { c: '#B50900', t: 'Mission first', d: 'Preparing every child to enter kindergarten ready to thrive can change the lives of the children we teach, and the country, as we share what we learn with more communities.' },
+    { c: '#3A9973', t: 'Solution-focused', d: 'This work is never easy. We dwell in solutions, search for proven strategies wherever they exist, and work in partnership with families and communities.' },
+    { c: '#238EA2', t: 'Continuous improvement', d: 'We collect and use data and feedback to improve everything we do, and we seek the professional growth our work demands.' },
+    { c: '#F58020', t: 'Trust', d: 'Teaching children well takes adults who trust one another. We keep our word, tell the truth when it is hard, and own our mistakes.' },
+    { c: '#563884', t: 'Research to practice', d: 'We build on what we have learned, contribute to the field, and hold a high standard of proof before changing our approach.' }
+  ];
+  ev = [
+    ['1996', 'AppleTree Institute is founded to “increase the supply of effective schools through innovation.”', '../photos/p02.jpg', 'Children and a teacher during circle time'],
+    ['1997', 'AppleTree incubates three DC charter schools, including Washington Math Science Technology and Cesar Chavez Public Policy.', '../photos/p14.jpg', 'An AppleTree class lined up together'],
+    ['1998', 'AppleTree creates and spins off the DC Charter School Center for Student Support Services.', '../hd/residency-team.jpg', 'AppleTree educators working together'],
+    ['2000', 'A shift to early learning: the AppleTree Early Literacy Preschool opens at Riverside Baptist Church in Southwest DC.', '../hd/class-lp.jpg', 'A preschool classroom with a rainbow rug'],
+    ['2005', 'The Charter Board grants AppleTree Early Learning PCS a 15-year charter. A $1.8 million Early Reading First grant follows.', '../hd/campus-sw.jpg', 'An AppleTree campus fence with student art'],
+    ['2008', 'Columbia Heights opens. A second Early Reading First grant shapes the model that becomes Every Child Ready.', '../hd/campus-columbia.jpg', 'The Columbia Heights campus'],
+    ['2010', 'A $5 million federal i3 grant, one of 49 from 1,698 applications, funds the full development of Every Child Ready.', '../hd/play-dk.jpg', 'An AppleTree playground'],
+    ['2012', 'Three campuses in one year: Douglas Knoll, Parklands and Lincoln Park.', '../hd/campus-douglas.jpg', 'The Douglas Knoll campus'],
+    ['2013', 'Oklahoma Avenue opens on 21st Street NE.', '../hd/campus-okla.jpg', 'The Oklahoma Avenue campus'],
+    ['2015', 'The first AppleTree@ school opens at Democracy Prep Congress Heights. Partner schools reach ten.', '../photos/p11.jpg', 'A teacher reading a story to children'],
+    ['2016', 'AppleTree@Perry Street Prep opens, and our first Partner outside DC: DREAM Charter School in Harlem.', '../hd/class-wf.jpg', 'A classroom ready for the day'],
+    ['2018', 'AppleTree@Rocketship Rise and AppleTree@Achievement Prep open.', '../hd/campus-aprep.jpg', 'The Achievement Prep campus'],
+    ['2020', 'The Charter Board renews our charter for a full 15 years. A new Southwest campus and Rocketship Infinity open mid-pandemic.', '../hd/play-sw.jpg', 'The Southwest campus'],
+    ['2021', 'An $8 million contract to build a Texas edition of Every Child Ready.', '../hd/residency-grad.jpg', 'Teacher Residency graduates'],
+    ['2023', 'Every Child Ready in Spanish. Texas networks Uplift and Austin Achieve become Partners.', '../hd/campus-sv.jpg', 'The Spring Valley campus'],
+    ['2024', 'Spring Valley opens on Massachusetts Avenue NW, our first campus in Ward 3. Mayor Bowser joins the opening.', 'pol-mayor-visit.jpg', 'Mayor Bowser at the Spring Valley opening'],
+    ['2025', 'Waterfront opens at 330 Maple Drive SW.', '../hd/campus-waterfront.jpg', 'The Waterfront campus']
+  ];
+  active = -1;
+  componentDidMount() {
+    this.reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (this.reduced) this.flatten();
+    else { this.onScroll = () => { if (!this.raf) this.raf = requestAnimationFrame(() => { this.raf = 0; this.update(); }); }; window.addEventListener('scroll', this.onScroll, { passive: true }); window.addEventListener('resize', this.onScroll); this.update(); }
+    if (!this.reduced && 'IntersectionObserver' in window) {
+      const io = new IntersectionObserver(es => es.forEach(e => {
+        if (!e.isIntersecting) return;
+        const el = e.target, d = (+el.dataset.r || 0) * 80;
+        el.style.transition = `opacity .7s cubic-bezier(.2,.8,.2,1) ${d}ms, transform .9s cubic-bezier(.2,.8,.2,1) ${d}ms`;
+        el.style.opacity = 1; el.style.transform = 'none'; io.unobserve(el);
+      }), { threshold: 0.12 });
+      document.querySelectorAll('[data-r]').forEach(el => { el.style.opacity = 0; el.style.transform = 'translateY(24px)'; io.observe(el); });
+      this.io = io;
+    }
+  }
+  componentWillUnmount() { this.io && this.io.disconnect(); window.removeEventListener('scroll', this.onScroll); window.removeEventListener('resize', this.onScroll); }
+  flatten() {
+    const s = this.secRef.current, st = this.stageRef.current, v = this.viewRef.current;
+    if (!s) return;
+    s.style.height = 'auto'; st.style.position = 'relative'; st.style.height = 'auto'; st.style.paddingBottom = '48px';
+    v.style.overflowX = 'auto'; v.style.padding = '48px 0';
+    this.setActive(this.ev.length - 1);
+  }
+  progress() {
+    const s = this.secRef.current; if (!s) return 0;
+    const r = s.getBoundingClientRect(), span = s.offsetHeight - window.innerHeight;
+    return Math.min(1, Math.max(0, -r.top / span));
+  }
+  update() {
+    const t = this.trackRef.current, v = this.viewRef.current; if (!t || !v) return;
+    const p = this.progress(), N = this.ev.length;
+    const max = Math.max(0, t.scrollWidth - v.clientWidth);
+    t.style.transform = `translate3d(${-p * max}px,0,0)`;
+    this.fillRef.current.style.transform = `scaleX(${p})`;
+    if (this.bgRef.current) this.bgRef.current.style.transform = `scale(${1.12 - p * 0.12}) translate3d(${p * -3}%,0,0)`;
+    const focus = v.getBoundingClientRect().left + Math.min(v.clientWidth * 0.12, 120);
+    t.querySelectorAll('[data-card]').forEach(c => {
+      const d = Math.min(1, Math.abs(c.getBoundingClientRect().left - focus) / 700);
+      c.style.transform = `scale(${1 - d * 0.1})`; c.style.opacity = String(1 - d * 0.55);
+    });
+    this.setActive(Math.round(p * (N - 1)));
+  }
+  setActive(i) {
+    if (i === this.active) return; this.active = i;
+    const st = this.stageRef.current; if (!st) return;
+    st.querySelectorAll('[data-tick]').forEach(b => { const on = +b.dataset.tick === i; b.style.opacity = on ? '1' : '.5'; b.style.color = on ? '#fff' : '#fff'; b.setAttribute('aria-current', on ? 'step' : 'false'); });
+    if (this.yearRef.current) this.yearRef.current.textContent = this.ev[i][0];
+    if (this.countRef.current) this.countRef.current.textContent = `${i + 1} of ${this.ev.length}`;
+  }
+  go(i) {
+    const s = this.secRef.current; if (!s) return;
+    if (this.reduced) { const c = this.trackRef.current.querySelector(`[data-card="${i}"]`); this.viewRef.current.scrollTo({ left: c.offsetLeft - 20 }); this.setActive(i); return; }
+    const top = s.getBoundingClientRect().top + window.scrollY, span = s.offsetHeight - window.innerHeight;
+    window.scrollTo({ top: top + (i / (this.ev.length - 1)) * span + 1, behavior: 'smooth' });
+  }
+  renderVals() {
+    return {
+      values: this.values,
+      events: this.ev.map(([y, t, img, alt], i) => ({ y, t, alt, img: `assets/web/${img}`, go: () => this.go(i) })),
+      secRef: this.secRef, stageRef: this.stageRef, viewRef: this.viewRef, trackRef: this.trackRef,
+      yearRef: this.yearRef, bgRef: this.bgRef, fillRef: this.fillRef, ticksRef: this.ticksRef, countRef: this.countRef
+    };
+  }
+}
+</script>
+</body>
+</html>

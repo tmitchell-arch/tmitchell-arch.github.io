@@ -1,0 +1,60 @@
+:root{
+/* Purple — Clarke's primary field color */
+--clarke-purple-900:#4A0C52;
+--clarke-purple-800:#601069; /* OFFICIAL Purple — PMS 2623 · CMYK 76/100/0/30 · RGB 98/18/107 */
+--clarke-purple-700:#601069; /* logo purple = official Purple */
+--clarke-purple-500:#9A30A6; /* bright accent (arrow tabs) */
+--clarke-purple-300:#B091B8; /* OFFICIAL secondary Light Purple — PMS 522 */
+--clarke-purple-200:#E3C6EE; /* lavender text on navy */
+--clarke-purple-100:#F6E3F9; /* lavender card tint */
+/* Green — blossom leaves */
+--clarke-green-700:#3E7A1F; /* deep green (text on light green) */
+--clarke-green-500:#6CB23E; /* OFFICIAL Green — PMS 369 · CMYK 65/0/100/60 · RGB 108/178/62 */
+--clarke-green-300:#96C574; /* OFFICIAL Light Green */
+--clarke-green-200:#9BD269; /* bright lime used in gradients */
+--clarke-green-100:#E8F3DF; /* green card tint */
+/* Navy — the "ink" */
+--clarke-navy-900:#343352; /* OFFICIAL secondary Midnight Blue — PMS 533 */
+--clarke-blue-700:#3B3D80; /* OFFICIAL secondary Dark Blue */
+--clarke-navy-700:#4A4970;
+/* Teal — print one-pager headline accent */
+--clarke-teal-600:#397981; /* OFFICIAL secondary Teal — PMS 5473 */
+/* Neutrals */
+--clarke-white:#FFFFFF;
+--clarke-offwhite:#FBFBFB;
+--clarke-gray-100:#F4F4F6;
+--clarke-gray-200:#EAEAEA;
+--clarke-gray-600:#666666; /* OFFICIAL Gray — PMS Cool Gray 10 */
+--clarke-gray-400:#9999A8; /* OFFICIAL secondary Light Gray — PMS 5285 */
+--clarke-gray-500:#6B6A7E;
+--clarke-black:#1E1D2E;
+
+/* Semantic */
+--brand-primary:var(--clarke-purple-800);
+--brand-secondary:var(--clarke-green-500);
+--brand-ink:var(--clarke-navy-900);
+--text-heading:var(--clarke-navy-900);
+--text-heading-accent:var(--clarke-purple-700);
+--text-body:var(--clarke-navy-900);
+--text-muted:var(--clarke-gray-600);
+--text-body-gray:var(--clarke-gray-600); /* guide: gray/neutral for long paragraphs — never purple or green */
+--text-on-dark:var(--clarke-white);
+--text-accent-on-dark:var(--clarke-green-300);
+--surface-page:var(--clarke-white);
+--surface-offwhite:var(--clarke-offwhite);
+--surface-card-lavender:var(--clarke-purple-100);
+--surface-card-green:var(--clarke-green-100);
+--surface-card-gray:var(--clarke-gray-100);
+--surface-dark:var(--clarke-navy-900);
+--surface-brand:var(--clarke-purple-800);
+--border-subtle:var(--clarke-gray-200);
+--link:var(--clarke-purple-700);
+--link-hover:var(--clarke-purple-500);
+
+/* Signature gradients (as seen in socials) */
+--gradient-purple-green:linear-gradient(135deg,#601069 0%,#7A5A78 50%,#8CBF68 100%); /* @kind other */
+--gradient-purple-fade:linear-gradient(180deg,rgba(96,16,105,0) 0%,rgba(96,16,105,.55) 60%,rgba(96,16,105,.9) 100%); /* @kind other */
+--gradient-announcement:linear-gradient(115deg,#5A1466 0%,#1F9C5A 45%,#0BBF5E 60%,#62A544 100%); /* @kind other */
+--gradient-navy-green:linear-gradient(90deg,#343352 0%,#4E7A55 55%,#79C766 100%); /* @kind other */
+--gradient-green-field:linear-gradient(90deg,#9BE56B 0%,#6CB23E 100%); /* @kind other */
+}

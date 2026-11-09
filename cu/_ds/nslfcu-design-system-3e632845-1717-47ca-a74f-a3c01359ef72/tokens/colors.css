@@ -1,0 +1,62 @@
+/* NSLFCU color tokens — sourced from Brand Guidelines 2026 p.07 and sampled from the guide/deck PDFs. */
+:root{
+  /* Primary */
+  --nsl-maroon:#7A2049;          /* headlines, primary UI */
+  --nsl-deep-maroon:#3A1420;     /* dark sections, covers, footers */
+  --nsl-gold:#C9A968;            /* precious accent only — never a large background */
+  /* Neutrals */
+  --nsl-parchment:#F7ECD6;       /* primary background, never pure white */
+  --nsl-parchment-soft:#FBF6EC;  /* lighter parchment used for panels/cards on white (brand guide p.10) */
+  --nsl-white:#FFFFFF;
+  --nsl-ink:#241019;             /* primary text */
+  --nsl-ink-soft:#4A3840;        /* secondary body text (guides) */
+  --nsl-ink-muted:#6B5A50;       /* captions, meta */
+  --nsl-ink-subtle:#A08A76;      /* placeholder, disabled */
+  /* Logo-only tints (reverse lockups on deep maroon) */
+  --nsl-logo-maroon:#7B213B;
+  --nsl-logo-cream:#FAE6C8;
+  --nsl-logo-gold-light:#E6D4A8;
+  --nsl-logo-gold-muted:#C4B493;
+
+  /* Alpha tints observed in source */
+  --nsl-rule:rgba(36,16,25,.12);          /* table row rules */
+  --nsl-maroon-line:rgba(122,32,73,.25);  /* card outline */
+  --nsl-parchment-line:rgba(247,236,214,.18); /* rules on deep maroon */
+  --nsl-parchment-wash:rgba(247,236,214,.06); /* stat tile fill on deep maroon */
+  --nsl-gold-line:rgba(201,169,104,.30);  /* stat tile border on deep maroon */
+
+  /* Semantic aliases */
+  --bg-page:var(--nsl-parchment);
+  --bg-paper:var(--nsl-white);            /* print pages / documents */
+  --bg-inverse:var(--nsl-deep-maroon);
+  --bg-accent:var(--nsl-maroon);
+  --surface-card:var(--nsl-parchment-soft);
+  --surface-callout:var(--nsl-parchment);
+  --surface-callout-dark:var(--nsl-deep-maroon);
+  --surface-field:var(--nsl-white);
+
+  --text-heading:var(--nsl-ink);
+  --text-body:var(--nsl-ink);
+  --text-secondary:var(--nsl-ink-soft);
+  --text-muted:var(--nsl-ink-muted);
+  --text-placeholder:var(--nsl-ink-subtle);
+  --text-accent:var(--nsl-maroon);
+  --text-eyebrow:var(--nsl-maroon);
+  --text-on-dark:var(--nsl-parchment);
+  --text-on-dark-muted:rgba(247,236,214,.72);
+  --text-eyebrow-on-dark:var(--nsl-gold);
+
+  --border-rule:var(--nsl-rule);
+  --border-card:var(--nsl-maroon-line);
+  --border-accent:var(--nsl-gold);
+  --border-field:rgba(36,16,25,.18);
+  --focus-ring:rgba(122,32,73,.35);
+
+  --action-primary:var(--nsl-maroon);
+  --action-primary-hover:#65193C;
+  --action-primary-press:#521431;
+  --action-on-primary:var(--nsl-white);
+  --action-accent:var(--nsl-gold);        /* primary CTA on deep maroon */
+  --action-accent-hover:#B99857;
+  --action-on-accent:var(--nsl-deep-maroon);
+}

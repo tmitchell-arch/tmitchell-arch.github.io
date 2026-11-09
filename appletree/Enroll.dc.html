@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+<script src="../portfolio-guard.js" defer></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Raleway:wght@700;800;900&family=Source+Sans+3:wght@400;600;700&display=swap">
+<style>
+html,body{margin:0;background:#fff;color:#141414;font-family:'Source Sans 3',system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+*{box-sizing:border-box}
+a{color:#B50900;text-decoration:none}
+a:hover{color:#8A0700}
+h1,h2,h3{text-wrap:balance}
+p,li{text-wrap:pretty}
+::selection{background:#F9C706;color:#141414}
+:focus-visible{outline:3px solid #238EA2;outline-offset:3px}
+@keyframes epulse{0%{transform:scale(1);opacity:.55}100%{transform:scale(2.4);opacity:0}}
+@media (prefers-reduced-motion: reduce){*{transition-duration:.01ms!important;animation:none!important}}
+</style>
+</helmet>
+
+<header style="position:sticky;top:0;z-index:30;background:#fff;display:flex;align-items:center;justify-content:space-between;gap:20px;padding:14px clamp(20px,4vw,56px);flex-wrap:wrap">
+  <a href="AppleTree.dc.html" aria-label="AppleTree home" style="display:flex"><img src="assets/logo-wide.png" alt="AppleTree" style="height:30px;width:auto;display:block"></a>
+  <nav style="white-space:nowrap;display:flex;align-items:center;gap:clamp(14px,2.2vw,28px);flex-wrap:wrap;font-size:17px;font-weight:700">
+    <a href="Schools%20Home.dc.html" style="color:#141414" style-hover="color:#B50900">Schools</a>
+    <a href="Campuses.dc.html" style="color:#141414" style-hover="color:#B50900">Campuses</a>
+    <a href="Curriculum.dc.html" style="color:#141414" style-hover="color:#B50900">Curriculum</a>
+    <a href="Mission%20and%20History.dc.html" style="color:#141414" style-hover="color:#B50900">About</a>
+    <a href="Enroll.dc.html" aria-current="page" style="background:#B50900;color:#fff;padding:12px 22px;border-radius:16px;transition:transform .12s ease-out" style-hover="color:#fff;background:#8A0700" style-active="transform:scale(.95)">Enroll</a>
+  </nav>
+</header>
+
+<section data-screen-label="01 Hero" style="max-width:1600px;margin:0 auto;padding:clamp(32px,4vw,72px) clamp(20px,4vw,56px) clamp(72px,8vw,128px);display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,500px),1fr));gap:clamp(32px,5vw,80px);align-items:center">
+  <div style="display:flex;flex-direction:column;gap:26px">
+    <h1 data-r="0" style="margin:0;font-family:Raleway,sans-serif;font-size:clamp(52px,6.4vw,108px);line-height:.94;letter-spacing:-.045em;font-weight:900">Enroll at AppleTree</h1>
+    <p data-r="1" style="margin:0;font-family:Raleway,sans-serif;font-size:clamp(22px,2vw,30px);line-height:1.2;letter-spacing:-.015em;font-weight:800;max-width:26ch">Early childhood education isn’t just part of what we do. It’s everything we do.</p>
+    <p data-r="2" style="margin:0;font-size:clamp(18px,1.4vw,21px);line-height:1.5;max-width:44ch">Our program is built around the needs of three- and four-year-olds, so your child enters kindergarten with confidence, curiosity and a love of learning. Washington Parent Magazine named us DC’s Best Preschool.</p>
+    <div data-r="3" style="display:flex;gap:12px;flex-wrap:wrap">
+      <a href="https://apply.myschooldc.dc.gov/login.aspx" style="background:#B50900;color:#fff;padding:18px 28px;border-radius:18px;font-size:18px;font-weight:700;white-space:nowrap;transition:transform .12s ease-out" style-hover="color:#fff;background:#8A0700" style-active="transform:scale(.95)">Apply on My School DC</a>
+      <a href="tel:+12024483330" style="background:#F9C706;color:#141414;padding:18px 28px;border-radius:18px;font-size:18px;font-weight:700;white-space:nowrap;transition:transform .12s ease-out" style-hover="color:#141414;background:#FFD633" style-active="transform:scale(.95)">Call (202) 448-3330</a>
+    </div>
+  </div>
+  <div ref="{{ heroRef }}" onPointerMove="{{ hover }}" onPointerLeave="{{ leave }}" style="position:relative;width:100%;aspect-ratio:1/1;max-width:680px;justify-self:center">
+    <img data-p="0" src="assets/photos/p15.jpg" alt="A smiling AppleTree girl in a school hallway" style="position:absolute;left:4%;top:0;width:46%;aspect-ratio:3/4;object-fit:cover;border-radius:999px 999px 32px 32px;will-change:transform">
+    <img data-p="1" src="assets/photos/p10.jpg" alt="A girl in a red jacket laughing in class" style="position:absolute;right:0;top:14%;width:46%;aspect-ratio:1/1;object-fit:cover;border-radius:50%;will-change:transform">
+    <img data-p="2" src="assets/photos/p06.jpg" alt="Children during circle time" style="position:absolute;left:22%;bottom:0;width:56%;aspect-ratio:4/3;object-fit:cover;border-radius:36px 36px 36px 140px;will-change:transform;border:10px solid #fff">
+    <img data-p="3" src="assets/badge-2024.png" alt="Best Preschool in DC 2024, Washington Parent Picks" style="position:absolute;right:6%;bottom:6%;width:22%;height:auto;will-change:transform">
+  </div>
+</section>
+
+<section id="eligible" data-screen-label="02 Eligibility" style="background:#F4F6F7">
+  <div style="max-width:1600px;margin:0 auto;padding:clamp(96px,10vw,160px) clamp(20px,4vw,56px);display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,440px),1fr));gap:clamp(40px,6vw,96px);align-items:start">
+    <div style="display:flex;flex-direction:column;gap:24px">
+      <h2 data-r="0" style="margin:0;font-family:Raleway,sans-serif;font-size:clamp(40px,4.6vw,76px);line-height:.98;letter-spacing:-.04em;font-weight:900">Things to know before you enroll</h2>
+      <div style="display:flex;flex-direction:column;gap:12px">
+        <sc-for list="{{ rules }}" as="r" hint-placeholder-count="3">
+          <div data-r="1" style="display:grid;grid-template-columns:auto 1fr;gap:18px;align-items:center;background:{{ r.bg }};color:{{ r.fg }};border-radius:{{ r.br }};padding:22px 26px">
+            <span style="font-family:Raleway,sans-serif;font-size:clamp(28px,2.6vw,40px);font-weight:900;letter-spacing:-.03em">{{ r.k }}</span>
+            <span style="font-size:18px;line-height:1.45;font-weight:600">{{ r.v }}</span>
+          </div>
+        </sc-for>
+      </div>
+    </div>
+    <div data-r="1" style="background:#fff;border-radius:36px;padding:clamp(28px,4vw,52px);display:flex;flex-direction:column;gap:22px">
+      <h3 style="margin:0;font-family:Raleway,sans-serif;font-size:clamp(26px,2.4vw,38px);line-height:1;letter-spacing:-.03em;font-weight:900">Check your child’s class</h3>
+      <label style="display:flex;flex-direction:column;gap:10px;font-size:17px;font-weight:700">Child’s birthday
+        <input type="date" value="{{ dob }}" onChange="{{ onDob }}" min="2018-01-01" max="2026-11-03" style="font:inherit;font-size:22px;font-weight:600;padding:14px 18px;border:3px solid #141414;border-radius:18px;background:#fff;color:#141414;width:100%">
+      </label>
+      <button onClick="{{ toggleDc }}" aria-pressed="{{ dc }}" style="display:flex;align-items:center;gap:14px;font:inherit;font-size:18px;font-weight:700;padding:10px 0;border:0;background:transparent;color:#141414;cursor:pointer;text-align:left">
+        <span style="position:relative;width:60px;height:34px;flex:0 0 60px;border-radius:999px;background:{{ dcTrack }};transition:background .25s">
+          <span style="position:absolute;top:4px;left:4px;width:26px;height:26px;border-radius:50%;background:#fff;transform:translateX({{ dcKnob }});transition:transform .35s cubic-bezier(.34,1.56,.64,1)"></span>
+        </span>
+        We live in Washington, DC
+      </button>
+      <div aria-live="polite" style="border-radius:24px;padding:22px 24px;background:{{ res.bg }};color:{{ res.fg }};display:flex;flex-direction:column;gap:8px;transition:background .3s">
+        <span style="font-family:Raleway,sans-serif;font-size:clamp(24px,2.2vw,32px);font-weight:900;letter-spacing:-.02em;line-height:1.1">{{ res.title }}</span>
+        <span style="font-size:18px;line-height:1.45">{{ res.d }}</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section ref="{{ tlRef }}" data-screen-label="03 Timeline" style="max-width:1600px;margin:0 auto;padding:clamp(96px,10vw,160px) clamp(20px,4vw,56px);display:flex;flex-direction:column;gap:56px">
+  <div style="display:flex;justify-content:space-between;align-items:end;gap:24px;flex-wrap:wrap">
+    <h2 data-r="0" style="margin:0;font-family:Raleway,sans-serif;font-size:clamp(40px,4.6vw,76px);line-height:.98;letter-spacing:-.04em;font-weight:900">The enrollment year</h2>
+    <p data-r="1" style="margin:0;font-size:19px;line-height:1.5;max-width:40ch">Seats are still available at select campuses after the lottery. Call us to find out where.</p>
+  </div>
+  <div style="overflow-x:auto;scrollbar-width:none;padding:16px 4px">
+    <div style="position:relative;min-width:760px;padding-top:28px">
+      <span aria-hidden="true" style="position:absolute;left:24px;right:24px;top:46px;height:18px;border-radius:999px;background:#ECEFF1"></span>
+      <span ref="{{ tlFill }}" aria-hidden="true" style="position:absolute;left:24px;top:46px;height:18px;width:0;border-radius:999px;background:#B50900;transition:width 1.6s cubic-bezier(.6,0,.2,1)"></span>
+      <div style="position:relative;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px">
+        <sc-for list="{{ phases }}" as="p" hint-placeholder-count="3">
+          <div style="display:flex;flex-direction:column;gap:16px">
+            <span style="position:relative;width:54px;height:54px;border-radius:50%;background:{{ p.dot }};border:9px solid #141414">
+              <sc-if value="{{ p.now }}" hint-placeholder-val="{{ false }}"><span style="position:absolute;inset:-9px;border-radius:50%;background:#B50900;animation:epulse 1.8s ease-out infinite"></span></sc-if>
+            </span>
+            <sc-if value="{{ p.now }}" hint-placeholder-val="{{ false }}"><span style="align-self:flex-start;background:#B50900;color:#fff;border-radius:999px;padding:6px 14px;font-size:15px;font-weight:700;white-space:nowrap">We are here</span></sc-if>
+            <span style="font-size:17px;font-weight:700;color:{{ p.c }}">{{ p.when }}</span>
+            <h3 style="margin:0;font-family:Raleway,sans-serif;font-size:clamp(24px,2.2vw,34px);line-height:1;letter-spacing:-.025em;font-weight:900">{{ p.t }}</h3>
+            <p style="margin:0;font-size:18px;line-height:1.5;max-width:34ch">{{ p.d }}</p>
+          </div>
+        </sc-for>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section data-screen-label="04 Steps" style="background:#141414;color:#fff">
+  <div style="max-width:1600px;margin:0 auto;padding:clamp(96px,10vw,160px) clamp(20px,4vw,56px);display:flex;flex-direction:column;gap:48px">
+    <h2 data-r="0" style="margin:0;font-family:Raleway,sans-serif;font-size:clamp(40px,4.6vw,76px);line-height:.98;letter-spacing:-.04em;font-weight:900;max-width:18ch">Four stops to your first day</h2>
+    <ol ref="{{ stackRef }}" style="list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:28px">
+      <sc-for list="{{ steps }}" as="s" hint-placeholder-count="4">
+        <li data-card="{{ $index }}" style="position:sticky;top:{{ s.top }};background:{{ s.bg }};color:{{ s.fg }};border-radius:40px;padding:clamp(24px,3.5vw,48px);display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,360px),1fr));gap:clamp(24px,4vw,56px);align-items:center;min-height:min(70vh,560px);transform-origin:center top;will-change:transform">
+          <div style="display:flex;flex-direction:column;gap:18px">
+            <span style="display:flex;align-items:center;gap:12px;font-size:17px;font-weight:700"><span style="width:30px;height:30px;border-radius:50%;background:#fff;border:7px solid #141414"></span>{{ s.k }}</span>
+            <h3 style="margin:0;font-family:Raleway,sans-serif;font-size:clamp(30px,3.4vw,56px);line-height:1;letter-spacing:-.035em;font-weight:900">{{ s.t }}</h3>
+            <p style="margin:0;font-size:clamp(18px,1.4vw,21px);line-height:1.5;max-width:44ch">{{ s.d }}</p>
+            <div style="display:flex;gap:10px;flex-wrap:wrap">
+              <sc-for list="{{ s.links }}" as="l" hint-placeholder-count="1">
+                <a href="{{ l.url }}" style="background:{{ l.bg }};color:{{ l.fg }};padding:14px 22px;border-radius:16px;font-size:17px;font-weight:700;white-space:nowrap;transition:transform .12s ease-out" style-hover="color:{{ l.fg }}" style-active="transform:scale(.95)">{{ l.t }}</a>
+              </sc-for>
+            </div>
+          </div>
+          <img src="{{ s.img }}" alt="{{ s.alt }}" style="width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:{{ s.br }};display:block">
+        </li>
+      </sc-for>
+    </ol>
+  </div>
+</section>
+
+<section data-screen-label="05 Help" style="max-width:1600px;margin:0 auto;padding:clamp(96px,10vw,160px) clamp(20px,4vw,56px);display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,420px),1fr));gap:clamp(40px,6vw,96px);align-items:start">
+  <div style="display:flex;flex-direction:column;gap:22px">
+    <h2 data-r="0" style="margin:0;font-family:Raleway,sans-serif;font-size:clamp(40px,4.6vw,76px);line-height:.98;letter-spacing:-.04em;font-weight:900">We are here to help</h2>
+    <p data-r="1" style="margin:0;font-size:19px;line-height:1.55;max-width:42ch">Choosing the right preschool is a big decision, and we’re here to make it easier.</p>
+    <a data-r="2" href="https://www.appletreeinstitute.org/frequently-asked-questions" style="align-self:flex-start;font-size:19px;font-weight:700">Visit the enrollment FAQs</a>
+    <div data-r="3" style="display:flex;flex-direction:column;gap:10px;margin-top:12px">
+      <h3 style="margin:0;font-family:Raleway,sans-serif;font-size:22px;font-weight:900">My School DC lottery in a nutshell</h3>
+      <div style="display:flex;gap:8px;flex-wrap:wrap">
+        <a href="https://www.myschooldc.org" style="background:#F4F6F7;color:#141414;padding:12px 18px;border-radius:14px;font-size:17px;font-weight:700" style-hover="color:#141414;background:#ECEFF1">English</a>
+        <a href="https://www.myschooldc.org" style="background:#F4F6F7;color:#141414;padding:12px 18px;border-radius:14px;font-size:17px;font-weight:700" style-hover="color:#141414;background:#ECEFF1">Español</a>
+        <a href="https://www.myschooldc.org" style="background:#F4F6F7;color:#141414;padding:12px 18px;border-radius:14px;font-size:17px;font-weight:700" style-hover="color:#141414;background:#ECEFF1">አማርኛ</a>
+      </div>
+    </div>
+  </div>
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,220px),1fr));gap:14px">
+    <sc-for list="{{ ways }}" as="w" hint-placeholder-count="3">
+      <a data-r="1" href="{{ w.url }}" style="background:{{ w.bg }};color:{{ w.fg }};border-radius:{{ w.br }};padding:28px;min-height:240px;display:flex;flex-direction:column;justify-content:flex-end;gap:8px;transition:transform .25s cubic-bezier(.34,1.56,.64,1)" style-hover="color:{{ w.fg }};transform:translateY(-6px) rotate(-1.5deg)" style-active="transform:scale(.97)">
+        <span style="font-family:Raleway,sans-serif;font-size:26px;font-weight:900;line-height:1.05;letter-spacing:-.02em">{{ w.t }}</span>
+        <span style="font-size:17px;line-height:1.4;font-weight:600">{{ w.d }}</span>
+      </a>
+    </sc-for>
+  </div>
+</section>
+
+<footer data-screen-label="06 Footer" style="background:#B50900;color:#fff">
+  <div aria-hidden="true" style="display:flex;flex-direction:column;gap:10px;padding-top:40px"><span style="height:14px;background:#F9C706;border-radius:0 999px 999px 0;width:72%"></span><span style="height:14px;background:#3A9973;border-radius:0 999px 999px 0;width:58%"></span><span style="height:14px;background:#9BDCE8;border-radius:0 999px 999px 0;width:44%"></span></div>
+  <div style="max-width:1600px;margin:0 auto;padding:56px clamp(20px,4vw,56px) 40px;display:flex;flex-direction:column;gap:48px">
+    <div style="display:flex;gap:40px 64px;flex-wrap:wrap;font-size:17px;line-height:1.6">
+      <div style="display:flex;flex-direction:column;gap:4px"><span style="font-weight:700">AppleTree Early Learning PCS</span><span>1801 Mississippi Avenue SE, Washington, DC 20020</span><span>Schools (202) 526-1503 · Enrollment (202) 448-3330</span></div>
+      <div style="display:flex;flex-direction:column;gap:4px"><a href="Schools%20Home.dc.html" style="color:#fff">AppleTree Schools</a><a href="Campuses.dc.html" style="color:#fff">Campuses</a><a href="Curriculum.dc.html" style="color:#fff">Curriculum</a></div>
+      <div style="display:flex;flex-direction:column;gap:4px"><a href="Mission%20and%20History.dc.html" style="color:#fff">Mission and history</a><a href="Institute%20Home.dc.html" style="color:#fff">AppleTree Institute</a><a href="https://www.instagram.com/appletree_dc_org/" style="color:#fff">Instagram</a></div>
+    </div>
+    <p aria-hidden="true" style="margin:0;font-family:Raleway,sans-serif;font-size:clamp(64px,16vw,280px);line-height:.8;letter-spacing:-.05em;font-weight:900">AppleTree</p>
+    <span style="font-size:15px">© 2026 AppleTree Early Learning Public Charter School</span>
+  </div>
+</footer>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  state = { dob: '', dc: true };
+  heroRef = React.createRef(); tlRef = React.createRef(); tlFill = React.createRef(); stackRef = React.createRef();
+  componentDidMount() {
+    this.reduced = matchMedia('(prefers-reduced-motion: reduce)').matches;
+    this.m = { x: 0, y: 0 }; this.p = [0, 0, 0, 0].map(() => ({ x: 0, y: 0 }));
+    const depth = [18, 30, 12, 40];
+    const loop = () => {
+      const h = this.heroRef.current;
+      if (h && !this.reduced) h.querySelectorAll('[data-p]').forEach((el, i) => { const p = this.p[i]; p.x += (this.m.x * depth[i] - p.x) * .08; p.y += (this.m.y * depth[i] - p.y) * .08; el.style.transform = `translate3d(${p.x}px,${p.y}px,0)`; });
+      const st = this.stackRef.current;
+      if (st && !this.reduced) { const cards = [...st.querySelectorAll('[data-card]')]; cards.forEach((c, i) => { const nx = cards[i + 1]; if (!nx) { c.style.transform = 'none'; return; } const a = c.getBoundingClientRect(), b = nx.getBoundingClientRect(); const cover = Math.min(1, Math.max(0, (a.bottom - b.top) / a.height)); c.style.transform = `scale(${1 - cover * .06})`; c.style.filter = `brightness(${1 - cover * .25})`; }); }
+      this.raf = requestAnimationFrame(loop);
+    };
+    this.raf = requestAnimationFrame(loop);
+    const tl = this.tlRef.current;
+    this.tio = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting && this.tlFill.current) { this.tlFill.current.style.width = this.fillPct(); this.tio.disconnect(); } }), { threshold: .35 });
+    tl && this.tio.observe(tl);
+    if (!this.reduced) {
+      const io = new IntersectionObserver(es => es.forEach(e => { if (!e.isIntersecting) return; const el = e.target, d = (+el.dataset.r || 0) * 80; el.style.transition = `opacity .7s cubic-bezier(.2,.8,.2,1) ${d}ms, transform .9s cubic-bezier(.2,.8,.2,1) ${d}ms`; el.style.opacity = 1; el.style.transform = 'none'; io.unobserve(el); }), { threshold: .12 });
+      document.querySelectorAll('[data-r]').forEach(el => { el.style.opacity = 0; el.style.transform = 'translateY(24px)'; io.observe(el); });
+      this.io = io;
+    }
+  }
+  componentWillUnmount() { cancelAnimationFrame(this.raf); this.io && this.io.disconnect(); this.tio && this.tio.disconnect(); }
+  phaseIdx() { const m = new Date().getMonth(); if (m === 11 || m <= 1) return 1; if (m >= 2 && m <= 9) return 2; return 0; }
+  fillPct() { const i = this.phaseIdx(); return i === 0 ? '24px' : `calc((100% - 48px) * ${i / 2})`; }
+  result() {
+    if (!this.state.dc) return { title: 'DC residency is required', d: 'The child and the enrolling parent must both live in Washington, DC to enroll at AppleTree.', bg: '#ECEFF1', fg: '#141414' };
+    if (!this.state.dob) return { title: 'Add a birthday', d: 'We’ll tell you whether your child would join PK3 or PK4.', bg: '#F4F6F7', fg: '#141414' };
+    const now = new Date(), Y = now.getMonth() >= 6 ? now.getFullYear() + 1 : now.getFullYear(), b = new Date(this.state.dob + 'T12:00:00');
+    const ageOn = y => { const d = new Date(y, 8, 30); let a = d.getFullYear() - b.getFullYear(); if (d < new Date(d.getFullYear(), b.getMonth(), b.getDate())) a--; return a; };
+    const a = ageOn(Y);
+    if (a === 3) return { title: `Eligible for PK3 in fall ${Y}`, d: 'Your child turns 3 on or before September 30. Apply through My School DC during lottery season.', bg: '#3A9973', fg: '#fff' };
+    if (a === 4) return { title: `Eligible for PK4 in fall ${Y}`, d: 'Your child turns 4 on or before September 30. Apply through My School DC during lottery season.', bg: '#3A9973', fg: '#fff' };
+    if (a >= 5) return { title: 'Ready for kindergarten', d: `By fall ${Y} your child is kindergarten age. AppleTree serves three- and four-year-olds.`, bg: '#238EA2', fg: '#fff' };
+    let s = Y; while (ageOn(s) < 3) s++;
+    return { title: `PK3 starts in fall ${s}`, d: 'Your child is still a little young. Join our interest list and we’ll be in touch when it’s time.', bg: '#F9C706', fg: '#141414' };
+  }
+  renderVals() {
+    const pi = this.phaseIdx();
+    return {
+      heroRef: this.heroRef, tlRef: this.tlRef, tlFill: this.tlFill, stackRef: this.stackRef,
+      hover: e => { const r = e.currentTarget.getBoundingClientRect(); this.m = { x: (e.clientX - r.left) / r.width - .5, y: (e.clientY - r.top) / r.height - .5 }; },
+      leave: () => { this.m = { x: 0, y: 0 }; },
+      rules: [
+        { k: 'PK3', v: 'Must be 3 years old on or before September 30 of the enrolling year', bg: '#F58020', fg: '#141414', br: '28px' },
+        { k: 'PK4', v: 'Must be 4 years old on or before September 30 of the enrolling year', bg: '#3A9973', fg: '#fff', br: '999px 28px 28px 999px' },
+        { k: 'DC', v: 'The child and enrolling parent must be DC residents', bg: '#238EA2', fg: '#fff', br: '28px' }
+      ],
+      dob: this.state.dob, onDob: e => this.setState({ dob: e.target.value }),
+      dc: this.state.dc, toggleDc: () => this.setState(s => ({ dc: !s.dc })), dcTrack: this.state.dc ? '#3A9973' : '#AAAAAB', dcKnob: this.state.dc ? '26px' : '0px',
+      res: this.result(),
+      phases: [
+        { when: 'Before December', t: 'Learn about AppleTree', d: 'Visit a campus, come to an open house and find the schools that fit your family.' },
+        { when: 'December 15 to March 2', t: 'Lottery season', d: 'Submit your application for enrollment through My School DC.' },
+        { when: 'March to October', t: 'Post-lottery season', d: 'Seats are still available at select campuses. Apply to join the waitlist, or call (202) 448-3330.' }
+      ].map((p, i) => ({ ...p, now: i === pi, dot: i <= pi ? '#B50900' : '#fff', c: i === pi ? '#B50900' : '#4A4A4A' })),
+      steps: [
+        { k: 'Stop 1', t: 'Choose your top three campuses', d: 'We recommend ranking three AppleTree locations. Last year, over 90% of families who ranked us first received a match offer. Applying post-lottery? Call us to find out where seats are open today.', img: 'assets/hd/campus-sv.jpg', alt: 'The Spring Valley campus', links: [{ t: 'Explore all campuses', url: 'Campuses.dc.html', bg: '#141414', fg: '#fff' }], bg: '#F9C706', fg: '#141414', br: '999px 999px 32px 32px' },
+        { k: 'Stop 2', t: 'Apply on My School DC', d: 'Create an account at myschooldc.org and save your username and password. Rank three different AppleTree schools in your top three choices to raise your chances of a match.', img: 'assets/photos/p18.jpg', alt: 'A girl at the learning wall', links: [{ t: 'Go to the application', url: 'https://apply.myschooldc.dc.gov/login.aspx', bg: '#fff', fg: '#141414' }], bg: '#238EA2', fg: '#fff', br: '32px' },
+        { k: 'Stop 3', t: 'Come play with us', d: 'Whether it’s a free family event, an open house or a tour, there are plenty of ways to connect with us and other families.', img: 'assets/photos/p13.jpg', alt: 'A boy playing with a yellow parachute', links: [{ t: 'Plan a visit', url: 'https://www.appletreeinstitute.org/visit-us', bg: '#141414', fg: '#fff' }], bg: '#69C49B', fg: '#141414', br: '50%' },
+        { k: 'Stop 4', t: 'Accept your match and finish enrolling', d: 'If your child is selected, staff at your matched campus will contact you. Accept the offer, then submit the required paperwork. Post-lottery applicants are contacted as soon as a seat opens.', img: 'assets/photos/p14.jpg', alt: 'An AppleTree class lined up together', links: [{ t: 'See required documents', url: 'https://www.appletreeinstitute.org/enroll-now', bg: '#fff', fg: '#141414' }], bg: '#B50900', fg: '#fff', br: '32px 32px 32px 140px' }
+      ].map((s, i) => ({ ...s, top: `calc(96px + ${i * 26}px)` })),
+      ways: [
+        { t: 'Call (202) 448-3330', d: 'Talk to our enrollment team now.', url: 'tel:+12024483330', bg: '#B50900', fg: '#fff', br: '32px' },
+        { t: 'Schedule a call', d: 'Pick a time that’s convenient for you.', url: 'https://calendly.com/at-recruitment-team/connection', bg: '#F9C706', fg: '#141414', br: '999px 999px 32px 32px' },
+        { t: 'Share your info', d: 'A team member will contact you.', url: 'https://www.tfaforms.com/4946409', bg: '#563884', fg: '#fff', br: '32px 32px 32px 110px' }
+      ]
+    };
+  }
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+<script src="../portfolio-guard.js" defer></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Raleway:wght@700;800;900&family=Source+Sans+3:wght@400;600;700&display=swap">
+<style>
+html,body{margin:0;background:#fff;color:#141414;font-family:'Source Sans 3',system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+*{box-sizing:border-box}
+a{color:#B50900;text-decoration:none}
+a:hover{color:#8A0700}
+h1,h2{text-wrap:balance}
+p{text-wrap:pretty}
+:focus-visible{outline:3px solid #238EA2;outline-offset:3px}
+@media (prefers-reduced-motion: reduce){*{transition-duration:.01ms!important}}
+</style>
+</helmet>
+<main style="min-height:100vh;display:flex;flex-direction:column">
+  <header style="display:flex;align-items:center;justify-content:space-between;gap:24px;padding:18px clamp(20px,4vw,56px);flex-wrap:wrap">
+    <img src="assets/logo-wide.png" alt="AppleTree" style="height:34px;width:auto;display:block">
+    <h1 style="margin:0;font-family:Raleway,sans-serif;font-size:clamp(17px,1.4vw,21px);font-weight:800;letter-spacing:-.01em">Early learning in Washington, DC since 1996</h1>
+  </header>
+  <div style="flex:1;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,480px),1fr));gap:16px;padding:0 16px 16px">
+    <a href="Schools%20Home.dc.html" data-screen-label="Schools" onPointerMove="{{ tilt }}" onPointerLeave="{{ untilt }}" style="position:relative;display:flex;flex-direction:column;justify-content:space-between;gap:40px;background:#B50900;color:#fff;border-radius:36px;padding:clamp(28px,4vw,56px);overflow:hidden;min-height:600px;transition:transform .15s ease-out" style-hover="color:#fff" style-active="transform:scale(.99)">
+      <div style="display:flex;flex-direction:column;gap:18px;position:relative;z-index:2;max-width:22ch">
+        <h2 style="margin:0;font-family:Raleway,sans-serif;font-size:clamp(44px,5vw,84px);line-height:.94;letter-spacing:-.045em;font-weight:900">AppleTree Schools</h2>
+        <p style="margin:0;font-size:clamp(18px,1.5vw,22px);line-height:1.4;font-weight:600">Free public preschool for three- and four-year-olds. Nine campuses across DC.</p>
+      </div>
+      <div ref="{{ blocks }}" aria-hidden="true" style="position:absolute;right:-2%;bottom:-2%;width:min(68%,560px);aspect-ratio:1/1">
+        <img data-b="0" src="assets/photos/p19.jpg" alt="" style="position:absolute;left:0;top:10%;width:52%;aspect-ratio:1/1;object-fit:cover;border-radius:50%;transition:transform .5s cubic-bezier(.34,1.4,.64,1)">
+        <img data-b="1" src="assets/photos/p08.jpg" alt="" style="position:absolute;left:50%;top:0;width:46%;aspect-ratio:4/5;object-fit:cover;border-radius:999px 999px 28px 28px;transition:transform .5s cubic-bezier(.34,1.4,.64,1)">
+        <img data-b="2" src="assets/photos/p03.jpg" alt="" style="position:absolute;left:18%;top:58%;width:50%;aspect-ratio:1/1;object-fit:cover;border-radius:100% 28px 28px 28px;transition:transform .5s cubic-bezier(.34,1.4,.64,1)">
+        <span data-b="3" style="position:absolute;left:72%;top:62%;width:22%;aspect-ratio:1/1;border-radius:50%;background:#F9C706;transition:transform .5s cubic-bezier(.34,1.4,.64,1)"></span>
+      </div>
+      <span style="position:relative;z-index:2;align-self:flex-start;background:#fff;color:#B50900;padding:16px 24px;border-radius:18px;font-size:18px;font-weight:700;white-space:nowrap">For families</span>
+    </a>
+    <a href="Institute%20Home.dc.html" data-screen-label="Institute" style="position:relative;display:flex;flex-direction:column;justify-content:space-between;gap:40px;background:#141414;color:#fff;border-radius:36px;padding:clamp(28px,4vw,56px);overflow:hidden;min-height:600px;transition:transform .15s ease-out" style-hover="color:#fff" style-active="transform:scale(.99)">
+      <img src="assets/photos/p11.jpg" alt="" aria-hidden="true" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.5;-webkit-mask-image:linear-gradient(to top,#000 15%,transparent 85%);mask-image:linear-gradient(to top,#000 15%,transparent 85%)">
+      <svg viewBox="0 0 600 600" aria-hidden="true" preserveAspectRatio="xMaxYMin meet" style="position:absolute;right:0;top:0;width:min(70%,460px);height:auto">
+        <path ref="{{ m0 }}" d="M600 120 H420 L340 200 V600" fill="none" stroke="#F9C706" stroke-width="16" stroke-linecap="round" stroke-linejoin="round"></path>
+        <path ref="{{ m1 }}" d="M600 220 H480 L400 300 H160" fill="none" stroke="#3A9973" stroke-width="16" stroke-linecap="round" stroke-linejoin="round"></path>
+        <path ref="{{ m2 }}" d="M520 0 V380 L460 440 H600" fill="none" stroke="#9BDCE8" stroke-width="16" stroke-linecap="round" stroke-linejoin="round"></path>
+        <circle cx="340" cy="300" r="13" fill="#fff" stroke="#141414" stroke-width="6"></circle>
+        <circle cx="520" cy="220" r="13" fill="#fff" stroke="#141414" stroke-width="6"></circle>
+        <circle cx="420" cy="120" r="11" fill="#fff" stroke="#141414" stroke-width="6"></circle>
+      </svg>
+      <div style="display:flex;flex-direction:column;gap:18px;position:relative;z-index:1;max-width:24ch">
+        <h2 style="margin:0;font-family:Raleway,sans-serif;font-size:clamp(44px,5vw,84px);line-height:.94;letter-spacing:-.045em;font-weight:900">AppleTree Institute</h2>
+        <p style="margin:0;font-size:clamp(18px,1.5vw,22px);line-height:1.4;font-weight:600">The Every Child Ready curriculum, research and policy, shared with schools in four states.</p>
+      </div>
+      <span style="position:relative;z-index:1;align-self:flex-start;background:#F9C706;color:#141414;padding:16px 24px;border-radius:18px;font-size:18px;font-weight:700;white-space:nowrap">For educators and partners</span>
+    </a>
+  </div>
+</main>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  blocks = React.createRef(); m0 = React.createRef(); m1 = React.createRef(); m2 = React.createRef();
+  componentDidMount() {
+    if (matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+    [this.m0, this.m1, this.m2].forEach((r, i) => { const p = r.current; if (!p) return; const L = p.getTotalLength(); p.style.strokeDasharray = L; p.style.strokeDashoffset = L; p.getBoundingClientRect(); p.style.transition = `stroke-dashoffset 1.3s cubic-bezier(.6,0,.2,1) ${300 + i * 200}ms`; p.style.strokeDashoffset = 0; });
+    const b = this.blocks.current; if (b) b.querySelectorAll('[data-b]').forEach((el, i) => el.animate([{ transform: 'scale(0)' }, { transform: 'scale(1)' }], { duration: 700, delay: 150 + i * 110, easing: 'cubic-bezier(.34,1.56,.64,1)', fill: 'backwards' }));
+  }
+  renderVals() {
+    return {
+      blocks: this.blocks, m0: this.m0, m1: this.m1, m2: this.m2,
+      tilt: e => { const r = e.currentTarget.getBoundingClientRect(), x = (e.clientX - r.left) / r.width - .5, y = (e.clientY - r.top) / r.height - .5; const b = this.blocks.current; if (b) b.querySelectorAll('[data-b]').forEach((el, i) => { const d = [14, 22, 10, 30][i]; el.style.transform = `translate(${x * d}px,${y * d}px)`; }); },
+      untilt: () => { const b = this.blocks.current; if (b) b.querySelectorAll('[data-b]').forEach(el => { el.style.transform = 'none'; }); }
+    };
+  }
+}
+</script>
+</body>
+</html>

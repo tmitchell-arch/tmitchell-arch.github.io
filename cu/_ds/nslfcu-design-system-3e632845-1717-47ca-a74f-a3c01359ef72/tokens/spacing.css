@@ -1,0 +1,24 @@
+/* Spacing, radii, borders, elevation, motion. */
+:root{
+  --space-1:4px;--space-2:8px;--space-3:12px;--space-4:16px;--space-5:20px;--space-6:24px;--space-7:32px;--space-8:40px;--space-9:56px;--space-10:72px;--space-11:96px;--space-12:128px;
+  --page-margin-print:72px;   /* 0.75in guide margins */
+  --page-margin-slide:220px;  /* deck content inset @1920 (82.5pt of 720) */
+  --content-max:1200px;
+
+  --radius-sm:6px;     /* table pills, small tags on slides */
+  --radius-md:10px;    /* deck stat tiles, deck buttons */
+  --radius-lg:16px;    /* guide callouts, section panels, cards */
+  --radius-xl:24px;    /* web feature panels / images */
+  --radius-pill:999px; /* web buttons, badges */
+
+  --border-hair:1px;--border-rule-accent:2px;--border-bar:14px; /* gold left bar on parchment slides */
+
+  --shadow-none:none;
+  --shadow-card:0 1px 2px rgba(36,16,25,.05),0 8px 24px rgba(36,16,25,.06);
+  --shadow-float:0 18px 48px rgba(36,16,25,.18); /* product screenshots floating on slides */
+
+  --ease-standard:cubic-bezier(.2,.7,.2,1); /* @kind other */
+  --duration-fast:120ms; /* @kind other */
+  --duration-base:200ms; /* @kind other */
+  --duration-slow:320ms; /* @kind other */
+}

@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+<script src="../portfolio-guard.js" defer></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..900&family=Hanken+Grotesk:wght@400;500;600;700&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+<style>body{margin:0;background:#F4F2EC;color:#0B0B0B;-webkit-font-smoothing:antialiased;font-family:'Hanken Grotesk',sans-serif}a{color:#DC4B2C;text-decoration:none}a:hover{color:#0B0B0B}html{scroll-behavior:smooth}</style>
+</helmet>
+<div style="font-family:'Hanken Grotesk',sans-serif;color:#0B0B0B;overflow-x:hidden">
+
+<header data-screen-label="Nav" onMouseLeave="{{ closeSoon }}" style="position:fixed;top:0;left:0;right:0;z-index:50;padding:{{ outerPad }};transition:padding 320ms cubic-bezier(.2,.7,.2,1);pointer-events:none">
+    <div style="position:relative;margin:0 auto;max-width:{{ barMax }};pointer-events:auto;transition:max-width 320ms cubic-bezier(.2,.7,.2,1)">
+      <div style="display:flex;align-items:center;gap:28px;height:{{ barH }};padding:{{ barPad }};background:#F4F2EC;border:{{ barBorder }};border-bottom:2px solid #0B0B0B;box-shadow:{{ barShadow }};transition:all 320ms cubic-bezier(.2,.7,.2,1)">
+        <a href="https://www.engagedspaces.com/" aria-label="Engaged Spaces — home" style="position:relative;display:block;flex:none;width:{{ logoBoxW }};height:44px;transition:width 320ms cubic-bezier(.2,.7,.2,1)">
+          <img src="logos/wordmark-solid.png" alt="" style="position:absolute;left:0;top:50%;transform:translateY(-50%);height:38px;width:auto;filter:brightness(0);opacity:{{ wordOp }};transition:opacity 200ms">
+          <img src="logos/icon-orange.png" alt="" style="position:absolute;left:0;top:50%;transform:translateY(-50%);height:42px;width:auto;opacity:{{ markOp }};transition:opacity 200ms">
+        </a>
+        <sc-if value="{{ desktop }}" hint-placeholder-val="{{ true }}">
+          <nav aria-label="Main" style="display:flex;align-items:center;gap:clamp(18px,2.4vw,36px);flex:1;min-width:0">
+            <sc-for list="{{ items }}" as="it" hint-placeholder-count="4">
+              <div onMouseEnter="{{ it.onEnter }}" style="position:relative">
+                <a href="{{ it.href }}" onClick="{{ it.onClick }}" aria-expanded="{{ it.expanded }}" aria-haspopup="{{ it.hasMenu }}" style="display:flex;align-items:center;gap:6px;padding:10px 0;font-weight:600;font-size:16px;white-space:nowrap;color:{{ it.color }};transition:color 160ms">{{ it.label }}<span style="font-size:11px;display:{{ it.caret }}">▾</span></a>
+                <span aria-hidden="true" style="position:absolute;left:0;right:0;bottom:2px;height:3px;background:#DC4B2C;transform-origin:left;transform:{{ it.lineScale }};transition:transform 220ms cubic-bezier(.2,.7,.2,1)"></span>
+              </div>
+            </sc-for>
+          </nav>
+          <a href="https://calendar.app.google/16qceu5122yaQ7LH8" style="flex:none;background:#0B0B0B;color:#F4F2EC;font-weight:700;font-size:15px;padding:12px 20px;box-shadow:4px 4px 0 #DC4B2C;white-space:nowrap" style-hover="background:#DC4B2C;color:#0B0B0B;box-shadow:4px 4px 0 #0B0B0B">Book a call</a>
+        </sc-if>
+        <sc-if value="{{ mobile }}" hint-placeholder-val="{{ false }}">
+          <div style="flex:1"></div>
+          <button type="button" onClick="{{ toggleMobile }}" aria-expanded="{{ mobileOpenStr }}" style="height:44px;padding:0 20px;border:2px solid #0B0B0B;background:#F4F2EC;color:#0B0B0B;font-family:'Hanken Grotesk',sans-serif;font-weight:700;font-size:15px;cursor:pointer;box-shadow:3px 3px 0 #DC4B2C">{{ menuBtnLabel }}</button>
+        </sc-if>
+      </div>
+
+      <div role="region" aria-label="Services menu" onMouseEnter="{{ keepOpen }}" style="position:absolute;left:0;right:0;top:100%;padding-top:12px;opacity:{{ servicesOp }};visibility:{{ servicesVis }};transform:{{ servicesY }};transition:opacity 200ms,transform 240ms cubic-bezier(.2,.7,.2,1),visibility 200ms">
+        <div style="max-width:1120px;margin:0 auto;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);background:#F4F2EC;border:2px solid #0B0B0B;box-shadow:8px 8px 0 #0B0B0B">
+          <div style="padding:28px 24px;display:grid;gap:4px;align-content:start">
+            <span style="font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#B23A20;padding:0 16px 10px">Services</span>
+            <a href="https://www.engagedspaces.com/services/coaching-" style="display:grid;gap:4px;padding:14px 16px;color:#0B0B0B;border-left:3px solid transparent" style-hover="background:#E3E2DD;border-color:#DC4B2C;color:#0B0B0B"><span style="font-family:'Archivo',sans-serif;font-weight:800;font-size:19px;letter-spacing:-.015em;line-height:1.15">Coaching</span><span style="font-size:14px;line-height:1.45;color:#3A3835">Instructional and professional / executive coaching.</span></a><a href="https://www.engagedspaces.com/services/consulting" style="display:grid;gap:4px;padding:14px 16px;color:#0B0B0B;border-left:3px solid transparent" style-hover="background:#E3E2DD;border-color:#DC4B2C;color:#0B0B0B"><span style="font-family:'Archivo',sans-serif;font-weight:800;font-size:19px;letter-spacing:-.015em;line-height:1.15">Consulting</span><span style="font-size:14px;line-height:1.45;color:#3A3835">A collaborative, strategic partner for leaders.</span></a><a href="https://www.engagedspaces.com/services/conversations" style="display:grid;gap:4px;padding:14px 16px;color:#0B0B0B;border-left:3px solid transparent" style-hover="background:#E3E2DD;border-color:#DC4B2C;color:#0B0B0B"><span style="font-family:'Archivo',sans-serif;font-weight:800;font-size:19px;letter-spacing:-.015em;line-height:1.15">Conversations</span><span style="font-size:14px;line-height:1.45;color:#3A3835">Facilitated dialogue on diversity, equity, inclusion and belonging.</span></a><a href="https://www.engagedspaces.com/services/professional-development" style="display:grid;gap:4px;padding:14px 16px;color:#0B0B0B;border-left:3px solid transparent" style-hover="background:#E3E2DD;border-color:#DC4B2C;color:#0B0B0B"><span style="font-family:'Archivo',sans-serif;font-weight:800;font-size:19px;letter-spacing:-.015em;line-height:1.15">Professional Development</span><span style="font-size:14px;line-height:1.45;color:#3A3835">Learning that builds an inclusive, engaged culture.</span></a><a href="https://www.engagedspaces.com/services" style="padding:14px 16px;font-weight:700;font-size:15px;color:#B23A20">Explore all services →</a>
+          </div>
+          <div style="background:#E3E2DD;padding:28px 32px;display:grid;gap:8px;align-content:start;border-left:2px solid #0B0B0B">
+            <a href="https://www.engagedspaces.com/case-studies" style="display:flex;gap:18px;align-items:center;color:#0B0B0B;padding:10px 0" style-hover="opacity:.85;color:#0B0B0B"><span style="position:relative;display:block;width:120px;flex:none;aspect-ratio:800 / 788"><span style="position:absolute;inset:0;-webkit-mask-image:url(logos/bubble2-mask.png);mask-image:url(logos/bubble2-mask.png);-webkit-mask-size:100% 100%;mask-size:100% 100%"><img src="photos/teens-hall.jpg" alt="" style="width:100%;height:100%;object-fit:cover;object-position:50% 40%"></span><img src="logos/bubble2-frame.png" alt="" style="position:absolute;inset:0;width:100%;height:100%"></span><span style="display:grid;gap:6px"><span style="font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#B23A20">Case studies</span><span style="font-family:'Archivo',sans-serif;font-weight:800;font-size:18px;letter-spacing:-.015em;line-height:1.2">See how communities transformed with us</span><span style="font-size:14px;font-weight:700;color:#B23A20">Read the stories →</span></span></a><a href="https://calendar.app.google/16qceu5122yaQ7LH8" style="display:flex;gap:18px;align-items:center;color:#0B0B0B;padding:10px 0" style-hover="opacity:.85;color:#0B0B0B"><span style="position:relative;display:block;width:120px;flex:none;aspect-ratio:800 / 788"><span style="position:absolute;inset:0;-webkit-mask-image:url(logos/bubble2-mask-flip.png);mask-image:url(logos/bubble2-mask-flip.png);-webkit-mask-size:100% 100%;mask-size:100% 100%"><img src="photos/teacher-smile.jpg" alt="" style="width:100%;height:100%;object-fit:cover;object-position:50% 30%"></span><img src="logos/bubble2-frame-flip.png" alt="" style="position:absolute;inset:0;width:100%;height:100%"></span><span style="display:grid;gap:6px"><span style="font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#B23A20">Free consultation</span><span style="font-family:'Archivo',sans-serif;font-weight:800;font-size:18px;letter-spacing:-.015em;line-height:1.2">Tell us about your community — we’ll listen first</span><span style="font-size:14px;font-weight:700;color:#B23A20">Book a call →</span></span></a>
+          </div>
+        </div>
+      </div>
+
+      <div role="region" aria-label="About menu" onMouseEnter="{{ keepOpen }}" style="position:absolute;left:0;right:0;top:100%;padding-top:12px;opacity:{{ aboutOp }};visibility:{{ aboutVis }};transform:{{ aboutY }};transition:opacity 200ms,transform 240ms cubic-bezier(.2,.7,.2,1),visibility 200ms">
+        <div style="max-width:1120px;margin:0 auto;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);background:#F4F2EC;border:2px solid #0B0B0B;box-shadow:8px 8px 0 #0B0B0B">
+          <div style="padding:28px 24px;display:grid;gap:4px;align-content:start">
+            <span style="font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#B23A20;padding:0 16px 10px">About</span>
+            <a href="https://www.engagedspaces.com/about" style="display:grid;gap:4px;padding:14px 16px;color:#0B0B0B;border-left:3px solid transparent" style-hover="background:#E3E2DD;border-color:#DC4B2C;color:#0B0B0B"><span style="font-family:'Archivo',sans-serif;font-weight:800;font-size:19px;letter-spacing:-.015em;line-height:1.15">About Us</span><span style="font-size:14px;line-height:1.45;color:#3A3835">A capacity-building consultancy based in Washington, D.C.</span></a><a href="https://www.engagedspaces.com/engaging-equitably-framework" style="display:grid;gap:4px;padding:14px 16px;color:#0B0B0B;border-left:3px solid transparent" style-hover="background:#E3E2DD;border-color:#DC4B2C;color:#0B0B0B"><span style="font-family:'Archivo',sans-serif;font-weight:800;font-size:19px;letter-spacing:-.015em;line-height:1.15">Our Framework</span><span style="font-size:14px;line-height:1.45;color:#3A3835">The Engaging Equitably framework behind our work.</span></a><a href="https://www.engagedspaces.com/contact" style="display:grid;gap:4px;padding:14px 16px;color:#0B0B0B;border-left:3px solid transparent" style-hover="background:#E3E2DD;border-color:#DC4B2C;color:#0B0B0B"><span style="font-family:'Archivo',sans-serif;font-weight:800;font-size:19px;letter-spacing:-.015em;line-height:1.15">Contact</span><span style="font-size:14px;line-height:1.45;color:#3A3835">hi@engagedspaces.com · +1 (202) 642-5484</span></a>
+          </div>
+          <div style="background:#E3E2DD;padding:28px 32px;display:grid;gap:8px;align-content:start;border-left:2px solid #0B0B0B">
+            <a href="https://www.engagedspaces.com/engaging-equitably-framework" style="display:flex;gap:18px;align-items:center;color:#0B0B0B;padding:10px 0" style-hover="opacity:.85;color:#0B0B0B"><span style="position:relative;display:block;width:120px;flex:none;aspect-ratio:800 / 788"><span style="position:absolute;inset:0;-webkit-mask-image:url(logos/bubble2-mask.png);mask-image:url(logos/bubble2-mask.png);-webkit-mask-size:100% 100%;mask-size:100% 100%"><img src="photos/kids-board.jpg" alt="" style="width:100%;height:100%;object-fit:cover;object-position:50% 40%"></span><img src="logos/bubble2-frame.png" alt="" style="position:absolute;inset:0;width:100%;height:100%"></span><span style="display:grid;gap:6px"><span style="font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#B23A20">Our framework</span><span style="font-family:'Archivo',sans-serif;font-weight:800;font-size:18px;letter-spacing:-.015em;line-height:1.2">Engaging Equitably</span><span style="font-size:14px;font-weight:700;color:#B23A20">Learn the framework →</span></span></a><figure style="margin:8px 0 0;padding:20px 22px;background:#F4F2EC;border:2px solid #0B0B0B;display:grid;gap:10px"><blockquote style="margin:0;font-family:'Instrument Serif',serif;font-size:21px;line-height:1.2">“Our team got comfortable with being uncomfortable… we’re in a much better place because of our partnership.”</blockquote><figcaption style="font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase">— School Principal</figcaption></figure>
+          </div>
+        </div>
+      </div>
+      <sc-if value="{{ mobilePanel }}" hint-placeholder-val="{{ false }}">
+        <div style="position:absolute;left:0;right:0;top:100%;padding:{{ mPanelPad }}">
+          <div style="background:#F4F2EC;border:2px solid #0B0B0B;box-shadow:6px 6px 0 #0B0B0B;padding:8px 20px 20px;max-height:{{ mPanelMax }};overscroll-behavior:contain;overflow:auto;display:grid">
+            <a href="https://www.engagedspaces.com/" style="padding:14px 0;border-bottom:2px solid #E3E2DD;font-family:'Archivo',sans-serif;font-weight:800;font-size:20px;color:#0B0B0B">Home</a>
+            <div style="padding:14px 0;border-bottom:2px solid #E3E2DD;display:grid;gap:6px"><span style="font-family:'Archivo',sans-serif;font-weight:800;font-size:20px">Services</span><div style="display:grid"><a href="https://www.engagedspaces.com/services/coaching-" style="padding:10px 0;font-size:16px;font-weight:500;color:#3A3835">Coaching</a><a href="https://www.engagedspaces.com/services/consulting" style="padding:10px 0;font-size:16px;font-weight:500;color:#3A3835">Consulting</a><a href="https://www.engagedspaces.com/services/conversations" style="padding:10px 0;font-size:16px;font-weight:500;color:#3A3835">Conversations</a><a href="https://www.engagedspaces.com/services/professional-development" style="padding:10px 0;font-size:16px;font-weight:500;color:#3A3835">Professional Development</a></div></div>
+            <a href="https://www.engagedspaces.com/case-studies" style="padding:14px 0;border-bottom:2px solid #E3E2DD;font-family:'Archivo',sans-serif;font-weight:800;font-size:20px;color:#0B0B0B">Case Studies</a>
+            <div style="padding:14px 0;display:grid;gap:6px"><span style="font-family:'Archivo',sans-serif;font-weight:800;font-size:20px">About</span><div style="display:grid"><a href="https://www.engagedspaces.com/about" style="padding:10px 0;font-size:16px;font-weight:500;color:#3A3835">About Us</a><a href="https://www.engagedspaces.com/engaging-equitably-framework" style="padding:10px 0;font-size:16px;font-weight:500;color:#3A3835">Our Framework</a><a href="https://www.engagedspaces.com/contact" style="padding:10px 0;font-size:16px;font-weight:500;color:#3A3835">Contact</a></div></div>
+            <a href="https://calendar.app.google/16qceu5122yaQ7LH8" style="margin-top:8px;text-align:center;background:#0B0B0B;color:#F4F2EC;font-weight:700;font-size:16px;padding:16px;box-shadow:4px 4px 0 #DC4B2C">Book a call</a>
+          </div>
+        </div>
+      </sc-if>
+    </div>
+  </header>
+  <div aria-hidden="true" style="height:{{ spacerH }}"></div>
+
+
+<section data-screen-label="Framework Hero" style="position:relative;overflow:hidden;background:#F4F2EC">
+  <div style="position:relative;max-width:1320px;margin:0 auto;padding:clamp(64px,8vw,120px) clamp(20px,4vw,56px);display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,520px),1fr));gap:clamp(40px,5vw,80px);align-items:center">
+    <div style="display:grid;gap:32px">
+      <span style="font-size:14px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#B23A20">Our framework</span>
+      <h1 style="margin:0;font-family:'Archivo',sans-serif;font-weight:900;font-size:clamp(60px,8.4vw,128px);line-height:.84;letter-spacing:-.055em;color:#DC4B2C;text-shadow:.04em .04em 0 #0B0B0B">engaging<br>equitably.</h1>
+      <p style="margin:0;font-size:clamp(17px,1.4vw,20px);line-height:1.6;color:#3A3835;max-width:560px;text-wrap:pretty">Welcome to the heart of our mission. We initiate vibrant dialogues, provide insightful consultancies, and facilitate transformative coaching to cultivate spaces that resonate with liberty and deep community impact.</p>
+      <p style="margin:0;font-family:'Instrument Serif',serif;font-style:italic;font-size:clamp(26px,2.6vw,36px);line-height:1.12;max-width:560px;text-wrap:pretty">Not just a set of principles—a beacon that guides every interaction and strategy we apply.</p>
+      <div style="display:flex;gap:16px;flex-wrap:wrap">
+        <a href="#framework" style="background:#0B0B0B;color:#F4F2EC;font-weight:700;font-size:16px;padding:14px 22px;box-shadow:4px 4px 0 #DC4B2C" style-hover="background:#DC4B2C;color:#0B0B0B;box-shadow:4px 4px 0 #0B0B0B">See the framework ↓</a>
+        <a href="https://calendar.app.google/16qceu5122yaQ7LH8" style="color:#0B0B0B;font-weight:700;font-size:16px;padding:14px 4px;border-bottom:3px solid #0B0B0B" style-hover="color:#B23A20;border-color:#B23A20">Book a call</a>
+      </div>
+    </div>
+    <div style="position:relative;justify-self:center;width:100%;max-width:580px;aspect-ratio:800 / 788">
+      <div style="position:absolute;inset:0;-webkit-mask-image:url(logos/bubble2-mask.png);mask-image:url(logos/bubble2-mask.png);-webkit-mask-size:100% 100%;mask-size:100% 100%"><img src="photos/hand-raised.jpg" alt="Student raising a hand in class while a classmate writes at the whiteboard" style="width:100%;height:100%;object-fit:cover;object-position:62% 40%"></div>
+      <img src="logos/bubble2-frame.png" alt="" style="position:absolute;inset:0;width:100%;height:100%">
+    </div>
+  </div>
+  <sc-if value="{{ showTexture }}" hint-placeholder-val="{{ true }}"><img src="textures/paper-2.png" alt="" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;mix-blend-mode:multiply;pointer-events:none"></sc-if>
+</section>
+
+<section data-screen-label="Theory" style="background:#0B0B0B;color:#F4F2EC">
+  <div style="max-width:1320px;margin:0 auto;padding:clamp(80px,9vw,140px) clamp(20px,4vw,56px);display:grid;gap:clamp(48px,6vw,88px)">
+    <div style="display:grid;gap:24px;max-width:1080px">
+      <span style="font-size:14px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#DC4B2C">Our theory</span>
+      <p style="margin:0;font-family:'Instrument Serif',serif;font-size:clamp(34px,4.2vw,64px);line-height:1.04;letter-spacing:-.01em;text-wrap:pretty">Individuals and collectives are <span style="font-style:italic;color:#DC4B2C">continuously evolving</span> along a spectrum of anti-racism awareness, bias comprehension, and competency.</p>
+    </div>
+    <div style="display:grid;gap:18px">
+      <div style="display:grid;grid-template-columns:repeat(3,minmax(0,1fr));border-top:4px solid #F4F2EC">
+        <span style="padding-top:16px;font-family:'Archivo',sans-serif;font-weight:800;font-size:clamp(16px,1.8vw,24px);letter-spacing:-.02em">Awareness</span>
+        <span style="padding-top:16px;font-family:'Archivo',sans-serif;font-weight:800;font-size:clamp(16px,1.8vw,24px);letter-spacing:-.02em;border-left:2px solid #3A3835;padding-left:clamp(12px,2vw,24px)">Comprehension</span>
+        <span style="padding-top:16px;font-family:'Archivo',sans-serif;font-weight:800;font-size:clamp(16px,1.8vw,24px);letter-spacing:-.02em;border-left:2px solid #3A3835;padding-left:clamp(12px,2vw,24px);color:#DC4B2C">Competency →</span>
+      </div>
+      <div style="display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap;font-size:15px;color:#B9B6AE"><span>From closed corridors of old power structures</span><span>to open arenas where justice and humanity converge</span></div>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,380px),1fr));gap:clamp(32px,4vw,64px)">
+      <p style="margin:0;font-size:clamp(17px,1.4vw,19px);line-height:1.65;color:#E3E2DD;text-wrap:pretty">At the core of everything we facilitate, anti-racism, equity, and emotional intelligence serve as critical touchstones—ensuring each venture is imbued with deliberate and compassionate humanity: recognition of our individual and collective humanhood.</p>
+      <p style="margin:0;font-size:clamp(17px,1.4vw,19px);line-height:1.65;color:#E3E2DD;text-wrap:pretty">To authentically engage with equity as our compass, we lean into a deep-seated appreciation for the full tapestry of humanhood—disentangling from archaic narratives to dismantle the war on humanity declared by white supremacy culture, using our potent collective potential.</p>
+    </div>
+  </div>
+</section>
+
+<section id="framework" data-screen-label="Framework" style="position:relative;overflow:hidden;background:#F4F2EC">
+  <div style="position:relative;max-width:1320px;margin:0 auto;padding:clamp(80px,9vw,140px) clamp(20px,4vw,56px);display:grid;gap:clamp(32px,4vw,48px)">
+    <div style="display:flex;justify-content:space-between;align-items:flex-end;gap:40px;flex-wrap:wrap;border-bottom:3px solid #0B0B0B;padding-bottom:clamp(24px,3vw,36px)">
+      <div style="display:grid;gap:18px">
+        <span style="font-size:14px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#B23A20">The framework</span>
+        <h2 style="margin:0;font-family:'Archivo',sans-serif;font-weight:900;font-size:clamp(52px,6.6vw,96px);line-height:.86;letter-spacing:-.05em">three pillars.</h2>
+      </div>
+      <p style="margin:0;max-width:470px;font-family:'Instrument Serif',serif;font-style:italic;font-size:clamp(24px,2.3vw,30px);line-height:1.15;text-wrap:pretty">Three movements — from <span style="color:#B23A20">humanhood</span>, through forward progress, to systemic change.</p>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,340px),1fr));gap:clamp(20px,2.4vw,28px)">
+      <div style="display:flex;flex-direction:column">
+        <div style="align-self:flex-start;background:#0B0B0B;color:#F4F2EC;padding:12px 22px 10px;display:flex;gap:12px;align-items:baseline"><span style="font-family:'Archivo',sans-serif;font-weight:900;font-size:20px;color:#DC4B2C">01</span><span style="font-size:15px;font-weight:700;letter-spacing:.12em;text-transform:uppercase">Humanhood</span></div>
+        <div style="flex:1;background:#0B0B0B;color:#F4F2EC;padding:4px clamp(22px,2.4vw,30px) 24px;display:flex;flex-direction:column">
+          <div style="padding:18px 0;display:grid;gap:8px"><span style="font-family:'Archivo',sans-serif;font-weight:900;font-size:clamp(24px,2.2vw,30px);letter-spacing:-.03em;line-height:1">Collective Potential</span><span style="font-size:17px;line-height:1.45;text-wrap:pretty">Power the disruption of White supremacy culture using the potential energy generated by the unique identities within your collective.</span></div>
+          <div style="padding:18px 0;border-top:3px solid #DC4B2C;display:grid;gap:8px"><span style="font-family:'Archivo',sans-serif;font-weight:900;font-size:clamp(24px,2.2vw,30px);letter-spacing:-.03em;line-height:1">Lines of Difference</span><span style="font-size:17px;line-height:1.45;text-wrap:pretty">Appreciate lines of difference — unshared identity markers and lived experiences — by recognizing them and their potential.</span></div>
+          <div style="padding:18px 0 0;border-top:3px solid #DC4B2C;display:grid;gap:8px"><span style="font-family:'Archivo',sans-serif;font-weight:900;font-size:clamp(24px,2.2vw,30px);letter-spacing:-.03em;line-height:1">Lines of Similarity</span><span style="font-size:17px;line-height:1.45;text-wrap:pretty">Appreciate lines of similarity — shared identity markers and lived experiences — by recognizing them and their potential.</span></div>
+        </div>
+      </div>
+      <div style="display:flex;flex-direction:column">
+        <div style="align-self:flex-start;background:#DC4B2C;color:#0B0B0B;padding:12px 22px 10px;display:flex;gap:12px;align-items:baseline"><span style="font-family:'Archivo',sans-serif;font-weight:900;font-size:20px;color:#F4F2EC">02</span><span style="font-size:15px;font-weight:700;letter-spacing:.12em;text-transform:uppercase">Forward Progress</span></div>
+        <div style="flex:1;background:#DC4B2C;color:#0B0B0B;padding:4px clamp(22px,2.4vw,30px) 24px;display:flex;flex-direction:column">
+          <div style="padding:18px 0;display:grid;gap:8px"><span style="font-family:'Archivo',sans-serif;font-weight:900;font-size:clamp(24px,2.2vw,30px);letter-spacing:-.03em;line-height:1">Own Your Learning</span><span style="font-size:17px;line-height:1.45;font-weight:500;text-wrap:pretty">Own your responsibility to understand the impact of oppression by deepening your understanding of systemic injustice and marking pathways to freedom.</span></div>
+          <div style="padding:18px 0 0;border-top:3px solid #0B0B0B;display:grid;gap:8px"><span style="font-family:'Archivo',sans-serif;font-weight:900;font-size:clamp(24px,2.2vw,30px);letter-spacing:-.03em;line-height:1">Put Off the Oppressor’s Gaze</span><span style="font-size:17px;line-height:1.45;font-weight:500;text-wrap:pretty">Recognize and renounce beliefs and behaviors that are byproducts of White supremacy culture; develop a liberatory mindset.</span></div>
+        </div>
+      </div>
+      <div style="display:flex;flex-direction:column">
+        <div style="align-self:flex-start;background:#E3E2DD;color:#0B0B0B;padding:12px 22px 10px;display:flex;gap:12px;align-items:baseline"><span style="font-family:'Archivo',sans-serif;font-weight:900;font-size:20px;color:#B23A20">03</span><span style="font-size:15px;font-weight:700;letter-spacing:.12em;text-transform:uppercase">Fuel Systemic Change</span></div>
+        <div style="flex:1;background:#E3E2DD;color:#0B0B0B;padding:4px clamp(22px,2.4vw,30px) 24px;display:flex;flex-direction:column">
+          <div style="padding:18px 0;display:grid;gap:8px"><span style="font-family:'Archivo',sans-serif;font-weight:900;font-size:clamp(24px,2.2vw,30px);letter-spacing:-.03em;line-height:1">Assess + Acknowledge</span><span style="font-size:17px;line-height:1.45;text-wrap:pretty">Inspect your systems and their origins. Reckon with their conception and current (and former) operating ecosystems.</span></div>
+          <div style="padding:18px 0 0;border-top:3px solid #0B0B0B;display:grid;gap:8px"><span style="font-family:'Archivo',sans-serif;font-weight:900;font-size:clamp(24px,2.2vw,30px);letter-spacing:-.03em;line-height:1">Design + Distribute</span><span style="font-size:17px;line-height:1.45;text-wrap:pretty">Design reformed systems anchored in DEIJB that are equipped to maintain equitable engagement even amidst systemic barriers.</span></div>
+        </div>
+      </div>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));align-items:center;gap:clamp(24px,4vw,56px);background:#0B0B0B;color:#F4F2EC;padding:clamp(24px,3vw,32px) clamp(24px,3.4vw,44px);box-shadow:8px 8px 0 #DC4B2C;margin-right:8px">
+      <div style="display:grid;gap:10px"><span style="font-size:14px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#E3E2DD">All three lead to</span><span style="font-family:'Archivo',sans-serif;font-weight:900;font-size:clamp(56px,6vw,80px);line-height:.82;letter-spacing:-.055em;color:#DC4B2C;text-shadow:.05em .05em 0 #F4F2EC">the goal.</span></div>
+      <p style="margin:0;font-size:clamp(19px,1.9vw,24px);line-height:1.35;font-weight:500;text-wrap:pretty;border-left:3px solid #DC4B2C;padding-left:clamp(20px,3vw,40px)">Disrupt oppressive culture and engage freely in equitable practices that produce equitable outcomes toward the <span style="font-family:'Instrument Serif',serif;font-style:italic;font-size:1.25em;color:#DC4B2C">liberation of all humankind.</span></p>
+    </div>
+  </div>
+  <sc-if value="{{ showTexture }}" hint-placeholder-val="{{ true }}"><img src="textures/paper-1.png" alt="" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;mix-blend-mode:multiply;pointer-events:none"></sc-if>
+</section>
+
+<section data-screen-label="Pillars in Depth" style="background:#E3E2DD">
+  <div style="max-width:1320px;margin:0 auto;padding:clamp(80px,9vw,140px) clamp(20px,4vw,56px);display:grid;gap:clamp(40px,5vw,64px)">
+    <div style="display:grid;gap:18px;max-width:760px"><span style="font-size:14px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#B23A20">In practice</span><h2 style="margin:0;font-family:'Archivo',sans-serif;font-weight:900;font-size:clamp(48px,6vw,88px);line-height:.88;letter-spacing:-.05em">what each pillar asks of us.</h2></div>
+    <div style="display:grid;border-bottom:3px solid #0B0B0B">
+      <div style="border-top:3px solid #0B0B0B;padding:clamp(28px,3.4vw,44px) 0;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,360px),1fr));gap:clamp(20px,4vw,64px)">
+        <div style="display:grid;gap:12px;align-content:start"><span style="font-family:'Archivo',sans-serif;font-weight:900;font-size:48px;letter-spacing:-.04em;line-height:1;color:#DC4B2C">01</span><h3 style="margin:0;font-family:'Archivo',sans-serif;font-weight:900;font-size:clamp(32px,3.4vw,48px);letter-spacing:-.04em;line-height:.95">Humanhood</h3><span style="font-family:'Instrument Serif',serif;font-style:italic;font-size:24px;line-height:1.2">is an invitation to…</span></div>
+        <div style="display:grid">
+          <div style="display:grid;gap:4px;padding:0 0 16px"><span style="font-family:'Archivo',sans-serif;font-weight:800;font-size:20px;letter-spacing:-.02em">Acknowledging our shared humanity</span><span style="font-size:17px;line-height:1.55;color:#3A3835;text-wrap:pretty">Finding unity in our similarities and strength in our diversities.</span></div>
+          <div style="display:grid;gap:4px;padding:16px 0;border-top:2px solid #B9B6AE"><span style="font-family:'Archivo',sans-serif;font-weight:800;font-size:20px;letter-spacing:-.02em">Mobilizing collective potency</span><span style="font-size:17px;line-height:1.55;color:#3A3835;text-wrap:pretty">Channeling the unique energies inside our community to upheave white supremacy culture.</span></div>
+          <div style="display:grid;gap:4px;padding:16px 0;border-top:2px solid #B9B6AE"><span style="font-family:'Archivo',sans-serif;font-weight:800;font-size:20px;letter-spacing:-.02em">Advancing education and leadership</span><span style="font-size:17px;line-height:1.55;color:#3A3835;text-wrap:pretty">Fostering a lifetime commitment to personal growth and societal change.</span></div>
+          <div style="display:grid;gap:4px;padding:16px 0 0;border-top:2px solid #B9B6AE"><span style="font-family:'Archivo',sans-serif;font-weight:800;font-size:20px;letter-spacing:-.02em">Cultivating enduring systemic reform</span><span style="font-size:17px;line-height:1.55;color:#3A3835;text-wrap:pretty">Planting seeds of equity that grow into structures capable of sheltering justice and inclusiveness.</span></div>
+        </div>
+      </div>
+      <div style="border-top:3px solid #0B0B0B;padding:clamp(28px,3.4vw,44px) 0;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,360px),1fr));gap:clamp(20px,4vw,64px)">
+        <div style="display:grid;gap:12px;align-content:start"><span style="font-family:'Archivo',sans-serif;font-weight:900;font-size:48px;letter-spacing:-.04em;line-height:1;color:#DC4B2C">02</span><h3 style="margin:0;font-family:'Archivo',sans-serif;font-weight:900;font-size:clamp(32px,3.4vw,48px);letter-spacing:-.04em;line-height:.95">Forward Progress</h3></div>
+        <p style="margin:0;font-size:clamp(17px,1.4vw,19px);line-height:1.6;color:#3A3835;text-wrap:pretty">The courageous commitment to self-directed learning—not superficially, but as a profound and personal understanding of systemic injustice and the active pursuit of genuine freedom. It’s about <strong style="color:#0B0B0B">dethroning the oppressor’s gaze</strong> and adopting a mindset of liberation.</p>
+      </div>
+      <div style="border-top:3px solid #0B0B0B;padding:clamp(28px,3.4vw,44px) 0;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,360px),1fr));gap:clamp(20px,4vw,64px)">
+        <div style="display:grid;gap:12px;align-content:start"><span style="font-family:'Archivo',sans-serif;font-weight:900;font-size:48px;letter-spacing:-.04em;line-height:1;color:#DC4B2C">03</span><h3 style="margin:0;font-family:'Archivo',sans-serif;font-weight:900;font-size:clamp(32px,3.4vw,48px);letter-spacing:-.04em;line-height:.95">Fueling Systemic Change</h3></div>
+        <p style="margin:0;font-size:clamp(17px,1.4vw,19px);line-height:1.6;color:#3A3835;text-wrap:pretty">First we acknowledge and confront the roots of our existing systems—thorough introspection, challenging the underpinnings of our professional practices, and reimagining them. Then we design and proliferate systems infused with diversity, equity, inclusion, justice, and belonging (DEIJB), resilient against systemic barriers to maintain equitable engagement.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section data-screen-label="Closing" style="background:#0B0B0B;color:#F4F2EC">
+  <div style="max-width:1320px;margin:0 auto;padding:clamp(80px,9vw,140px) clamp(20px,4vw,56px);display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,440px),1fr));gap:clamp(40px,6vw,96px);align-items:center">
+    <div style="position:relative;justify-self:center;width:100%;max-width:520px;aspect-ratio:800 / 788">
+      <div style="position:absolute;inset:0;-webkit-mask-image:url(logos/bubble2-mask-flip.png);mask-image:url(logos/bubble2-mask-flip.png);-webkit-mask-size:100% 100%;mask-size:100% 100%"><img src="photos/family-sofa.jpg" alt="Family laughing together on a sofa" style="width:100%;height:100%;object-fit:cover;object-position:50% 30%"></div>
+      <img src="logos/bubble2-frame-flip.png" alt="" style="position:absolute;inset:0;width:100%;height:100%;filter:brightness(0) invert(1)">
+    </div>
+    <div style="display:grid;gap:28px">
+      <p style="margin:0;font-family:'Instrument Serif',serif;font-size:clamp(32px,3.6vw,54px);line-height:1.05;text-wrap:pretty">Our ethos, translated into practices that yield spaces with outcomes <span style="font-style:italic;color:#DC4B2C">as equitable as the intentions behind them.</span></p>
+      <p style="margin:0;font-size:clamp(17px,1.4vw,19px);line-height:1.65;color:#E3E2DD;max-width:560px;text-wrap:pretty">We don’t just envision educational and professional environments that reflect the kaleidoscope of identities within them—we take concrete action to build them. Connect with us, and together we can actualize equitable outcomes that revel in our shared humanhood.</p>
+      <a href="https://calendar.app.google/16qceu5122yaQ7LH8" style="justify-self:start;background:#DC4B2C;color:#0B0B0B;font-weight:700;font-size:16px;padding:14px 22px;box-shadow:4px 4px 0 #F4F2EC" style-hover="background:#F4F2EC;color:#0B0B0B;box-shadow:4px 4px 0 #DC4B2C">Start the conversation →</a>
+    </div>
+  </div>
+</section>
+
+<section id="contact" data-screen-label="Contact" style="position:relative;background:#DC4B2C;overflow:hidden">
+  <div style="max-width:1320px;margin:0 auto;padding:clamp(72px,8vw,120px) clamp(20px,4vw,56px);display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,420px),1fr));gap:clamp(40px,5vw,80px);align-items:center">
+    <div style="position:relative;width:100%;max-width:560px;aspect-ratio:800 / 788">
+      <img src="logos/bubble2-mask.png" alt="" style="position:absolute;inset:0;width:100%;height:100%">
+      <img src="logos/bubble2-frame.png" alt="" style="position:absolute;inset:0;width:100%;height:100%;filter:brightness(0)">
+      <div style="position:absolute;left:21%;top:24%;right:12%;font-family:'Archivo',sans-serif;font-weight:900;font-size:clamp(64px,9vw,112px);line-height:.84;letter-spacing:-.055em">let’s<br>talk.</div>
+    </div>
+    <div style="display:grid;gap:32px;color:#0B0B0B">
+      <p style="margin:0;font-family:'Instrument Serif',serif;font-style:italic;font-size:clamp(30px,3vw,44px);line-height:1.08;text-wrap:pretty">We get to collaborate with so many amazing leaders and organizations every year. We can’t wait to see what you have in mind!</p>
+      <div style="border-top:3px solid #0B0B0B;border-bottom:3px solid #0B0B0B;padding:18px 0;display:grid;gap:8px;font-size:clamp(18px,1.8vw,24px);font-weight:600">
+        <a href="mailto:hi@engagedspaces.com" style="color:#0B0B0B" style-hover="color:#F4F2EC">hi@engagedspaces.com</a>
+        <a href="tel:+12026425484" style="color:#0B0B0B" style-hover="color:#F4F2EC">+1 (202) 642-5484</a>
+        <span>Washington, D.C.</span>
+      </div>
+      <a href="https://calendar.app.google/16qceu5122yaQ7LH8" style="justify-self:start;background:#0B0B0B;color:#F4F2EC;font-weight:700;font-size:17px;padding:16px 24px;box-shadow:4px 4px 0 #F4F2EC" style-hover="background:#F4F2EC;color:#0B0B0B;box-shadow:4px 4px 0 #0B0B0B">Book a call →</a>
+    </div>
+  </div>
+  <sc-if value="{{ showTexture }}" hint-placeholder-val="{{ true }}"><img src="textures/paper-1.png" alt="" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;mix-blend-mode:multiply;pointer-events:none"></sc-if>
+</section>
+
+<footer style="background:#0B0B0B;color:#F4F2EC">
+  <div style="max-width:1320px;margin:0 auto;padding:56px clamp(20px,4vw,56px) 32px;display:grid;gap:40px">
+    <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:40px;flex-wrap:wrap">
+      <img src="logos/wordmark-solid.png" alt="Engaged Spaces" style="height:44px;filter:brightness(0) invert(1)">
+      <div style="display:flex;gap:clamp(40px,6vw,96px);flex-wrap:wrap">
+        <div style="display:grid;gap:10px;align-content:start;font-size:16px"><span style="font-size:13px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#B9B6AE">Main pages</span>
+          <a href="https://www.engagedspaces.com/" style="color:#F4F2EC" style-hover="color:#DC4B2C">Home</a><a href="https://www.engagedspaces.com/about" style="color:#F4F2EC" style-hover="color:#DC4B2C">About</a><a href="https://www.engagedspaces.com/services" style="color:#F4F2EC" style-hover="color:#DC4B2C">Services</a><a href="https://www.engagedspaces.com/contact" style="color:#F4F2EC" style-hover="color:#DC4B2C">Contact</a><a href="https://www.engagedspaces.com/legal" style="color:#F4F2EC" style-hover="color:#DC4B2C">Legal</a>
+        </div>
+        <div style="display:grid;gap:10px;align-content:start;font-size:16px"><span style="font-size:13px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#B9B6AE">Follow</span>
+          <a href="https://www.instagram.com/engaged.spaces/" style="color:#F4F2EC" style-hover="color:#DC4B2C">Instagram</a><a href="https://twitter.com/engagedspacesdc" style="color:#F4F2EC" style-hover="color:#DC4B2C">X / Twitter</a>
+        </div>
+      </div>
+    </div>
+    <div style="border-top:1px solid #3A3835;padding-top:20px;display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;font-size:14px;color:#B9B6AE"><span>© 2026 Engaged Spaces · Washington, D.C.</span><span>Website designed by <a href="https://www.mitchellstrategies.co/" style="color:#F4F2EC" style-hover="color:#DC4B2C">Mitchell Strategies</a></span></div>
+  </div>
+</footer>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;menuTrigger&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;hover&quot;,&quot;click&quot;],&quot;default&quot;:&quot;hover&quot;,&quot;tsType&quot;:&quot;'hover'|'click'&quot;,&quot;section&quot;:&quot;Nav&quot;},&quot;navPreview&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;live&quot;,&quot;top&quot;,&quot;scrolled&quot;],&quot;default&quot;:&quot;live&quot;,&quot;tsType&quot;:&quot;'live'|'top'|'scrolled'&quot;,&quot;section&quot;:&quot;Nav&quot;},&quot;showTexture&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;}}">
+class Component extends DCLogic {
+  state = { scrolled: false, open: null, mobile: false, mobileOpen: false };
+  componentDidMount() {
+    this.onScroll = () => { const v = window.scrollY > 24; if (v !== this.state.scrolled) this.setState({ scrolled: v }); };
+    this.mq = window.matchMedia('(max-width: 960px)');
+    this.onMq = () => this.setState({ mobile: this.mq.matches, open: null, mobileOpen: false });
+    this.onKey = e => { if (e.key === 'Escape') this.setState({ open: null, mobileOpen: false }); };
+    this.onDoc = e => { if (!e.target.closest('header[data-screen-label="Nav"]')) this.setState({ open: null }); };
+    window.addEventListener('scroll', this.onScroll, { passive: true });
+    this.mq.addEventListener('change', this.onMq);
+    document.addEventListener('keydown', this.onKey);
+    document.addEventListener('click', this.onDoc);
+    this.onScroll(); this.onMq();
+  }
+  componentDidUpdate() { document.documentElement.style.overflow = this.state.mobile && this.state.mobileOpen ? 'hidden' : ''; }
+  componentWillUnmount() {
+    clearTimeout(this.t);
+    document.documentElement.style.overflow = '';
+    window.removeEventListener('scroll', this.onScroll);
+    this.mq.removeEventListener('change', this.onMq);
+    document.removeEventListener('keydown', this.onKey);
+    document.removeEventListener('click', this.onDoc);
+  }
+  navVals() {
+    const P = this.props, trigger = P.menuTrigger ?? 'hover';
+    const { open, mobile, mobileOpen } = this.state;
+    const scrolled = (P.navPreview ?? 'live') === 'scrolled' || ((P.navPreview ?? 'live') === 'live' && this.state.scrolled);
+    const setOpen = k => { clearTimeout(this.t); if (this.state.open !== k) this.setState({ open: k }); };
+    const defs = [
+      { label: 'Services', href: 'https://www.engagedspaces.com/services', menu: 'services' },
+      { label: 'Case Studies', href: 'https://www.engagedspaces.com/case-studies' },
+      { label: 'About', href: 'https://www.engagedspaces.com/about', menu: 'about' },
+      { label: 'Contact', href: 'https://www.engagedspaces.com/contact' }];
+    const items = defs.map(d => { const o = d.menu && open === d.menu; return {
+      label: d.label, href: d.href, hasMenu: d.menu ? 'true' : undefined, expanded: d.menu ? String(!!o) : undefined,
+      caret: d.menu ? 'inline' : 'none', color: o || d.label === 'About' ? '#B23A20' : '#0B0B0B', lineScale: o || d.label === 'About' ? 'scaleX(1)' : 'scaleX(0)',
+      onEnter: () => { if (trigger === 'hover') setOpen(d.menu || null); },
+      onClick: e => { if (d.menu) { e.preventDefault(); setOpen(this.state.open === d.menu ? null : d.menu); } } }; });
+    const show = k => open === k && !mobile;
+    const pv = k => ({ [k + 'Op']: show(k) ? 1 : 0, [k + 'Vis']: show(k) ? 'visible' : 'hidden', [k + 'Y']: show(k) ? 'translateY(0)' : 'translateY(-6px)' });
+    return { items, desktop: !mobile, mobile, mobileOpenStr: String(mobileOpen), mobilePanel: mobile && mobileOpen,
+      ...pv('services'), ...pv('about'),
+      outerPad: scrolled ? '14px 16px 0' : '0px 0px 0',
+      barMax: scrolled ? '1120px' : '100%',
+      barH: scrolled ? (mobile ? '60px' : '68px') : (mobile ? '72px' : '84px'),
+      barPad: scrolled ? (mobile ? '0 10px 0 14px' : '0 16px 0 20px') : '0 clamp(20px,3.5vw,56px)',
+      barBorder: scrolled ? '2px solid #0B0B0B' : '0px solid transparent',
+      barShadow: scrolled ? '6px 6px 0 #0B0B0B' : 'none',
+      spacerH: mobile ? '72px' : '84px',
+      logoBoxW: scrolled ? '44px' : '200px', wordOp: scrolled ? 0 : 1, markOp: scrolled ? 1 : 0,
+      mPanelPad: scrolled ? '12px 0 0' : '10px 12px 0', mPanelMax: scrolled ? 'calc(100dvh - 110px)' : 'calc(100dvh - 96px)',
+      closeSoon: () => { if (trigger !== 'hover') return; clearTimeout(this.t); this.t = setTimeout(() => this.setState({ open: null }), 160); },
+      keepOpen: () => clearTimeout(this.t),
+      toggleMobile: () => this.setState(st => ({ mobileOpen: !st.mobileOpen })),
+      menuBtnLabel: mobileOpen ? 'Close' : 'Menu' };
+  }
+  renderVals() {
+    return { ...this.navVals(), showTexture: this.props.showTexture ?? true };
+  }
+}
+</script>
+</body>
+</html>

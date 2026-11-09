@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+<script src="../portfolio-guard.js" defer></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Raleway:wght@700;800;900&family=Source+Sans+3:wght@400;600;700&display=swap">
+<style>
+html,body{margin:0;background:#fff;color:#141414;font-family:'Source Sans 3',system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+*{box-sizing:border-box}
+a{color:#B50900;text-decoration:none}
+a:hover{color:#8A0700}
+h1,h2,h3{text-wrap:balance}
+p,li{text-wrap:pretty}
+::selection{background:#F9C706;color:#141414}
+:focus-visible{outline:3px solid #238EA2;outline-offset:3px}
+@keyframes ipulse{0%{transform:scale(1);opacity:.5}100%{transform:scale(2.6);opacity:0}}
+@media (prefers-reduced-motion: reduce){*{transition-duration:.01ms!important;animation:none!important}}
+</style>
+</helmet>
+
+<header style="position:sticky;top:0;z-index:30;background:#fff;display:flex;align-items:center;justify-content:space-between;gap:20px;padding:14px clamp(20px,4vw,56px);flex-wrap:wrap">
+  <a href="AppleTree.dc.html" aria-label="AppleTree home" style="display:flex;align-items:center;gap:12px;color:#141414;font-weight:700;font-size:17px"><img src="assets/logo-wide.png" alt="AppleTree" style="height:30px;width:auto;display:block"><span>Institute</span></a>
+  <nav style="white-space:nowrap;display:flex;align-items:center;gap:clamp(14px,2.2vw,28px);flex-wrap:wrap;font-size:17px;font-weight:700">
+    <a href="#ecr" style="color:#141414" style-hover="color:#B50900">Every Child Ready</a>
+    <a href="#research" style="color:#141414" style-hover="color:#B50900">Research</a>
+    <a href="Policy.dc.html" style="color:#141414" style-hover="color:#B50900">Policy</a>
+    <a href="Mission%20and%20History.dc.html" style="color:#141414" style-hover="color:#B50900">About</a>
+    <a href="Schools%20Home.dc.html" style="color:#141414" style-hover="color:#B50900">Our schools</a>
+    <a href="#partner" style="background:#141414;color:#fff;padding:12px 22px;border-radius:16px;transition:transform .12s ease-out" style-hover="color:#fff;background:#000" style-active="transform:scale(.95)">Partner with us</a>
+  </nav>
+</header>
+
+<section id="ecr" data-screen-label="01 Hero" style="background:#141414;color:#fff;position:relative;overflow:hidden">
+  <img src="assets/photos/p07.jpg" alt="" aria-hidden="true" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.28;-webkit-mask-image:linear-gradient(to right,#000 0%,transparent 70%);mask-image:linear-gradient(to right,#000 0%,transparent 70%)">
+  <div style="position:relative;max-width:1600px;margin:0 auto;padding:clamp(56px,7vw,112px) clamp(20px,4vw,56px);display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,480px),1fr));gap:clamp(32px,4vw,64px);align-items:center">
+    <div style="display:flex;flex-direction:column;gap:26px">
+      <h1 data-r="0" style="margin:0;font-family:Raleway,sans-serif;font-size:clamp(52px,7vw,120px);line-height:.92;letter-spacing:-.045em;font-weight:900">Every Child Ready</h1>
+      <p data-r="1" style="margin:0;font-size:clamp(18px,1.5vw,22px);line-height:1.5;max-width:44ch">A high-quality, research-based curriculum built by AppleTree Institute for three- and four-year-olds. It grows language, literacy, social-emotional and thinking skills through play, so children are ready for kindergarten and beyond.</p>
+      <div data-r="2" style="display:flex;gap:12px;flex-wrap:wrap">
+        <a href="https://www.appletreeinstitute.org/every-child-ready" style="background:#F9C706;color:#141414;padding:18px 28px;border-radius:18px;font-size:18px;font-weight:700;white-space:nowrap;transition:transform .12s ease-out" style-hover="color:#141414;background:#FFD633" style-active="transform:scale(.95)">Discover more</a>
+        <a href="#partner" style="background:#fff;color:#141414;padding:18px 28px;border-radius:18px;font-size:18px;font-weight:700;white-space:nowrap;transition:transform .12s ease-out" style-hover="color:#141414;background:#F4F6F7" style-active="transform:scale(.95)">Bring it to your school</a>
+      </div>
+    </div>
+    <div data-r="1" style="position:relative;width:100%;max-width:720px;justify-self:center">
+      <div style="position:relative">
+      <svg viewBox="0 0 640 460" role="img" aria-label="Every Child Ready lines running from Washington, DC to partners in New York, Missouri and Texas" style="width:100%;height:auto;display:block;overflow:visible">
+        <path ref="{{ r0 }}" d="M470 230 V140 L540 70 H600" fill="none" stroke="#B50900" stroke-width="16" stroke-linecap="round" stroke-linejoin="round"></path>
+        <path ref="{{ r1 }}" d="M470 230 L430 270 H230 L190 230 H120" fill="none" stroke="#3A9973" stroke-width="16" stroke-linecap="round" stroke-linejoin="round"></path>
+        <path ref="{{ r2 }}" d="M470 230 V330 L420 380 H200 L160 420" fill="none" stroke="#F9C706" stroke-width="16" stroke-linecap="round" stroke-linejoin="round"></path>
+        <circle ref="{{ t0 }}" r="8" fill="#fff" stroke="#B50900" stroke-width="5" opacity="0"></circle>
+        <circle ref="{{ t1 }}" r="8" fill="#fff" stroke="#3A9973" stroke-width="5" opacity="0"></circle>
+        <circle ref="{{ t2 }}" r="8" fill="#fff" stroke="#C99A00" stroke-width="5" opacity="0"></circle>
+        <circle cx="470" cy="230" r="20" fill="#F9C706" style="transform-box:fill-box;transform-origin:center;animation:ipulse 2s ease-out infinite"></circle>
+        <sc-for list="{{ hubs }}" as="h" hint-placeholder-count="4">
+          <g onClick="{{ h.pick }}" onKeyDown="{{ h.key }}" role="button" tabindex="0" aria-label="{{ h.name }}" style="cursor:pointer">
+            <circle cx="{{ h.x }}" cy="{{ h.y }}" r="26" fill="transparent"></circle>
+            <circle cx="{{ h.x }}" cy="{{ h.y }}" r="{{ h.r }}" fill="{{ h.fill }}" stroke="#141414" stroke-width="6" style="transition:r .3s"></circle>
+          </g>
+        </sc-for>
+      </svg>
+      <sc-for list="{{ hubs }}" as="h" hint-placeholder-count="4">
+        <span aria-hidden="true" onClick="{{ h.pick }}" style="position:absolute;left:{{ h.px }};top:{{ h.py }};transform:translate(-50%,-150%);font-size:clamp(14px,1.2vw,18px);font-weight:700;white-space:nowrap;color:#141414;background:#fff;padding:4px 10px;border-radius:10px;cursor:pointer">{{ h.name }}</span>
+      </sc-for>
+      </div>
+      <div aria-live="polite" style="margin-top:16px;background:#fff;color:#141414;border-radius:24px;padding:20px 24px;display:flex;flex-direction:column;gap:4px">
+        <span style="font-size:15px;font-weight:700;color:{{ hub.c }}">{{ hub.line }}</span>
+        <span style="font-family:Raleway,sans-serif;font-size:22px;font-weight:900;letter-spacing:-.02em">{{ hub.name }}</span>
+        <span style="font-size:17px;line-height:1.45">{{ hub.d }}</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section data-screen-label="02 Values" style="max-width:1600px;margin:0 auto;padding:clamp(96px,10vw,160px) clamp(20px,4vw,56px);display:flex;flex-direction:column;gap:48px">
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,440px),1fr));gap:clamp(24px,5vw,80px);align-items:end">
+    <h2 data-r="0" style="margin:0;font-family:Raleway,sans-serif;font-size:clamp(40px,4.6vw,76px);line-height:.98;letter-spacing:-.04em;font-weight:900">Preparing all children to thrive in kindergarten and beyond</h2>
+    <p data-r="1" style="margin:0;font-size:19px;line-height:1.55;max-width:48ch">Preparing every child to enter kindergarten ready to thrive will transform the lives of the children we teach, and our country, as we share what we’ve learned with more communities. Five core values guide the work.</p>
+  </div>
+  <div data-r="2" role="group" aria-label="Our core values" style="display:flex;flex-direction:{{ vDir }};gap:12px;min-height:{{ vMin }}">
+    <sc-for list="{{ values }}" as="v" hint-placeholder-count="5">
+      <button onClick="{{ v.pick }}" onMouseEnter="{{ v.pick }}" onFocus="{{ v.pick }}" aria-pressed="{{ v.on }}" style="flex:{{ v.flex }};min-width:0;text-align:left;font:inherit;border:0;cursor:pointer;background:{{ v.bg }};color:{{ v.fg }};border-radius:{{ v.br }};padding:28px;display:flex;flex-direction:column;justify-content:flex-end;gap:12px;overflow:hidden;transition:flex .6s cubic-bezier(.2,.9,.2,1),border-radius .6s">
+        <span style="font-family:Raleway,sans-serif;font-size:clamp(22px,2vw,34px);line-height:1;letter-spacing:-.025em;font-weight:900;white-space:{{ v.ws }}">{{ v.t }}</span>
+        <sc-if value="{{ v.on }}" hint-placeholder-val="{{ false }}">
+          <span style="font-size:18px;line-height:1.45;max-width:44ch">{{ v.d }}</span>
+        </sc-if>
+      </button>
+    </sc-for>
+  </div>
+</section>
+
+<section data-screen-label="03 Growth" style="background:#B50900;color:#fff">
+  <div style="max-width:1600px;margin:0 auto;padding:clamp(96px,10vw,160px) clamp(20px,4vw,56px);display:flex;flex-direction:column;gap:48px">
+    <h2 data-r="0" style="margin:0;font-family:Raleway,sans-serif;font-size:clamp(40px,4.6vw,76px);line-height:.98;letter-spacing:-.04em;font-weight:900;max-width:16ch">From one DC classroom to four states</h2>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,420px),1fr));gap:clamp(32px,5vw,80px);align-items:end">
+      <span data-r="1" style="font-family:Raleway,sans-serif;font-size:clamp(120px,16vw,260px);line-height:.82;letter-spacing:-.06em;font-weight:900;font-variant-numeric:tabular-nums">{{ m.year }}</span>
+      <div data-r="2" aria-live="polite" style="display:flex;flex-direction:column;gap:16px;min-height:180px">
+        <p style="margin:0;font-size:clamp(22px,2vw,32px);line-height:1.2;letter-spacing:-.015em;font-weight:700">{{ m.text }}</p>
+        <p style="margin:0;font-size:18px;font-weight:700">{{ m.where }}</p>
+      </div>
+    </div>
+    <div data-r="3" style="display:flex;flex-direction:column;gap:18px">
+      <div style="display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap">
+        <span style="font-size:18px;font-weight:700">Ride the line, or tap a year</span>
+        <button onClick="{{ toggle }}" style="font:inherit;font-size:17px;font-weight:700;padding:12px 22px;border:0;border-radius:18px;background:#fff;color:#141414;cursor:pointer;white-space:nowrap;transition:transform .12s ease-out" style-active="transform:scale(.95)">{{ playLabel }}</button>
+      </div>
+      <div style="overflow-x:auto;scrollbar-width:none;padding:8px 4px 4px">
+        <div role="group" aria-label="Milestones by year" style="position:relative;display:flex;justify-content:space-between;min-width:720px;padding:0 6px">
+          <span aria-hidden="true" style="position:absolute;left:20px;right:20px;top:22px;height:16px;border-radius:999px;background:#F9C706"></span>
+          <span aria-hidden="true" style="position:absolute;left:20px;top:22px;height:16px;border-radius:999px;background:#fff;width:{{ fillW }};transition:width .6s cubic-bezier(.2,.9,.2,1)"></span>
+          <sc-for list="{{ stops }}" as="s" hint-placeholder-count="12">
+            <button onClick="{{ s.pick }}" aria-pressed="{{ s.on }}" aria-label="{{ s.year }}" style="position:relative;display:flex;flex-direction:column;align-items:center;gap:10px;border:0;background:transparent;color:#fff;font:inherit;cursor:pointer;padding:0;min-width:44px">
+              <span style="width:{{ s.size }};height:{{ s.size }};margin-top:{{ s.mt }};border-radius:50%;background:{{ s.bg }};border:7px solid #141414;transition:all .35s cubic-bezier(.34,1.56,.64,1)"></span>
+              <span style="font-size:15px;font-weight:700;font-variant-numeric:tabular-nums;opacity:{{ s.op }}">{{ s.year }}</span>
+            </button>
+          </sc-for>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="research" data-screen-label="04 Research" style="max-width:1600px;margin:0 auto;padding:clamp(96px,10vw,160px) clamp(20px,4vw,56px);display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,440px),1fr));gap:clamp(40px,6vw,96px);align-items:center">
+  <div style="position:relative;width:100%;aspect-ratio:1/1;max-width:640px">
+    <span data-r="0" aria-hidden="true" style="position:absolute;left:4%;top:4%;width:70%;aspect-ratio:1/1;border-radius:50%;background:#9BDCE8"></span>
+    <img data-r="1" src="assets/web/ins-report.png" alt="An AppleTree research report" style="position:absolute;left:0;top:10%;width:76%;height:auto;display:block">
+    <img data-r="2" src="assets/hd/residency-team.jpg" alt="AppleTree coaches and teachers reviewing classroom work" style="position:absolute;right:0;bottom:0;width:52%;aspect-ratio:1/1;object-fit:cover;border-radius:999px 999px 32px 32px;border:10px solid #fff">
+  </div>
+  <div style="display:flex;flex-direction:column;gap:22px">
+    <h2 data-r="0" style="margin:0;font-family:Raleway,sans-serif;font-size:clamp(40px,4.6vw,76px);line-height:.98;letter-spacing:-.04em;font-weight:900">Research and impact</h2>
+    <p data-r="1" style="margin:0;font-size:19px;line-height:1.55;max-width:44ch">Our research and impact work is directly aligned to two of our core values:</p>
+    <div data-r="2" style="display:flex;gap:10px;flex-wrap:wrap">
+      <span style="background:#238EA2;color:#fff;border-radius:999px;padding:12px 20px;font-size:18px;font-weight:700;white-space:nowrap">Continuous improvement</span>
+      <span style="background:#563884;color:#fff;border-radius:999px;padding:12px 20px;font-size:18px;font-weight:700;white-space:nowrap">Research to practice</span>
+    </div>
+    <div data-r="3" style="background:#F4F6F7;border-radius:28px;padding:26px 28px;display:flex;flex-direction:column;gap:10px">
+      <h3 style="margin:0;font-family:Raleway,sans-serif;font-size:24px;line-height:1.1;font-weight:900">Early Childhood Mental Health Consultation</h3>
+      <p style="margin:0;font-size:18px;line-height:1.5">We provide applied, rapid research to our Every Child Ready partners, bridging the old gap between researchers and practitioners. Educators’ direct experience informs every development cycle.</p>
+    </div>
+    <a data-r="3" href="https://www.appletreeinstitute.org/research-impact" style="align-self:flex-start;background:#141414;color:#fff;padding:16px 24px;border-radius:16px;font-size:18px;font-weight:700;white-space:nowrap;transition:transform .12s ease-out" style-hover="color:#fff;background:#000" style-active="transform:scale(.95)">View all research</a>
+  </div>
+</section>
+
+<section data-screen-label="05 Policy insights" style="background:#F9C706">
+  <div style="max-width:1600px;margin:0 auto;padding:clamp(96px,10vw,160px) clamp(20px,4vw,56px);display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,440px),1fr));gap:clamp(40px,6vw,96px);align-items:center">
+    <div style="display:flex;flex-direction:column;gap:22px">
+      <h2 data-r="0" style="margin:0;font-family:Raleway,sans-serif;font-size:clamp(40px,4.6vw,76px);line-height:.98;letter-spacing:-.04em;font-weight:900">Early Ed Policy Insights</h2>
+      <p data-r="1" style="margin:0;font-size:19px;line-height:1.55;max-width:44ch">Conversations on the early learning landscape with the people who set policy, run schools and teach in them, hosted by Natasha Parrilla.</p>
+      <div data-r="2" style="display:flex;gap:12px;flex-wrap:wrap">
+        <a href="https://youtu.be/cA4xKdt38s4" style="background:#141414;color:#fff;padding:16px 24px;border-radius:16px;font-size:18px;font-weight:700;white-space:nowrap;transition:transform .12s ease-out" style-hover="color:#fff;background:#000" style-active="transform:scale(.95)">Watch now</a>
+        <a href="Policy.dc.html" style="background:#fff;color:#141414;padding:16px 24px;border-radius:16px;font-size:18px;font-weight:700;white-space:nowrap;transition:transform .12s ease-out" style-hover="color:#141414" style-active="transform:scale(.95)">Our policy work</a>
+      </div>
+    </div>
+    <a data-r="1" href="https://youtu.be/cA4xKdt38s4" aria-label="Watch Early Ed Policy Insights on YouTube" style="position:relative;display:block;border-radius:36px;overflow:hidden;transition:transform .25s cubic-bezier(.34,1.56,.64,1)" style-hover="transform:scale(1.02) rotate(-.5deg)" style-active="transform:scale(.98)">
+      <img src="assets/web/early-ed-policy.jpg" alt="Early Ed Policy Insights video thumbnail" style="width:100%;aspect-ratio:1293/793;object-fit:cover;display:block">
+      <span aria-hidden="true" style="position:absolute;left:50%;top:50%;width:92px;height:92px;margin:-46px 0 0 -46px;border-radius:50%;background:#B50900;color:#fff;display:flex;align-items:center;justify-content:center;font-size:30px;padding-left:6px">▶</span>
+    </a>
+  </div>
+</section>
+
+<section data-screen-label="06 Careers" style="max-width:1600px;margin:0 auto;padding:clamp(96px,10vw,160px) clamp(20px,4vw,56px);display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,420px),1fr));gap:clamp(40px,5vw,72px)">
+  <div style="display:flex;flex-direction:column;gap:20px">
+    <img data-r="0" src="assets/photos/p12.jpg" alt="An AppleTree teacher and students raising their hands" style="width:100%;aspect-ratio:16/10;object-fit:cover;border-radius:999px 999px 36px 36px;display:block">
+    <h2 data-r="1" style="margin:0;font-family:Raleway,sans-serif;font-size:clamp(32px,3.4vw,56px);line-height:1;letter-spacing:-.035em;font-weight:900">Join our team</h2>
+    <p data-r="2" style="margin:0;font-size:18px;line-height:1.55;max-width:46ch">Looking to build a long and rewarding career? Our commitment to our people is unmatched, and many of our team have been with us for years.</p>
+    <a data-r="2" href="https://www.appletreeinstitute.org/join-our-team" style="align-self:flex-start;background:#B50900;color:#fff;padding:16px 24px;border-radius:16px;font-size:18px;font-weight:700;white-space:nowrap;transition:transform .12s ease-out" style-hover="color:#fff;background:#8A0700" style-active="transform:scale(.95)">View open positions</a>
+  </div>
+  <div style="display:flex;flex-direction:column;gap:20px">
+    <img data-r="0" src="assets/hd/residency-grad.jpg" alt="Teacher Residency graduates celebrating" style="width:100%;aspect-ratio:16/10;object-fit:cover;border-radius:36px 36px 36px 140px;display:block">
+    <h2 data-r="1" style="margin:0;font-family:Raleway,sans-serif;font-size:clamp(32px,3.4vw,56px);line-height:1;letter-spacing:-.035em;font-weight:900">Teacher Residency</h2>
+    <p data-r="2" style="margin:0;font-size:18px;line-height:1.55;max-width:46ch">A two-year program for novice teachers of three- and four-year-olds in DC. It offers more than financial support: belonging, independence and growth. 60% of our mentors were residents themselves.</p>
+    <a data-r="2" href="https://www.appletreeinstitute.org/teacher-residency" style="align-self:flex-start;background:#141414;color:#fff;padding:16px 24px;border-radius:16px;font-size:18px;font-weight:700;white-space:nowrap;transition:transform .12s ease-out" style-hover="color:#fff;background:#000" style-active="transform:scale(.95)">Apply now</a>
+  </div>
+</section>
+
+<section id="partner" data-screen-label="07 Partner" style="background:#141414;color:#fff;position:relative;overflow:hidden">
+  <img src="assets/photos/p09.jpg" alt="" aria-hidden="true" style="position:absolute;left:0;bottom:0;width:60%;height:80%;object-fit:cover;opacity:.4;-webkit-mask-image:linear-gradient(to top right,#000 20%,transparent 75%);mask-image:linear-gradient(to top right,#000 20%,transparent 75%)">
+  <div style="position:relative;max-width:1600px;margin:0 auto;padding:clamp(96px,10vw,160px) clamp(20px,4vw,56px);display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,440px),1fr));gap:clamp(40px,6vw,96px);align-items:start">
+    <div style="display:flex;flex-direction:column;gap:22px">
+      <h2 data-r="0" style="margin:0;font-family:Raleway,sans-serif;font-size:clamp(40px,4.6vw,76px);line-height:.98;letter-spacing:-.04em;font-weight:900">Partner with us</h2>
+      <p data-r="1" style="margin:0;font-size:19px;line-height:1.55;max-width:42ch">Passionate about advancing early childhood education? Educators, organizations and advocates: let’s create meaningful impact together.</p>
+      <p data-r="2" style="margin:0;font-family:Raleway,sans-serif;font-size:22px;font-weight:800;color:#F9C706">Join hands to shape the future of early education.</p>
+    </div>
+    <form data-r="1" onSubmit="{{ onSend }}" style="background:#fff;color:#141414;border-radius:36px;padding:clamp(24px,3vw,40px);display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:14px">
+      <h3 style="grid-column:1/-1;margin:0 0 6px;font-family:Raleway,sans-serif;font-size:28px;font-weight:900;letter-spacing:-.02em">Send us a message</h3>
+      <label style="display:flex;flex-direction:column;gap:8px;font-size:16px;font-weight:700">First name<input required autocomplete="given-name" style="font:inherit;font-size:18px;padding:14px 16px;border:0;border-radius:14px;background:#F4F6F7;color:#141414"></label>
+      <label style="display:flex;flex-direction:column;gap:8px;font-size:16px;font-weight:700">Last name<input required autocomplete="family-name" style="font:inherit;font-size:18px;padding:14px 16px;border:0;border-radius:14px;background:#F4F6F7;color:#141414"></label>
+      <label style="display:flex;flex-direction:column;gap:8px;font-size:16px;font-weight:700">Email<input type="email" required autocomplete="email" style="font:inherit;font-size:18px;padding:14px 16px;border:0;border-radius:14px;background:#F4F6F7;color:#141414"></label>
+      <label style="display:flex;flex-direction:column;gap:8px;font-size:16px;font-weight:700">Phone<input type="tel" autocomplete="tel" style="font:inherit;font-size:18px;padding:14px 16px;border:0;border-radius:14px;background:#F4F6F7;color:#141414"></label>
+      <label style="grid-column:1/-1;display:flex;flex-direction:column;gap:8px;font-size:16px;font-weight:700">Message<textarea rows="4" style="font:inherit;font-size:18px;padding:14px 16px;border:0;border-radius:14px;background:#F4F6F7;color:#141414;resize:vertical"></textarea></label>
+      <button type="submit" style="justify-self:start;font:inherit;font-size:18px;font-weight:700;padding:16px 26px;border:0;border-radius:16px;background:#B50900;color:#fff;cursor:pointer;white-space:nowrap;transition:transform .12s ease-out" style-active="transform:scale(.95)">{{ sendLabel }}</button>
+    </form>
+  </div>
+</section>
+
+<footer data-screen-label="08 Footer" style="background:#B50900;color:#fff">
+  <div aria-hidden="true" style="display:flex;flex-direction:column;gap:10px;padding-top:40px"><span style="height:14px;background:#F9C706;border-radius:0 999px 999px 0;width:72%"></span><span style="height:14px;background:#3A9973;border-radius:0 999px 999px 0;width:58%"></span><span style="height:14px;background:#9BDCE8;border-radius:0 999px 999px 0;width:44%"></span></div>
+  <div style="max-width:1600px;margin:0 auto;padding:56px clamp(20px,4vw,56px) 40px;display:flex;flex-direction:column;gap:48px">
+    <div style="display:flex;gap:40px 64px;flex-wrap:wrap;font-size:17px;line-height:1.6">
+      <div style="display:flex;flex-direction:column;gap:4px"><span style="font-weight:700">AppleTree Institute for Education Innovation</span><span>1801 Mississippi Avenue SE, 3rd Floor, Washington, DC 20020</span><span>(202) 488-3990 · communications@appletreeinstitute.org</span></div>
+      <div style="display:flex;flex-direction:column;gap:4px"><a href="Schools%20Home.dc.html" style="color:#fff">AppleTree Schools</a><a href="Campuses.dc.html" style="color:#fff">Campuses</a><a href="Curriculum.dc.html" style="color:#fff">Curriculum</a><a href="Policy.dc.html" style="color:#fff">Policy</a></div>
+      <div style="display:flex;flex-direction:column;gap:4px"><a href="Mission%20and%20History.dc.html" style="color:#fff">Mission and history</a><a href="https://www.appletreeinstitute.org/donate" style="color:#fff">Donate</a><a href="https://www.appletreeinstitute.org/contact-us" style="color:#fff">Contact us</a></div>
+    </div>
+    <p aria-hidden="true" style="margin:0;font-family:Raleway,sans-serif;font-size:clamp(64px,16vw,280px);line-height:.8;letter-spacing:-.05em;font-weight:900">AppleTree</p>
+    <span style="font-size:15px">© 2026 AppleTree Institute</span>
+  </div>
+</footer>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  state = { idx: 0, sent: false, playing: false, hub: 0, vi: 0, wide: true };
+  r0 = React.createRef(); r1 = React.createRef(); r2 = React.createRef(); t0 = React.createRef(); t1 = React.createRef(); t2 = React.createRef();
+  hubData = [
+    { name: 'Washington, DC', x: 470, y: 230, line: 'Home station', c: '#B50900', d: 'Where Every Child Ready was built and tested, in AppleTree’s own classrooms and Partner schools across the city.' },
+    { name: 'New York', x: 600, y: 70, line: 'Red line', c: '#B50900', d: 'Our first Partner outside DC, DREAM Charter School in Harlem, joined in 2016. A Spanish edition was piloted in New York City in 2024.' },
+    { name: 'Missouri', x: 120, y: 230, line: 'Green line', c: '#3A9973', d: 'Partner schools in Missouri joined the Every Child Ready network in 2021.' },
+    { name: 'Texas', x: 160, y: 420, line: 'Yellow line', c: '#C99A00', d: 'A Texas edition of Every Child Ready, with Uplift and Austin Achieve as Partners since 2023.' }
+  ];
+  valueData = [
+    ['Mission first', 'Preparing every child to enter kindergarten ready to thrive can change lives, and the country, as we share what we learn.', '#B50900', '#fff'],
+    ['Trust', 'We keep our word, tell the truth when it is hard and own our mistakes.', '#F9C706', '#141414'],
+    ['Solution-focused', 'We dwell in solutions and look for proven strategies wherever they exist.', '#3A9973', '#fff'],
+    ['Continuous improvement', 'We use data and feedback to improve everything we do.', '#238EA2', '#fff'],
+    ['Research to practice', 'We build on what we have learned and hold a high standard of proof.', '#563884', '#fff']
+  ];
+  ms = [
+    { year: '1996', text: 'AppleTree Institute is founded to “increase the supply of effective schools through innovation.”', where: 'Washington, DC' },
+    { year: '2005', text: 'AppleTree Early Learning PCS receives a 15-year charter and a $1.8 million Early Reading First grant.', where: 'One campus, Southwest DC' },
+    { year: '2008', text: 'A second Early Reading First grant, $3.8 million, funds the model that becomes Every Child Ready. Our first Partner school begins.', where: '1 Partner school, DC' },
+    { year: '2010', text: 'A $5 million Investing in Innovation grant, one of 49 funded from 1,698 applications, lets us fully develop and pilot Every Child Ready.', where: 'DC' },
+    { year: '2013', text: 'A five-year strategic plan launches the AppleTree@ model and Partner expansion.', where: '3 Partner schools' },
+    { year: '2014', text: 'The Partner network doubles.', where: '6 Partner schools' },
+    { year: '2015', text: 'The first AppleTree@ school opens at Democracy Prep Congress Heights.', where: '10 Partner schools' },
+    { year: '2016', text: 'Our first Partner outside DC: DREAM Charter School in Harlem.', where: 'DC and New York' },
+    { year: '2018', text: 'AppleTree@Rocketship Legacy opens.', where: '13 Partner schools: 12 in DC, 1 in New York' },
+    { year: '2021', text: 'An $8 million contract to build a Texas edition of Every Child Ready. Partners added in Missouri.', where: 'DC, New York, Missouri' },
+    { year: '2023', text: 'Two Texas networks, Uplift and Austin Achieve, join as Partners.', where: 'DC, New York, Missouri, Texas' },
+    { year: '2024', text: 'A Spanish-language Every Child Ready is piloted at School-in-the-Square in New York City.', where: 'Four states, two languages' }
+  ];
+  componentDidMount() {
+    this.reduced = matchMedia('(prefers-reduced-motion: reduce)').matches;
+    this.onResize = () => this.setState({ wide: innerWidth >= 900 }); this.onResize(); addEventListener('resize', this.onResize);
+    const paths = [this.r0, this.r1, this.r2].map(r => r.current); this.lens = paths.map(p => p ? p.getTotalLength() : 0);
+    if (!this.reduced) paths.forEach((p, i) => { if (!p) return; p.style.strokeDasharray = this.lens[i]; p.style.strokeDashoffset = this.lens[i]; p.getBoundingClientRect(); p.style.transition = `stroke-dashoffset 1.4s cubic-bezier(.6,0,.2,1) ${250 + i * 220}ms`; p.style.strokeDashoffset = 0; });
+    const t0 = performance.now();
+    const loop = now => {
+      const el = now - t0 - 2000;
+      [this.t0, this.t1, this.t2].forEach((r, i) => { const c = r.current, p = paths[i]; if (!c || !p || this.reduced || el < 0) return; const dur = [5000, 7000, 8000][i], ph = ((el + i * 900) % (dur * 2)) / dur, t = ph < 1 ? ph : 2 - ph, e = t < .5 ? 2 * t * t : 1 - Math.pow(-2 * t + 2, 2) / 2; const pt = p.getPointAtLength(e * this.lens[i]); c.setAttribute('cx', pt.x); c.setAttribute('cy', pt.y); c.setAttribute('opacity', Math.min(1, el / 400)); });
+      this.raf = requestAnimationFrame(loop);
+    };
+    this.raf = requestAnimationFrame(loop);
+    if (!this.reduced) {
+      const io = new IntersectionObserver(es => es.forEach(e => { if (!e.isIntersecting) return; const el = e.target, d = (+el.dataset.r || 0) * 80; el.style.transition = `opacity .7s cubic-bezier(.2,.8,.2,1) ${d}ms, transform .9s cubic-bezier(.2,.8,.2,1) ${d}ms`; el.style.opacity = 1; el.style.transform = 'none'; io.unobserve(el); }), { threshold: .12 });
+      document.querySelectorAll('[data-r]').forEach(el => { el.style.opacity = 0; el.style.transform = 'translateY(24px)'; io.observe(el); });
+      this.io = io;
+    }
+  }
+  componentWillUnmount() { cancelAnimationFrame(this.raf); clearInterval(this.timer); this.io && this.io.disconnect(); removeEventListener('resize', this.onResize); }
+  toggle() { if (this.state.playing) { clearInterval(this.timer); this.setState({ playing: false }); return; } if (this.state.idx >= this.ms.length - 1) this.setState({ idx: 0 }); this.setState({ playing: true }); this.timer = setInterval(() => { if (this.state.idx >= this.ms.length - 1) { clearInterval(this.timer); this.setState({ playing: false }); return; } this.setState(s => ({ idx: s.idx + 1 })); }, 1800); }
+  renderVals() {
+    const { idx, hub, vi, wide } = this.state;
+    return {
+      r0: this.r0, r1: this.r1, r2: this.r2, t0: this.t0, t1: this.t1, t2: this.t2,
+      hubs: this.hubData.map((h, i) => { const on = i === hub; return { ...h, px: `${h.x / 6.4}%`, py: `${h.y / 4.6}%`, r: on ? 18 : 13, fill: on ? '#141414' : '#fff', pick: () => this.setState({ hub: i }), key: e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); this.setState({ hub: i }); } } }; }),
+      hub: this.hubData[hub],
+      vDir: wide ? 'row' : 'column', vMin: wide ? '380px' : '0px',
+      values: this.valueData.map(([t, d, bg, fg], i) => { const on = i === vi; return { t, d, bg, fg, on, flex: wide ? (on ? '3.2 1 0' : '1 1 0') : 'none', ws: wide && !on ? 'normal' : 'normal', br: on ? '40px' : (i % 2 ? '999px 999px 40px 40px' : '40px'), pick: () => this.setState({ vi: i }) }; }),
+      m: this.ms[idx],
+      stops: this.ms.map((x, i) => { const on = i === idx; return { year: x.year, on, size: on ? '44px' : '30px', mt: on ? '8px' : '15px', bg: on ? '#141414' : '#fff', op: on ? 1 : .75, pick: () => { clearInterval(this.timer); this.setState({ idx: i, playing: false }); } }; }),
+      fillW: `calc((100% - 40px) * ${idx / (this.ms.length - 1)})`,
+      toggle: () => this.toggle(), playLabel: this.state.playing ? 'Pause' : 'Play the years',
+      sendLabel: this.state.sent ? 'Thanks, we’ll be in touch' : 'Get in touch',
+      onSend: e => { e.preventDefault(); this.setState({ sent: true }); }
+    };
+  }
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="stylesheet" href="_ds/clarke-schools-design-system-1c554edb-ddbb-4d62-9b51-89a74f0be5f5/tokens/fonts.css">
+  <link rel="stylesheet" href="_ds/clarke-schools-design-system-1c554edb-ddbb-4d62-9b51-89a74f0be5f5/tokens/colors.css">
+  <link rel="stylesheet" href="_ds/clarke-schools-design-system-1c554edb-ddbb-4d62-9b51-89a74f0be5f5/styles.css">
+  <script src="_ds/clarke-schools-design-system-1c554edb-ddbb-4d62-9b51-89a74f0be5f5/_ds_bundle.js"></script>
+</helmet>
+<div style="font-family:var(--font-brand);">
+  <section style="max-width:1360px;margin:0 auto;padding:clamp(88px,10vw,140px) 16px 16px;box-sizing:border-box;">
+    <div style="position:relative;overflow:hidden;border-radius:28px;background:var(--clarke-purple-800);color:#fff;">
+      <img src="assets/logo/clarke-blossom-white.png" alt="" style="position:absolute;right:-80px;bottom:-110px;width:380px;opacity:.12;pointer-events:none;">
+      <div style="position:relative;padding:clamp(44px,6vw,80px) clamp(28px,6vw,80px);display:flex;flex-wrap:wrap;gap:28px 48px;align-items:center;justify-content:space-between;">
+        <div style="display:flex;flex-direction:column;gap:12px;max-width:620px;">
+          <h2 style="margin:0;font-size:clamp(30px,3.6vw,48px);line-height:1.04;letter-spacing:-.026em;font-weight:700;">Our professionals are here to help.</h2>
+          <p style="margin:0;font-size:17px;line-height:1.55;color:var(--clarke-purple-200);">Contact any of our locations to learn more about Clarke’s broad array of programs and services.</p>
+        </div>
+        <div style="display:flex;gap:16px 24px;flex-wrap:wrap;align-items:center;">
+          <x-import component-from-global-scope="ClarkeSchoolsDesignSystem_1c554e.CTAButton" size="md" href="#" hint-size="200px,56px">Contact Us</x-import>
+          <a href="tel:8552037085" style="font-weight:700;font-size:16px;color:var(--clarke-green-300);">855.203.7085</a>
+        </div>
+      </div>
+    </div>
+  </section>
+  <footer style="background:var(--clarke-navy-900);color:#fff;margin-top:96px;">
+    <div style="max-width:1360px;margin:0 auto;padding:64px 32px 28px;display:flex;flex-direction:column;gap:44px;box-sizing:border-box;">
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,190px),1fr));gap:40px;">
+        <div style="display:flex;flex-direction:column;gap:18px;">
+          <div style="display:flex;"><x-import component-from-global-scope="ClarkeSchoolsDesignSystem_1c554e.Logo" tone="white" height="{{ 54 }}" hint-size="184px,54px"></x-import></div>
+          <p style="margin:0;font-size:14px;line-height:1.55;color:var(--clarke-purple-200);">At Clarke, we unlock the power of listening and spoken language for people who are deaf or hard of hearing, their families, and their communities.</p>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:10px;font-size:15px;">
+          <div style="font-weight:700;color:var(--clarke-green-300);font-size:12px;letter-spacing:.14em;">START HERE</div>
+          <a href="Clarke For Families.dc.html" style="color:#fff;">Getting Started</a>
+          <a href="Clarke Services.dc.html" style="color:#fff;">Our Services</a>
+          <a href="#" style="color:#fff;">Request Services</a>
+          <a href="#" style="color:#fff;">Refer a Child</a>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:10px;font-size:15px;">
+          <div style="font-weight:700;color:var(--clarke-green-300);font-size:12px;letter-spacing:.14em;">LEARN</div>
+          <a href="Clarke About.dc.html" style="color:#fff;">About</a>
+          <a href="Clarke Professionals.dc.html" style="color:#fff;">Professionals</a>
+          <a href="Clarke Community.dc.html" style="color:#fff;">Community</a>
+          <a href="#" style="color:#fff;">Financials</a>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:10px;font-size:15px;">
+          <div style="font-weight:700;color:var(--clarke-green-300);font-size:12px;letter-spacing:.14em;">CONTACT</div>
+          <div>Toll-free 855.203.7085</div>
+          <a href="mailto:info@clarkeschools.org" style="color:#fff;">info@clarkeschools.org</a>
+          <a href="#" style="color:#fff;">Stay Connected</a>
+          <x-import component-from-global-scope="ClarkeSchoolsDesignSystem_1c554e.SocialIcons" size="{{ 30 }}" color="var(--clarke-navy-700)" hint-size="180px,30px"></x-import>
+        </div>
+      </div>
+      <div style="border-top:1px solid var(--clarke-navy-700);padding-top:20px;display:flex;flex-wrap:wrap;gap:8px 24px;justify-content:space-between;font-size:13px;color:var(--clarke-purple-200);">
+        <div style="font-weight:700;color:#fff;">Florida • Massachusetts • New York • Pennsylvania • Teleservices</div>
+        <div>clarkeschools.org · © 2026 Clarke Schools for Hearing and Speech · Privacy Policy</div>
+      </div>
+    </div>
+  </footer>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:&quot;1280px&quot;,&quot;height&quot;:&quot;720px&quot;}}"></script>
+</body>
+</html>

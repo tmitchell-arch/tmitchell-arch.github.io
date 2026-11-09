@@ -1,0 +1,15 @@
+:root{
+--space-1:4px;--space-2:8px;--space-3:12px;--space-4:16px;--space-5:24px;--space-6:32px;--space-7:48px;--space-8:64px;--space-9:96px;
+--print-margin:36px;      /* 0.5in page margin on one-pagers */
+--social-margin:54px;     /* ~5% of 1080 canvas */
+--radius-none:0;
+--radius-sm:4px;          /* date plates, buttons, photo cards */
+--radius-md:8px;          /* one-pager info cards */
+--radius-lg:16px;
+--radius-xl:48px;         /* announcement "app-icon" card */
+--radius-pill:999px;      /* section pills, numbered dots */
+--shadow-text:0 4px 18px rgba(0,0,0,.28);  /* headlines over photos */
+--shadow-card:0 10px 30px rgba(30,29,46,.18);
+--shadow-soft:0 2px 8px rgba(30,29,46,.10);
+--border-rule:4px solid var(--clarke-teal-600); /* left rule on intro paragraphs */
+}

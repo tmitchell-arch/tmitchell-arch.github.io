@@ -1,0 +1,31 @@
+:root{
+--font-brand:'Gotham','Montserrat',system-ui,sans-serif; /* all print + most social */
+--font-social:'Calibri','Carlito','Open Sans',system-ui,sans-serif; /* official substitute for Gotham; PowerPoint, email, shared Word docs */
+--font-serif:'Adobe Garamond Pro','Times New Roman','EB Garamond',Georgia,serif; /* official serif — long-form body (letters, reports) */
+--weight-light:300;
+--weight-book:400;
+--weight-medium:500;
+--weight-bold:700;
+--weight-black:800;
+
+/* Print scale (Letter, pt ≈ px at 1x) */
+--print-title:40px;     /* "Speech Clinic", "LAUNCH" */
+--print-subtitle:24px;  /* "Clarke Pennsylvania", "Birth to Age Three" */
+--print-h2:18px;        /* "Our Services" card heads */
+--print-body:10.5px;
+--print-small:8px;
+
+/* Social scale (1080px canvas) */
+--social-mega:150px;    /* JOIN CLARKE */
+--social-display:96px;  /* CLARKE HONORS */
+--social-h1:64px;       /* Helping Your Student… */
+--social-h2:44px;
+--social-body:36px;
+--social-eyebrow:34px;  /* INNOVATE. INSPIRE. IMPACT (tracked) */
+
+--leading-tight:0.95;
+--leading-snug:1.15;
+--leading-body:1.35;
+--tracking-wordmark:0.12em;
+--tracking-eyebrow:0.14em;
+}

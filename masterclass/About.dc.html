@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+<script src="../portfolio-guard.js" defer></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700;800;900&family=Instrument+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+html,body{margin:0;background:#06141e;color:#f4f8fa;font-family:'Instrument Sans',system-ui,sans-serif;overflow-x:hidden;}
+*{box-sizing:border-box;}
+a{color:#92edff;text-decoration:none;}
+a:hover{color:#ffffff;}
+</style>
+</helmet>
+<header style="position:absolute;top:0;left:0;right:0;z-index:40;display:flex;align-items:center;gap:36px;padding:18px clamp(20px,4vw,56px);background:linear-gradient(180deg,rgba(6,20,30,.9),rgba(6,20,30,0));">
+  <a href="Master Class Home v2.dc.html" style="display:block;line-height:0;"><img src="assets/logo.png" alt="Douglas County Master Class Series" style="height:40px;width:auto;"></a>
+  <nav style="display:flex;gap:22px;font-size:14px;font-weight:500;flex-wrap:wrap;">
+    <a href="Master Class Home v2.dc.html" style="color:#b9cad4;" style-hover="color:#ffffff;">Home</a>
+    <a href="Series.dc.html" style="color:#b9cad4;" style-hover="color:#ffffff;">Series</a>
+    <a href="Profile.dc.html" style="color:#b9cad4;" style-hover="color:#ffffff;">Watchlist</a>
+    <a href="About.dc.html" style="color:#ffffff;font-weight:700;">About</a>
+  </nav>
+  <a href="Profile.dc.html" aria-label="Profile" style="margin-left:auto;width:36px;height:36px;border-radius:4px;background:#359aae;color:#06141e;display:grid;place-items:center;font-weight:700;font-size:14px;" style-hover="background:#92edff;color:#06141e;">KM</a>
+</header>
+
+<section style="position:relative;min-height:min(78vh,720px);display:flex;align-items:flex-end;background:#06141e url(assets/courthouse.jpg) center/cover no-repeat;">
+  <div style="position:absolute;inset:0;background:linear-gradient(90deg,rgba(6,20,30,.95) 0%,rgba(6,20,30,.6) 50%,rgba(6,20,30,.2) 100%),linear-gradient(0deg,#06141e 0%,rgba(6,20,30,0) 50%);"></div>
+  <div style="position:relative;padding:0 clamp(20px,4vw,56px) 72px;max-width:820px;display:flex;flex-direction:column;gap:18px;">
+    <span style="font-size:12px;font-weight:700;letter-spacing:.22em;color:#92edff;">ABOUT US</span>
+    <h1 style="margin:0;font-family:'Big Shoulders Display',sans-serif;font-weight:900;font-size:clamp(52px,8vw,112px);line-height:.86;text-transform:uppercase;text-wrap:balance;">Building wealth, one moment at a time</h1>
+  </div>
+</section>
+
+<section style="padding:72px clamp(20px,4vw,56px) 88px;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,380px),1fr));gap:48px;">
+  <div style="display:flex;flex-direction:column;gap:18px;">
+    <h2 style="margin:0;font-size:clamp(24px,2.4vw,32px);font-weight:600;line-height:1.3;text-wrap:balance;">A free financial and entrepreneurship program from the Douglas County Board of Commissioners.</h2>
+  </div>
+  <div style="display:flex;flex-direction:column;gap:18px;font-size:18px;line-height:1.65;color:#b9cad4;">
+    <p style="margin:0;text-wrap:pretty;">The Master Class Series was created to give every resident — from teens learning the basics to adults rebuilding after a setback — practical, judgment-free money education. Its 60 Moments of Truth are short vignettes that cover the decisions that shape a household's financial life.</p>
+    <p style="margin:0;text-wrap:pretty;">The series moves from literacy to legacy: maintaining a financial foundation, growing investments, diversifying a portfolio, protecting what you have and transferring it to the next generation. Every vignette is free to watch, on any device.</p>
+  </div>
+</section>
+
+<section id="council" style="padding:80px clamp(20px,4vw,56px);background:#042034;">
+  <div style="display:flex;align-items:baseline;justify-content:space-between;gap:20px;flex-wrap:wrap;margin-bottom:32px;">
+    <h2 style="margin:0;font-family:'Big Shoulders Display',sans-serif;font-weight:900;font-size:clamp(44px,5.5vw,76px);line-height:.9;text-transform:uppercase;">Board of Commissioners</h2>
+    <span style="font-size:14px;color:#7f97a6;">Douglas County, Georgia</span>
+  </div>
+  <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,230px),1fr));gap:20px;">
+    <sc-for list="{{ council }}" as="c" hint-placeholder-count="5">
+      <a href="{{ c.href }}" style="display:flex;flex-direction:column;gap:14px;color:#ffffff;" style-hover="color:#ffffff;transform:translateY(-4px);">
+        <span style="position:relative;display:block;aspect-ratio:4/5;border-radius:6px;overflow:hidden;background:#0b2a40 url({{ c.img }}) center top/cover no-repeat;">
+          <span style="position:absolute;inset:0;background:linear-gradient(0deg,rgba(4,32,52,.9) 0%,rgba(4,32,52,0) 45%);"></span>
+          <span style="position:absolute;left:14px;bottom:12px;font-size:11px;font-weight:700;letter-spacing:.2em;color:#92edff;">{{ c.role }}</span>
+        </span>
+        <span style="display:flex;flex-direction:column;gap:8px;">
+          <span style="font-size:20px;font-weight:700;">{{ c.name }}</span>
+          <span style="font-size:15px;line-height:1.5;color:#b9cad4;text-wrap:pretty;">{{ c.short }}</span>
+          <span style="font-size:14px;font-weight:600;color:#92edff;">Read More ›</span>
+        </span>
+      </a>
+    </sc-for>
+  </div>
+</section>
+
+<section style="padding:88px clamp(20px,4vw,56px);text-align:center;background:radial-gradient(60% 100% at 50% 0%,#163d5e 0%,#06141e 80%);">
+  <div style="max-width:680px;margin:0 auto;display:flex;flex-direction:column;gap:18px;align-items:center;">
+    <h2 style="margin:0;font-family:'Big Shoulders Display',sans-serif;font-weight:900;font-size:clamp(40px,5vw,64px);line-height:.9;text-transform:uppercase;">Start with Series 1</h2>
+    <p style="margin:0;font-size:18px;line-height:1.55;color:#b9cad4;text-wrap:pretty;">Nine vignettes on plans, budgets, recovery and credit.</p>
+    <a href="Series.dc.html" style="background:#359aae;color:#06141e;font-weight:700;font-size:17px;padding:14px 28px;border-radius:4px;" style-hover="background:#92edff;color:#06141e;">Get Started ›</a>
+  </div>
+</section>
+
+<footer style="padding:40px clamp(20px,4vw,56px) 56px;border-top:1px solid #163d5e;display:flex;flex-wrap:wrap;gap:24px 48px;align-items:center;font-size:13px;color:#7f97a6;">
+  <img src="assets/logo.png" alt="Douglas County Master Class Series" style="height:36px;width:auto;">
+  <a href="https://douglascountyga.gov" target="_blank" style="color:#b9cad4;" style-hover="color:#ffffff;">douglascountyga.gov</a>
+  <span style="margin-left:auto;">© 2026 Douglas County, Georgia. All rights reserved.</span>
+</footer>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+const COUNCIL = [
+  { id: 'jones', name: 'Dr. Romona Jackson Jones', role: 'CHAIRMAN', img: 'assets/council-jones.jpg', short: 'The first African American Commission Chairman in the history of Douglas County, Georgia.' },
+  { id: 'mitchell', name: 'Henry Mitchell III', role: 'DISTRICT 1', img: 'assets/council-mitchell.jpg', short: 'Enlisted in the U.S. Army after graduating from Henry Grady High School in Atlanta.' },
+  { id: 'robinson', name: 'Kelly Robinson', role: 'DISTRICT 2 · VICE-CHAIRMAN', img: 'assets/council-robinson.jpg', short: 'First elected in 2008 and re-elected in 2012, 2016 and 2020.' },
+  { id: 'carthan', name: 'Tarenia Carthan', role: 'DISTRICT 3', img: 'assets/council-carthan.jpg', short: 'Atlanta native and CEO of Elohim Consultants, a health technology consulting firm.' },
+  { id: 'guider', name: 'Ann Jones Guider', role: 'DISTRICT 4', img: 'assets/council-guider.jpg', short: 'Retired as Douglas County Tax Commissioner in 2008 after 28 years.' },
+];
+class Component extends DCLogic {
+  renderVals() { return { council: COUNCIL.map(c => ({ ...c, href: 'Council.dc.html?m=' + c.id })) }; }
+}
+</script>
+</body>
+</html>

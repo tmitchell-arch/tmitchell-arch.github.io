@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600&family=Roboto+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+body{margin:0;background:#F7F9FB;color:#1C2A3E;font-family:Archivo,sans-serif;-webkit-font-smoothing:antialiased}
+a{color:#1C2A3E;text-decoration:none}
+a:hover{color:#2EB2FF}
+*{box-sizing:border-box}
+</style>
+</helmet>
+  <header data-screen-label="Nav" onMouseLeave="{{ closeSoon }}" style="position:fixed;top:0;left:0;right:0;z-index:50;padding:{{ outerPad }};transition:padding 320ms cubic-bezier(.2,.7,.2,1);pointer-events:none">
+    <div style="position:relative;margin:0 auto;max-width:{{ barMax }};pointer-events:auto;transition:max-width 320ms cubic-bezier(.2,.7,.2,1)">
+      <div style="display:flex;align-items:center;gap:40px;height:{{ barH }};padding:{{ barPad }};background:{{ barBg }};border-radius:{{ barRadius }};box-shadow:{{ barShadow }};border-bottom:{{ barRule }};transition:all 320ms cubic-bezier(.2,.7,.2,1)">
+        <a href="Homepage.dc.html" aria-label="Mitchell Strategies home" style="position:relative;display:block;flex:none;width:{{ logoBoxW }};height:48px;transition:width 320ms cubic-bezier(.2,.7,.2,1)">
+          <img src="assets/ms-wordmark-navy.png" alt="Mitchell Strategies" style="position:absolute;left:0;top:50%;transform:translateY(-50%);height:48px;width:auto;opacity:{{ wordOp }};transition:opacity 200ms">
+          <img src="assets/ms-logo.svg" alt="" style="position:absolute;left:0;top:50%;transform:translateY(-50%);height:30px;width:auto;opacity:{{ markOp }};transition:opacity 200ms">
+        </a>
+        <sc-if value="{{ desktop }}" hint-placeholder-val="{{ true }}">
+          <nav aria-label="Main" style="display:flex;align-items:center;justify-content:center;gap:36px;flex:1;min-width:0">
+            <sc-for list="{{ items }}" as="it" hint-placeholder-count="5">
+              <div onMouseEnter="{{ it.onEnter }}" style="position:relative">
+                <a href="{{ it.href }}" onClick="{{ it.onClick }}" aria-expanded="{{ it.expanded }}" aria-haspopup="{{ it.hasMenu }}" style="display:block;padding:12px 0;font-family:Archivo,sans-serif;font-weight:500;font-size:16px;line-height:1;white-space:nowrap;color:#1C2A3E">{{ it.label }}</a>
+                <span aria-hidden="true" style="position:absolute;left:0;right:0;bottom:2px;height:2px;background:#2EB2FF;transform-origin:left;transform:{{ it.lineScale }};transition:transform 220ms cubic-bezier(.2,.7,.2,1)"></span>
+              </div>
+            </sc-for>
+          </nav>
+          <div style="display:flex;align-items:center;gap:24px;flex:none">
+            <a href="#" style="font-family:Archivo,sans-serif;font-weight:600;font-size:15px;background:#1C2A3E;color:#FFFFFF;padding:13px 24px;white-space:nowrap" style-hover="background:#2EB2FF;color:#1C2A3E">Let's Talk</a>
+          </div>
+        </sc-if>
+        <sc-if value="{{ mobile }}" hint-placeholder-val="{{ false }}">
+          <div style="flex:1"></div>
+          <button onClick="{{ toggleMobile }}" aria-expanded="{{ mobileOpen }}" style="height:44px;padding:0 20px;border:2px solid #1C2A3E;background:transparent;color:#1C2A3E;font-family:Archivo,sans-serif;font-weight:600;font-size:15px;cursor:pointer">{{ menuBtnLabel }}</button>
+        </sc-if>
+      </div>
+
+      <div role="region" aria-label="Services menu" onMouseEnter="{{ keepOpen }}" style="position:absolute;left:0;right:0;top:100%;padding:10px {{ panelSide }} 0;opacity:{{ svcOp }};visibility:{{ svcVis }};transform:{{ svcY }};transition:opacity 200ms, transform 240ms cubic-bezier(.2,.7,.2,1), visibility 200ms">
+        <div style="max-width:1200px;margin:0 auto;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);background:#FFFFFF;border-radius:0 24px 0 0;overflow:hidden;box-shadow:0 30px 60px -24px rgba(28,42,62,.35), 0 0 0 1px rgba(28,42,62,.08)">
+          <div style="padding:32px 28px 28px;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:4px;align-content:start">
+            <div style="grid-column:1/-1;font-family:'Roboto Mono',monospace;font-weight:500;font-size:12px;letter-spacing:0.06em;text-transform:uppercase;color:#4C5A6E;padding:0 14px 12px">Services</div>
+            <a href="#" style="display:grid;gap:6px;padding:14px;align-content:start" style-hover="background:#F7F9FB"><span style="font-family:Archivo,sans-serif;font-weight:600;font-size:18px;color:#1C2A3E">Branding &amp; Creative</span><span style="font-size:14px;line-height:1.5;color:#4C5A6E">Design and branding that blends creative flair with strategy.</span></a>
+            <a href="#" style="display:grid;gap:6px;padding:14px;align-content:start" style-hover="background:#F7F9FB"><span style="font-family:Archivo,sans-serif;font-weight:600;font-size:18px;color:#1C2A3E">Web Development</span><span style="font-size:14px;line-height:1.5;color:#4C5A6E">Custom websites that look exceptional and feel seamless.</span></a>
+            <a href="#" style="display:grid;gap:6px;padding:14px;align-content:start" style-hover="background:#F7F9FB"><span style="font-family:Archivo,sans-serif;font-weight:600;font-size:18px;color:#1C2A3E">Digital Marketing</span><span style="font-size:14px;line-height:1.5;color:#4C5A6E">Reach your exact audience and turn prospects into customers.</span></a>
+            <a href="#" style="display:grid;gap:6px;padding:14px;align-content:start" style-hover="background:#F7F9FB"><span style="font-family:Archivo,sans-serif;font-weight:600;font-size:18px;color:#1C2A3E">Unlimited Creative</span><span style="font-size:14px;line-height:1.5;color:#4C5A6E">Unlimited design and video requests for one flat monthly rate.</span></a>
+            <a href="#" style="grid-column:1/-1;justify-self:start;margin:14px;font-family:Archivo,sans-serif;font-weight:600;font-size:15px;color:#1C2A3E;border-bottom:2px solid #2EB2FF;padding-bottom:4px" style-hover="color:#2EB2FF">Explore all services →</a>
+          </div>
+          <div style="background:#F7F9FB;padding:32px;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px;align-content:start">
+            <a href="#" style="display:grid;gap:10px;align-content:start" style-hover="opacity:.85">
+              <img src="https://images.pexels.com/photos/3931445/pexels-photo-3931445.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1600" alt="" style="width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:0 32px 0 0;display:block">
+              <span style="font-family:'Roboto Mono',monospace;font-weight:500;font-size:12px;letter-spacing:0.06em;text-transform:uppercase;color:#4C5A6E">Monthly flat-rate</span>
+              <span style="font-family:Archivo,sans-serif;font-weight:600;font-size:17px;line-height:1.3;color:#1C2A3E">Unlimited Creative Plan, $4,750/mo</span>
+            </a>
+            <a href="#" style="display:grid;gap:10px;align-content:start" style-hover="opacity:.85">
+              <img src="https://images.pexels.com/photos/5053765/pexels-photo-5053765.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1600" alt="" style="width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:0 32px 0 0;display:block;background:#D1DCE6">
+              <span style="font-family:'Roboto Mono',monospace;font-weight:500;font-size:12px;letter-spacing:0.06em;text-transform:uppercase;color:#4C5A6E">Monthly</span>
+              <span style="font-family:Archivo,sans-serif;font-weight:600;font-size:17px;line-height:1.3;color:#1C2A3E">Paid Advertising Plan: test, verify, scale</span>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div role="region" aria-label="Work menu" onMouseEnter="{{ keepOpen }}" style="position:absolute;left:0;right:0;top:100%;padding:10px {{ panelSide }} 0;opacity:{{ workOp }};visibility:{{ workVis }};transform:{{ workY }};transition:opacity 200ms, transform 240ms cubic-bezier(.2,.7,.2,1), visibility 200ms">
+        <div style="max-width:1200px;margin:0 auto;display:grid;grid-template-columns:minmax(0,0.8fr) minmax(0,1.2fr);background:#FFFFFF;border-radius:0 24px 0 0;overflow:hidden;box-shadow:0 30px 60px -24px rgba(28,42,62,.35), 0 0 0 1px rgba(28,42,62,.08)">
+          <div style="padding:32px 28px 28px;display:grid;gap:4px;align-content:start">
+            <div style="font-family:'Roboto Mono',monospace;font-weight:500;font-size:12px;letter-spacing:0.06em;text-transform:uppercase;color:#4C5A6E;padding:0 14px 12px">Work</div>
+            <a href="#" style="display:grid;gap:6px;padding:14px" style-hover="background:#F7F9FB"><span style="font-family:Archivo,sans-serif;font-weight:600;font-size:18px;color:#1C2A3E">Case Studies</span><span style="font-size:14px;line-height:1.5;color:#4C5A6E">How 80+ clients grew with Mitchell Strategies.</span></a>
+            <a href="#" style="display:grid;gap:6px;padding:14px" style-hover="background:#F7F9FB"><span style="font-family:Archivo,sans-serif;font-weight:600;font-size:18px;color:#1C2A3E">Client Reviews</span><span style="font-size:14px;line-height:1.5;color:#4C5A6E">What clients say about working with us.</span></a>
+            <a href="#" style="justify-self:start;margin:14px;font-family:Archivo,sans-serif;font-weight:600;font-size:15px;color:#1C2A3E;border-bottom:2px solid #2EB2FF;padding-bottom:4px" style-hover="color:#2EB2FF">See all work →</a>
+          </div>
+          <div style="background:#F7F9FB;padding:32px;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px;align-content:start">
+            <a href="#" style="display:grid;gap:10px;align-content:start" style-hover="opacity:.85">
+              <img src="https://cdn.prod.website-files.com/66a2927aa1f5a550f5c0364d/66a40234fd684878330163ec_Hero%201%20-%201.webp" alt="" style="width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:0 32px 0 0;display:block">
+              <span style="font-family:'Roboto Mono',monospace;font-weight:500;font-size:12px;letter-spacing:0.06em;text-transform:uppercase;color:#4C5A6E">Tech startup · +150%</span>
+              <span style="font-family:Archivo,sans-serif;font-weight:600;font-size:17px;line-height:1.3;color:#1C2A3E">How a tech startup grew site traffic 150% with paid ads</span>
+            </a>
+            <a href="#" style="display:grid;gap:10px;align-content:start" style-hover="opacity:.85">
+              <img src="https://cdn.prod.website-files.com/66a2927aa1f5a550f5c0364d/66a40235fd6848783301640b_Hero%201%20-%206.webp" alt="" style="width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:0 32px 0 0;display:block">
+              <span style="font-family:'Roboto Mono',monospace;font-weight:500;font-size:12px;letter-spacing:0.06em;text-transform:uppercase;color:#4C5A6E">Bigered · Unlimited Creative</span>
+              <span style="font-family:Archivo,sans-serif;font-weight:600;font-size:17px;line-height:1.3;color:#1C2A3E">How Bigered got an entire marketing team in one partner</span>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div role="region" aria-label="Industries menu" onMouseEnter="{{ keepOpen }}" style="position:absolute;left:0;right:0;top:100%;padding:10px {{ panelSide }} 0;opacity:{{ indOp }};visibility:{{ indVis }};transform:{{ indY }};transition:opacity 200ms, transform 240ms cubic-bezier(.2,.7,.2,1), visibility 200ms">
+        <div style="max-width:1200px;margin:0 auto;display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,0.7fr);background:#FFFFFF;border-radius:0 24px 0 0;overflow:hidden;box-shadow:0 30px 60px -24px rgba(28,42,62,.35), 0 0 0 1px rgba(28,42,62,.08)">
+          <div style="padding:32px 28px 28px;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:4px;align-content:start">
+            <div style="grid-column:1/-1;font-family:'Roboto Mono',monospace;font-weight:500;font-size:12px;letter-spacing:0.06em;text-transform:uppercase;color:#4C5A6E;padding:0 14px 12px">Industries</div>
+            <a href="Industry.dc.html?industry=schools" style="display:grid;gap:6px;padding:14px;align-content:start" style-hover="background:#F7F9FB"><span style="font-family:Archivo,sans-serif;font-weight:600;font-size:18px;color:#1C2A3E">Schools</span><span style="font-size:14px;line-height:1.5;color:#4C5A6E">Grow enrollment and keep families informed.</span></a>
+            <a href="Industry.dc.html?industry=financial" style="display:grid;gap:6px;padding:14px;align-content:start" style-hover="background:#F7F9FB"><span style="font-family:Archivo,sans-serif;font-weight:600;font-size:18px;color:#1C2A3E">Credit Unions &amp; Banks</span><span style="font-size:14px;line-height:1.5;color:#4C5A6E">Reach new members and grow loan volume.</span></a>
+            <a href="Industry.dc.html?industry=churches" style="display:grid;gap:6px;padding:14px;align-content:start" style-hover="background:#F7F9FB"><span style="font-family:Archivo,sans-serif;font-weight:600;font-size:18px;color:#1C2A3E">Churches</span><span style="font-size:14px;line-height:1.5;color:#4C5A6E">Welcome guests before they walk in.</span></a>
+            <a href="Industry.dc.html?industry=nonprofits" style="display:grid;gap:6px;padding:14px;align-content:start" style-hover="background:#F7F9FB"><span style="font-family:Archivo,sans-serif;font-weight:600;font-size:18px;color:#1C2A3E">Nonprofits</span><span style="font-size:14px;line-height:1.5;color:#4C5A6E">Turn supporters into donors and advocates.</span></a>
+            <a href="Industry.dc.html?industry=public" style="display:grid;gap:6px;padding:14px;align-content:start" style-hover="background:#F7F9FB"><span style="font-family:Archivo,sans-serif;font-weight:600;font-size:18px;color:#1C2A3E">Public Sector</span><span style="font-size:14px;line-height:1.5;color:#4C5A6E">Federal, state and local agencies.</span></a>
+          </div>
+          <a href="#" style="background:#1C2A3E;padding:32px;display:flex;flex-direction:column;gap:12px;justify-content:flex-end" style-hover="background:#24364F">
+            <span style="font-family:Archivo,sans-serif;font-weight:500;font-size:64px;line-height:0.9;letter-spacing:-0.02em;color:#FFFFFF">80+</span>
+            <span style="font-size:15px;color:#D1DCE6">clients served, from the U.S. Department of Energy to first-time founders</span>
+            <span style="font-family:Archivo,sans-serif;font-weight:600;font-size:15px;color:#2EB2FF">Browse by industry →</span>
+          </a>
+        </div>
+      </div>
+
+      <div role="region" aria-label="Resources menu" onMouseEnter="{{ keepOpen }}" style="position:absolute;left:0;right:0;top:100%;padding:10px {{ panelSide }} 0;opacity:{{ resOp }};visibility:{{ resVis }};transform:{{ resY }};transition:opacity 200ms, transform 240ms cubic-bezier(.2,.7,.2,1), visibility 200ms">
+        <div style="max-width:1200px;margin:0 auto;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);background:#FFFFFF;border-radius:0 24px 0 0;overflow:hidden;box-shadow:0 30px 60px -24px rgba(28,42,62,.35), 0 0 0 1px rgba(28,42,62,.08)">
+          <div style="padding:32px 28px 28px;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:4px;align-content:start">
+            <div style="grid-column:1/-1;font-family:'Roboto Mono',monospace;font-weight:500;font-size:12px;letter-spacing:0.06em;text-transform:uppercase;color:#4C5A6E;padding:0 14px 12px">Resources</div>
+            <a href="Resources.dc.html" style="display:grid;gap:6px;padding:14px;align-content:start" style-hover="background:#F7F9FB"><span style="font-family:Archivo,sans-serif;font-weight:600;font-size:18px;color:#1C2A3E">Resource Library</span><span style="font-size:14px;line-height:1.5;color:#4C5A6E">Playbooks, templates and courses. Some free.</span></a>
+            <a href="News.dc.html" style="display:grid;gap:6px;padding:14px;align-content:start" style-hover="background:#F7F9FB"><span style="font-family:Archivo,sans-serif;font-weight:600;font-size:18px;color:#1C2A3E">News &amp; Insights</span><span style="font-size:14px;line-height:1.5;color:#4C5A6E">How-tos, agency news and upcoming events.</span></a>
+            <a href="Resources.dc.html#free" style="display:grid;gap:6px;padding:14px;align-content:start" style-hover="background:#F7F9FB"><span style="font-family:Archivo,sans-serif;font-weight:600;font-size:18px;color:#1C2A3E">Free Downloads</span><span style="font-size:14px;line-height:1.5;color:#4C5A6E">Checklists and templates, free with your email.</span></a>
+            <a href="#" style="display:grid;gap:6px;padding:14px;align-content:start" style-hover="background:#F7F9FB"><span style="font-family:Archivo,sans-serif;font-weight:600;font-size:18px;color:#1C2A3E">FAQ's</span><span style="font-size:14px;line-height:1.5;color:#4C5A6E">Plans, pricing and timelines.</span></a>
+          </div>
+          <div style="background:#F7F9FB;padding:32px;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px;align-content:start">
+            <a href="Resources.dc.html?product=enrollment-campaign-playbook" style="display:grid;gap:10px;align-content:start" style-hover="opacity:.85">
+              <span style="aspect-ratio:4/3;background:#1C2A3E;color:#FFFFFF;border-radius:0 32px 0 0;padding:18px;display:flex;flex-direction:column;justify-content:flex-end;gap:10px"><span style="width:28px;height:3px;background:#2EB2FF"></span><span style="font-family:Archivo,sans-serif;font-weight:500;font-size:20px;line-height:1.05;letter-spacing:-0.01em">Enrollment Campaign Playbook</span></span>
+              <span style="font-family:'Roboto Mono',monospace;font-weight:500;font-size:12px;letter-spacing:0.06em;text-transform:uppercase;color:#4C5A6E">Guide · Schools</span>
+              <span style="font-family:Archivo,sans-serif;font-weight:600;font-size:17px;line-height:1.3;color:#1C2A3E">Plan an enrollment season, start to finish</span>
+            </a>
+            <a href="News.dc.html?post=ada-title-ii-school-websites" style="display:grid;gap:10px;align-content:start" style-hover="opacity:.85">
+              <img src="https://images.pexels.com/photos/8617965/pexels-photo-8617965.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1600" alt="" style="width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:0 32px 0 0;display:block;background:#D1DCE6">
+              <span style="font-family:'Roboto Mono',monospace;font-weight:500;font-size:12px;letter-spacing:0.06em;text-transform:uppercase;color:#4C5A6E">Insights · Schools</span>
+              <span style="font-family:Archivo,sans-serif;font-weight:600;font-size:17px;line-height:1.3;color:#1C2A3E">What the ADA Title II web rule means for your school site</span>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div role="region" aria-label="About menu" onMouseEnter="{{ keepOpen }}" style="position:absolute;left:0;right:0;top:100%;padding:10px {{ panelSide }} 0;opacity:{{ aboutOp }};visibility:{{ aboutVis }};transform:{{ aboutY }};transition:opacity 200ms, transform 240ms cubic-bezier(.2,.7,.2,1), visibility 200ms">
+        <div style="max-width:1200px;margin:0 auto;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);background:#FFFFFF;border-radius:0 24px 0 0;overflow:hidden;box-shadow:0 30px 60px -24px rgba(28,42,62,.35), 0 0 0 1px rgba(28,42,62,.08)">
+          <div style="padding:32px 28px 28px;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:4px;align-content:start">
+            <div style="grid-column:1/-1;font-family:'Roboto Mono',monospace;font-weight:500;font-size:12px;letter-spacing:0.06em;text-transform:uppercase;color:#4C5A6E;padding:0 14px 12px">About</div>
+            <a href="About.dc.html" style="display:grid;gap:6px;padding:14px;align-content:start" style-hover="background:#F7F9FB"><span style="font-family:Archivo,sans-serif;font-weight:600;font-size:18px;color:#1C2A3E">About Us</span><span style="font-size:14px;line-height:1.5;color:#4C5A6E">The team behind the work.</span></a>
+            <a href="#" style="display:grid;gap:6px;padding:14px;align-content:start" style-hover="background:#F7F9FB"><span style="font-family:Archivo,sans-serif;font-weight:600;font-size:18px;color:#1C2A3E">How We Work</span><span style="font-size:14px;line-height:1.5;color:#4C5A6E">Diagnose, test, then scale what wins.</span></a>
+            <a href="#" style="display:grid;gap:6px;padding:14px;align-content:start" style-hover="background:#F7F9FB"><span style="font-family:Archivo,sans-serif;font-weight:600;font-size:18px;color:#1C2A3E">Careers</span><span style="font-size:14px;line-height:1.5;color:#4C5A6E">Join Mitchell Strategies.</span></a>
+            <a href="#" style="display:grid;gap:6px;padding:14px;align-content:start" style-hover="background:#F7F9FB"><span style="font-family:Archivo,sans-serif;font-weight:600;font-size:18px;color:#1C2A3E">FAQ's</span><span style="font-size:14px;line-height:1.5;color:#4C5A6E">Plans, pricing and timelines.</span></a>
+          </div>
+          <div style="background:#F7F9FB;padding:32px;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px;align-content:start">
+            <a href="#" style="display:grid;gap:10px;align-content:start" style-hover="opacity:.85">
+              <img src="https://images.pexels.com/photos/9487241/pexels-photo-9487241.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1600" alt="" style="width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:0 32px 0 0;display:block">
+              <span style="font-family:Archivo,sans-serif;font-weight:600;font-size:17px;line-height:1.3;color:#1C2A3E">Strategy by design</span>
+              <span style="font-family:Archivo,sans-serif;font-weight:600;font-size:14px;color:#4C5A6E">Our process →</span>
+            </a>
+            <a href="#" style="display:grid;gap:10px;align-content:start" style-hover="opacity:.85">
+              <img src="https://images.pexels.com/photos/5234774/pexels-photo-5234774.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1600" alt="" style="width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:0 32px 0 0;display:block">
+              <span style="font-family:Archivo,sans-serif;font-weight:600;font-size:17px;line-height:1.3;color:#1C2A3E">Talk it through with our team</span>
+              <span style="font-family:Archivo,sans-serif;font-weight:600;font-size:14px;color:#4C5A6E">Contact us →</span>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <sc-if value="{{ mobilePanel }}" hint-placeholder-val="{{ false }}">
+        <div style="position:absolute;left:0;right:0;top:100%;padding:10px 12px 0">
+          <div style="background:#FFFFFF;border-radius:0 24px 0 0;box-shadow:0 30px 60px -24px rgba(28,42,62,.35), 0 0 0 1px rgba(28,42,62,.08);padding:8px 20px 20px;max-height:calc(100dvh - 104px);overflow:auto;display:grid">
+            <sc-for list="{{ mobileLinks }}" as="ml" hint-placeholder-count="5">
+              <a href="{{ ml.href }}" style="padding:16px 0;border-bottom:1px solid #ECECEC;font-family:Archivo,sans-serif;font-weight:600;font-size:18px;color:#1C2A3E">{{ ml.label }}</a>
+            </sc-for>
+            <a href="#" style="margin-top:16px;text-align:center;font-family:Archivo,sans-serif;font-weight:600;font-size:16px;background:#1C2A3E;color:#FFFFFF;padding:16px 24px" style-hover="background:#2EB2FF;color:#1C2A3E">Let's Talk</a>
+          </div>
+        </div>
+      </sc-if>
+    </div>
+  </header>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;active&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;&quot;,&quot;Services&quot;,&quot;Work&quot;,&quot;Industries&quot;,&quot;Resources&quot;,&quot;About&quot;],&quot;default&quot;:&quot;&quot;,&quot;tsType&quot;:&quot;string&quot;},&quot;trigger&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;hover&quot;,&quot;click&quot;],&quot;default&quot;:&quot;hover&quot;,&quot;tsType&quot;:&quot;'hover'|'click'&quot;},&quot;preview&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;live&quot;,&quot;top&quot;,&quot;scrolled&quot;],&quot;default&quot;:&quot;live&quot;,&quot;tsType&quot;:&quot;'live'|'top'|'scrolled'&quot;},&quot;$preview&quot;:{&quot;width&quot;:&quot;1440px&quot;,&quot;height&quot;:&quot;640px&quot;}}">
+class Component extends DCLogic {
+  state = { scrolled: false, open: null, mobile: false, mobileOpen: false };
+  componentDidMount() {
+    this.onScroll = () => { const s = window.scrollY > 24; if (s !== this.state.scrolled) this.setState({ scrolled: s }); };
+    this.mq = window.matchMedia('(max-width: 960px)');
+    this.onMq = () => this.setState({ mobile: this.mq.matches, open: null, mobileOpen: false });
+    this.onKey = e => { if (e.key === 'Escape') this.setState({ open: null, mobileOpen: false }); };
+    this.onDoc = e => { if (!e.target.closest('header')) this.setState({ open: null }); };
+    window.addEventListener('scroll', this.onScroll, { passive: true });
+    this.mq.addEventListener('change', this.onMq);
+    document.addEventListener('keydown', this.onKey);
+    document.addEventListener('click', this.onDoc);
+    this.onScroll(); this.onMq();
+  }
+  componentWillUnmount() {
+    clearTimeout(this.ct);
+    window.removeEventListener('scroll', this.onScroll);
+    this.mq.removeEventListener('change', this.onMq);
+    document.removeEventListener('keydown', this.onKey);
+    document.removeEventListener('click', this.onDoc);
+  }
+  renderVals() {
+    const S = this.state, P = this.props;
+    const preview = P.preview ?? 'live', trigger = P.trigger ?? 'hover', active = P.active ?? '';
+    const scrolled = preview === 'scrolled' || (preview === 'live' && S.scrolled);
+    const { open, mobile, mobileOpen } = S;
+    const solid = scrolled || !!open || mobileOpen;
+    const setOpen = k => { clearTimeout(this.ct); if (this.state.open !== k) this.setState({ open: k }); };
+    const defs = [
+      { label: 'Services', menu: 'svc', href: '#' }, { label: 'Work', menu: 'work', href: '#' }, { label: 'Industries', menu: 'ind', href: 'Industry.dc.html' },
+      { label: 'Resources', menu: 'res', href: 'Resources.dc.html' }, { label: 'About', menu: 'about', href: 'About.dc.html' }
+    ];
+    const items = defs.map(d => {
+      const isOpen = d.menu && open === d.menu, on = isOpen || (!open && d.label === active);
+      return {
+        label: d.label, href: d.href, hasMenu: d.menu ? 'true' : undefined, expanded: d.menu ? String(!!isOpen) : undefined,
+        lineScale: on ? 'scaleX(1)' : 'scaleX(0)',
+        onEnter: () => { if (trigger === 'hover') setOpen(d.menu || null); },
+        onClick: e => { if (d.menu) { e.preventDefault(); setOpen(this.state.open === d.menu ? null : d.menu); } }
+      };
+    });
+    const panel = k => { const on = open === k && !mobile; return [on ? 1 : 0, on ? 'visible' : 'hidden', on ? 'translateY(0)' : 'translateY(-6px)']; };
+    const [svcOp, svcVis, svcY] = panel('svc'), [workOp, workVis, workY] = panel('work'), [indOp, indVis, indY] = panel('ind'), [aboutOp, aboutVis, aboutY] = panel('about'), [resOp, resVis, resY] = panel('res');
+    return {
+      items, desktop: !mobile, mobile, mobileOpen: String(mobileOpen), mobilePanel: mobile && mobileOpen,
+      outerPad: scrolled ? '14px 16px 0' : '0px 0px 0',
+      barMax: scrolled ? '1200px' : '100%',
+      barH: scrolled ? '68px' : '96px',
+      barPad: scrolled ? '0 14px 0 24px' : (mobile ? '0 20px' : '0 64px'),
+      barBg: solid ? '#FFFFFF' : 'rgba(255,255,255,0)',
+      barRadius: scrolled ? '0 24px 0 0' : '0px',
+      barShadow: scrolled ? '0 18px 40px -18px rgba(28,42,62,.28), 0 0 0 1px rgba(28,42,62,.08)' : 'none',
+      barRule: solid && !scrolled ? '1px solid #ECECEC' : '1px solid transparent',
+      logoBoxW: scrolled ? '58px' : '149px',
+      wordOp: scrolled ? 0 : 1, markOp: scrolled ? 1 : 0,
+      panelSide: scrolled ? '0px' : '64px',
+      svcOp, svcVis, svcY, workOp, workVis, workY, indOp, indVis, indY, aboutOp, aboutVis, aboutY, resOp, resVis, resY,
+      closeSoon: () => { if (trigger !== 'hover') return; clearTimeout(this.ct); this.ct = setTimeout(() => this.setState({ open: null }), 160); },
+      keepOpen: () => clearTimeout(this.ct),
+      toggleMobile: () => this.setState(s => ({ mobileOpen: !s.mobileOpen })),
+      menuBtnLabel: mobileOpen ? 'Close' : 'Menu',
+      mobileLinks: [{ label: 'Home', href: 'Homepage.dc.html' }, { label: 'Services', href: '#' }, { label: 'Work', href: '#' }, { label: 'Industries', href: 'Industry.dc.html' }, { label: 'News', href: 'News.dc.html' }, { label: 'Resources', href: 'Resources.dc.html' }, { label: 'About', href: 'About.dc.html' }, { label: 'Contact us', href: '#' }]
+    };
+  }
+}
+</script>
+</body>
+</html>

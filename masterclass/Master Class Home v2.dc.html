@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+<script src="../portfolio-guard.js" defer></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700;800;900&family=Instrument+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+html,body{margin:0;background:#06141e;color:#f4f8fa;font-family:'Instrument Sans',system-ui,sans-serif;overflow-x:hidden;}
+*{box-sizing:border-box;}
+a{color:#92edff;text-decoration:none;}
+a:hover{color:#ffffff;}
+.dc-row::-webkit-scrollbar{display:none;}
+input::placeholder{color:#7f97a6;}
+</style>
+</helmet>
+<header style="position:fixed;top:0;left:0;right:0;z-index:40;display:flex;align-items:center;gap:36px;padding:16px clamp(20px,4vw,56px);background:linear-gradient(180deg,rgba(6,20,30,.95) 0%,rgba(6,20,30,0) 100%);">
+  <a href="#top" style="display:block;line-height:0;"><img src="assets/logo.png" alt="Douglas County Master Class Series" style="height:40px;width:auto;"></a>
+  <nav style="display:flex;gap:22px;font-size:14px;font-weight:500;flex-wrap:wrap;">
+    <a href="#top" style="color:#ffffff;font-weight:700;">Home</a>
+    <a href="Series.dc.html" style="color:#b9cad4;" style-hover="color:#ffffff;">Series</a>
+    <a href="Profile.dc.html" style="color:#b9cad4;" style-hover="color:#ffffff;">Watchlist</a>
+    <a href="About.dc.html" style="color:#b9cad4;" style-hover="color:#ffffff;">About</a>
+    <a href="#faq" style="color:#b9cad4;" style-hover="color:#ffffff;">FAQ</a>
+  </nav>
+  <a href="Profile.dc.html" aria-label="Profile" style="margin-left:auto;width:36px;height:36px;border-radius:4px;background:#359aae;color:#06141e;display:grid;place-items:center;font-weight:700;font-size:14px;" style-hover="background:#92edff;color:#06141e;">KM</a>
+</header>
+
+<section id="top" style="position:relative;">
+  <sc-if value="{{ isCinematic }}" hint-placeholder-val="{{ true }}">
+    <div style="position:relative;height:min(92vh,880px);min-height:620px;display:flex;align-items:flex-end;background:#06141e url(assets/hero-money.jpg) center/cover no-repeat;">
+      <div style="position:absolute;inset:0;background:linear-gradient(90deg,rgba(6,20,30,.96) 0%,rgba(6,20,30,.75) 40%,rgba(6,20,30,.15) 75%),linear-gradient(0deg,#06141e 0%,rgba(6,20,30,0) 45%);"></div>
+      <div style="position:relative;padding:0 clamp(20px,4vw,56px) clamp(180px,22vh,230px);max-width:780px;display:flex;flex-direction:column;gap:18px;">
+        <div style="display:flex;align-items:center;gap:12px;font-size:12px;font-weight:700;letter-spacing:.22em;">
+          <span style="background:#359aae;color:#06141e;padding:4px 8px;border-radius:2px;">SERIES 1</span><span style="color:#92edff;">MAINTAINING</span>
+        </div>
+        <h1 style="margin:0;font-family:'Big Shoulders Display',sans-serif;font-weight:900;font-size:clamp(56px,8.5vw,120px);line-height:.86;text-transform:uppercase;text-wrap:balance;">Financial Foundation</h1>
+        <p style="margin:0;font-size:clamp(16px,1.4vw,19px);line-height:1.55;color:#d6e2e8;max-width:580px;text-wrap:pretty;">Plans, budgets, credit and recovery — the everyday money skills every household needs, taught in short vignettes from Douglas County.</p>
+        <div style="display:flex;gap:14px;font-size:14px;color:#b9cad4;align-items:center;flex-wrap:wrap;">
+          <span style="border:1px solid #7f97a6;padding:1px 6px;border-radius:2px;font-size:12px;">ALL AGES</span><span>9 vignettes</span><span>·</span><span>60 Moments of Truth</span><span>·</span><span>Free</span>
+        </div>
+        <div style="display:flex;gap:12px;flex-wrap:wrap;">
+          <a href="{{ trailerUrl }}" target="_blank" onClick="{{ startIntro }}" style="display:flex;align-items:center;gap:10px;background:#ffffff;color:#06141e;border-radius:4px;padding:13px 28px;font-weight:700;font-size:17px;" style-hover="background:#92edff;color:#06141e;"><svg width="18" height="18" viewBox="0 0 24 24" fill="#06141e"><path d="M6 4l15 8-15 8z"></path></svg>Watch Now</a>
+          <button onClick="{{ openIntro }}" style="display:flex;align-items:center;gap:10px;background:rgba(127,151,166,.4);color:#ffffff;border:0;border-radius:4px;padding:13px 24px;font:inherit;font-weight:600;font-size:17px;cursor:pointer;" style-hover="background:rgba(127,151,166,.6);"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2"><circle cx="12" cy="12" r="9"></circle><path d="M12 11v6M12 7.5v.5"></path></svg>More Info</button>
+        </div>
+      </div>
+    </div>
+  </sc-if>
+
+  <sc-if value="{{ isSplit }}" hint-placeholder-val="{{ false }}">
+    <div style="position:relative;min-height:min(92vh,880px);display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,420px),1fr));gap:48px;align-items:center;padding:120px clamp(20px,4vw,56px) 200px;background:radial-gradient(80% 70% at 85% 30%,#163d5e 0%,#06141e 70%);">
+      <div style="display:flex;flex-direction:column;gap:18px;">
+        <span style="font-size:12px;font-weight:700;letter-spacing:.22em;color:#92edff;">60 MOMENTS OF TRUTH</span>
+        <h1 style="margin:0;font-family:'Big Shoulders Display',sans-serif;font-weight:900;font-size:clamp(52px,7vw,104px);line-height:.88;text-transform:uppercase;text-wrap:balance;">Literacy to legacy.</h1>
+        <p style="margin:0;font-size:clamp(16px,1.4vw,19px);line-height:1.55;color:#d6e2e8;max-width:520px;text-wrap:pretty;">Free consumer financial education vignettes from Douglas County — five series, from your first budget to passing on what you've built.</p>
+        <div style="display:flex;gap:12px;flex-wrap:wrap;">
+          <a href="Series.dc.html" style="background:#ffffff;color:#06141e;border-radius:4px;padding:13px 28px;font-weight:700;font-size:17px;" style-hover="background:#92edff;color:#06141e;">Start Series 1</a>
+          <a href="#rows" style="border:1px solid #7f97a6;color:#ffffff;border-radius:4px;padding:13px 24px;font-weight:600;font-size:17px;" style-hover="border-color:#ffffff;color:#ffffff;">Browse all</a>
+        </div>
+      </div>
+      <a href="{{ trailerUrl }}" target="_blank" style="position:relative;display:block;aspect-ratio:16/9;border-radius:8px;overflow:hidden;background:#042034 url(https://i.ytimg.com/vi/TrevNrSnTZk/maxresdefault.jpg) center/cover no-repeat;box-shadow:0 30px 80px rgba(0,0,0,.55);color:#ffffff;" style-hover="transform:scale(1.02);color:#ffffff;">
+        <span style="position:absolute;inset:0;background:linear-gradient(0deg,rgba(6,20,30,.9) 0%,rgba(6,20,30,0) 55%);"></span>
+        <span style="position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:76px;height:76px;border-radius:50%;background:#359aae;display:grid;place-items:center;"><svg width="28" height="28" viewBox="0 0 24 24" fill="#06141e"><path d="M7 4l14 8-14 8z"></path></svg></span>
+        <span style="position:absolute;left:20px;bottom:18px;display:flex;flex-direction:column;gap:4px;"><span style="font-size:11px;font-weight:700;letter-spacing:.2em;color:#92edff;">TRAILER</span><span style="font-size:18px;font-weight:600;">Douglas County Master Class Series Launch</span></span>
+      </a>
+    </div>
+  </sc-if>
+
+  <sc-if value="{{ isCarousel }}" hint-placeholder-val="{{ false }}">
+    <div style="position:relative;height:min(94vh,900px);min-height:640px;display:flex;flex-direction:column;justify-content:flex-end;background:#06141e url({{ hs.img }}) center/cover no-repeat;transition:background-image .6s;">
+      <div style="position:absolute;inset:0;background:linear-gradient(90deg,rgba(6,20,30,.95) 0%,rgba(6,20,30,.6) 45%,rgba(6,20,30,.1) 80%),linear-gradient(0deg,#06141e 8%,rgba(6,20,30,0) 55%);"></div>
+      <div style="position:absolute;right:clamp(20px,5vw,80px);top:18%;font-family:'Big Shoulders Display',sans-serif;font-weight:900;font-size:clamp(160px,24vw,380px);line-height:.8;color:transparent;-webkit-text-stroke:2px rgba(146,237,255,.5);">0{{ hs.n }}</div>
+      <div style="position:relative;padding:0 clamp(20px,4vw,56px);max-width:760px;display:flex;flex-direction:column;gap:16px;">
+        <span style="font-size:12px;font-weight:700;letter-spacing:.22em;color:#92edff;">SERIES {{ hs.n }} · {{ hs.wordUp }}</span>
+        <h1 style="margin:0;font-family:'Big Shoulders Display',sans-serif;font-weight:900;font-size:clamp(52px,8vw,112px);line-height:.86;text-transform:uppercase;text-wrap:balance;">{{ hs.title }}</h1>
+        <p style="margin:0;font-size:18px;line-height:1.55;color:#d6e2e8;max-width:560px;text-wrap:pretty;">{{ hs.desc }}</p>
+        <div style="display:flex;gap:12px;flex-wrap:wrap;">
+          <a href="{{ hs.url }}" target="_blank" style="display:flex;align-items:center;gap:10px;background:#ffffff;color:#06141e;border-radius:4px;padding:13px 28px;font-weight:700;font-size:17px;" style-hover="background:#92edff;color:#06141e;"><svg width="18" height="18" viewBox="0 0 24 24" fill="#06141e"><path d="M6 4l15 8-15 8z"></path></svg>Watch Now</a>
+          <a href="Series.dc.html" style="background:rgba(127,151,166,.4);color:#ffffff;border-radius:4px;padding:13px 24px;font-weight:600;font-size:17px;" style-hover="background:rgba(127,151,166,.6);color:#ffffff;">View Lessons</a>
+        </div>
+      </div>
+      <div style="position:relative;display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:10px;padding:32px clamp(20px,4vw,56px) 190px;">
+        <sc-for list="{{ heroTabs }}" as="t" hint-placeholder-count="5">
+          <button onClick="{{ t.go }}" style="position:relative;aspect-ratio:16/9;border:2px solid {{ t.border }};border-radius:6px;overflow:hidden;padding:0;cursor:pointer;background:#042034 url({{ t.img }}) center/cover no-repeat;opacity:{{ t.op }};transition:opacity .3s,border-color .3s;" style-hover="opacity:1;">
+            <span style="position:absolute;inset:0;background:linear-gradient(0deg,rgba(6,20,30,.9),rgba(6,20,30,.1));"></span>
+            <span style="position:absolute;left:10px;bottom:8px;right:10px;text-align:left;color:#ffffff;font-size:12px;font-weight:600;line-height:1.2;"><span style="display:block;font-size:10px;letter-spacing:.18em;color:#92edff;">SERIES {{ t.n }}</span>{{ t.title }}</span>
+          </button>
+        </sc-for>
+      </div>
+    </div>
+  </sc-if>
+</section>
+
+<main id="rows" style="position:relative;z-index:5;margin-top:-150px;display:flex;flex-direction:column;gap:44px;padding-bottom:48px;">
+  <sc-for list="{{ vrows }}" as="row" hint-placeholder-count="2">
+    <div>
+      <div style="display:flex;align-items:baseline;gap:14px;padding:0 clamp(20px,4vw,56px);margin-bottom:10px;flex-wrap:wrap;">
+        <h2 style="margin:0;font-size:clamp(18px,1.6vw,22px);font-weight:700;">{{ row.title }}</h2>
+        <span style="font-size:13px;color:#7f97a6;">{{ row.sub }}</span>
+      </div>
+      <div style="position:relative;">
+        <button onClick="{{ row.prev }}" aria-label="Scroll left" style="position:absolute;left:0;top:0;bottom:0;z-index:3;width:clamp(20px,4vw,56px);border:0;background:linear-gradient(90deg,rgba(6,20,30,.9),rgba(6,20,30,0));color:#ffffff;font-size:34px;cursor:pointer;" style-hover="background:rgba(6,20,30,.9);">‹</button>
+        <div ref="{{ row.ref }}" class="dc-row" style="display:flex;gap:10px;overflow-x:auto;scroll-snap-type:x mandatory;scroll-padding:0 clamp(20px,4vw,56px);padding:14px clamp(20px,4vw,56px) 20px;scrollbar-width:none;">
+          <sc-for list="{{ row.items }}" as="v" hint-placeholder-count="5">
+            <div style="flex:0 0 auto;display:flex;align-items:flex-end;scroll-snap-align:start;">
+              <sc-if value="{{ row.ranked }}" hint-placeholder-val="{{ false }}">
+                <span style="font-family:'Big Shoulders Display',sans-serif;font-weight:900;font-size:190px;line-height:.78;margin-right:-24px;color:#06141e;-webkit-text-stroke:3px #359aae;">{{ v.rank }}</span>
+              </sc-if>
+              <button onClick="{{ v.open }}" style="position:relative;width:clamp(250px,22vw,320px);aspect-ratio:16/9;border:0;padding:0;border-radius:6px;overflow:hidden;cursor:pointer;background:#042034 url({{ v.img }}) center/cover no-repeat;color:#ffffff;text-align:left;font:inherit;transition:transform .28s cubic-bezier(.2,.8,.2,1),box-shadow .28s;" style-hover="transform:scale(1.07);box-shadow:0 18px 40px rgba(0,0,0,.6);z-index:2;">
+                <span style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(6,20,30,.15) 20%,rgba(6,20,30,.92) 100%);"></span>
+                <span style="position:absolute;left:12px;top:10px;font-size:10px;font-weight:700;letter-spacing:.18em;color:#92edff;">{{ v.num }}</span>
+                <sc-if value="{{ v.hasStatus }}" hint-placeholder-val="{{ false }}">
+                  <span style="position:absolute;right:10px;top:8px;font-size:11px;font-weight:600;color:#ffffff;background:rgba(6,20,30,.7);padding:2px 6px;border-radius:2px;">{{ v.status }}</span>
+                </sc-if>
+                <span style="position:absolute;left:12px;right:12px;bottom:14px;display:flex;flex-direction:column;gap:4px;">
+                  <span style="font-family:'Big Shoulders Display',sans-serif;font-weight:800;font-size:26px;line-height:.95;text-transform:uppercase;text-wrap:balance;">{{ v.title }}</span>
+                  <span style="font-size:12px;color:#b9cad4;">{{ v.len }}</span>
+                </span>
+                <sc-if value="{{ v.hasProgress }}" hint-placeholder-val="{{ false }}">
+                  <span style="position:absolute;left:0;right:0;bottom:0;height:4px;background:rgba(255,255,255,.25);"><span style="display:block;height:100%;width:{{ v.pct }};background:#359aae;"></span></span>
+                </sc-if>
+              </button>
+            </div>
+          </sc-for>
+        </div>
+        <button onClick="{{ row.next }}" aria-label="Scroll right" style="position:absolute;right:0;top:0;bottom:0;z-index:3;width:clamp(20px,4vw,56px);border:0;background:linear-gradient(270deg,rgba(6,20,30,.9),rgba(6,20,30,0));color:#ffffff;font-size:34px;cursor:pointer;" style-hover="background:rgba(6,20,30,.9);">›</button>
+      </div>
+    </div>
+  </sc-for>
+
+  <div>
+    <div style="display:flex;align-items:baseline;gap:14px;padding:0 clamp(20px,4vw,56px);margin-bottom:10px;">
+      <h2 style="margin:0;font-size:clamp(18px,1.6vw,22px);font-weight:700;">All Series</h2>
+      <span style="font-size:13px;color:#7f97a6;">60 Moments of Truth</span>
+    </div>
+    <div class="dc-row" style="display:flex;gap:12px;overflow-x:auto;scroll-snap-type:x mandatory;padding:14px clamp(20px,4vw,56px) 20px;scrollbar-width:none;">
+      <sc-for list="{{ series }}" as="sr" hint-placeholder-count="5">
+        <a href="{{ sr.url }}" target="_blank" style="position:relative;flex:0 0 auto;width:clamp(200px,17vw,250px);aspect-ratio:2/3;border-radius:6px;overflow:hidden;scroll-snap-align:start;background:#042034 url({{ sr.img }}) center/cover no-repeat;color:#ffffff;transition:transform .28s cubic-bezier(.2,.8,.2,1);" style-hover="transform:scale(1.05);color:#ffffff;">
+          <span style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(6,20,30,.1) 30%,rgba(6,20,30,.95) 100%);"></span>
+          <span style="position:absolute;right:12px;top:6px;font-family:'Big Shoulders Display',sans-serif;font-weight:900;font-size:80px;line-height:1;color:transparent;-webkit-text-stroke:1.5px rgba(146,237,255,.7);">0{{ sr.n }}</span>
+          <span style="position:absolute;left:14px;right:14px;bottom:16px;display:flex;flex-direction:column;gap:4px;">
+            <span style="font-size:10px;font-weight:700;letter-spacing:.2em;color:#92edff;">SERIES {{ sr.n }} · {{ sr.wordUp }}</span>
+            <span style="font-family:'Big Shoulders Display',sans-serif;font-weight:800;font-size:30px;line-height:.92;text-transform:uppercase;">{{ sr.title }}</span>
+          </span>
+        </a>
+      </sc-for>
+    </div>
+  </div>
+</main>
+<section id="about" style="padding:88px clamp(20px,4vw,56px);border-top:1px solid #163d5e;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,380px),1fr));gap:56px;align-items:start;background:linear-gradient(180deg,#06141e 0%,#042034 100%);">
+  <div style="display:flex;flex-direction:column;gap:18px;">
+    <span style="font-size:12px;font-weight:700;letter-spacing:.22em;color:#92edff;">ABOUT THE SERIES</span>
+    <h2 style="margin:0;font-family:'Big Shoulders Display',sans-serif;font-weight:900;font-size:clamp(48px,6vw,84px);line-height:.88;text-transform:uppercase;">Financial literacy,<br>made simple.</h2>
+    <p style="margin:0;font-size:18px;line-height:1.55;color:#b9cad4;max-width:520px;text-wrap:pretty;">The Douglas County Master Class Series is a free financial and entrepreneurship program built around recovery fundamentals. Watch on any device, at your own pace — for everyone from teens just starting out to adults rebuilding.</p>
+    <div style="display:flex;gap:12px;flex-wrap:wrap;margin-top:6px;">
+      <a href="https://www.youtube.com/@DCMasterClass" target="_blank" style="background:#359aae;color:#06141e;font-weight:700;padding:12px 22px;border-radius:4px;" style-hover="background:#92edff;color:#06141e;">Subscribe on YouTube</a>
+      <a href="#newsletter" style="border:1px solid #7f97a6;color:#ffffff;font-weight:600;padding:12px 22px;border-radius:4px;" style-hover="border-color:#ffffff;color:#ffffff;">Get the newsletter</a>
+    </div>
+  </div>
+  <div style="display:flex;flex-direction:column;">
+    <span style="font-size:13px;color:#7f97a6;margin-bottom:8px;">By the end of the series, you will</span>
+    <sc-for list="{{ outcomes }}" as="o" hint-placeholder-count="5">
+      <div style="display:grid;grid-template-columns:64px 1fr;gap:16px;align-items:baseline;padding:18px 0;border-bottom:1px solid #163d5e;">
+        <span style="font-family:'Big Shoulders Display',sans-serif;font-weight:900;font-size:40px;line-height:1;color:#359aae;">{{ o.n }}</span>
+        <span style="font-size:18px;line-height:1.45;color:#ffffff;text-wrap:pretty;">{{ o.text }}</span>
+      </div>
+    </sc-for>
+  </div>
+</section>
+
+<section id="faq" style="padding:88px clamp(20px,4vw,56px);background:#042034;">
+  <div style="max-width:860px;margin:0 auto;display:flex;flex-direction:column;gap:8px;">
+    <h2 style="margin:0 0 24px;font-family:'Big Shoulders Display',sans-serif;font-weight:900;font-size:clamp(40px,5vw,64px);line-height:.9;text-transform:uppercase;text-align:center;">Frequently asked questions</h2>
+    <sc-for list="{{ faqs }}" as="f" hint-placeholder-count="4">
+      <div style="background:#0b2a40;">
+        <button onClick="{{ f.toggle }}" style="width:100%;display:flex;justify-content:space-between;align-items:center;gap:20px;padding:22px 26px;background:transparent;border:0;color:#ffffff;font:inherit;font-size:clamp(17px,1.6vw,21px);font-weight:500;text-align:left;cursor:pointer;" style-hover="background:#163d5e;">
+          <span>{{ f.q }}</span><span style="font-size:30px;font-weight:300;line-height:1;color:#92edff;">{{ f.icon }}</span>
+        </button>
+        <sc-if value="{{ f.open }}" hint-placeholder-val="{{ false }}">
+          <div style="padding:20px 26px 24px;border-top:1px solid #06141e;font-size:17px;line-height:1.6;color:#b9cad4;text-wrap:pretty;">{{ f.a }}</div>
+        </sc-if>
+      </div>
+    </sc-for>
+  </div>
+</section>
+
+<section id="newsletter" style="padding:80px clamp(20px,4vw,56px) 92px;border-top:1px solid #163d5e;text-align:center;background:radial-gradient(60% 100% at 50% 0%,#163d5e 0%,#06141e 80%);">
+  <div style="max-width:680px;margin:0 auto;display:flex;flex-direction:column;gap:16px;align-items:center;">
+    <span style="font-size:12px;font-weight:700;letter-spacing:.22em;color:#92edff;">DOUGLAS COUNTY HAPPENINGS</span>
+    <h2 style="margin:0;font-size:clamp(22px,2.4vw,30px);font-weight:600;line-height:1.3;text-wrap:balance;">New vignettes, extra resources and money tips — straight to your inbox.</h2>
+    <sc-if value="{{ notSubscribed }}" hint-placeholder-val="{{ true }}">
+      <form onSubmit="{{ onSubscribe }}" style="display:flex;gap:8px;width:100%;flex-wrap:wrap;margin-top:8px;">
+        <input type="email" required="required" value="{{ email }}" onChange="{{ onEmail }}" placeholder="Email address" style="flex:1 1 260px;min-width:0;background:rgba(6,20,30,.6);border:1px solid #7f97a6;border-radius:4px;padding:16px 18px;color:#ffffff;font:inherit;font-size:16px;outline:0;" style-focus="border-color:#92edff;">
+        <button type="submit" style="flex:0 0 auto;background:#359aae;color:#06141e;border:0;border-radius:4px;padding:16px 28px;font:inherit;font-weight:700;font-size:17px;cursor:pointer;" style-hover="background:#92edff;">Get Started ›</button>
+      </form>
+    </sc-if>
+    <sc-if value="{{ subscribed }}" hint-placeholder-val="{{ false }}">
+      <p style="margin:8px 0 0;font-size:17px;">You're on the list. Watch for the next Douglas County Happenings.</p>
+    </sc-if>
+  </div>
+</section>
+
+<footer style="padding:40px clamp(20px,4vw,56px) 56px;border-top:1px solid #163d5e;display:flex;flex-wrap:wrap;gap:24px 48px;align-items:center;font-size:13px;color:#7f97a6;">
+  <img src="assets/logo.png" alt="Douglas County Master Class Series" style="height:36px;width:auto;">
+  <nav style="display:flex;gap:22px;flex-wrap:wrap;">
+    <a href="https://douglascountyga.gov" target="_blank" style="color:#b9cad4;" style-hover="color:#ffffff;">douglascountyga.gov</a>
+    <a href="About.dc.html" style="color:#b9cad4;" style-hover="color:#ffffff;">About</a>
+    <a href="Series.dc.html" style="color:#b9cad4;" style-hover="color:#ffffff;">Series</a>
+    <a href="#faq" style="color:#b9cad4;" style-hover="color:#ffffff;">FAQ</a>
+    <a href="https://www.youtube.com/@DCMasterClass" target="_blank" style="color:#b9cad4;" style-hover="color:#ffffff;">YouTube</a>
+  </nav>
+  <span style="margin-left:auto;">© 2026 Douglas County, Georgia. All rights reserved.</span>
+</footer>
+<sc-if value="{{ modalOpen }}" hint-placeholder-val="{{ false }}">
+  <div onClick="{{ closeModal }}" style="position:fixed;inset:0;z-index:100;background:rgba(2,8,12,.8);overflow-y:auto;padding:40px 16px;display:flex;justify-content:center;align-items:flex-start;">
+    <div onClick="{{ stop }}" style="width:min(880px,100%);background:#0b2a40;border-radius:8px;overflow:hidden;box-shadow:0 30px 80px rgba(0,0,0,.7);">
+      <div style="position:relative;aspect-ratio:16/9;background:#042034 url({{ m.img }}) center/cover no-repeat;">
+        <div style="position:absolute;inset:0;background:linear-gradient(0deg,#0b2a40 0%,rgba(11,42,64,0) 60%);"></div>
+        <button onClick="{{ closeModal }}" aria-label="Close" style="position:absolute;top:14px;right:14px;width:40px;height:40px;border-radius:50%;border:0;background:#06141e;color:#ffffff;font-size:22px;cursor:pointer;">×</button>
+        <div style="position:absolute;left:clamp(20px,4vw,40px);right:clamp(20px,4vw,40px);bottom:24px;display:flex;flex-direction:column;gap:14px;">
+          <span style="font-size:11px;font-weight:700;letter-spacing:.2em;color:#92edff;">SERIES 1 · {{ m.num }}</span>
+          <h3 style="margin:0;font-family:'Big Shoulders Display',sans-serif;font-weight:900;font-size:clamp(38px,6vw,64px);line-height:.9;text-transform:uppercase;text-wrap:balance;">{{ m.title }}</h3>
+          <div style="display:flex;gap:10px;flex-wrap:wrap;">
+            <a href="{{ m.watchUrl }}" target="_blank" onClick="{{ m.watch }}" style="display:flex;align-items:center;gap:10px;background:#ffffff;color:#06141e;border-radius:4px;padding:11px 24px;font-weight:700;font-size:16px;" style-hover="background:#92edff;color:#06141e;"><svg width="16" height="16" viewBox="0 0 24 24" fill="#06141e"><path d="M6 4l15 8-15 8z"></path></svg>Watch on YouTube</a>
+            <button onClick="{{ m.markDone }}" style="background:rgba(127,151,166,.35);color:#ffffff;border:0;border-radius:4px;padding:11px 20px;font:inherit;font-weight:600;font-size:15px;cursor:pointer;" style-hover="background:rgba(127,151,166,.55);">{{ m.doneLabel }}</button>
+          </div>
+        </div>
+      </div>
+      <div style="padding:24px clamp(20px,4vw,40px) 36px;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,280px),1fr));gap:32px;">
+        <div style="display:flex;flex-direction:column;gap:12px;">
+          <div style="display:flex;gap:12px;font-size:14px;color:#b9cad4;align-items:center;flex-wrap:wrap;">
+            <span style="border:1px solid #7f97a6;padding:1px 6px;border-radius:2px;font-size:12px;">ALL AGES</span><span>{{ m.len }}</span><span>·</span><span>Maintaining Financial Foundation</span>
+          </div>
+          <p style="margin:0;font-size:17px;line-height:1.6;text-wrap:pretty;">{{ m.desc }}</p>
+          <a href="Series.dc.html" style="font-size:15px;font-weight:600;">See all Series 1 lessons ›</a>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:8px;">
+          <span style="font-size:16px;font-weight:700;">More vignettes</span>
+          <sc-for list="{{ m.related }}" as="r" hint-placeholder-count="4">
+            <button onClick="{{ r.open }}" style="display:grid;grid-template-columns:96px 1fr;gap:14px;align-items:center;padding:8px;background:#06141e;border:0;border-radius:4px;color:#ffffff;font:inherit;text-align:left;cursor:pointer;" style-hover="background:#163d5e;">
+              <span style="aspect-ratio:16/9;border-radius:3px;background:#042034 url({{ r.img }}) center/cover no-repeat;"></span>
+              <span style="display:flex;flex-direction:column;gap:2px;"><span style="font-size:15px;font-weight:600;">{{ r.title }}</span><span style="font-size:12px;color:#7f97a6;">{{ r.len }}</span></span>
+            </button>
+          </sc-for>
+        </div>
+      </div>
+    </div>
+  </div>
+</sc-if></x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;heroLayout&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;cinematic&quot;,&quot;split&quot;,&quot;carousel&quot;],&quot;default&quot;:&quot;cinematic&quot;,&quot;tsType&quot;:&quot;'cinematic'|'split'|'carousel'&quot;}}">
+const PL1 = 'https://youtube.com/playlist?list=PLcVvEWIzJCUkARL-50bZKWyoI4fUUbl3k';
+const PL2 = 'https://youtube.com/playlist?list=PLcVvEWIzJCUn2Jk3HxE3dP7MWZU9xRgGW';
+const CH = 'https://www.youtube.com/@DCMasterClass';
+const TRAILER = 'https://youtu.be/TrevNrSnTZk';
+const SERIES = [
+  { n: 1, word: 'Maintaining', title: 'Financial Foundation', img: 'assets/t-wallet.jpg', url: PL1, desc: 'Plans, budgets, credit and recovery — the everyday money skills every household needs.' },
+  { n: 2, word: 'Growing', title: 'Investments', img: 'assets/t-phone.jpg', url: PL2, desc: 'Put your money to work. Saving vs. investing, risk, and growing wealth over time.' },
+  { n: 3, word: 'Diversifying', title: 'Portfolio Management', img: 'assets/t-charts.jpg', url: CH, desc: 'Spread risk, balance goals and keep your portfolio working as life changes.' },
+  { n: 4, word: 'Protecting', title: 'Insurance', img: 'assets/t-insurance.jpg', url: CH, desc: 'Protect what you’ve built — health, home, auto, life and disability coverage explained.' },
+  { n: 5, word: 'Transferring', title: 'Legacy Planning', img: 'assets/t-docs.jpg', url: CH, desc: 'Wills, beneficiaries and passing on generational wealth — literacy to legacy.' },
+];
+const VIG = [
+  { id: 1, title: 'Introduction', mins: 25, img: 'assets/t-presenter.jpg', desc: 'Why financial literacy matters and how the 60 Moments of Truth are organized.' },
+  { id: 2, title: 'Plans, Goals & Priorities', mins: 35, img: 'assets/t-planning.jpg', desc: 'Turn what you want into a plan — set goals, rank priorities and put dates on them.' },
+  { id: 3, title: 'Budget, Forecast & Track', mins: 70, img: 'assets/t-calculator.jpg', desc: 'Build a budget, forecast the months ahead and track actuals against your plan.' },
+  { id: 4, title: 'Financial Adjustment', mins: 50, img: 'assets/t-calc2.jpg', desc: 'When income or costs change, here’s how to adjust without losing ground.' },
+  { id: 5, title: 'Financial Recovery', mins: 50, img: 'assets/t-table.jpg', desc: 'Steps to rebuild after a setback and boost your ability to recover.' },
+  { id: 6, title: 'Spending vs. Shopping', mins: 50, img: 'assets/t-coins.jpg', desc: 'Spot the difference between purposeful spending and habit shopping.' },
+  { id: 7, title: 'Checking & Savings Accounts', mins: 25, img: 'assets/t-clipboard.jpg', desc: 'Choosing accounts, avoiding fees and making savings automatic.' },
+  { id: 8, title: 'Credit Score & You', mins: 35, img: 'assets/t-team.jpg', desc: 'What builds a credit score, what hurts it and how to read your report.' },
+  { id: 9, title: 'Credit Cards & Loans', mins: 70, img: 'assets/t-trader.jpg', desc: 'Using credit wisely — rates, terms, payoff strategies and what to avoid.' },
+];
+const FAQS = [
+  { q: 'What will I learn in the Master Class Series?', a: 'You’ll learn to identify poor vs. good spending habits, understand why planning matters and how to approach it, get exposure to the budget process, learn financial adjustments that boost your ability to recover, and use assets and liabilities on a personal financial statement to calculate net worth.' },
+  { q: 'How can I take the course?', a: 'Watch the vignettes from this site or subscribe to the Douglas County GA Master Class Series YouTube channel. Sign up for the “Douglas County Happenings” newsletter for extra resources and financial tips. New videos are added regularly.' },
+  { q: 'Who should take the class?', a: 'Everyone — from young teenagers just learning about finances on up.' },
+  { q: 'Does it cost anything?', a: 'No. The Master Class Series is free for everyone.' },
+];
+const OUTCOMES = ['Identify poor spending habits vs. good spending habits', 'Understand why planning matters and how to approach it', 'Get exposure to the budget process', 'Make the adjustments that boost your ability to recover', 'Calculate net worth from a personal financial statement'];
+const KEY = 'dcmc-v2-progress';
+const fmt = m => m >= 60 ? Math.floor(m / 60) + 'h ' + (m % 60) + 'm' : m + ' min';
+
+class Component extends DCLogic {
+  state = { heroI: 0, modalId: null, progress: {}, faqOpen: 0, email: '', subscribed: false };
+  rowEls = {}; rowRefs = {};
+  componentDidMount() {
+    try { this.setState({ progress: JSON.parse(localStorage.getItem(KEY) || '{}') }); } catch (e) {}
+    this.t = setInterval(() => { if (this.state.modalId == null) this.setState(s => ({ heroI: (s.heroI + 1) % SERIES.length })); }, 7000);
+    this.onKey = e => { if (e.key === 'Escape') this.setState({ modalId: null }); };
+    window.addEventListener('keydown', this.onKey);
+  }
+  componentWillUnmount() { clearInterval(this.t); window.removeEventListener('keydown', this.onKey); }
+  setProg(id, v) { this.setState(s => { const progress = { ...s.progress, [id]: v }; try { localStorage.setItem(KEY, JSON.stringify(progress)); } catch (e) {} return { progress }; }); }
+  refFor(id) { if (!this.rowRefs[id]) this.rowRefs[id] = el => { this.rowEls[id] = el; }; return this.rowRefs[id]; }
+  scroll(id, d) { const el = this.rowEls[id]; if (el) el.scrollBy({ left: d * el.clientWidth * 0.85, behavior: 'smooth' }); }
+  deco(v, i) {
+    const p = this.state.progress[v.id] || 0;
+    return { ...v, rank: i + 1, num: 'Vignette ' + v.id, len: fmt(v.mins), pct: p + '%', hasProgress: p > 0, hasStatus: p > 0, status: p >= 100 ? 'Watched' : (p > 0 ? 'In progress' : ''), open: () => this.setState({ modalId: v.id }) };
+  }
+  renderVals() {
+    const s = this.state; const layout = this.props.heroLayout ?? 'cinematic';
+    const row = (id, title, sub, items, kind) => ({ id, title, sub, items, ranked: kind === 'rank', ref: this.refFor(id), prev: () => this.scroll(id, -1), next: () => this.scroll(id, 1) });
+    const vigs = VIG.map((v, i) => this.deco(v, i));
+    const cont = vigs.filter(v => { const p = s.progress[v.id] || 0; return p > 0 && p < 100; });
+    const top = [3, 8, 1, 9, 5].map((id, i) => this.deco(VIG[id - 1], i));
+    const vrows = [];
+    if (cont.length) vrows.push(row('cont', 'Continue Watching', '', cont));
+    vrows.push(row('s1', 'Series 1: Maintaining Financial Foundation', '9 vignettes', vigs));
+    vrows.push(row('top', 'Most Viewed', 'Top 5 in Douglas County', top, 'rank'));
+    const me = VIG.find(v => v.id === s.modalId);
+    const m = me ? { ...this.deco(me, 0), watchUrl: PL1, related: vigs.filter(v => v.id !== me.id).slice(0, 4), watch: () => this.setProg(me.id, Math.max(s.progress[me.id] || 0, 40)), markDone: () => this.setProg(me.id, 100), doneLabel: (s.progress[me.id] || 0) >= 100 ? '✓ Watched' : 'Mark as watched' } : {};
+    const hs = SERIES[s.heroI];
+    return {
+      isCinematic: layout === 'cinematic', isSplit: layout === 'split', isCarousel: layout === 'carousel',
+      trailerUrl: TRAILER, openIntro: () => this.setState({ modalId: 1 }), startIntro: () => this.setProg(1, Math.max(s.progress[1] || 0, 10)),
+      hs: { ...hs, wordUp: hs.word.toUpperCase() },
+      heroTabs: SERIES.map((x, i) => ({ ...x, border: i === s.heroI ? '#92edff' : 'transparent', op: i === s.heroI ? 1 : 0.6, go: () => this.setState({ heroI: i }) })),
+      vrows, series: SERIES.map(x => ({ ...x, wordUp: x.word.toUpperCase() })),
+      outcomes: OUTCOMES.map((t, i) => ({ n: '0' + (i + 1), text: t })),
+      faqs: FAQS.map((f, i) => ({ ...f, open: s.faqOpen === i, icon: s.faqOpen === i ? '×' : '+', toggle: () => this.setState({ faqOpen: s.faqOpen === i ? -1 : i }) })),
+      email: s.email, onEmail: e => this.setState({ email: e.target.value }), onSubscribe: e => { e.preventDefault(); this.setState({ subscribed: true }); },
+      subscribed: s.subscribed, notSubscribed: !s.subscribed,
+      modalOpen: !!me, m, closeModal: () => this.setState({ modalId: null }), stop: e => e.stopPropagation(),
+    };
+  }
+}
+</script>
+</body>
+</html>

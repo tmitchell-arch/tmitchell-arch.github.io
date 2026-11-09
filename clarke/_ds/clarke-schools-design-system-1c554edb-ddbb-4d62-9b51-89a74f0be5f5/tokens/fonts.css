@@ -1,0 +1,27 @@
+/* Licensed brand fonts, self-hosted from assets/fonts. Google Fonts substitutes remain as fallbacks. */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500&family=EB+Garamond:ital,wght@0,400;0,700;1,400&family=Carlito:ital,wght@0,400;0,700;1,400&display=swap');
+@font-face{font-family:'Gotham';src:url('../assets/fonts/gotham/gotham_thin.otf') format('opentype');font-weight:100;font-style:normal;font-display:swap}
+@font-face{font-family:'Gotham';src:url('../assets/fonts/gotham/gotham_thinitalic.otf') format('opentype');font-weight:100;font-style:italic;font-display:swap}
+@font-face{font-family:'Gotham';src:url('../assets/fonts/gotham/gotham_xlight.otf') format('opentype');font-weight:200;font-style:normal;font-display:swap}
+@font-face{font-family:'Gotham';src:url('../assets/fonts/gotham/gotham_xlightitalic.otf') format('opentype');font-weight:200;font-style:italic;font-display:swap}
+@font-face{font-family:'Gotham';src:url('../assets/fonts/gotham/gotham_light.otf') format('opentype');font-weight:300;font-style:normal;font-display:swap}
+@font-face{font-family:'Gotham';src:url('../assets/fonts/gotham/gotham_lightitalic.otf') format('opentype');font-weight:300;font-style:italic;font-display:swap}
+@font-face{font-family:'Gotham';src:url('../assets/fonts/gotham/gotham_book.otf') format('opentype');font-weight:400;font-style:normal;font-display:swap}
+@font-face{font-family:'Gotham';src:url('../assets/fonts/gotham/gotham_bookitalic.otf') format('opentype');font-weight:400;font-style:italic;font-display:swap}
+@font-face{font-family:'Gotham';src:url('../assets/fonts/gotham/gotham_medium.otf') format('opentype');font-weight:500;font-style:normal;font-display:swap}
+@font-face{font-family:'Gotham';src:url('../assets/fonts/gotham/gotham_mediumitalic.otf') format('opentype');font-weight:500;font-style:italic;font-display:swap}
+@font-face{font-family:'Gotham';src:url('../assets/fonts/gotham/gotham_bold.otf') format('opentype');font-weight:700;font-style:normal;font-display:swap}
+@font-face{font-family:'Gotham';src:url('../assets/fonts/gotham/gotham_bolditalic.otf') format('opentype');font-weight:700;font-style:italic;font-display:swap}
+@font-face{font-family:'Gotham';src:url('../assets/fonts/gotham/gotham_black.otf') format('opentype');font-weight:800;font-style:normal;font-display:swap}
+@font-face{font-family:'Gotham';src:url('../assets/fonts/gotham/gotham_blackitalic.otf') format('opentype');font-weight:800;font-style:italic;font-display:swap}
+@font-face{font-family:'Gotham';src:url('../assets/fonts/gotham/gotham_ultra.otf') format('opentype');font-weight:900;font-style:normal;font-display:swap}
+@font-face{font-family:'Gotham';src:url('../assets/fonts/gotham/gotham_ultraitalic.otf') format('opentype');font-weight:900;font-style:italic;font-display:swap}
+@font-face{font-family:'Gotham Condensed';src:url('../assets/fonts/gotham/gothamcond_book.otf') format('opentype');font-weight:400;font-style:normal;font-display:swap}
+@font-face{font-family:'Gotham Condensed';src:url('../assets/fonts/gotham/gothamcond_medium.otf') format('opentype');font-weight:500;font-style:normal;font-display:swap}
+@font-face{font-family:'Gotham Condensed';src:url('../assets/fonts/gotham/gothamcond_bold.otf') format('opentype');font-weight:700;font-style:normal;font-display:swap}
+@font-face{font-family:'Gotham Condensed';src:url('../assets/fonts/gotham/gothamcond_black.otf') format('opentype');font-weight:800;font-style:normal;font-display:swap}
+@font-face{font-family:'Calibri';src:url('../assets/fonts/calibri/calibri-regular.ttf') format('truetype');font-weight:400;font-style:normal;font-display:swap}
+@font-face{font-family:'Calibri';src:url('../assets/fonts/calibri/calibri-italic.ttf') format('truetype');font-weight:400;font-style:italic;font-display:swap}
+@font-face{font-family:'Calibri';src:url('../assets/fonts/calibri/calibri-bold.ttf') format('truetype');font-weight:700;font-style:normal;font-display:swap}
+@font-face{font-family:'Calibri';src:url('../assets/fonts/calibri/calibri-bold-italic.ttf') format('truetype');font-weight:700;font-style:italic;font-display:swap}
+@font-face{font-family:'Adobe Garamond Pro';src:url('../assets/fonts/garamond/adobe-garamond-regular.otf') format('opentype');font-weight:400;font-style:normal;font-display:swap}

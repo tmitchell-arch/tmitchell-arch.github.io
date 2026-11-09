@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+<script src="../portfolio-guard.js" defer></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..900&family=Hanken+Grotesk:wght@400;500;600;700&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+<style>body{margin:0;background:#F4F2EC;color:#0B0B0B;-webkit-font-smoothing:antialiased;font-family:'Hanken Grotesk',sans-serif}a{color:#DC4B2C;text-decoration:none}a:hover{color:#0B0B0B}html{scroll-behavior:smooth}</style>
+</helmet>
+<div style="font-family:'Hanken Grotesk',sans-serif;color:#0B0B0B;overflow-x:hidden">
+
+<header data-screen-label="Nav" onMouseLeave="{{ closeSoon }}" style="position:fixed;top:0;left:0;right:0;z-index:50;padding:{{ outerPad }};transition:padding 320ms cubic-bezier(.2,.7,.2,1);pointer-events:none">
+    <div style="position:relative;margin:0 auto;max-width:{{ barMax }};pointer-events:auto;transition:max-width 320ms cubic-bezier(.2,.7,.2,1)">
+      <div style="display:flex;align-items:center;gap:28px;height:{{ barH }};padding:{{ barPad }};background:#F4F2EC;border:{{ barBorder }};border-bottom:2px solid #0B0B0B;box-shadow:{{ barShadow }};transition:all 320ms cubic-bezier(.2,.7,.2,1)">
+        <a href="https://www.engagedspaces.com/" aria-label="Engaged Spaces — home" style="position:relative;display:block;flex:none;width:{{ logoBoxW }};height:44px;transition:width 320ms cubic-bezier(.2,.7,.2,1)">
+          <img src="logos/wordmark-solid.png" alt="" style="position:absolute;left:0;top:50%;transform:translateY(-50%);height:38px;width:auto;filter:brightness(0);opacity:{{ wordOp }};transition:opacity 200ms">
+          <img src="logos/icon-orange.png" alt="" style="position:absolute;left:0;top:50%;transform:translateY(-50%);height:42px;width:auto;opacity:{{ markOp }};transition:opacity 200ms">
+        </a>
+        <sc-if value="{{ desktop }}" hint-placeholder-val="{{ true }}">
+          <nav aria-label="Main" style="display:flex;align-items:center;gap:clamp(18px,2.4vw,36px);flex:1;min-width:0">
+            <sc-for list="{{ items }}" as="it" hint-placeholder-count="4">
+              <div onMouseEnter="{{ it.onEnter }}" style="position:relative">
+                <a href="{{ it.href }}" onClick="{{ it.onClick }}" aria-expanded="{{ it.expanded }}" aria-haspopup="{{ it.hasMenu }}" style="display:flex;align-items:center;gap:6px;padding:10px 0;font-weight:600;font-size:16px;white-space:nowrap;color:{{ it.color }};transition:color 160ms">{{ it.label }}<span style="font-size:11px;display:{{ it.caret }}">▾</span></a>
+                <span aria-hidden="true" style="position:absolute;left:0;right:0;bottom:2px;height:3px;background:#DC4B2C;transform-origin:left;transform:{{ it.lineScale }};transition:transform 220ms cubic-bezier(.2,.7,.2,1)"></span>
+              </div>
+            </sc-for>
+          </nav>
+          <a href="https://calendar.app.google/16qceu5122yaQ7LH8" style="flex:none;background:#0B0B0B;color:#F4F2EC;font-weight:700;font-size:15px;padding:12px 20px;box-shadow:4px 4px 0 #DC4B2C;white-space:nowrap" style-hover="background:#DC4B2C;color:#0B0B0B;box-shadow:4px 4px 0 #0B0B0B">Book a call</a>
+        </sc-if>
+        <sc-if value="{{ mobile }}" hint-placeholder-val="{{ false }}">
+          <div style="flex:1"></div>
+          <button type="button" onClick="{{ toggleMobile }}" aria-expanded="{{ mobileOpenStr }}" style="height:44px;padding:0 20px;border:2px solid #0B0B0B;background:#F4F2EC;color:#0B0B0B;font-family:'Hanken Grotesk',sans-serif;font-weight:700;font-size:15px;cursor:pointer;box-shadow:3px 3px 0 #DC4B2C">{{ menuBtnLabel }}</button>
+        </sc-if>
+      </div>
+
+      <div role="region" aria-label="Services menu" onMouseEnter="{{ keepOpen }}" style="position:absolute;left:0;right:0;top:100%;padding-top:12px;opacity:{{ servicesOp }};visibility:{{ servicesVis }};transform:{{ servicesY }};transition:opacity 200ms,transform 240ms cubic-bezier(.2,.7,.2,1),visibility 200ms">
+        <div style="max-width:1120px;margin:0 auto;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);background:#F4F2EC;border:2px solid #0B0B0B;box-shadow:8px 8px 0 #0B0B0B">
+          <div style="padding:28px 24px;display:grid;gap:4px;align-content:start">
+            <span style="font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#B23A20;padding:0 16px 10px">Services</span>
+            <a href="https://www.engagedspaces.com/services/coaching-" style="display:grid;gap:4px;padding:14px 16px;color:#0B0B0B;border-left:3px solid transparent" style-hover="background:#E3E2DD;border-color:#DC4B2C;color:#0B0B0B"><span style="font-family:'Archivo',sans-serif;font-weight:800;font-size:19px;letter-spacing:-.015em;line-height:1.15">Coaching</span><span style="font-size:14px;line-height:1.45;color:#3A3835">Instructional and professional / executive coaching.</span></a><a href="https://www.engagedspaces.com/services/consulting" style="display:grid;gap:4px;padding:14px 16px;color:#0B0B0B;border-left:3px solid transparent" style-hover="background:#E3E2DD;border-color:#DC4B2C;color:#0B0B0B"><span style="font-family:'Archivo',sans-serif;font-weight:800;font-size:19px;letter-spacing:-.015em;line-height:1.15">Consulting</span><span style="font-size:14px;line-height:1.45;color:#3A3835">A collaborative, strategic partner for leaders.</span></a><a href="https://www.engagedspaces.com/services/conversations" style="display:grid;gap:4px;padding:14px 16px;color:#0B0B0B;border-left:3px solid transparent" style-hover="background:#E3E2DD;border-color:#DC4B2C;color:#0B0B0B"><span style="font-family:'Archivo',sans-serif;font-weight:800;font-size:19px;letter-spacing:-.015em;line-height:1.15">Conversations</span><span style="font-size:14px;line-height:1.45;color:#3A3835">Facilitated dialogue on diversity, equity, inclusion and belonging.</span></a><a href="https://www.engagedspaces.com/services/professional-development" style="display:grid;gap:4px;padding:14px 16px;color:#0B0B0B;border-left:3px solid transparent" style-hover="background:#E3E2DD;border-color:#DC4B2C;color:#0B0B0B"><span style="font-family:'Archivo',sans-serif;font-weight:800;font-size:19px;letter-spacing:-.015em;line-height:1.15">Professional Development</span><span style="font-size:14px;line-height:1.45;color:#3A3835">Learning that builds an inclusive, engaged culture.</span></a><a href="https://www.engagedspaces.com/services" style="padding:14px 16px;font-weight:700;font-size:15px;color:#B23A20">Explore all services →</a>
+          </div>
+          <div style="background:#E3E2DD;padding:28px 32px;display:grid;gap:8px;align-content:start;border-left:2px solid #0B0B0B">
+            <a href="https://www.engagedspaces.com/case-studies" style="display:flex;gap:18px;align-items:center;color:#0B0B0B;padding:10px 0" style-hover="opacity:.85;color:#0B0B0B"><span style="position:relative;display:block;width:120px;flex:none;aspect-ratio:800 / 788"><span style="position:absolute;inset:0;-webkit-mask-image:url(logos/bubble2-mask.png);mask-image:url(logos/bubble2-mask.png);-webkit-mask-size:100% 100%;mask-size:100% 100%"><img src="photos/teens-hall.jpg" alt="" style="width:100%;height:100%;object-fit:cover;object-position:50% 40%"></span><img src="logos/bubble2-frame.png" alt="" style="position:absolute;inset:0;width:100%;height:100%"></span><span style="display:grid;gap:6px"><span style="font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#B23A20">Case studies</span><span style="font-family:'Archivo',sans-serif;font-weight:800;font-size:18px;letter-spacing:-.015em;line-height:1.2">See how communities transformed with us</span><span style="font-size:14px;font-weight:700;color:#B23A20">Read the stories →</span></span></a><a href="https://calendar.app.google/16qceu5122yaQ7LH8" style="display:flex;gap:18px;align-items:center;color:#0B0B0B;padding:10px 0" style-hover="opacity:.85;color:#0B0B0B"><span style="position:relative;display:block;width:120px;flex:none;aspect-ratio:800 / 788"><span style="position:absolute;inset:0;-webkit-mask-image:url(logos/bubble2-mask-flip.png);mask-image:url(logos/bubble2-mask-flip.png);-webkit-mask-size:100% 100%;mask-size:100% 100%"><img src="photos/teacher-smile.jpg" alt="" style="width:100%;height:100%;object-fit:cover;object-position:50% 30%"></span><img src="logos/bubble2-frame-flip.png" alt="" style="position:absolute;inset:0;width:100%;height:100%"></span><span style="display:grid;gap:6px"><span style="font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#B23A20">Free consultation</span><span style="font-family:'Archivo',sans-serif;font-weight:800;font-size:18px;letter-spacing:-.015em;line-height:1.2">Tell us about your community — we’ll listen first</span><span style="font-size:14px;font-weight:700;color:#B23A20">Book a call →</span></span></a>
+          </div>
+        </div>
+      </div>
+
+      <div role="region" aria-label="About menu" onMouseEnter="{{ keepOpen }}" style="position:absolute;left:0;right:0;top:100%;padding-top:12px;opacity:{{ aboutOp }};visibility:{{ aboutVis }};transform:{{ aboutY }};transition:opacity 200ms,transform 240ms cubic-bezier(.2,.7,.2,1),visibility 200ms">
+        <div style="max-width:1120px;margin:0 auto;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);background:#F4F2EC;border:2px solid #0B0B0B;box-shadow:8px 8px 0 #0B0B0B">
+          <div style="padding:28px 24px;display:grid;gap:4px;align-content:start">
+            <span style="font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#B23A20;padding:0 16px 10px">About</span>
+            <a href="https://www.engagedspaces.com/about" style="display:grid;gap:4px;padding:14px 16px;color:#0B0B0B;border-left:3px solid transparent" style-hover="background:#E3E2DD;border-color:#DC4B2C;color:#0B0B0B"><span style="font-family:'Archivo',sans-serif;font-weight:800;font-size:19px;letter-spacing:-.015em;line-height:1.15">About Us</span><span style="font-size:14px;line-height:1.45;color:#3A3835">A capacity-building consultancy based in Washington, D.C.</span></a><a href="https://www.engagedspaces.com/engaging-equitably-framework" style="display:grid;gap:4px;padding:14px 16px;color:#0B0B0B;border-left:3px solid transparent" style-hover="background:#E3E2DD;border-color:#DC4B2C;color:#0B0B0B"><span style="font-family:'Archivo',sans-serif;font-weight:800;font-size:19px;letter-spacing:-.015em;line-height:1.15">Our Framework</span><span style="font-size:14px;line-height:1.45;color:#3A3835">The Engaging Equitably framework behind our work.</span></a><a href="https://www.engagedspaces.com/contact" style="display:grid;gap:4px;padding:14px 16px;color:#0B0B0B;border-left:3px solid transparent" style-hover="background:#E3E2DD;border-color:#DC4B2C;color:#0B0B0B"><span style="font-family:'Archivo',sans-serif;font-weight:800;font-size:19px;letter-spacing:-.015em;line-height:1.15">Contact</span><span style="font-size:14px;line-height:1.45;color:#3A3835">hi@engagedspaces.com · +1 (202) 642-5484</span></a>
+          </div>
+          <div style="background:#E3E2DD;padding:28px 32px;display:grid;gap:8px;align-content:start;border-left:2px solid #0B0B0B">
+            <a href="https://www.engagedspaces.com/engaging-equitably-framework" style="display:flex;gap:18px;align-items:center;color:#0B0B0B;padding:10px 0" style-hover="opacity:.85;color:#0B0B0B"><span style="position:relative;display:block;width:120px;flex:none;aspect-ratio:800 / 788"><span style="position:absolute;inset:0;-webkit-mask-image:url(logos/bubble2-mask.png);mask-image:url(logos/bubble2-mask.png);-webkit-mask-size:100% 100%;mask-size:100% 100%"><img src="photos/kids-board.jpg" alt="" style="width:100%;height:100%;object-fit:cover;object-position:50% 40%"></span><img src="logos/bubble2-frame.png" alt="" style="position:absolute;inset:0;width:100%;height:100%"></span><span style="display:grid;gap:6px"><span style="font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#B23A20">Our framework</span><span style="font-family:'Archivo',sans-serif;font-weight:800;font-size:18px;letter-spacing:-.015em;line-height:1.2">Engaging Equitably</span><span style="font-size:14px;font-weight:700;color:#B23A20">Learn the framework →</span></span></a><figure style="margin:8px 0 0;padding:20px 22px;background:#F4F2EC;border:2px solid #0B0B0B;display:grid;gap:10px"><blockquote style="margin:0;font-family:'Instrument Serif',serif;font-size:21px;line-height:1.2">“Our team got comfortable with being uncomfortable… we’re in a much better place because of our partnership.”</blockquote><figcaption style="font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase">— School Principal</figcaption></figure>
+          </div>
+        </div>
+      </div>
+      <sc-if value="{{ mobilePanel }}" hint-placeholder-val="{{ false }}">
+        <div style="position:absolute;left:0;right:0;top:100%;padding:{{ mPanelPad }}">
+          <div style="background:#F4F2EC;border:2px solid #0B0B0B;box-shadow:6px 6px 0 #0B0B0B;padding:8px 20px 20px;max-height:{{ mPanelMax }};overscroll-behavior:contain;overflow:auto;display:grid">
+            <a href="https://www.engagedspaces.com/" style="padding:14px 0;border-bottom:2px solid #E3E2DD;font-family:'Archivo',sans-serif;font-weight:800;font-size:20px;color:#0B0B0B">Home</a>
+            <div style="padding:14px 0;border-bottom:2px solid #E3E2DD;display:grid;gap:6px"><span style="font-family:'Archivo',sans-serif;font-weight:800;font-size:20px">Services</span><div style="display:grid"><a href="https://www.engagedspaces.com/services/coaching-" style="padding:10px 0;font-size:16px;font-weight:500;color:#3A3835">Coaching</a><a href="https://www.engagedspaces.com/services/consulting" style="padding:10px 0;font-size:16px;font-weight:500;color:#3A3835">Consulting</a><a href="https://www.engagedspaces.com/services/conversations" style="padding:10px 0;font-size:16px;font-weight:500;color:#3A3835">Conversations</a><a href="https://www.engagedspaces.com/services/professional-development" style="padding:10px 0;font-size:16px;font-weight:500;color:#3A3835">Professional Development</a></div></div>
+            <a href="https://www.engagedspaces.com/case-studies" style="padding:14px 0;border-bottom:2px solid #E3E2DD;font-family:'Archivo',sans-serif;font-weight:800;font-size:20px;color:#0B0B0B">Case Studies</a>
+            <div style="padding:14px 0;display:grid;gap:6px"><span style="font-family:'Archivo',sans-serif;font-weight:800;font-size:20px">About</span><div style="display:grid"><a href="https://www.engagedspaces.com/about" style="padding:10px 0;font-size:16px;font-weight:500;color:#3A3835">About Us</a><a href="https://www.engagedspaces.com/engaging-equitably-framework" style="padding:10px 0;font-size:16px;font-weight:500;color:#3A3835">Our Framework</a><a href="https://www.engagedspaces.com/contact" style="padding:10px 0;font-size:16px;font-weight:500;color:#3A3835">Contact</a></div></div>
+            <a href="https://calendar.app.google/16qceu5122yaQ7LH8" style="margin-top:8px;text-align:center;background:#0B0B0B;color:#F4F2EC;font-weight:700;font-size:16px;padding:16px;box-shadow:4px 4px 0 #DC4B2C">Book a call</a>
+          </div>
+        </div>
+      </sc-if>
+    </div>
+  </header>
+  <div aria-hidden="true" style="height:{{ spacerH }}"></div>
+
+<header data-screen-label="Hero" onMouseEnter="{{ pause }}" onMouseLeave="{{ resume }}" style="position:relative;overflow:hidden;min-height:clamp(620px,64vw,840px);background:#0B0B0B">
+  <sc-for list="{{ slides }}" as="s" hint-placeholder-count="0">
+    <div aria-hidden="{{ s.hidden }}" style="position:absolute;inset:0;background:{{ s.bg }};color:{{ s.fg }};opacity:{{ s.op }};visibility:{{ s.vis }};transition:opacity .8s ease,visibility .8s">
+      <div style="position:absolute;top:28px;left:clamp(20px,4vw,56px);right:clamp(20px,4vw,56px);display:flex;justify-content:space-between;gap:16px;font-size:14px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;z-index:3"><span>{{ s.n }} — {{ s.label }}</span><span>Engaged Spaces</span></div>
+      <div style="position:absolute;left:0;right:0;top:clamp(100px,12vw,170px);text-align:center;font-family:'Archivo',sans-serif;font-weight:900;font-size:{{ s.fs }};line-height:.8;letter-spacing:-.06em;color:{{ s.word }};text-shadow:.03em .03em 0 {{ s.shadow }};z-index:1;transform:translateY({{ s.ty }});transition:transform 1s cubic-bezier(.2,.7,.2,1)">{{ s.big }}</div>
+      <img src="{{ s.img }}" alt="{{ s.alt }}" style="position:absolute;left:50%;bottom:0;height:84%;transform:translateX(-50%) translateY({{ s.iy }});transition:transform 1s cubic-bezier(.2,.7,.2,1) .08s;z-index:2">
+      <div style="position:absolute;left:clamp(20px,4vw,56px);bottom:clamp(96px,10vw,120px);max-width:min(330px,30%);display:grid;gap:14px;z-index:3">
+        <span style="font-family:'Archivo',sans-serif;font-weight:900;font-size:clamp(22px,2.4vw,32px);letter-spacing:-.025em;line-height:1">{{ s.label }}</span>
+        <p style="margin:0;font-family:'Instrument Serif',serif;font-style:italic;font-size:clamp(20px,2.1vw,28px);line-height:1.12;text-wrap:pretty">{{ s.line }}</p>
+      </div>
+      <a href="{{ s.href }}" tabindex="{{ s.tab }}" style="position:absolute;right:clamp(20px,4vw,56px);bottom:clamp(96px,10vw,120px);background:{{ s.fg }};color:{{ s.bg }};font-weight:700;font-size:16px;padding:14px 22px;box-shadow:4px 4px 0 {{ s.word }};z-index:3">{{ s.cta }} →</a>
+    </div>
+  </sc-for>
+  <div style="position:absolute;left:0;right:0;bottom:0;padding:16px clamp(20px,4vw,56px);display:flex;align-items:center;gap:12px;z-index:5;background:#0B0B0B;color:#F4F2EC">
+    <div style="flex:1;display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:10px">
+      <sc-for list="{{ tabs }}" as="t" hint-placeholder-count="5">
+        <button type="button" onClick="{{ t.go }}" aria-label="Show {{ t.label }}" style="all:unset;cursor:pointer;display:grid;gap:8px;padding-top:4px;font-size:13px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;opacity:{{ t.op }};white-space:nowrap;overflow:hidden;text-overflow:ellipsis"><span style="display:block;height:4px;background:currentColor"></span><span>{{ t.label }}</span></button>
+      </sc-for>
+    </div>
+    <button type="button" onClick="{{ prev }}" aria-label="Previous slide" style="all:unset;cursor:pointer;width:44px;height:44px;display:grid;place-items:center;border:2px solid currentColor;font-size:18px;font-weight:700">←</button>
+    <button type="button" onClick="{{ next }}" aria-label="Next slide" style="all:unset;cursor:pointer;width:44px;height:44px;display:grid;place-items:center;border:2px solid currentColor;font-size:18px;font-weight:700">→</button>
+  </div>
+</header>
+
+<section data-screen-label="Intro" style="position:relative;overflow:hidden;background:#F4F2EC">
+  <div style="max-width:1320px;margin:0 auto;padding:clamp(72px,9vw,140px) clamp(20px,4vw,56px);display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,460px),1fr));gap:clamp(40px,6vw,96px);align-items:center">
+    <div style="display:grid;gap:32px">
+      <span style="font-size:14px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#B23A20">Who we are</span>
+      <p style="margin:0;font-family:'Archivo',sans-serif;font-weight:900;font-size:clamp(40px,4.6vw,66px);line-height:.98;letter-spacing:-.04em;text-wrap:pretty">We support your professional community in fostering <span style="color:#DC4B2C">inclusive, high-performing,</span> and <span style="color:#DC4B2C">anti-racist</span> communities.</p>
+      <div style="display:flex;gap:16px;flex-wrap:wrap">
+        <a href="https://www.engagedspaces.com/contact" style="background:#DC4B2C;color:#0B0B0B;font-weight:700;font-size:16px;padding:14px 22px;box-shadow:4px 4px 0 #0B0B0B" style-hover="background:#0B0B0B;color:#F4F2EC;box-shadow:4px 4px 0 #DC4B2C">Let’s talk →</a>
+        <a href="https://www.engagedspaces.com/about" style="color:#0B0B0B;font-weight:700;font-size:16px;padding:14px 4px;border-bottom:3px solid #0B0B0B" style-hover="color:#DC4B2C;border-color:#DC4B2C">About us</a>
+      </div>
+    </div>
+    <div style="position:relative;width:100%;max-width:600px;justify-self:center;aspect-ratio:1 / .9">
+      <div style="position:absolute;left:0;bottom:0;width:52%;aspect-ratio:800 / 788">
+        <div style="position:absolute;inset:0;-webkit-mask-image:url(logos/bubble2-mask-flip.png);mask-image:url(logos/bubble2-mask-flip.png);-webkit-mask-size:100% 100%;mask-size:100% 100%"><img src="photos/whisper.jpg" alt="Two students sharing a conversation" style="width:100%;height:100%;object-fit:cover"></div>
+        <img src="logos/bubble2-frame-flip.png" alt="" style="position:absolute;inset:0;width:100%;height:100%">
+      </div>
+      <div style="position:absolute;right:0;top:0;width:60%;aspect-ratio:800 / 788">
+        <div style="position:absolute;inset:0;-webkit-mask-image:url(logos/bubble2-mask.png);mask-image:url(logos/bubble2-mask.png);-webkit-mask-size:100% 100%;mask-size:100% 100%"><img src="photos/high-five.jpg" alt="Teacher high-fiving a student" style="width:100%;height:100%;object-fit:cover;object-position:40% 50%"></div>
+        <img src="logos/bubble2-frame.png" alt="" style="position:absolute;inset:0;width:100%;height:100%">
+      </div>
+    </div>
+  </div>
+  <sc-if value="{{ showTexture }}" hint-placeholder-val="{{ true }}"><img src="textures/paper-1.png" alt="" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;mix-blend-mode:multiply;pointer-events:none"></sc-if>
+</section>
+
+<section id="services" data-screen-label="Services" style="background:#0B0B0B;color:#F4F2EC">
+  <div style="max-width:1320px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,580px),1fr))">
+    <div style="position:relative;overflow:hidden;display:flex;align-items:flex-end;justify-content:center;height:clamp(420px,52vw,760px);align-self:end"><img src="cutouts/girl-chalk-sticker.png" alt="Student with a backpack, smiling" style="display:block;height:92%;width:auto;max-width:100%;object-fit:contain;object-position:bottom"></div>
+    <div style="padding:clamp(48px,6vw,88px) clamp(20px,4vw,64px);display:flex;flex-direction:column;gap:clamp(28px,3.5vw,44px)">
+      <h2 style="margin:0;font-family:'Archivo',sans-serif;font-weight:900;font-size:clamp(72px,9vw,128px);line-height:.82;letter-spacing:-.055em;color:#DC4B2C;text-shadow:.05em .05em 0 #F4F2EC">our<br>services</h2>
+      <p style="margin:0;font-size:clamp(17px,1.4vw,19px);line-height:1.55;max-width:560px;text-wrap:pretty">Engaged Spaces is a capacity-building consultancy that supports leaders and professionals in nurturing inclusive environments and mobilizing high-performing teams.</p>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,max(240px,calc((100% - 22px) / 2))),1fr));gap:22px">
+        <sc-for list="{{ services }}" as="s" hint-placeholder-count="4">
+          <a href="{{ s.href }}" style="position:relative;padding-top:20px;color:#0B0B0B;display:flex;flex-direction:column" style-hover="transform:translate(-2px,-2px)">
+            <span style="position:absolute;top:0;left:0;width:90px;height:24px;background:{{ s.bg }};border-radius:10px 10px 0 0"></span>
+            <span style="flex:1;background:{{ s.bg }};border-radius:0 12px 12px 12px;padding:20px 22px;display:flex;flex-direction:column;gap:10px"><span style="font-family:'Archivo',sans-serif;font-weight:900;font-size:28px;letter-spacing:-.025em;line-height:1">{{ s.t }}</span><span style="font-size:15px;line-height:1.45;flex:1">{{ s.d }}</span><span style="font-size:14px;font-weight:700;text-transform:uppercase;letter-spacing:.06em">Read more →</span></span>
+          </a>
+        </sc-for>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section data-screen-label="Co-design" style="position:relative;background:#F4F2EC;overflow:hidden">
+  <div style="position:absolute;inset:clamp(20px,3vw,48px);background-image:linear-gradient(#EBD3CA 1px,transparent 1px),linear-gradient(90deg,#EBD3CA 1px,transparent 1px);background-size:32px 32px"></div>
+  <div style="position:relative;max-width:1320px;margin:0 auto;padding:clamp(80px,9vw,140px) clamp(32px,5vw,80px) 0;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,460px),1fr));gap:clamp(40px,5vw,80px);align-items:end">
+    <div style="display:grid;gap:28px;padding-bottom:clamp(80px,9vw,140px)">
+      <h2 style="margin:0;font-family:'Archivo',sans-serif;font-weight:900;font-size:clamp(46px,5.4vw,76px);letter-spacing:-.045em;line-height:.94;color:#DC4B2C;text-wrap:pretty">We <span style="font-family:'Instrument Serif',serif;font-style:italic;font-weight:400;letter-spacing:-.01em">co-design</span> with our clients ensuring a <span style="font-family:'Instrument Serif',serif;font-style:italic;font-weight:400;letter-spacing:-.01em">customized</span> experience</h2>
+      <p style="margin:0;font-size:clamp(17px,1.4vw,19px);line-height:1.55;color:#3A3835;max-width:540px;text-wrap:pretty">With clear timelines and project expectations that lead to visible outcomes. We ensure that we're meeting client expectations and bringing about positive, empowering change for them and their teams.</p>
+      <div style="display:grid">
+        <sc-for list="{{ pillars }}" as="r" hint-placeholder-count="4">
+          <div style="border-top:4px solid #DC4B2C;padding:22px 0 24px;display:flex;gap:20px;align-items:baseline;font-size:clamp(18px,1.7vw,24px);font-weight:700;line-height:1.25;color:#DC4B2C;text-transform:uppercase"><span style="font-family:'Archivo',sans-serif;font-weight:900;font-size:16px;color:#B23A20">{{ r.n }}</span><span>{{ r.t }}</span></div>
+        </sc-for>
+        <div style="border-top:4px solid #DC4B2C"></div>
+      </div>
+      <a href="https://www.engagedspaces.com/about" style="justify-self:start;background:#DC4B2C;color:#0B0B0B;font-weight:700;font-size:16px;padding:14px 22px;box-shadow:4px 4px 0 #0B0B0B" style-hover="background:#0B0B0B;color:#F4F2EC;box-shadow:4px 4px 0 #DC4B2C">About us →</a>
+    </div>
+    <div style="position:relative;justify-self:center;width:100%;max-width:620px;line-height:0">
+      <img src="cutouts/boy-denim-sticker.png" alt="Student sticker" style="display:block;width:100%;height:auto;filter:drop-shadow(0 10px 16px rgba(11,11,11,.22))">
+      <div style="position:absolute;left:30%;bottom:7%;width:clamp(110px,12vw,160px);height:clamp(30px,3vw,42px);background:#D9A23B;opacity:.9;transform:rotate(-38deg);clip-path:polygon(0 10%,5% 0,10% 12%,15% 0,100% 0,96% 50%,100% 100%,5% 100%,0 88%,4% 50%)"></div>
+    </div>
+  </div>
+  <sc-if value="{{ showTexture }}" hint-placeholder-val="{{ true }}"><img src="textures/paper-2.png" alt="" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;mix-blend-mode:multiply;pointer-events:none"></sc-if>
+</section>
+
+<section data-screen-label="Process" style="background:#E3E2DD">
+  <div style="max-width:1320px;margin:0 auto;padding:clamp(72px,9vw,130px) clamp(20px,4vw,56px);display:grid;gap:clamp(48px,6vw,80px)">
+    <div style="display:flex;justify-content:space-between;align-items:center;gap:40px;flex-wrap:wrap">
+      <div style="display:grid;gap:18px;max-width:720px"><span style="font-size:14px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#B23A20">How it works</span><h2 style="margin:0;font-family:'Archivo',sans-serif;font-weight:900;font-size:clamp(56px,7vw,96px);letter-spacing:-.05em;line-height:.88">simple process,<br>great results.</h2><p style="margin:0;font-size:clamp(17px,1.4vw,19px);line-height:1.5;color:#3A3835">We support communities in every step of this collective journey.</p></div>
+      <div style="position:relative;width:clamp(200px,24vw,300px);aspect-ratio:800 / 788;flex:none">
+        <div style="position:absolute;inset:0;-webkit-mask-image:url(logos/bubble2-mask.png);mask-image:url(logos/bubble2-mask.png);-webkit-mask-size:100% 100%;mask-size:100% 100%"><img src="photos/teacher-table.jpg" alt="Teacher working with students at a table" style="width:100%;height:100%;object-fit:cover;object-position:50% 30%"></div>
+        <img src="logos/bubble2-frame.png" alt="" style="position:absolute;inset:0;width:100%;height:100%">
+      </div>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,340px),1fr));gap:40px 32px">
+      <sc-for list="{{ process }}" as="p" hint-placeholder-count="4">
+        <div style="border-top:4px solid #0B0B0B;padding-top:18px;display:grid;gap:12px;align-content:start"><span style="font-family:'Archivo',sans-serif;font-weight:900;font-size:48px;letter-spacing:-.04em;line-height:1;color:#DC4B2C">{{ p.n }}</span><span style="font-family:'Archivo',sans-serif;font-weight:800;font-size:24px;letter-spacing:-.02em;line-height:1.05">{{ p.t }}</span><span style="font-size:16px;line-height:1.55;color:#3A3835;text-wrap:pretty">{{ p.d }}</span></div>
+      </sc-for>
+    </div>
+    <a href="https://www.engagedspaces.com/contact" style="justify-self:start;background:#0B0B0B;color:#F4F2EC;font-weight:700;font-size:16px;padding:14px 22px;box-shadow:4px 4px 0 #DC4B2C" style-hover="background:#DC4B2C;color:#0B0B0B;box-shadow:4px 4px 0 #0B0B0B">Let’s talk →</a>
+  </div>
+</section>
+
+<section data-screen-label="Impact" style="position:relative;background:#F4F2EC;overflow:hidden">
+  <div style="max-width:1320px;margin:0 auto;padding:clamp(72px,8vw,120px) clamp(20px,4vw,56px) 0;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,440px),1fr));gap:40px;align-items:end">
+    <div style="display:grid;gap:clamp(36px,4.5vw,60px);padding-bottom:clamp(72px,8vw,120px)">
+      <div style="display:grid;gap:16px"><h2 style="margin:0;font-family:'Archivo',sans-serif;font-weight:900;font-size:clamp(44px,5vw,72px);line-height:.92;letter-spacing:-.045em">we build our nation’s capacity.</h2><p style="margin:0;font-size:clamp(17px,1.4vw,19px);line-height:1.55;color:#3A3835;max-width:520px;text-wrap:pretty">Whether in-person or virtual, east coast or west—we are intentional about meeting our clients wherever they are.</p></div>
+      <div style="display:flex;align-items:baseline;gap:20px;flex-wrap:wrap"><span style="font-family:'Archivo',sans-serif;font-weight:900;font-size:clamp(120px,16vw,230px);line-height:.8;letter-spacing:-.06em;color:#DC4B2C;text-shadow:.03em .03em 0 #0B0B0B">100+</span><span style="font-family:'Archivo',sans-serif;font-weight:800;font-size:clamp(22px,2.4vw,32px);letter-spacing:-.02em">sessions facilitated</span></div>
+      <div style="display:flex;align-items:baseline;gap:20px;flex-wrap:wrap"><span style="font-family:'Archivo',sans-serif;font-weight:900;font-size:clamp(96px,11vw,150px);line-height:.8;letter-spacing:-.06em;text-shadow:.04em .04em 0 #DC4B2C">75+</span><span style="font-family:'Archivo',sans-serif;font-weight:800;font-size:clamp(22px,2.4vw,32px);letter-spacing:-.02em">leaders developed</span></div>
+      <a href="https://www.engagedspaces.com/contact" style="justify-self:start;background:#DC4B2C;color:#0B0B0B;font-weight:700;font-size:16px;padding:14px 22px;box-shadow:4px 4px 0 #0B0B0B" style-hover="background:#0B0B0B;color:#F4F2EC;box-shadow:4px 4px 0 #DC4B2C">Contact us →</a>
+    </div>
+    <img src="cutouts/boy-backpack-clean.png" alt="Student with a backpack" style="justify-self:center;display:block;width:100%;max-width:480px;height:auto">
+  </div>
+</section>
+
+<section data-screen-label="Testimonials" style="position:relative;background:#F4F2EC;overflow:hidden;border-top:2px solid #0B0B0B">
+  <div style="position:absolute;inset:clamp(20px,3vw,48px);background-image:linear-gradient(#EBD3CA 1px,transparent 1px),linear-gradient(90deg,#EBD3CA 1px,transparent 1px);background-size:32px 32px"></div>
+  <sc-if value="{{ showTexture }}" hint-placeholder-val="{{ true }}"><img src="textures/paper-2.png" alt="" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;mix-blend-mode:multiply;pointer-events:none;z-index:1"></sc-if>
+  <div style="max-width:1320px;margin:0 auto;padding:clamp(80px,9vw,140px) clamp(32px,5vw,80px);display:grid;gap:clamp(48px,6vw,72px)">
+    <h2 style="position:relative;z-index:0;margin:0;font-family:'Archivo',sans-serif;font-weight:900;font-size:clamp(64px,8vw,110px);letter-spacing:-.055em;line-height:.88;color:#DC4B2C">in their <span style="font-family:'Instrument Serif',serif;font-style:italic;font-weight:400;letter-spacing:-.01em">words</span></h2>
+    <div style="position:relative;z-index:2;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,320px),1fr));gap:clamp(32px,4vw,48px) clamp(24px,3vw,40px);align-items:start">
+      <sc-for list="{{ quotes }}" as="q" hint-placeholder-count="5">
+        <figure style="position:relative;margin:0;background:{{ q.bg }};color:{{ q.fg }};padding:40px 32px 32px;display:grid;gap:22px;transform:rotate({{ q.r }}deg);box-shadow:0 10px 18px rgba(11,11,11,.14)">
+          <span style="position:absolute;top:-16px;left:50%;width:120px;height:32px;margin-left:-60px;background:#D9A23B;opacity:.9;transform:rotate({{ q.tr }}deg);clip-path:polygon(0 10%,5% 0,10% 12%,15% 0,100% 0,96% 50%,100% 100%,5% 100%,0 88%,4% 50%)"></span>
+          <blockquote style="margin:0;font-family:'Instrument Serif',serif;font-size:clamp(22px,1.9vw,26px);line-height:1.22;text-wrap:pretty">“{{ q.text }}”</blockquote>
+          <figcaption style="font-size:14px;font-weight:700;letter-spacing:.08em;text-transform:uppercase">— {{ q.who }}</figcaption>
+        </figure>
+      </sc-for>
+    </div>
+  </div>
+</section>
+
+<section id="contact" data-screen-label="Contact" style="position:relative;background:#DC4B2C;overflow:hidden">
+  <div style="max-width:1320px;margin:0 auto;padding:clamp(72px,8vw,120px) clamp(20px,4vw,56px);display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,420px),1fr));gap:clamp(40px,5vw,80px);align-items:center">
+    <div style="position:relative;width:100%;max-width:560px;aspect-ratio:800 / 788">
+      <img src="logos/bubble2-mask.png" alt="" style="position:absolute;inset:0;width:100%;height:100%">
+      <img src="logos/bubble2-frame.png" alt="" style="position:absolute;inset:0;width:100%;height:100%;filter:brightness(0)">
+      <div style="position:absolute;left:21%;top:24%;right:12%;font-family:'Archivo',sans-serif;font-weight:900;font-size:clamp(64px,9vw,112px);line-height:.84;letter-spacing:-.055em">let’s<br>talk.</div>
+    </div>
+    <div style="display:grid;gap:32px;color:#0B0B0B">
+      <p style="margin:0;font-family:'Instrument Serif',serif;font-style:italic;font-size:clamp(30px,3vw,44px);line-height:1.08;text-wrap:pretty">We are aimed at providing space for people and organizations to transform and thrive.</p>
+      <div style="border-top:3px solid #0B0B0B;border-bottom:3px solid #0B0B0B;padding:18px 0;display:grid;gap:8px;font-size:clamp(18px,1.8vw,24px);font-weight:600">
+        <a href="mailto:hi@engagedspaces.com" style="color:#0B0B0B" style-hover="color:#F4F2EC">hi@engagedspaces.com</a>
+        <a href="tel:+12026425484" style="color:#0B0B0B" style-hover="color:#F4F2EC">+1 (202) 642-5484</a>
+        <span>Washington, D.C.</span>
+      </div>
+      <a href="https://calendar.app.google/16qceu5122yaQ7LH8" style="justify-self:start;background:#0B0B0B;color:#F4F2EC;font-weight:700;font-size:17px;padding:16px 24px;box-shadow:4px 4px 0 #F4F2EC" style-hover="background:#F4F2EC;color:#0B0B0B;box-shadow:4px 4px 0 #0B0B0B">Book a call →</a>
+    </div>
+  </div>
+  <sc-if value="{{ showTexture }}" hint-placeholder-val="{{ true }}"><img src="textures/paper-1.png" alt="" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;mix-blend-mode:multiply;pointer-events:none"></sc-if>
+</section>
+
+<footer style="background:#0B0B0B;color:#F4F2EC">
+  <div style="max-width:1320px;margin:0 auto;padding:56px clamp(20px,4vw,56px) 32px;display:grid;gap:40px">
+    <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:40px;flex-wrap:wrap">
+      <img src="logos/wordmark-solid.png" alt="Engaged Spaces" style="height:44px;filter:brightness(0) invert(1)">
+      <div style="display:flex;gap:clamp(40px,6vw,96px);flex-wrap:wrap">
+        <div style="display:grid;gap:10px;align-content:start;font-size:16px"><span style="font-size:13px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#B9B6AE">Main pages</span>
+          <a href="https://www.engagedspaces.com/" style="color:#F4F2EC" style-hover="color:#DC4B2C">Home</a><a href="https://www.engagedspaces.com/about" style="color:#F4F2EC" style-hover="color:#DC4B2C">About</a><a href="https://www.engagedspaces.com/services" style="color:#F4F2EC" style-hover="color:#DC4B2C">Services</a><a href="https://www.engagedspaces.com/contact" style="color:#F4F2EC" style-hover="color:#DC4B2C">Contact</a><a href="https://www.engagedspaces.com/legal" style="color:#F4F2EC" style-hover="color:#DC4B2C">Legal</a>
+        </div>
+        <div style="display:grid;gap:10px;align-content:start;font-size:16px"><span style="font-size:13px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#B9B6AE">Follow</span>
+          <a href="https://www.instagram.com/engaged.spaces/" style="color:#F4F2EC" style-hover="color:#DC4B2C">Instagram</a><a href="https://twitter.com/engagedspacesdc" style="color:#F4F2EC" style-hover="color:#DC4B2C">X / Twitter</a>
+        </div>
+      </div>
+    </div>
+    <div style="border-top:1px solid #3A3835;padding-top:20px;display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;font-size:14px;color:#B9B6AE"><span>© 2026 Engaged Spaces · Washington, D.C.</span><span>Website designed by <a href="https://www.mitchellstrategies.co/" style="color:#F4F2EC" style-hover="color:#DC4B2C">Mitchell Strategies</a></span></div>
+  </div>
+</footer>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;menuTrigger&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;hover&quot;,&quot;click&quot;],&quot;default&quot;:&quot;hover&quot;,&quot;tsType&quot;:&quot;'hover'|'click'&quot;,&quot;section&quot;:&quot;Nav&quot;},&quot;navPreview&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;live&quot;,&quot;top&quot;,&quot;scrolled&quot;],&quot;default&quot;:&quot;live&quot;,&quot;tsType&quot;:&quot;'live'|'top'|'scrolled'&quot;,&quot;section&quot;:&quot;Nav&quot;},&quot;autoRotate&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Hero&quot;},&quot;rotateSeconds&quot;:{&quot;editor&quot;:&quot;range&quot;,&quot;default&quot;:6,&quot;min&quot;:3,&quot;max&quot;:12,&quot;step&quot;:1,&quot;unit&quot;:&quot;s&quot;,&quot;tsType&quot;:&quot;number&quot;,&quot;section&quot;:&quot;Hero&quot;},&quot;showTexture&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;}}">
+class Component extends DCLogic {
+  state = { i: 0, paused: false, scrolled: false, open: null, mobile: false, mobileOpen: false };
+  SLIDES = [
+    {label:'Coaching',big:'coach',fs:'clamp(140px,26vw,400px)',bg:'#DC4B2C',fg:'#0B0B0B',word:'#F4F2EC',shadow:'#0B0B0B',img:'cutouts/boy-denim-clean.png',alt:'Smiling student in a denim jacket',line:'Instructional and executive coaching for professionals in education, non-profit and the workplace.',cta:'Explore coaching',href:'https://www.engagedspaces.com/services/coaching-'},
+    {label:'Consulting',big:'consult',fs:'clamp(110px,21vw,330px)',bg:'#1F4A44',fg:'#F4F2EC',word:'#F4F2EC',shadow:'#DC4B2C',img:'cutouts/teacher-boy-noboard.png',alt:'Teacher and student',line:'A collaborative, strategic partner guiding leaders through change.',cta:'Explore consulting',href:'https://www.engagedspaces.com/services/consulting'},
+    {label:'Conversations',big:'dialogue',fs:'clamp(96px,18.5vw,290px)',bg:'#D9A23B',fg:'#0B0B0B',word:'#F4F2EC',shadow:'#0B0B0B',img:'cutouts/kids-board-fixed.png',alt:'Students at a whiteboard',line:'Nuanced conversations that deepen commitment to diversity, equity, inclusion and belonging.',cta:'Explore conversations',href:'https://www.engagedspaces.com/services/conversations'},
+    {label:'Professional Development',big:'grow',fs:'clamp(160px,30vw,440px)',bg:'#E8B4A0',fg:'#0B0B0B',word:'#0B0B0B',shadow:'#DC4B2C',img:'cutouts/girl-thumbs-clean.png',alt:'Student giving two thumbs up',line:'Learning that lifts performance and builds an inclusive, engaged culture.',cta:'Explore PD',href:'https://www.engagedspaces.com/services/professional-development'},
+    {label:'Case Studies',big:'impact',fs:'clamp(120px,23vw,360px)',bg:'#0B0B0B',fg:'#F4F2EC',word:'#DC4B2C',shadow:'#F4F2EC',img:'cutouts/girl-bus-clean.png',alt:'Student smiling on a school bus',line:'See how schools and organizations transformed with Engaged Spaces.',cta:'Read our case studies',href:'https://www.engagedspaces.com/case-studies'}];
+  componentDidMount() {
+    this.onScroll = () => { const v = window.scrollY > 24; if (v !== this.state.scrolled) this.setState({ scrolled: v }); };
+    this.mq = window.matchMedia('(max-width: 960px)');
+    this.onMq = () => this.setState({ mobile: this.mq.matches, open: null, mobileOpen: false });
+    this.onKey = e => { if (e.key === 'Escape') this.setState({ open: null, mobileOpen: false }); };
+    this.onDoc = e => { if (!e.target.closest('header[data-screen-label="Nav"]')) this.setState({ open: null }); };
+    window.addEventListener('scroll', this.onScroll, { passive: true });
+    this.mq.addEventListener('change', this.onMq);
+    document.addEventListener('keydown', this.onKey);
+    document.addEventListener('click', this.onDoc);
+    this.onScroll(); this.onMq();
+    this.mountRotate();
+  }
+  componentDidUpdate() { document.documentElement.style.overflow = this.state.mobile && this.state.mobileOpen ? 'hidden' : ''; }
+  mountRotate() { this.timer = setInterval(() => { if (!this.state.paused && (this.props.autoRotate ?? true)) this.go(this.state.i + 1); }, (this.props.rotateSeconds ?? 6) * 1000); }
+  componentWillUnmount() {
+    clearInterval(this.timer); clearTimeout(this.t);
+    document.documentElement.style.overflow = '';
+    window.removeEventListener('scroll', this.onScroll);
+    this.mq.removeEventListener('change', this.onMq);
+    document.removeEventListener('keydown', this.onKey);
+    document.removeEventListener('click', this.onDoc);
+  }
+  navVals() {
+    const P = this.props, trigger = P.menuTrigger ?? 'hover';
+    const { open, mobile, mobileOpen } = this.state;
+    const scrolled = (P.navPreview ?? 'live') === 'scrolled' || ((P.navPreview ?? 'live') === 'live' && this.state.scrolled);
+    const setOpen = k => { clearTimeout(this.t); if (this.state.open !== k) this.setState({ open: k }); };
+    const defs = [
+      { label: 'Services', href: 'https://www.engagedspaces.com/services', menu: 'services' },
+      { label: 'Case Studies', href: 'https://www.engagedspaces.com/case-studies' },
+      { label: 'About', href: 'https://www.engagedspaces.com/about', menu: 'about' },
+      { label: 'Contact', href: 'https://www.engagedspaces.com/contact' }];
+    const items = defs.map(d => { const o = d.menu && open === d.menu; return {
+      label: d.label, href: d.href, hasMenu: d.menu ? 'true' : undefined, expanded: d.menu ? String(!!o) : undefined,
+      caret: d.menu ? 'inline' : 'none', color: o ? '#B23A20' : '#0B0B0B', lineScale: o ? 'scaleX(1)' : 'scaleX(0)',
+      onEnter: () => { if (trigger === 'hover') setOpen(d.menu || null); },
+      onClick: e => { if (d.menu) { e.preventDefault(); setOpen(this.state.open === d.menu ? null : d.menu); } } }; });
+    const show = k => open === k && !mobile;
+    const pv = k => ({ [k + 'Op']: show(k) ? 1 : 0, [k + 'Vis']: show(k) ? 'visible' : 'hidden', [k + 'Y']: show(k) ? 'translateY(0)' : 'translateY(-6px)' });
+    return { items, desktop: !mobile, mobile, mobileOpenStr: String(mobileOpen), mobilePanel: mobile && mobileOpen,
+      ...pv('services'), ...pv('about'),
+      outerPad: scrolled ? '14px 16px 0' : '0px 0px 0',
+      barMax: scrolled ? '1120px' : '100%',
+      barH: scrolled ? (mobile ? '60px' : '68px') : (mobile ? '72px' : '84px'),
+      barPad: scrolled ? (mobile ? '0 10px 0 14px' : '0 16px 0 20px') : '0 clamp(20px,3.5vw,56px)',
+      barBorder: scrolled ? '2px solid #0B0B0B' : '0px solid transparent',
+      barShadow: scrolled ? '6px 6px 0 #0B0B0B' : 'none',
+      spacerH: mobile ? '72px' : '84px',
+      logoBoxW: scrolled ? '44px' : '200px', wordOp: scrolled ? 0 : 1, markOp: scrolled ? 1 : 0,
+      mPanelPad: scrolled ? '12px 0 0' : '10px 12px 0', mPanelMax: scrolled ? 'calc(100dvh - 110px)' : 'calc(100dvh - 96px)',
+      closeSoon: () => { if (trigger !== 'hover') return; clearTimeout(this.t); this.t = setTimeout(() => this.setState({ open: null }), 160); },
+      keepOpen: () => clearTimeout(this.t),
+      toggleMobile: () => this.setState(st => ({ mobileOpen: !st.mobileOpen })),
+      menuBtnLabel: mobileOpen ? 'Close' : 'Menu' };
+  }
+  go(n) { const L = this.SLIDES.length; this.setState({ i: ((n % L) + L) % L }); }
+  renderVals() {
+    const i = this.state.i;
+    const slides = this.SLIDES.map((s, k) => ({ ...s, n: String(k + 1).padStart(2, '0'), op: k === i ? 1 : 0, vis: k === i ? 'visible' : 'hidden', hidden: k === i ? 'false' : 'true', tab: k === i ? 0 : -1, ty: k === i ? '0' : '40px', iy: k === i ? '0' : '24px' }));
+    const tabs = this.SLIDES.map((s, k) => ({ label: s.label === 'Professional Development' ? 'Prof. Development' : s.label, op: k === i ? 1 : 0.6, go: () => this.go(k) }));
+    return {
+      ...this.navVals(),
+      slides, tabs, ctrlFg: this.SLIDES[i].fg,
+      next: () => this.go(i + 1), prev: () => this.go(i - 1),
+      pause: () => this.setState({ paused: true }), resume: () => this.setState({ paused: false }),
+      showTexture: this.props.showTexture ?? true,
+      services: [
+        {t:'Coaching',d:'Instructional Coaching and Professional / Executive Coaching for professionals in the education, non-profit, and workplace sectors — tailored to meet diverse needs.',bg:'#DC4B2C',href:'https://www.engagedspaces.com/services/coaching-'},
+        {t:'Consulting',d:'We guide and support leaders and professionals through a collaborative and strategic approach.',bg:'#F4F2EC',href:'https://www.engagedspaces.com/services/consulting'},
+        {t:'Conversations',d:'We facilitate nuanced conversations that catalyze communities’ understanding and commitment to diversity, equity, inclusion, and belonging.',bg:'#D9A23B',href:'https://www.engagedspaces.com/services/conversations'},
+        {t:'Professional Development',d:'Learning that enhances workplace performance and fosters an inclusive, engaged environment.',bg:'#E8B4A0',href:'https://www.engagedspaces.com/services/professional-development'}],
+      pillars: [
+        {n:'01',t:'Expertise in leadership development'},
+        {n:'02',t:'Commitment to diversity and inclusion'},
+        {n:'03',t:'Customized approach'},
+        {n:'04',t:'Continued support'}],
+      process: [
+        {n:'01',t:'Initial Consultation',d:'This free consultation helps us understand you and your community’s needs, goals, and any obstacles you’re facing. We use what we learn to design pathways that align with your desired outcomes.'},
+        {n:'02',t:'Customized Proposal',d:'We draft a proposed scope of work outlining suggested services, execution strategy, engagement / project timelines, intended outcomes, and fees / payment structure.'},
+        {n:'03',t:'Onboarding',d:'You’re officially part of the Engaged Spaces community! We kick off observations, listening sessions, calendaring meetings, and community member check-ins to build our work into your system.'},
+        {n:'04',t:'Engagement',d:'Our team partners with you to execute the agreed upon scope of work—pausing to ensure continued alignment, engage in feedback cycles, and celebrate our wins together.'}],
+      quotes: [
+        {text:'Much appreciation for your energy, individualism, flexibility to our spaces, and connection. Nothing but deep gratitude for Dana—I wish I could write down the brilliant nuggets she’s shared over time.',who:'School Principal',bg:'#FFFFFF',fg:'#0B0B0B',r:-2,tr:-4},
+        {text:'Our team got comfortable with being uncomfortable. That led us to sharing vulnerably and transparently…we’re in a much better place because of our partnership with Engaged Spaces.',who:'School Principal',bg:'#DC4B2C',fg:'#0B0B0B',r:1.5,tr:5},
+        {text:'I’ve always appreciated the forms and tools that helped me guide through sessions. After sessions, I had relevant resources that supported my growth between our meetings.',who:'Diverse School Leader',bg:'#E8B4A0',fg:'#0B0B0B',r:-1,tr:-6},
+        {text:'Thank you so much for sending the video and vocabulary in advance of the meeting. I reviewed it and watched the video a couple of times and it made it so much better for me in the session.',who:'Learning Specialist',bg:'#FFFFFF',fg:'#0B0B0B',r:2,tr:3},
+        {text:'The friendly emails and texts between sessions are helpful and keeps us focused on the work.',who:'Executive Leader',bg:'#0B0B0B',fg:'#F4F2EC',r:-1.5,tr:-3}]
+    };
+  }
+}
+</script>
+</body>
+</html>

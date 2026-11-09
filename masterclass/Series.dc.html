@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+<script src="../portfolio-guard.js" defer></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700;800;900&family=Instrument+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+html,body{margin:0;background:#06141e;color:#f4f8fa;font-family:'Instrument Sans',system-ui,sans-serif;overflow-x:hidden;}
+*{box-sizing:border-box;}
+a{color:#92edff;text-decoration:none;}
+a:hover{color:#ffffff;}
+</style>
+</helmet>
+<header style="position:sticky;top:0;z-index:40;display:flex;align-items:center;gap:36px;padding:14px clamp(20px,4vw,56px);background:rgba(6,20,30,.92);backdrop-filter:blur(10px);border-bottom:1px solid #163d5e;">
+  <a href="Master Class Home v2.dc.html" style="display:block;line-height:0;"><img src="assets/logo.png" alt="Douglas County Master Class Series" style="height:38px;width:auto;"></a>
+  <nav style="display:flex;gap:22px;font-size:14px;font-weight:500;flex-wrap:wrap;">
+    <a href="Master Class Home v2.dc.html" style="color:#b9cad4;" style-hover="color:#ffffff;">Home</a>
+    <a href="Series.dc.html" style="color:#ffffff;font-weight:700;">Series</a>
+    <a href="Profile.dc.html" style="color:#b9cad4;" style-hover="color:#ffffff;">Watchlist</a>
+    <a href="About.dc.html" style="color:#b9cad4;" style-hover="color:#ffffff;">About</a>
+  </nav>
+  <a href="Profile.dc.html" aria-label="Profile" style="margin-left:auto;width:36px;height:36px;border-radius:4px;background:#359aae;color:#06141e;display:grid;place-items:center;font-weight:700;font-size:14px;" style-hover="background:#92edff;color:#06141e;">KM</a>
+</header>
+
+<section style="position:relative;padding:56px clamp(20px,4vw,56px) 48px;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,420px),1fr));gap:40px;align-items:center;background:radial-gradient(70% 90% at 90% 10%,#163d5e 0%,#06141e 70%);">
+  <a href="{{ cur.url }}" target="_blank" onClick="{{ cur.watch }}" style="position:relative;display:block;aspect-ratio:16/9;border-radius:8px;overflow:hidden;background:#042034 url({{ cur.img }}) center/cover no-repeat;box-shadow:0 30px 70px rgba(0,0,0,.55);color:#ffffff;" style-hover="color:#ffffff;">
+    <span style="position:absolute;inset:0;background:linear-gradient(0deg,rgba(6,20,30,.85),rgba(6,20,30,.05) 60%);"></span>
+    <span style="position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:80px;height:80px;border-radius:50%;background:#359aae;display:grid;place-items:center;"><svg width="30" height="30" viewBox="0 0 24 24" fill="#06141e"><path d="M7 4l14 8-14 8z"></path></svg></span>
+    <span style="position:absolute;left:18px;bottom:14px;font-size:13px;font-weight:600;color:#d6e2e8;">Plays on YouTube</span>
+    <span style="position:absolute;left:0;right:0;bottom:0;height:4px;background:rgba(255,255,255,.2);"><span style="display:block;height:100%;width:{{ cur.pct }};background:#359aae;"></span></span>
+  </a>
+  <div style="display:flex;flex-direction:column;gap:14px;">
+    <span style="font-size:12px;font-weight:700;letter-spacing:.22em;color:#92edff;">SERIES 1 · LESSON 1: MAINTAINING</span>
+    <h1 style="margin:0;font-family:'Big Shoulders Display',sans-serif;font-weight:900;font-size:clamp(48px,6vw,88px);line-height:.88;text-transform:uppercase;text-wrap:balance;">{{ cur.title }}</h1>
+    <div style="display:flex;gap:12px;font-size:14px;color:#b9cad4;flex-wrap:wrap;align-items:center;"><span>Vignette {{ cur.id }}</span><span>·</span><span>{{ cur.len }}</span><span>·</span><span style="color:#92edff;font-weight:600;">{{ doneLabel }}</span></div>
+    <p style="margin:0;font-size:18px;line-height:1.55;color:#d6e2e8;max-width:560px;text-wrap:pretty;">{{ cur.desc }}</p>
+    <div style="height:6px;border-radius:3px;background:#163d5e;overflow:hidden;max-width:420px;"><div style="height:100%;width:{{ seriesPct }};background:#359aae;"></div></div>
+    <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:6px;">
+      <a href="{{ cur.url }}" target="_blank" onClick="{{ cur.watch }}" style="background:#ffffff;color:#06141e;border-radius:4px;padding:12px 24px;font-weight:700;font-size:16px;" style-hover="background:#92edff;color:#06141e;">▶  Watch Now</a>
+      <button onClick="{{ cur.markDone }}" style="background:rgba(127,151,166,.35);color:#ffffff;border:0;border-radius:4px;padding:12px 20px;font:inherit;font-weight:600;font-size:15px;cursor:pointer;" style-hover="background:rgba(127,151,166,.55);">{{ cur.doneBtn }}</button>
+      <button onClick="{{ goNext }}" style="background:transparent;color:#ffffff;border:1px solid #7f97a6;border-radius:4px;padding:12px 20px;font:inherit;font-weight:600;font-size:15px;cursor:pointer;" style-hover="border-color:#ffffff;">Next: {{ next.title }} ›</button>
+    </div>
+  </div>
+</section>
+
+<nav style="display:flex;gap:8px;padding:8px clamp(20px,4vw,56px) 0;border-bottom:1px solid #163d5e;overflow-x:auto;">
+  <sc-for list="{{ lessons }}" as="l" hint-placeholder-count="5">
+    <a href="{{ l.href }}" target="{{ l.target }}" style="flex:0 0 auto;padding:14px 18px;font-size:14px;font-weight:600;color:{{ l.color }};border-bottom:3px solid {{ l.border }};" style-hover="color:#ffffff;">Lesson {{ l.n }} · {{ l.word }}</a>
+  </sc-for>
+</nav>
+
+<main style="padding:36px clamp(20px,4vw,56px) 80px;">
+  <h2 style="margin:0 0 18px;font-size:22px;font-weight:700;">Vignettes</h2>
+  <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,300px),1fr));gap:24px 16px;">
+    <sc-for list="{{ vigs }}" as="v" hint-placeholder-count="9">
+      <button onClick="{{ v.select }}" style="display:flex;flex-direction:column;gap:10px;padding:0;border:0;background:transparent;color:#ffffff;font:inherit;text-align:left;cursor:pointer;" style-hover="transform:translateY(-3px);">
+        <span style="position:relative;display:block;width:100%;aspect-ratio:16/9;border-radius:6px;overflow:hidden;outline:2px solid {{ v.ring }};outline-offset:2px;background:#042034 url({{ v.img }}) center/cover no-repeat;">
+          <span style="position:absolute;inset:0;background:linear-gradient(0deg,rgba(6,20,30,.7),rgba(6,20,30,0) 55%);"></span>
+          <span style="position:absolute;left:10px;top:8px;font-size:10px;font-weight:700;letter-spacing:.18em;color:#92edff;background:rgba(6,20,30,.7);padding:3px 6px;border-radius:2px;">VIGNETTE {{ v.id }}</span>
+          <span style="position:absolute;right:10px;bottom:10px;font-size:12px;font-weight:600;">{{ v.status }}</span>
+          <span style="position:absolute;left:0;right:0;bottom:0;height:4px;background:rgba(255,255,255,.15);"><span style="display:block;height:100%;width:{{ v.pct }};background:#359aae;"></span></span>
+        </span>
+        <span style="display:flex;justify-content:space-between;gap:12px;align-items:baseline;">
+          <span style="font-size:17px;font-weight:600;">{{ v.title }}</span><span style="font-size:13px;color:#7f97a6;flex:0 0 auto;">{{ v.len }}</span>
+        </span>
+      </button>
+    </sc-for>
+  </div>
+</main>
+
+<footer style="padding:40px clamp(20px,4vw,56px) 56px;border-top:1px solid #163d5e;display:flex;flex-wrap:wrap;gap:24px 48px;align-items:center;font-size:13px;color:#7f97a6;">
+  <img src="assets/logo.png" alt="Douglas County Master Class Series" style="height:36px;width:auto;">
+  <a href="https://douglascountyga.gov" target="_blank" style="color:#b9cad4;" style-hover="color:#ffffff;">douglascountyga.gov</a>
+  <span style="margin-left:auto;">© 2026 Douglas County, Georgia. All rights reserved.</span>
+</footer>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+const PL1 = 'https://youtube.com/playlist?list=PLcVvEWIzJCUkARL-50bZKWyoI4fUUbl3k';
+const PL2 = 'https://youtube.com/playlist?list=PLcVvEWIzJCUn2Jk3HxE3dP7MWZU9xRgGW';
+const CH = 'https://www.youtube.com/@DCMasterClass';
+const LESSONS = [['Maintaining', '#'], ['Growing', PL2], ['Diversifying', CH], ['Protecting', CH], ['Transferring', CH]];
+const VIG = [
+  { id: 1, title: 'Introduction', mins: 25, img: 'assets/t-presenter.jpg', desc: 'Why financial literacy matters and how the 60 Moments of Truth are organized.' },
+  { id: 2, title: 'Plans, Goals & Priorities', mins: 35, img: 'assets/t-planning.jpg', desc: 'Turn what you want into a plan — set goals, rank priorities and put dates on them.' },
+  { id: 3, title: 'Budget, Forecast & Track', mins: 70, img: 'assets/t-calculator.jpg', desc: 'Build a budget, forecast the months ahead and track actuals against your plan.' },
+  { id: 4, title: 'Financial Adjustment', mins: 50, img: 'assets/t-calc2.jpg', desc: 'When income or costs change, here’s how to adjust without losing ground.' },
+  { id: 5, title: 'Financial Recovery', mins: 50, img: 'assets/t-table.jpg', desc: 'Steps to rebuild after a setback and boost your ability to recover.' },
+  { id: 6, title: 'Spending vs. Shopping', mins: 50, img: 'assets/t-coins.jpg', desc: 'Spot the difference between purposeful spending and habit shopping.' },
+  { id: 7, title: 'Checking & Savings Accounts', mins: 25, img: 'assets/t-clipboard.jpg', desc: 'Choosing accounts, avoiding fees and making savings automatic.' },
+  { id: 8, title: 'Credit Score & You', mins: 35, img: 'assets/t-team.jpg', desc: 'What builds a credit score, what hurts it and how to read your report.' },
+  { id: 9, title: 'Credit Cards & Loans', mins: 70, img: 'assets/t-trader.jpg', desc: 'Using credit wisely — rates, terms, payoff strategies and what to avoid.' },
+];
+const KEY = 'dcmc-v2-progress';
+const fmt = m => m >= 60 ? Math.floor(m / 60) + 'h ' + (m % 60) + 'm' : m + ' min';
+
+class Component extends DCLogic {
+  state = { cur: 1, progress: {} };
+  componentDidMount() { try { this.setState({ progress: JSON.parse(localStorage.getItem(KEY) || '{}') }); } catch (e) {} }
+  setProg(id, v) { this.setState(s => { const progress = { ...s.progress, [id]: v }; try { localStorage.setItem(KEY, JSON.stringify(progress)); } catch (e) {} return { progress }; }); }
+  select(id) { this.setState({ cur: id }); window.scrollTo({ top: 0, behavior: 'smooth' }); }
+  renderVals() {
+    const s = this.state; const P = id => s.progress[id] || 0;
+    const c = VIG[s.cur - 1]; const n = VIG[s.cur % VIG.length];
+    const done = VIG.filter(v => P(v.id) >= 100).length;
+    return {
+      cur: { ...c, len: fmt(c.mins), url: PL1, pct: P(c.id) + '%', watch: () => this.setProg(c.id, Math.max(P(c.id), 40)), markDone: () => this.setProg(c.id, P(c.id) >= 100 ? 0 : 100), doneBtn: P(c.id) >= 100 ? '✓ Watched' : 'Mark as watched' },
+      next: n, goNext: () => this.select(n.id),
+      doneLabel: done + ' / ' + VIG.length + ' completed', seriesPct: Math.round(done / VIG.length * 100) + '%',
+      lessons: LESSONS.map(([word, href], i) => ({ n: i + 1, word, href, target: i ? '_blank' : '_self', color: i ? '#7f97a6' : '#ffffff', border: i ? 'transparent' : '#359aae' })),
+      vigs: VIG.map(v => ({ ...v, len: fmt(v.mins), pct: P(v.id) + '%', status: P(v.id) >= 100 ? '✓ Watched' : '', ring: v.id === s.cur ? '#92edff' : 'transparent', select: () => this.select(v.id) })),
+    };
+  }
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+<script src="../portfolio-guard.js" defer></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="stylesheet" href="_ds/clarke-schools-design-system-1c554edb-ddbb-4d62-9b51-89a74f0be5f5/tokens/fonts.css">
+  <link rel="stylesheet" href="_ds/clarke-schools-design-system-1c554edb-ddbb-4d62-9b51-89a74f0be5f5/tokens/colors.css">
+  <link rel="stylesheet" href="_ds/clarke-schools-design-system-1c554edb-ddbb-4d62-9b51-89a74f0be5f5/tokens/typography.css">
+  <link rel="stylesheet" href="_ds/clarke-schools-design-system-1c554edb-ddbb-4d62-9b51-89a74f0be5f5/tokens/spacing.css">
+  <link rel="stylesheet" href="_ds/clarke-schools-design-system-1c554edb-ddbb-4d62-9b51-89a74f0be5f5/tokens/base.css">
+  <link rel="stylesheet" href="_ds/clarke-schools-design-system-1c554edb-ddbb-4d62-9b51-89a74f0be5f5/styles.css">
+  <script src="_ds/clarke-schools-design-system-1c554edb-ddbb-4d62-9b51-89a74f0be5f5/_ds_bundle.js"></script>
+  <style>
+    body{margin:0;background:#fff;-webkit-font-smoothing:antialiased;}
+    a{color:var(--clarke-purple-800);text-decoration:none;}
+    a:hover{color:var(--clarke-purple-500);}
+  </style>
+</helmet>
+<div style="font-family:var(--font-brand);color:var(--clarke-navy-900);background:#fff;min-width:0;">
+  <dc-import name="Site Header" active="Our Services" hint-size="100%,100px"></dc-import>
+  <dc-import name="Local Nav" title="Our Services" items="{{ jump }}" cta-label="Request Services" cta-href="#" style="position:sticky;top:0;z-index:8;display:block;" hint-size="100%,56px"></dc-import>
+
+  <section data-screen-label="Hero" style="max-width:1360px;margin:0 auto;padding:clamp(56px,8vw,112px) 16px 0;box-sizing:border-box;">
+    <div style="display:flex;flex-direction:column;align-items:center;gap:22px;text-align:center;padding:0 16px;">
+      <x-import component-from-global-scope="ClarkeSchoolsDesignSystem_1c554e.Eyebrow" color="var(--clarke-green-700)" hint-size="140px,18px">OUR SERVICES</x-import>
+      <h1 style="margin:0;max-width:1000px;font-size:clamp(40px,6vw,84px);line-height:1;letter-spacing:-.034em;font-weight:700;color:var(--clarke-purple-800);text-wrap:balance;">Support for every stage of life.</h1>
+      <p style="margin:0;max-width:640px;font-size:clamp(18px,1.6vw,22px);line-height:1.5;color:var(--clarke-gray-600);text-wrap:pretty;">Clarke’s services help people who are deaf or hard of hearing succeed — through a continuum of Listening and Spoken Language programs at locations along the East Coast and via teleservices.</p>
+      <div style="display:flex;gap:24px;flex-wrap:wrap;align-items:center;justify-content:center;">
+        <x-import component-from-global-scope="ClarkeSchoolsDesignSystem_1c554e.CTAButton" size="md" href="#" hint-size="200px,56px">Contact us</x-import>
+        <a href="#stages" style="font-weight:700;font-size:16px;">Find services by age ↓</a>
+      </div>
+    </div>
+    <div style="margin-top:clamp(32px,4vw,56px);border-radius:28px;overflow:hidden;aspect-ratio:21/9;min-height:300px;background-image:url(assets/imagery/kids-playground.png);background-size:cover;background-position:center;"></div>
+  </section>
+
+  <section id="stages" data-screen-label="Services by age" style="scroll-margin-top:64px;">
+    <div style="max-width:1360px;margin:0 auto;padding:clamp(88px,10vw,140px) 32px 0;display:flex;flex-direction:column;align-items:center;gap:32px;box-sizing:border-box;">
+      <div style="display:flex;flex-direction:column;align-items:center;gap:12px;text-align:center;">
+        <h2 style="margin:0;font-size:clamp(34px,4.4vw,60px);line-height:1.04;letter-spacing:-.028em;font-weight:700;text-wrap:balance;">Who are you looking for support for?</h2>
+        <p style="margin:0;font-size:18px;line-height:1.5;color:var(--clarke-gray-600);">Choose an age to see the programs and services that fit.</p>
+      </div>
+      <div style="max-width:100%;overflow-x:auto;scrollbar-width:none;">
+        <div ref="{{ segRef }}" role="tablist" onKeyDown="{{ segKey }}" style="position:relative;display:inline-flex;padding:4px;border-radius:12px;background:var(--clarke-gray-100);">
+          <span ref="{{ segIndRef }}" style="position:absolute;left:0;top:4px;bottom:4px;width:0;border-radius:9px;background:#fff;box-shadow:0 1px 2px rgba(52,51,82,.10),0 4px 14px rgba(52,51,82,.08);will-change:transform,width;"></span>
+          <sc-for list="{{ stages }}" as="t" hint-placeholder-count="5">
+            <button role="tab" ref="{{ t.ref }}" aria-selected="{{ t.sel }}" tabIndex="{{ t.tabIndex }}" onClick="{{ t.select }}" style="{{ t.style }}">{{ t.label }}</button>
+          </sc-for>
+        </div>
+      </div>
+      <div ref="{{ panelRef }}" role="tabpanel" style="width:100%;background:var(--clarke-gray-100);border-radius:28px;overflow:hidden;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,440px),1fr));">
+        <div style="{{ stage.photo }}"></div>
+        <div style="padding:clamp(28px,4.5vw,64px);display:flex;flex-direction:column;gap:18px;">
+          <div style="font-size:12px;font-weight:700;letter-spacing:.14em;color:var(--clarke-green-700);">{{ stage.kicker }}</div>
+          <h3 style="margin:0;font-size:clamp(28px,2.8vw,40px);line-height:1.06;letter-spacing:-.022em;font-weight:700;color:var(--clarke-purple-800);">{{ stage.label }}</h3>
+          <p style="margin:0;font-size:17px;line-height:1.55;color:var(--clarke-gray-600);max-width:520px;text-wrap:pretty;">{{ stage.body }}</p>
+          <div style="display:flex;flex-wrap:wrap;gap:8px;margin-top:4px;">
+            <sc-for list="{{ stage.programs }}" as="p" hint-placeholder-count="6">
+              <a href="#" style="background:#fff;color:var(--clarke-navy-900);font-size:14px;font-weight:700;padding:9px 14px;border-radius:999px;transition:transform .1s ease-out, color .15s ease-out;" style-hover="color:var(--clarke-purple-800);" style-active="transform:scale(.96);">{{ p }}</a>
+            </sc-for>
+          </div>
+          <div style="margin-top:8px;">
+            <x-import component-from-global-scope="ClarkeSchoolsDesignSystem_1c554e.CTAButton" size="sm" href="#" hint-size="180px,40px">Learn More</x-import>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="programs" data-screen-label="All programs" style="scroll-margin-top:64px;">
+    <div style="max-width:1360px;margin:0 auto;padding:clamp(88px,10vw,140px) 32px 0;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,380px),1fr));gap:clamp(40px,6vw,80px);align-items:start;box-sizing:border-box;">
+      <div style="display:flex;flex-direction:column;gap:18px;position:sticky;top:96px;">
+        <h2 style="margin:0;font-size:clamp(32px,3.8vw,52px);line-height:1.04;letter-spacing:-.026em;font-weight:700;">We have a program to fit your needs.</h2>
+        <p style="margin:0;font-size:17px;line-height:1.55;color:var(--clarke-gray-600);text-wrap:pretty;">Maximize your baby’s early language development, find a supportive and personalized preschool class, discover a small, customized classroom for your school-age student, or have hearing aids serviced at our award-winning hearing clinic.</p>
+        <a href="#" style="font-weight:700;font-size:16px;">Clarke Locations →</a>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,250px),1fr));gap:4px 24px;">
+        <sc-for list="{{ programs }}" as="p" hint-placeholder-count="12">
+          <a href="#" style="display:flex;align-items:center;justify-content:space-between;gap:12px;padding:16px 14px;margin:0 -14px;border-radius:12px;font-size:17px;font-weight:700;color:var(--clarke-navy-900);transition:background .15s ease-out, transform .1s ease-out;" style-hover="background:var(--clarke-gray-100);color:var(--clarke-purple-800);" style-active="transform:scale(.985);">{{ p }}<span style="color:var(--clarke-green-500);">→</span></a>
+        </sc-for>
+      </div>
+    </div>
+  </section>
+
+  <section id="family" data-screen-label="Meet a Clarke family" style="scroll-margin-top:64px;max-width:1360px;margin:0 auto;padding:clamp(88px,10vw,140px) 16px 0;box-sizing:border-box;">
+    <div style="border-radius:28px;overflow:hidden;background:var(--clarke-navy-900);color:#fff;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,440px),1fr));">
+      <button aria-label="Play video: Meet Josie" style="position:relative;min-height:400px;border:none;padding:0;cursor:pointer;background-image:url(assets/imagery/girl-classroom.png);background-size:cover;background-position:center;display:flex;align-items:center;justify-content:center;">
+        <span style="width:84px;height:84px;border-radius:50%;background:rgba(255,255,255,.28);backdrop-filter:blur(16px) saturate(180%);-webkit-backdrop-filter:blur(16px) saturate(180%);display:flex;align-items:center;justify-content:center;color:#fff;font-size:28px;transition:transform .12s ease-out;" style-active="transform:scale(.92);">▶</span>
+      </button>
+      <div style="padding:clamp(40px,6vw,88px);display:flex;flex-direction:column;gap:20px;justify-content:center;">
+        <x-import component-from-global-scope="ClarkeSchoolsDesignSystem_1c554e.Eyebrow" color="var(--clarke-green-300)" hint-size="200px,18px">MEET A CLARKE FAMILY</x-import>
+        <h2 style="margin:0;font-size:clamp(30px,3.4vw,46px);line-height:1.05;letter-spacing:-.024em;font-weight:700;text-wrap:balance;">Josie gets Teleservices support right in her mainstream school.</h2>
+        <p style="margin:0;font-size:17px;line-height:1.6;color:var(--clarke-purple-200);max-width:520px;">Seven-year-old Josie receives Clarke’s Teleservices in her mainstream school. Her mother, Elizabeth, explains the many benefits of the program.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="approach" data-screen-label="Approach + outcomes" style="scroll-margin-top:64px;">
+    <div style="max-width:1360px;margin:0 auto;padding:clamp(88px,10vw,140px) 32px 0;display:flex;flex-direction:column;gap:48px;box-sizing:border-box;">
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,420px),1fr));gap:clamp(32px,5vw,72px);align-items:end;">
+        <div style="display:flex;flex-direction:column;gap:16px;">
+          <x-import component-from-global-scope="ClarkeSchoolsDesignSystem_1c554e.Eyebrow" color="var(--clarke-green-700)" hint-size="140px,18px">OUTCOMES</x-import>
+          <h2 style="margin:0;font-size:clamp(32px,3.8vw,52px);line-height:1.04;letter-spacing:-.026em;font-weight:700;"><span style="color:var(--clarke-purple-800);">Family-focused.</span> <span style="color:var(--clarke-teal-600);">Outcomes-oriented.</span></h2>
+        </div>
+        <p style="margin:0;font-size:17px;line-height:1.55;color:var(--clarke-gray-600);text-wrap:pretty;">Teachers of the deaf, speech-language pathologists, audiologists and other professionals lead our programs — at our locations, in mainstream classrooms, in homes, and remotely through Teleservices.</p>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,280px),1fr));gap:16px;">
+        <sc-for list="{{ outcomes }}" as="o" hint-placeholder-count="7">
+          <div style="background:var(--clarke-gray-100);border-radius:24px;padding:28px;display:flex;flex-direction:column;gap:14px;">
+            <x-import component-from-global-scope="ClarkeSchoolsDesignSystem_1c554e.BrandIcon" name="{{ o.icon }}" size="{{ 52 }}" bg="{{ o.bg }}" hint-size="52px,52px"></x-import>
+            <div style="font-size:19px;font-weight:700;letter-spacing:-.01em;line-height:1.2;">{{ o.title }}</div>
+            <div style="font-size:15px;line-height:1.5;color:var(--clarke-gray-600);">{{ o.body }}</div>
+          </div>
+        </sc-for>
+      </div>
+      <div style="display:flex;gap:24px;flex-wrap:wrap;">
+        <a href="#" style="font-weight:700;font-size:16px;">Our Listening and Spoken Language philosophy →</a>
+        <a href="Clarke For Families.dc.html" style="font-weight:700;font-size:16px;">For families →</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="news" data-screen-label="News + stories" style="scroll-margin-top:64px;">
+    <div style="max-width:1360px;margin:0 auto;padding:clamp(88px,10vw,140px) 32px 0;display:flex;flex-direction:column;gap:32px;box-sizing:border-box;">
+      <div style="display:flex;justify-content:space-between;align-items:flex-end;gap:16px;flex-wrap:wrap;">
+        <h2 style="margin:0;font-size:clamp(30px,3.4vw,48px);line-height:1.06;letter-spacing:-.024em;font-weight:700;">Recent Clarke news</h2>
+        <a href="#" style="font-weight:700;font-size:16px;">More News →</a>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:24px;">
+        <sc-for list="{{ news }}" as="e" hint-placeholder-count="3">
+          <a href="#" style="display:flex;flex-direction:column;gap:18px;color:var(--clarke-navy-900);transition:transform .1s ease-out;" style-hover="color:var(--clarke-navy-900);" style-active="transform:scale(.985);">
+            <div style="{{ e.img }}"></div>
+            <div style="display:flex;flex-direction:column;gap:8px;padding:0 4px;">
+              <div style="font-size:13px;font-weight:500;color:var(--clarke-gray-600);">{{ e.date }}</div>
+              <div style="font-size:21px;font-weight:700;line-height:1.22;letter-spacing:-.012em;text-wrap:pretty;">{{ e.title }}</div>
+              <div style="font-size:15px;font-weight:700;color:var(--clarke-purple-800);padding-top:2px;">Read more →</div>
+            </div>
+          </a>
+        </sc-for>
+      </div>
+      <div style="display:flex;justify-content:space-between;align-items:flex-end;gap:16px;flex-wrap:wrap;margin-top:56px;">
+        <h2 style="margin:0;font-size:clamp(30px,3.4vw,48px);line-height:1.06;letter-spacing:-.024em;font-weight:700;">Our stories</h2>
+        <a href="Clarke Community.dc.html" style="font-weight:700;font-size:16px;">All stories →</a>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:24px;">
+        <sc-for list="{{ stories }}" as="s" hint-placeholder-count="3">
+          <a href="#" style="position:relative;aspect-ratio:4/5;border-radius:24px;overflow:hidden;display:flex;flex-direction:column;justify-content:flex-end;color:#fff;background:var(--clarke-navy-900);transition:transform .12s ease-out;" style-hover="color:#fff;" style-active="transform:scale(.98);">
+            <div style="{{ s.img }}"></div>
+            <div style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(52,51,82,0) 40%,rgba(52,51,82,.92) 100%);"></div>
+            <div style="position:relative;padding:26px;display:flex;flex-direction:column;gap:6px;">
+              <div style="font-size:28px;font-weight:700;letter-spacing:-.02em;">{{ s.name }}</div>
+              <div style="font-size:15px;line-height:1.45;color:#fff;">{{ s.line }}</div>
+            </div>
+          </a>
+        </sc-for>
+      </div>
+    </div>
+  </section>
+
+  <dc-import name="Site Footer" hint-size="100%,720px"></dc-import>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  state = { stage: 0 };
+  segBtns = [];
+  segRefs = [0, 1, 2, 3, 4].map(i => el => { this.segBtns[i] = el; });
+  get reduced() { return typeof matchMedia !== 'undefined' && matchMedia('(prefers-reduced-motion: reduce)').matches; }
+  makeSpring(apply) {
+    const s = { x: 0, v: 0, target: 0, k: 0, c: 0, raf: 0, last: 0 };
+    const tick = now => {
+      let dt = Math.min(0.064, (now - s.last) / 1000); s.last = now;
+      while (dt > 0) { const h = Math.min(dt, 0.004); s.v += (-s.k * (s.x - s.target) - s.c * s.v) * h; s.x += s.v * h; dt -= h; }
+      if (Math.abs(s.v) < 1 && Math.abs(s.x - s.target) < 0.5) { s.x = s.target; s.v = 0; apply(); s.raf = 0; return; }
+      apply(); s.raf = requestAnimationFrame(tick);
+    };
+    s.to = (t, r = 0.38) => { s.target = t; s.k = Math.pow(2 * Math.PI / r, 2); s.c = 4 * Math.PI / r; if (this.reduced) return s.set(t); if (!s.raf) { s.last = performance.now(); s.raf = requestAnimationFrame(tick); } };
+    s.set = t => { cancelAnimationFrame(s.raf); s.raf = 0; s.x = s.target = t; s.v = 0; apply(); };
+    return s;
+  }
+  paint = () => { if (this.ind) { this.ind.style.transform = 'translateX(' + this.sx.x + 'px)'; this.ind.style.width = this.sw.x + 'px'; } };
+  sx = this.makeSpring(this.paint);
+  sw = this.makeSpring(this.paint);
+  segIndRef = el => { this.ind = el; };
+  panelRef = el => { this.panel = el; };
+  segRef = el => { if (el && el !== this.seg) { this.seg = el; this.ro = new ResizeObserver(() => this.place(true)); this.ro.observe(el); } };
+  place(instant) {
+    const b = this.segBtns[this.state.stage]; if (!b) return;
+    if (instant) { this.sx.set(b.offsetLeft); this.sw.set(b.offsetWidth); } else { this.sx.to(b.offsetLeft); this.sw.to(b.offsetWidth); }
+  }
+  componentDidMount() { requestAnimationFrame(() => this.place(true)); if (document.fonts) document.fonts.ready.then(() => this.place(true)); }
+  componentWillUnmount() { this.ro && this.ro.disconnect(); }
+  select(i) {
+    if (i === this.state.stage) return;
+    const d = i > this.state.stage ? 1 : -1;
+    this.setState({ stage: i }, () => {
+      this.place(false);
+      if (this.panel && !this.reduced) this.panel.animate([{ opacity: 0.35, transform: 'translateX(' + (d * 14) + 'px)' }, { opacity: 1, transform: 'none' }], { duration: 300, easing: 'cubic-bezier(.2,.8,.2,1)' });
+    });
+  }
+  renderVals() {
+    const S = this.state;
+    const ST = [
+      { label: 'Infants', kicker: 'BIRTH TO 12 MONTHS', body: 'We work with families to begin their baby’s listening and spoken language journey — with compassion, expertise and play.', img: 'assets/imagery/family-reading.png', programs: ['Birth to Age Three Program', 'Teleservices', 'Support Groups', 'Audiology Services', 'Auditory, Speech and Language Services', 'Summer Services', 'Clarke Hearing Center'] },
+      { label: 'Toddlers', kicker: 'AGES 1 TO 3', body: 'Individualized education for toddlers who are deaf or hard of hearing to listen and speak, along with coaching for their families.', img: 'assets/imagery/preschool-teacher-play.png', programs: ['Birth to Age Three Program', 'Teleservices', 'Support Groups', 'Audiology Services', 'Auditory, Speech and Language Services', 'Summer Services', 'Clarke Hearing Center'] },
+      { label: 'Preschoolers', kicker: 'AGES 3 TO 5', body: 'Customized programs for preschool-aged children who are deaf or hard of hearing and their families, built to fit a range of needs.', img: 'assets/imagery/kids-playground.png', programs: ['Preschool / Early Childhood Program', 'Preschool / Early Elementary Program', 'Integrated Preschool Program', 'Teleservices', 'Mainstream Services', 'Audiology Services', 'Auditory, Speech and Language Services', 'Support Groups', 'Summer Services', 'Clarke Hearing Center'] },
+      { label: 'School-Age Students', kicker: 'KINDERGARTEN AND UP', body: 'Support for children in mainstream classrooms, programs for socialization and leadership-building, and audiological services that maximize access to sound.', img: 'assets/imagery/student-alphabet.png', programs: ['Mainstream Services', 'Teleservices', 'Preschool / Early Elementary Program', 'Comprehensive Educational Evaluations (CEE) Program', 'Audiology Services', 'Auditory, Speech and Language Services', 'Summer Services', 'Clarke Hearing Center'] },
+      { label: 'Adults & Families', kicker: 'ALL AGES', body: 'Educational and social opportunities for families, audiological services for people of all ages with hearing loss, and trainings and workshops.', img: 'assets/imagery/slp-session.png', programs: ['Audiology Services', 'Auditory, Speech and Language Services', 'Mainstream Services', 'Support Groups', 'Clarke Hearing Center'] }
+    ];
+    const cur = ST[S.stage];
+    const stages = ST.map((t, i) => {
+      const on = i === S.stage;
+      return { label: t.label, ref: this.segRefs[i], sel: on ? 'true' : 'false', tabIndex: on ? 0 : -1, select: () => this.select(i),
+        style: { position: 'relative', zIndex: 1, fontFamily: 'var(--font-brand)', fontSize: 15, fontWeight: on ? 700 : 500, padding: '11px 20px', borderRadius: 9, cursor: 'pointer', border: 'none', background: 'transparent', whiteSpace: 'nowrap', color: on ? 'var(--clarke-purple-800)' : 'var(--clarke-navy-900)', transition: 'color .2s ease-out' } };
+    });
+    const bg = { position: 'absolute', inset: 0, backgroundSize: 'cover', backgroundPosition: 'center' };
+    const card = img => ({ aspectRatio: '16/11', borderRadius: 24, backgroundColor: 'var(--clarke-gray-200)', backgroundImage: 'url(' + img + ')', backgroundSize: 'cover', backgroundPosition: 'center' });
+    return {
+      jump: [['stages', 'By Age'], ['programs', 'All Programs'], ['family', 'Meet a Family'], ['approach', 'Outcomes'], ['news', 'News & Stories']],
+      segRef: this.segRef, segIndRef: this.segIndRef, panelRef: this.panelRef,
+      segKey: e => { if (e.key === 'ArrowRight') this.select(Math.min(4, S.stage + 1)); if (e.key === 'ArrowLeft') this.select(Math.max(0, S.stage - 1)); },
+      stages,
+      stage: { ...cur, photo: { minHeight: 380, backgroundImage: 'url(' + cur.img + ')', backgroundSize: 'cover', backgroundPosition: 'center' } },
+      programs: ['Birth to Age Three Program', 'Teleservices Program', 'Preschool / Early Childhood Program', 'Preschool / Early Elementary Program', 'Integrated Preschool Program', 'Mainstream Services', 'Summer Services', 'Audiology Services', 'Auditory, Speech and Language Services', 'Clarke Hearing Center', 'Support Groups', 'Trainings & Workshops'],
+      outcomes: [
+        { icon: 'support', bg: 'var(--clarke-purple-800)', title: 'Optimized home learning', body: 'Families give their child an optimized home learning environment as early as possible.' },
+        { icon: 'graduation', bg: 'var(--clarke-green-500)', title: 'Enter mainstream schools', body: 'Many children with hearing loss enter mainstream schools ready to learn by kindergarten.' },
+        { icon: 'achievement', bg: 'var(--clarke-teal-600)', title: 'IFSP & IEP goal achievement', body: 'Children meet goals set in their Individualized Family Service Plan (IFSP) and Individualized Education Program (IEP).' },
+        { icon: 'training', bg: 'var(--clarke-navy-900)', title: 'Specialized support', body: 'Mainstream classroom educators are trained and prepared to support children with hearing loss.' },
+        { icon: 'goals', bg: 'var(--clarke-purple-800)', title: 'On track with hearing peers', body: 'Children demonstrate listening and spoken language skills on par with peers who have typical hearing.' },
+        { icon: 'evaluation', bg: 'var(--clarke-green-500)', title: 'Improve connections', body: 'State-of-the-art hearing testing and hearing aid fittings help children and adults get more out of life.' },
+        { icon: 'coaching', bg: 'var(--clarke-teal-600)', title: 'Family support', body: 'Families are coached to develop spoken language through listening and to advocate for inclusion in mainstream settings.' }
+      ],
+      news: [
+        { date: 'October 16, 2026', title: 'Clarke Introduces Renewed Mission, Vision and Values', img: card('assets/imagery/nyc-classroom.jpg') },
+        { date: 'July 1, 2026', title: 'Clarke Pennsylvania Expands Early Childhood Offerings with New Integrated Preschool Program', img: card('assets/imagery/preschool-teacher-play.png') },
+        { date: 'May 6, 2026', title: 'Clarke Massachusetts Featured on Karson & Kennedy’s Good Vibe Tribe', img: card('assets/imagery/fl-outdoors.jpg') }
+      ],
+      stories: [
+        { name: 'Chase', line: 'Walking for what’s possible.', img: { ...bg, backgroundImage: 'url(assets/imagery/boys-peace.png)' } },
+        { name: 'Kaylee', line: 'Finding her voice.', img: { ...bg, backgroundImage: 'url(assets/imagery/girl-classroom.png)' } },
+        { name: 'Jaxson', line: 'The gift of communication.', img: { ...bg, backgroundImage: 'url(assets/imagery/classroom-book.png)' } }
+      ]
+    };
+  }
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+<script src="../portfolio-guard.js" defer></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700;800;900&family=Instrument+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+html,body{margin:0;background:#06141e;color:#f4f8fa;font-family:'Instrument Sans',system-ui,sans-serif;overflow-x:hidden;}
+*{box-sizing:border-box;}
+a{color:#92edff;text-decoration:none;}
+a:hover{color:#ffffff;}
+</style>
+</helmet>
+<header style="position:sticky;top:0;z-index:40;display:flex;align-items:center;gap:36px;padding:14px clamp(20px,4vw,56px);background:rgba(6,20,30,.92);backdrop-filter:blur(10px);border-bottom:1px solid #163d5e;">
+  <a href="Master Class Home v2.dc.html" style="display:block;line-height:0;"><img src="assets/logo.png" alt="Douglas County Master Class Series" style="height:38px;width:auto;"></a>
+  <nav style="display:flex;gap:22px;font-size:14px;font-weight:500;flex-wrap:wrap;">
+    <a href="Master Class Home v2.dc.html" style="color:#b9cad4;" style-hover="color:#ffffff;">Home</a>
+    <a href="Series.dc.html" style="color:#b9cad4;" style-hover="color:#ffffff;">Series</a>
+    <a href="Profile.dc.html" style="color:#b9cad4;" style-hover="color:#ffffff;">Watchlist</a>
+    <a href="About.dc.html" style="color:#ffffff;font-weight:700;">About</a>
+  </nav>
+</header>
+
+<section style="padding:48px clamp(20px,4vw,56px) 80px;background:radial-gradient(70% 70% at 0% 0%,#163d5e 0%,#06141e 70%);">
+  <a href="About.dc.html#council" style="display:inline-block;font-size:14px;font-weight:600;color:#b9cad4;margin-bottom:32px;" style-hover="color:#ffffff;">‹ Board of Commissioners</a>
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,320px),1fr));gap:56px;align-items:start;">
+    <div style="aspect-ratio:4/5;max-width:460px;border-radius:8px;overflow:hidden;background:#0b2a40 url({{ c.img }}) center top/cover no-repeat;box-shadow:0 30px 70px rgba(0,0,0,.5);"></div>
+    <div style="display:flex;flex-direction:column;gap:20px;max-width:720px;">
+      <span style="font-size:12px;font-weight:700;letter-spacing:.22em;color:#92edff;">{{ c.role }}</span>
+      <h1 style="margin:0;font-family:'Big Shoulders Display',sans-serif;font-weight:900;font-size:clamp(52px,7vw,96px);line-height:.88;text-transform:uppercase;text-wrap:balance;">{{ c.name }}</h1>
+      <sc-for list="{{ c.bio }}" as="p" hint-placeholder-count="3">
+        <p style="margin:0;font-size:18px;line-height:1.7;color:#d6e2e8;text-wrap:pretty;">{{ p }}</p>
+      </sc-for>
+    </div>
+  </div>
+</section>
+
+<section style="padding:64px clamp(20px,4vw,56px) 88px;border-top:1px solid #163d5e;">
+  <h2 style="margin:0 0 20px;font-size:22px;font-weight:700;">More commissioners</h2>
+  <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,220px),1fr));gap:16px;">
+    <sc-for list="{{ others }}" as="o" hint-placeholder-count="4">
+      <a href="{{ o.href }}" style="display:grid;grid-template-columns:72px 1fr;gap:14px;align-items:center;padding:10px;background:#042034;border-radius:6px;color:#ffffff;" style-hover="background:#163d5e;color:#ffffff;">
+        <span style="aspect-ratio:1;border-radius:4px;background:#0b2a40 url({{ o.img }}) center top/cover no-repeat;"></span>
+        <span style="display:flex;flex-direction:column;gap:4px;"><span style="font-size:16px;font-weight:600;">{{ o.name }}</span><span style="font-size:11px;font-weight:700;letter-spacing:.16em;color:#92edff;">{{ o.role }}</span></span>
+      </a>
+    </sc-for>
+  </div>
+</section>
+
+<footer style="padding:40px clamp(20px,4vw,56px) 56px;border-top:1px solid #163d5e;display:flex;flex-wrap:wrap;gap:24px 48px;align-items:center;font-size:13px;color:#7f97a6;">
+  <img src="assets/logo.png" alt="Douglas County Master Class Series" style="height:36px;width:auto;">
+  <a href="https://douglascountyga.gov" target="_blank" style="color:#b9cad4;" style-hover="color:#ffffff;">douglascountyga.gov</a>
+  <span style="margin-left:auto;">© 2026 Douglas County, Georgia. All rights reserved.</span>
+</footer>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+const COUNCIL = [
+  { id: 'jones', name: 'Dr. Romona Jackson Jones', role: 'COMMISSION CHAIRMAN', img: 'assets/council-jones.jpg', bio: ['Dr. Romona Jackson Jones serves as the first African American Commission Chairman in the history of Douglas County, Georgia.'] },
+  { id: 'mitchell', name: 'Henry Mitchell III', role: 'DISTRICT 1 COMMISSIONER', img: 'assets/council-mitchell.jpg', bio: ['Henry Mitchell, III is the District 1 Commissioner for Douglas County. Mitchell enlisted in the United States Army after graduating from Henry Grady High School in Atlanta, GA.'] },
+  { id: 'robinson', name: 'Kelly Robinson', role: 'DISTRICT 2 · VICE-CHAIRMAN', img: 'assets/council-robinson.jpg', bio: ['Kelly Robinson serves as Vice-Chairman and the District 2 Commissioner for Douglas County. Voters first elected Vice-Chairman Robinson to office in 2008 and re-elected him in 2012, 2016 and 2020.'] },
+  { id: 'carthan', name: 'Tarenia Carthan', role: 'DISTRICT 3 COMMISSIONER', img: 'assets/council-carthan.jpg', bio: [
+    'Tarenia Carthan serves as the Commissioner for District 3. She is an Atlanta native and holds a Computer Information Systems degree and a Bachelor of Science degree from Atlanta Christian College.',
+    'As the chief executive officer of Elohim Consultants, a health technology-consulting firm established in 2005, Commissioner Carthan has served in the healthcare and technology sectors for over 20 years. Her dedication to excellence in the medical and technology field may be seen in her philanthropic work that includes co-founding the Angels N Tech/Angels N Me Foundation which was created to benefit young girls and encourage them to pursue careers in science, technology, engineering, arts, and mathematics (STEAM). In recognition of her work in the field, Carthan was recognized as an Outstanding Entrepreneur by Who’s Who in Black Atlanta in 2012 and is also the former Chairman of the Healthcare Committee of the Georgia Federation of Democratic Women.',
+    'Carthan is an ordained minister and serves as a Deaconess at Jackson Memorial Baptist Church. She loves working in her community as a member of the Democratic Women of Douglas County and the Douglas County Democratic Committee. In 2020, Commissioner Carthan was appointed by National Association of Counties (NACo) President Gary Moore to serve on the Community, Economic Development and Workforce Development Steering Committee and the Economic Development Subcommittee Vice Chair.'] },
+  { id: 'guider', name: 'Ann Jones Guider', role: 'DISTRICT 4 COMMISSIONER', img: 'assets/council-guider.jpg', bio: ['Ann Jones Guider serves as District 4 Commissioner. She retired as the Douglas County Tax Commissioner in 2008 after 28 years.'] },
+];
+class Component extends DCLogic {
+  renderVals() {
+    let id = 'carthan';
+    try { id = new URLSearchParams(window.location.search).get('m') || id; } catch (e) {}
+    const c = COUNCIL.find(x => x.id === id) || COUNCIL[3];
+    return { c, others: COUNCIL.filter(x => x.id !== c.id).map(o => ({ ...o, href: 'Council.dc.html?m=' + o.id })) };
+  }
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+<script src="../portfolio-guard.js" defer></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<title>Digital Marketing Services: SEO, Paid Ads, Social, Email &amp; SMS | Mitchell Strategies</title>
+<meta name="description" content="Digital marketing services from Mitchell Strategies: organic and paid social media, email and SMS marketing, SEO and search ads. Retainer packages that cost a fraction of an in-house team.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600&family=Roboto+Mono:wght@400;500&display=swap" rel="stylesheet">
+<script src="./image-slot.js"></script>
+<style>
+body{margin:0;background:#FFFFFF;color:#1C2A3E;font-family:Archivo,sans-serif;-webkit-font-smoothing:antialiased}
+a{color:#1C2A3E;text-decoration:none}
+a:hover{color:#2EB2FF}
+*{box-sizing:border-box}
+@keyframes ms-prog{from{transform:scaleX(0)}to{transform:scaleX(1)}}
+@keyframes ms-rise{from{opacity:0;transform:translateY(0.35em)}to{opacity:1;transform:none}}
+</style>
+</helmet>
+
+<div style="background:#FFFFFF;color:#1C2A3E;font-family:Archivo,sans-serif;overflow-x:hidden">
+  <dc-import name="Site Nav" active="Services" trigger="{{ navTrigger }}" preview="{{ navPreview }}" hint-size="100%,0px"></dc-import>
+
+  <section data-screen-label="Service hero" onMouseEnter="{{ pause }}" onMouseLeave="{{ resume }}" style="background:#F7F9FB;padding:clamp(124px,12vw,168px) clamp(20px,5vw,64px) 0;display:flex;flex-direction:column;gap:clamp(40px,5vw,64px)">
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,440px),1fr));gap:clamp(40px,5vw,72px);align-items:center">
+      <div style="display:flex;flex-direction:column;gap:28px">
+        <span style="font-family:'Roboto Mono',monospace;font-weight:500;font-size:13px;letter-spacing:0.06em;text-transform:uppercase;color:#4C5A6E">Services / Digital marketing</span>
+        <h1 style="margin:0;font-family:Archivo,sans-serif;font-weight:500;font-size:clamp(44px,5.8vw,84px);line-height:1;letter-spacing:-0.02em">
+          <span style="display:block;text-wrap:balance">Digital marketing&nbsp;that</span>
+          <span style="display:block;min-height:2em;color:#2EB2FF;text-wrap:balance">{{ phrase }}</span>
+        </h1>
+        <p style="margin:0;font-size:clamp(17px,1.6vw,20px);line-height:1.6;color:#4C5A6E;max-width:560px;text-wrap:pretty">Social media, email and SMS, SEO and paid ads, all run by one team. Maybe you run marketing for a living, or maybe you own the business and you're ready to grow online. Either way, we've got you&nbsp;covered.</p>
+        <div style="display:flex;flex-wrap:wrap;gap:14px">
+          <a href="#" style="font-family:Archivo,sans-serif;font-weight:600;font-size:17px;background:#2EB2FF;color:#1C2A3E;padding:18px 30px;white-space:nowrap" style-hover="background:#1C2A3E;color:#FFFFFF">Book a Call</a>
+          <a href="#plans" style="font-family:Archivo,sans-serif;font-weight:600;font-size:17px;background:#FFFFFF;color:#1C2A3E;padding:16px 28px;border:2px solid #1C2A3E;white-space:nowrap" style-hover="background:#1C2A3E;color:#FFFFFF">See Retainer Plans</a>
+        </div>
+      </div>
+      <div style="position:relative;aspect-ratio:5/4;overflow:hidden;background:#D1DCE6;border-radius:0 clamp(56px,8vw,140px) 0 0">
+        <sc-for list="{{ offers }}" as="o" hint-placeholder-count="3">
+          <div aria-hidden="{{ o.hidden }}" style="position:absolute;inset:0;opacity:{{ o.op }};transform:scale({{ o.scale }});transition:opacity 600ms ease, transform 1400ms cubic-bezier(.2,.7,.2,1);pointer-events:{{ o.pe }}"><image-slot id="{{ o.slot }}" src="{{ o.img }}" shape="rect" placeholder="Hero photo" alt="{{ o.alt }}"></image-slot></div>
+        </sc-for>
+        <div style="position:absolute;left:0;bottom:0;background:#FFFFFF;border-top:1px solid #1C2A3E;border-right:1px solid #1C2A3E;padding:14px 20px;max-width:calc(100% - 24px);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;font-family:'Roboto Mono',monospace;font-weight:500;font-size:13px;letter-spacing:0.06em;text-transform:uppercase">{{ cur.num }} / 0{{ offerCount }} · {{ cur.name }}</div>
+      </div>
+    </div>
+    <div role="tablist" aria-label="Digital marketing services" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,260px),1fr));gap:0 clamp(24px,3vw,40px);border-top:1px solid #D1DCE6">
+      <sc-for list="{{ offers }}" as="o" hint-placeholder-count="3">
+        <button role="tab" aria-selected="{{ o.expanded }}" onClick="{{ o.onClick }}" style="all:unset;box-sizing:border-box;cursor:pointer;position:relative;display:flex;flex-direction:column;gap:10px;padding:24px 0 clamp(32px,4vw,48px)">
+          {{ o.bar }}
+          <span style="display:flex;align-items:baseline;gap:14px">
+            <span style="font-family:'Roboto Mono',monospace;font-weight:500;font-size:13px;letter-spacing:0.06em;color:{{ o.numColor }}">{{ o.num }}</span>
+            <span style="font-family:Archivo,sans-serif;font-weight:500;font-size:clamp(22px,2.2vw,28px);line-height:1.1;letter-spacing:-0.02em;color:{{ o.fg }};transition:color 200ms">{{ o.name }}</span>
+          </span>
+          <span style="padding-left:34px;font-size:16px;line-height:1.6;color:{{ o.sub }};transition:color 200ms;text-wrap:pretty">{{ o.desc }}</span>
+        </button>
+      </sc-for>
+    </div>
+  </section>
+
+  <section data-screen-label="Intro" style="padding:clamp(72px,10vw,120px) clamp(20px,5vw,64px);display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,420px),1fr));gap:clamp(28px,5vw,80px);align-items:start">
+    <div style="display:flex;flex-direction:column;gap:14px">
+      <span style="font-family:'Roboto Mono',monospace;font-weight:500;font-size:13px;letter-spacing:0.06em;text-transform:uppercase;color:#4C5A6E">Transform your marketing strategy</span>
+      <h2 style="margin:0;font-family:Archivo,sans-serif;font-weight:500;font-size:clamp(36px,4.6vw,56px);line-height:1.02;letter-spacing:-0.02em;text-wrap:balance">A specialist for every channel your business&nbsp;uses.</h2>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:28px;align-items:flex-start">
+      <p style="margin:0;font-size:clamp(17px,1.5vw,19px);line-height:1.65;color:#4C5A6E;text-wrap:pretty">Our marketing team comes from a lot of different backgrounds, which is exactly why we can cover so much of what your business needs. We plan social media your audience actually responds to. We tune your search presence so the right people find you. And every part of your digital marketing gets the same mix of precision and&nbsp;creativity.</p>
+      <a href="#" style="font-family:Archivo,sans-serif;font-weight:600;font-size:16px;border-bottom:2px solid #2EB2FF;padding-bottom:4px;white-space:nowrap" style-hover="color:#2EB2FF">Book a call today →</a>
+    </div>
+  </section>
+
+  <section id="plans" data-screen-label="Retainer plans" style="padding:0 clamp(20px,5vw,64px) clamp(72px,10vw,112px)">
+    <div style="background:#1C2A3E;color:#FFFFFF;border-radius:0 72px 0 0;overflow:hidden;display:flex;flex-direction:column">
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,420px),1fr))">
+        <div style="padding:clamp(40px,6vw,72px) clamp(24px,5vw,64px);display:flex;flex-direction:column;gap:20px;justify-content:center">
+          <span style="font-family:'Roboto Mono',monospace;font-weight:500;font-size:13px;letter-spacing:0.06em;text-transform:uppercase;color:#2EB2FF">Retainer packages</span>
+          <h2 style="margin:0;font-family:Archivo,sans-serif;font-weight:500;font-size:clamp(36px,4.6vw,56px);line-height:1.02;letter-spacing:-0.02em;text-wrap:balance">Put your brand on&nbsp;autopilot</h2>
+          <p style="margin:0;font-size:17px;line-height:1.65;color:#D1DCE6;max-width:520px;text-wrap:pretty">Why pay for an expensive in-house team when you can hire ours for a fraction of the cost? A retainer package gives you everything you need to grow your brand without breaking the bank, and it takes the guesswork out of working with a digital marketing&nbsp;agency.</p>
+        </div>
+        <div style="position:relative;min-height:clamp(280px,36vw,480px);background:#4C5A6E">
+          <image-slot id="dm-autopilot" src="https://images.pexels.com/photos/3184338/pexels-photo-3184338.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1600" shape="rect" placeholder="Retainer photo" alt="Three colleagues smiling during a meeting"></image-slot>
+        </div>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,400px),1fr));gap:1px;background:#4C5A6E;border-top:1px solid #4C5A6E">
+        <sc-for list="{{ plans }}" as="p" hint-placeholder-count="2">
+          <div style="background:#1C2A3E;padding:clamp(32px,5vw,56px) clamp(24px,5vw,64px);display:flex;flex-direction:column;gap:20px">
+            <span style="font-family:'Roboto Mono',monospace;font-weight:500;font-size:13px;letter-spacing:0.06em;text-transform:uppercase;color:#D1DCE6">{{ p.kicker }}</span>
+            <h3 style="margin:0;font-family:Archivo,sans-serif;font-weight:500;font-size:clamp(28px,3vw,38px);line-height:1.05;letter-spacing:-0.02em;color:#FFFFFF">{{ p.name }}</h3>
+            <p style="margin:0;font-size:17px;line-height:1.65;color:#D1DCE6;text-wrap:pretty">{{ p.desc }}</p>
+            <a href="#" style="margin-top:auto;align-self:flex-start;font-family:Archivo,sans-serif;font-weight:600;font-size:16px;background:#2EB2FF;color:#1C2A3E;padding:16px 26px;white-space:nowrap" style-hover="background:#FFFFFF;color:#1C2A3E">View retainer package →</a>
+          </div>
+        </sc-for>
+      </div>
+    </div>
+  </section>
+
+  <section data-screen-label="Case studies" style="padding:0 clamp(20px,5vw,64px) clamp(72px,10vw,112px);display:flex;flex-direction:column;gap:clamp(32px,4vw,48px)">
+    <div style="display:flex;flex-wrap:wrap;gap:20px 64px;align-items:flex-end;justify-content:space-between">
+      <div style="flex:1 1 420px;display:flex;flex-direction:column;gap:14px">
+        <span style="font-family:'Roboto Mono',monospace;font-weight:500;font-size:13px;letter-spacing:0.06em;text-transform:uppercase;color:#4C5A6E">Selected work</span>
+        <h2 style="margin:0;font-family:Archivo,sans-serif;font-weight:500;font-size:clamp(34px,4vw,48px);line-height:1.04;letter-spacing:-0.02em;text-wrap:balance">Digital marketing in&nbsp;action</h2>
+      </div>
+      <a href="#" style="font-family:Archivo,sans-serif;font-weight:600;font-size:16px;border-bottom:2px solid #2EB2FF;padding-bottom:4px;white-space:nowrap" style-hover="color:#2EB2FF">View all work →</a>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:clamp(24px,3vw,40px)">
+      <sc-for list="{{ cases }}" as="c" hint-placeholder-count="3">
+        <a href="#" style="display:flex;flex-direction:column;gap:20px;color:#1C2A3E" style-hover="color:#1C2A3E;transform:translateY(-4px)">
+          <div style="position:relative;aspect-ratio:4/3;overflow:hidden;background:#D1DCE6;border-radius:{{ c.r }}"><image-slot id="{{ c.slot }}" shape="rect" placeholder="Case study image"></image-slot></div>
+          <div style="display:flex;flex-direction:column;gap:10px">
+            <span style="font-family:'Roboto Mono',monospace;font-weight:500;font-size:13px;letter-spacing:0.06em;text-transform:uppercase;color:#4C5A6E">Client name · Channel</span>
+            <h3 style="margin:0;font-family:Archivo,sans-serif;font-weight:500;font-size:clamp(22px,2.2vw,28px);line-height:1.15;letter-spacing:-0.02em;text-wrap:balance">Case study headline with the main&nbsp;result</h3>
+            <span style="font-family:Archivo,sans-serif;font-weight:600;font-size:16px;color:#1C2A3E">Read the case study →</span>
+          </div>
+        </a>
+      </sc-for>
+    </div>
+  </section>
+
+  <section data-screen-label="Process" style="background:#F7F9FB;padding:clamp(72px,10vw,112px) clamp(20px,5vw,64px);display:flex;flex-direction:column;gap:clamp(40px,5vw,64px)">
+    <div style="display:flex;flex-wrap:wrap;gap:20px 64px;align-items:flex-end;justify-content:space-between">
+      <div style="flex:1 1 480px;display:flex;flex-direction:column;gap:14px">
+        <span style="font-family:'Roboto Mono',monospace;font-weight:500;font-size:13px;letter-spacing:0.06em;text-transform:uppercase;color:#4C5A6E">Our process</span>
+        <h2 style="margin:0;max-width:760px;font-family:Archivo,sans-serif;font-weight:500;font-size:clamp(34px,4vw,48px);line-height:1.04;letter-spacing:-0.02em;text-wrap:balance">Tailored strategies for unique brand&nbsp;challenges</h2>
+      </div>
+      <p style="margin:0;flex:1 1 320px;max-width:460px;font-size:17px;line-height:1.65;color:#4C5A6E;text-wrap:pretty">Every brand is different, so every marketing plan should be too. It's part art, part science, and there are no shortcuts to results. Here's how we build&nbsp;yours.</p>
+    </div>
+    <ol style="margin:0;padding:0;list-style:none;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,280px),1fr));gap:clamp(24px,3vw,40px)">
+      <sc-for list="{{ steps }}" as="st" hint-placeholder-count="3">
+        <li style="display:flex;flex-direction:column;gap:16px;border-top:2px solid #1C2A3E;padding-top:24px">
+          <span style="font-family:Archivo,sans-serif;font-weight:500;font-size:clamp(48px,5vw,64px);line-height:1;letter-spacing:-0.02em;color:#2EB2FF">{{ st.n }}</span>
+          <h3 style="margin:0;font-family:Archivo,sans-serif;font-weight:600;font-size:22px;line-height:1.2;text-wrap:balance">{{ st.t }}</h3>
+          <p style="margin:0;font-size:16px;line-height:1.65;color:#4C5A6E;text-wrap:pretty">{{ st.d }}</p>
+        </li>
+      </sc-for>
+    </ol>
+  </section>
+
+  <section data-screen-label="CTA" style="padding:clamp(72px,10vw,112px) clamp(20px,5vw,64px);display:flex;flex-direction:column;gap:36px">
+    <h2 style="margin:0;font-family:Archivo,sans-serif;font-weight:500;font-size:clamp(34px,4vw,48px);letter-spacing:-0.02em;text-align:center;text-wrap:balance">Ready to grow your&nbsp;audience?</h2>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,400px),1fr));gap:24px">
+      <a href="#" style="display:flex;flex-direction:column;gap:14px;background:#2EB2FF;color:#1C2A3E;border-radius:0 48px 0 0;padding:clamp(28px,4vw,48px)" style-hover="transform:translateY(-4px);color:#1C2A3E">
+        <span style="font-family:Archivo,sans-serif;font-weight:500;font-size:clamp(28px,3vw,36px)">Book a Call →</span>
+        <span style="font-size:18px;line-height:1.55;text-wrap:pretty">Tell us where your marketing stands today and where you want it to&nbsp;go.</span>
+      </a>
+      <a href="#" style="display:flex;flex-direction:column;gap:14px;background:#F7F9FB;border:1px solid #D1DCE6;color:#1C2A3E;border-radius:0 48px 0 0;padding:clamp(28px,4vw,48px)" style-hover="transform:translateY(-4px);color:#1C2A3E">
+        <span style="font-family:Archivo,sans-serif;font-weight:500;font-size:clamp(28px,3vw,36px)">See Our Work →</span>
+        <span style="font-size:18px;line-height:1.55;color:#4C5A6E;text-wrap:pretty">Campaigns and results from the brands we work&nbsp;with.</span>
+      </a>
+    </div>
+  </section>
+
+  <footer data-screen-label="Footer" style="background:#1C2A3E;color:#D1DCE6;padding:80px clamp(20px,5vw,64px) 40px;display:flex;flex-direction:column;gap:64px">
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:40px">
+      <img src="assets/ms-wordmark-white.png" alt="Mitchell Strategies" style="height:60px;width:auto;display:block">
+      <sc-for list="{{ footerCols }}" as="c" hint-placeholder-count="4">
+        <div style="display:flex;flex-direction:column;gap:14px">
+          <span style="font-family:'Roboto Mono',monospace;font-weight:500;font-size:13px;letter-spacing:0.06em;text-transform:uppercase;color:#FFFFFF">{{ c.h }}</span>
+          <sc-for list="{{ c.links }}" as="lk" hint-placeholder-count="4"><a href="#" style="font-size:15px;color:#D1DCE6" style-hover="color:#2EB2FF">{{ lk }}</a></sc-for>
+        </div>
+      </sc-for>
+    </div>
+    <div style="display:flex;flex-wrap:wrap;gap:12px 24px;justify-content:space-between;font-size:14px;border-top:1px solid #4C5A6E;padding-top:28px"><span>© 2026 Mitchell Strategies</span><span>Privacy · Terms</span></div>
+  </footer>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;autoplay&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Hero&quot;},&quot;cycleSeconds&quot;:{&quot;editor&quot;:&quot;range&quot;,&quot;min&quot;:3,&quot;max&quot;:12,&quot;step&quot;:1,&quot;unit&quot;:&quot;s&quot;,&quot;default&quot;:6,&quot;tsType&quot;:&quot;number&quot;,&quot;section&quot;:&quot;Hero&quot;},&quot;trigger&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;hover&quot;,&quot;click&quot;],&quot;default&quot;:&quot;hover&quot;,&quot;tsType&quot;:&quot;'hover'|'click'&quot;,&quot;section&quot;:&quot;Nav&quot;},&quot;preview&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;live&quot;,&quot;top&quot;,&quot;scrolled&quot;],&quot;default&quot;:&quot;live&quot;,&quot;tsType&quot;:&quot;'live'|'top'|'scrolled'&quot;,&quot;section&quot;:&quot;Nav&quot;}}">
+class Component extends DCLogic {
+  state = { i: 0, tick: 0, paused: false, locked: false };
+  componentDidMount() { this.start(); }
+  componentWillUnmount() { clearInterval(this.t); }
+  start() {
+    clearInterval(this.t);
+    if (!(this.props.autoplay ?? true) || this.state.locked) return;
+    this.t = setInterval(() => { if (!this.state.paused) this.setState(s => ({ i: (s.i + 1) % 3, tick: s.tick + 1 })); }, (this.props.cycleSeconds ?? 6) * 1000);
+  }
+  renderVals() {
+    const S = this.state, P = this.props;
+    const nb = s => s.replace(/ (\S+)$/, '\u00a0$1');
+    const px = id => 'https://images.pexels.com/photos/' + id + '/pexels-photo-' + id + '.jpeg?auto=compress&cs=tinysrgb&w=1600';
+    const auto = (P.autoplay ?? true) && !S.locked, secs = P.cycleSeconds ?? 6;
+    // Service-page template: swap this list (and the hero copy) for each service page.
+    const offers = [
+      { num: '01', name: 'Organic & paid social', phrase: 'grows your following.', desc: 'Organic posts and paid campaigns working together to engage your audience and grow it.', img: px(4350217), slot: 'dm-hero-social', alt: 'Friends checking social media on their phones in a cafe' },
+      { num: '02', name: 'Email & SMS', phrase: 'lands in the inbox.', desc: 'Campaigns that convert, and keep customers connected to your brand long after the first sale.', img: px(4350099), slot: 'dm-hero-email', alt: 'Woman reading a message on her phone' },
+      { num: '03', name: 'SEO & search ads', phrase: 'gets you found.', desc: 'Current optimization techniques and paid search campaigns that raise your visibility and bring in traffic.', img: px(6801872), slot: 'dm-hero-seo', alt: 'Hands reviewing marketing charts' }
+    ];
+    const plans = [
+      { kicker: 'Grow organically', name: 'Digital Marketing Bundle', desc: "Build a strong online presence and grow your audience without paying for every click. We pair proven, ethical SEO with organic social media, email marketing and other tools that draw in the people you want and keep them engaged. What you get is a digital footprint that feels authentic and earns trust." },
+      { kicker: 'Grow with ads', name: 'Paid Advertising', desc: "Get a better return on investment (ROI) from every ad dollar. Our team builds each campaign to reach your target audience, then engage and convert them. Close attention to detail and a data-driven approach drive the results." }
+    ];
+    const steps = [
+      { n: '01', t: 'Diagnosis & strategic planning', d: "A good strategy starts with an honest diagnosis. We dig into your brand and your data to see what's working, what isn't, and where the untapped opportunities are. From there, our strategic planning framework lays the groundwork to grow your business into a 7- or 8-figure company." },
+      { n: '02', t: 'Test & verify benchmarks', d: "Once you're live, we collect data, find the top-performing variables and keep optimizing. With that data in hand, we set clear target metrics inside your ad funnel, which gives us a path to scale." },
+      { n: '03', t: 'Scale', d: "When we've hit our KPIs, we map your revenue goals and growth path against performance and inventory. Then we raise ad spend and push your brand toward its revenue milestones." }
+    ];
+    const pick = i => { clearInterval(this.t); this.setState({ i, locked: true }); };
+    const cur = offers[S.i];
+    return {
+      navTrigger: P.trigger ?? 'hover', navPreview: P.preview ?? 'live',
+      pause: () => { if (auto) this.setState({ paused: true }); },
+      resume: () => { if (auto) { this.setState(s => ({ paused: false, tick: s.tick + 1 })); this.start(); } },
+      phrase: React.createElement('span', { key: S.i, style: { display: 'inline-block', textWrap: 'balance', animation: 'ms-rise 600ms cubic-bezier(.2,.7,.2,1) both' } }, cur.phrase.replace(/ (\S+)$/, '\u00A0$1')),
+      cur, offerCount: offers.length,
+      offers: offers.map((o, i) => {
+        const on = S.i === i;
+        return { ...o, desc: nb(o.desc), expanded: String(on), hidden: String(!on), op: on ? 1 : 0, scale: on ? 1 : 1.06, pe: on ? 'auto' : 'none',
+          fg: on ? '#1C2A3E' : '#4C5A6E', sub: on ? '#1C2A3E' : '#4C5A6E', numColor: on ? '#2EB2FF' : '#4C5A6E', onClick: () => pick(i),
+          bar: React.createElement('span', { key: on ? S.i + '-' + S.tick + '-' + S.paused : 'off', 'aria-hidden': true, style: { position: 'absolute', left: 0, right: 0, top: -1, height: 2, background: on ? '#2EB2FF' : 'transparent', transformOrigin: 'left', animation: on && auto && !S.paused ? `ms-prog ${secs}s linear forwards` : 'none' } }) };
+      }),
+      plans: plans.map(p => ({ ...p, desc: nb(p.desc) })),
+      cases: ['0 64px 0 0', '0', '0 0 0 64px'].map((r, i) => ({ r, slot: 'dm-case-' + (i + 1) })),
+      steps: steps.map(s => ({ ...s, d: nb(s.d) })),
+      footerCols: [
+        { h: 'Services', links: ['Branding & Creative', 'Web Development', 'Digital Marketing'] },
+        { h: 'Plans', links: ['Unlimited Creative', 'Digital Marketing Bundle', 'Paid Advertising'] },
+        { h: 'Resources', links: ['Digital District', 'Shop', "FAQ's", 'Reviews'] },
+        { h: 'Company', links: ['About us', 'Work', 'Careers', 'Contact us'] }
+      ]
+    };
+  }
+}
+</script>
+</body>
+</html>
