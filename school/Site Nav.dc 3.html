@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&display=swap" rel="stylesheet">
+<style>a{color:#173A66;text-decoration:none}a:hover{color:#2D6CB5}h1,h2,h3,h4,blockquote,div,a,button{text-wrap:balance}p,li,blockquote,figcaption,dd,span{text-wrap:pretty}</style>
+</helmet>
+<div style="font-family:-apple-system,BlinkMacSystemFont,'SF Pro Text','Helvetica Neue',system-ui,sans-serif;-webkit-font-smoothing:antialiased;">
+<header data-screen-label="Nav" onMouseLeave="{{ closeSoon }}" style="position:fixed;top:0;left:0;right:0;z-index:60;pointer-events:none;">
+  <sc-if value="{{ utility }}" hint-placeholder-val="{{ false }}">
+    <div style="pointer-events:auto;background:#0F2747;color:#C9D6E6;font-size:13px;overflow:hidden;height:{{ utilH }};transition:height 320ms cubic-bezier(.2,.7,.2,1);">
+      <div style="max-width:1320px;margin:0 auto;height:36px;padding:0 clamp(20px,3vw,40px);display:flex;justify-content:space-between;align-items:center;gap:24px;">
+        <div style="display:flex;gap:22px;min-width:0;overflow:hidden;">
+          <a href="https://maps.google.com/?q=1120+Spa+Road+Annapolis+MD+21403" style="color:#C9D6E6;white-space:nowrap;">1120 Spa Road, Annapolis, MD&nbsp;21403</a>
+          <a href="tel:4102691955" style="color:#C9D6E6;white-space:nowrap;">(410) 269-1955</a>
+        </div>
+        <div style="display:flex;gap:20px;font-weight:600;flex:none;">
+          <a href="Donate.dc.html" style="color:#fff;white-space:nowrap;">Donate</a>
+          <a href="https://www.stmartinsannapolis.org/" style="color:#fff;white-space:nowrap;">Church ↗</a>
+        </div>
+      </div>
+    </div>
+  </sc-if>
+  <div style="padding:{{ outerPad }};transition:padding 320ms cubic-bezier(.2,.7,.2,1);">
+    <div style="position:relative;margin:0 auto;max-width:{{ barMax }};pointer-events:auto;transition:max-width 320ms cubic-bezier(.2,.7,.2,1);">
+      <div style="display:flex;align-items:center;gap:28px;height:{{ barH }};padding:{{ barPad }};background:{{ barBg }};border-radius:{{ barRadius }};box-shadow:{{ barShadow }};border-bottom:{{ barRule }};transition:all 320ms cubic-bezier(.2,.7,.2,1);">
+        <a href="Homepage - Concept D v2.dc.html" aria-label="Saint Martin's Lutheran School of Annapolis, home" style="position:relative;display:block;flex:none;width:{{ logoBoxW }};height:48px;transition:width 320ms cubic-bezier(.2,.7,.2,1);">
+          <img src="assets/logo/wordmark-white-44-2x.png" srcset="assets/logo/wordmark-white-44-2x.png 2x, assets/logo/wordmark-white-44-3x.png 3x" alt="" style="position:absolute;left:0;top:0;bottom:0;margin:auto 0;height:44px;width:auto;opacity:{{ logoReverseOp }};transition:opacity 200ms;">
+          <img src="assets/logo/wordmark-44-2x.png" srcset="assets/logo/wordmark-44-2x.png 2x, assets/logo/wordmark-44-3x.png 3x" alt="" style="position:absolute;left:0;top:0;bottom:0;margin:auto 0;height:44px;width:auto;opacity:{{ logoPrimaryOp }};transition:opacity 200ms;">
+          <img src="assets/logo/bulldog-navy-42-2x.png" srcset="assets/logo/bulldog-navy-42-2x.png 2x, assets/logo/bulldog-navy-42-3x.png 3x" alt="" style="position:absolute;left:0;top:0;bottom:0;margin:auto 0;height:42px;width:auto;opacity:{{ logoMarkOp }};transition:opacity 200ms;">
+        </a>
+        <sc-if value="{{ desktop }}" hint-placeholder-val="{{ true }}">
+          <nav aria-label="Main" style="display:flex;align-items:center;gap:clamp(16px,2vw,30px);flex:1;min-width:0;">
+            <sc-for list="{{ items }}" as="it" hint-placeholder-count="6">
+              <div onMouseEnter="{{ it.onEnter }}" style="position:relative;">
+                <a href="{{ it.h }}" onClick="{{ it.onClick }}" aria-expanded="{{ it.expanded }}" aria-haspopup="{{ it.hasMenu }}" style="display:block;padding:10px 0;font-size:15px;font-weight:600;line-height:1;letter-spacing:-0.01em;white-space:nowrap;color:{{ it.color }};transition:color 160ms;">{{ it.label }}</a>
+                <span aria-hidden="true" style="position:absolute;left:0;right:0;bottom:2px;height:2px;border-radius:2px;background:#2D6CB5;transform-origin:left;transform:{{ it.lineScale }};transition:transform 220ms cubic-bezier(.2,.7,.2,1);"></span>
+              </div>
+            </sc-for>
+          </nav>
+          <div style="display:flex;align-items:center;gap:10px;flex:none;">
+            <a href="#" title="Opens Blackbaud tuition payment" style="display:inline-flex;align-items:center;height:42px;padding:0 18px;border-radius:999px;border:1px solid {{ btn2Border }};color:{{ btn2Color }};font-size:15px;font-weight:600;white-space:nowrap;transition:all 200ms;" style-active="transform:scale(0.96);">Pay tuition</a>
+            <a href="Request a Tour.dc.html" style="display:inline-flex;align-items:center;height:42px;padding:0 20px;border-radius:999px;background:{{ btn1Bg }};color:{{ btn1Color }};font-size:15px;font-weight:600;white-space:nowrap;transition:all 200ms;" style-active="transform:scale(0.96);">Schedule a visit</a>
+          </div>
+        </sc-if>
+        <sc-if value="{{ mobile }}" hint-placeholder-val="{{ false }}">
+          <div style="flex:1;"></div>
+          <button onClick="{{ toggleMobile }}" aria-expanded="{{ mobileOpenStr }}" style="height:44px;padding:0 20px;border-radius:999px;border:1px solid {{ btn2Border }};background:transparent;color:{{ btn2Color }};font-family:inherit;font-size:15px;font-weight:600;cursor:pointer;">{{ menuBtnLabel }}</button>
+        </sc-if>
+      </div>
+
+      <sc-for list="{{ menus }}" as="m" hint-placeholder-count="0">
+        <div role="region" aria-label="{{ m.label }} menu" onMouseEnter="{{ keepOpen }}" style="position:absolute;left:0;right:0;top:100%;padding-top:10px;opacity:{{ m.op }};visibility:{{ m.vis }};transform:{{ m.y }};transition:opacity 200ms, transform 240ms cubic-bezier(.2,.7,.2,1), visibility 200ms;">
+          <div style="max-width:1120px;margin:0 auto;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.05fr);background:#fff;border-radius:16px;overflow:hidden;box-shadow:0 30px 60px -24px rgba(15,39,71,.35), 0 0 0 1px rgba(15,39,71,.06);">
+            <div style="padding:32px 28px 28px;display:grid;grid-template-columns:{{ m.cols }};gap:4px;align-content:start;">
+              <div style="grid-column:1/-1;font-size:12px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:#2D6CB5;padding:0 14px 12px;">{{ m.label }}</div>
+              <sc-for list="{{ m.links }}" as="l" hint-placeholder-count="3">
+                <a href="{{ l.h }}" style="display:grid;gap:4px;padding:14px;border-radius:12px;align-content:start;transition:background 160ms;" style-hover="background:#EEF3F9;">
+                  <span style="font-family:Newsreader,Georgia,serif;font-size:20px;line-height:1.2;letter-spacing:-0.01em;color:#173A66;">{{ l.t }}</span>
+                  <span style="font-size:14px;line-height:1.5;color:#4A5260;">{{ l.d }}</span>
+                </a>
+              </sc-for>
+              <a href="{{ m.h }}" style="grid-column:1/-1;display:inline-flex;gap:6px;padding:14px;font-size:15px;font-weight:600;color:#2D6CB5;">{{ m.all }} →</a>
+            </div>
+            <div style="background:#F6F5F1;padding:32px;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px;align-content:start;">
+              <sc-for list="{{ m.cards }}" as="c" hint-placeholder-count="2">
+                <a href="{{ c.h }}" style="display:grid;gap:12px;align-content:start;" style-hover="opacity:.85;">
+                  <img src="{{ c.img }}" alt="{{ c.alt }}" style="width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:12px;display:block;">
+                  <span style="font-size:12px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:#2D6CB5;">{{ c.eyebrow }}</span>
+                  <span style="font-size:16px;font-weight:600;line-height:1.3;letter-spacing:-0.01em;color:#1F2328;">{{ c.title }}</span>
+                  <span style="font-size:14px;font-weight:600;color:#2D6CB5;">{{ c.cta }} →</span>
+                </a>
+              </sc-for>
+            </div>
+          </div>
+        </div>
+      </sc-for>
+
+      <sc-if value="{{ mobilePanel }}" hint-placeholder-val="{{ false }}">
+        <div style="position:absolute;left:0;right:0;top:100%;padding:{{ mPanelPad }};">
+          <div style="background:#fff;border-radius:16px;box-shadow:0 30px 60px -24px rgba(15,39,71,.35), 0 0 0 1px rgba(15,39,71,.06);padding:12px 20px 20px;max-height:calc(100dvh - 110px);overscroll-behavior:contain;overflow:auto;display:grid;">
+            <sc-for list="{{ mobileGroups }}" as="g" hint-placeholder-count="4">
+              <div style="padding:14px 0;border-bottom:1px solid rgba(23,58,102,0.1);display:grid;gap:6px;">
+                <span style="font-family:Newsreader,Georgia,serif;font-size:22px;color:#173A66;">{{ g.label }}</span>
+                <sc-for list="{{ g.links }}" as="l" hint-placeholder-count="3">
+                  <a href="{{ l.h }}" style="padding:9px 0;font-size:16px;font-weight:500;color:#4A5260;">{{ l.t }}</a>
+                </sc-for>
+              </div>
+            </sc-for>
+            <a href="Tuition and Financial Aid.dc.html" style="padding:16px 0;border-bottom:1px solid rgba(23,58,102,0.1);font-family:Newsreader,Georgia,serif;font-size:22px;color:#173A66;">Tuition &amp; Aid</a>
+            <a href="Calendar.dc.html" style="padding:16px 0;font-family:Newsreader,Georgia,serif;font-size:22px;color:#173A66;">Calendar</a>
+            <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:8px;">
+              <a href="#" style="display:grid;place-items:center;height:50px;border-radius:999px;border:1px solid #173A66;color:#173A66;font-weight:600;">Pay tuition</a>
+              <a href="Request a Tour.dc.html" style="display:grid;place-items:center;height:50px;border-radius:999px;background:#2D6CB5;color:#fff;font-weight:600;">Schedule a visit</a>
+            </div>
+          </div>
+        </div>
+      </sc-if>
+    </div>
+  </div>
+</header>
+<sc-if value="{{ spacer }}" hint-placeholder-val="{{ false }}">
+  <div aria-hidden="true" style="height:{{ spacerH }};"></div>
+</sc-if>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;tone&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;overlay&quot;,&quot;solid&quot;],&quot;default&quot;:&quot;overlay&quot;,&quot;tsType&quot;:&quot;'overlay'|'solid'&quot;},&quot;utility&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:false,&quot;tsType&quot;:&quot;boolean&quot;}}">
+class Component extends DCLogic {
+  state = { scrolled: false, open: null, mobile: false, mobileOpen: false };
+  MENUS = [
+    { key: 'about', h: 'About.dc.html', label: 'About', all: "All about Saint\u00a0Martin's", cols: 'minmax(0,1fr)',
+      links: [{ h: 'About.dc.html', t: "About Saint\u00a0Martin's", d: 'A Christ-centered PreK–8 school in Annapolis since\u00a01963.' }, { h: 'Meet the Faculty.dc.html', t: 'Meet the faculty', d: 'The teachers who know every child by\u00a0name.' }, { h: 'Board Information.dc.html', t: 'Board information', d: 'Leadership, governance, and meeting\u00a0notes.' }, { h: 'Alumni.dc.html', t: 'Alumni', d: 'Stay connected with the Bulldog\u00a0family.' }],
+      cards: [{ h: 'Meet the Faculty.dc.html', img: 'assets/cd/07200.jpg', alt: 'A teacher helping a student with his workbook', eyebrow: 'Faculty', title: 'Teachers who walk alongside every\u00a0student', cta: 'Meet the faculty' }, { h: 'About.dc.html', img: 'assets/cd/07104.jpg', alt: 'The Saint Martin\u2019s Bulldogs seal on the gym wall', eyebrow: 'Since 1963', title: 'More than 60 years of faith-filled\u00a0learning', cta: 'Our story' }] },
+    { key: 'adm', h: 'Admissions.dc.html', label: 'Admissions', all: 'Admissions overview', cols: 'minmax(0,1fr)',
+      links: [{ h: 'Request a Tour.dc.html', t: 'Request a tour', d: 'See classrooms, chapel, and campus in\u00a0person.' }, { h: 'Open House.dc.html', t: 'Open house', d: 'Meet teachers and families at our next\u00a0event.' }, { h: 'Admissions.dc.html#apply', t: 'Apply now', d: 'Start your application online in a few\u00a0minutes.' }, { h: 'School Forms.dc.html', t: 'School forms', d: 'Enrollment paperwork, all in one\u00a0place.' }],
+      cards: [{ h: 'Request a Tour.dc.html', img: 'assets/cd/07215.jpg', alt: 'A smiling student at his desk', eyebrow: 'Visit', title: 'Come see a Saint\u00a0Martin\u2019s school\u00a0day', cta: 'Schedule a visit' }, { h: 'Tuition and Financial Aid.dc.html', img: 'assets/cd/07203.jpg', alt: 'A student writing at her desk', eyebrow: 'Tuition', title: 'Tuition, financial aid, and\u00a0scholarships', cta: 'View tuition' }] },
+    { key: 'aca', h: 'Academics.dc.html', label: 'Academics', all: 'Academics overview', cols: 'minmax(0,1fr)',
+      links: [{ h: 'Academics.dc.html', t: 'Academics overview', d: 'Rigorous, grade-level instruction in every\u00a0subject.' }, { h: 'Student Experience.dc.html', t: 'Student experience', d: 'Chapel, specials, recess, and real\u00a0friendships.' }, { h: 'Extended Day.dc.html', t: 'Extended Day', d: 'Supervised care before and after the\u00a0bell.' }],
+      cards: [{ h: 'Student Experience.dc.html', img: 'assets/cd/07143.jpg', alt: 'A teacher leading a math game at the smart board', eyebrow: 'In the classroom', title: 'Lessons that get every student\u00a0involved', cta: 'Student experience' }, { h: 'Academics.dc.html', img: 'assets/cd/07139.jpg', alt: 'Two students working together on a laptop', eyebrow: 'Middle school', title: 'Ready for high school and\u00a0beyond', cta: 'See academics' }] },
+    { key: 'par', h: 'Parent Portal.dc.html', label: 'Parent Portal', all: 'Parent portal home', cols: 'repeat(2,minmax(0,1fr))',
+      links: [{ h: 'School Forms.dc.html', t: 'Forms & policies', d: '' }, { h: 'Student Preparations.dc.html', t: 'Student preparations', d: '' }, { h: 'Fundraisers and Events.dc.html', t: 'Fundraisers & events', d: '' }, { h: 'Meet the Faculty.dc.html', t: 'Staff emails', d: '' }, { h: 'Sponsors.dc.html', t: 'Sponsors', d: '' }, { h: 'Bulletin Archive.dc.html', t: 'Bulldog Bulletin', d: '' }],
+      cards: [{ h: 'Calendar.dc.html', img: 'assets/cd/07206.jpg', alt: 'Students working on laptops in class', eyebrow: 'Calendar', title: 'Upcoming days off, events, and\u00a0chapel', cta: 'View calendar' }, { h: 'Bulletin Archive.dc.html', img: 'assets/cd/07204.jpg', alt: 'A student reading at her desk', eyebrow: 'Bulletin', title: 'This week in the Bulldog\u00a0Bulletin', cta: 'Read the latest' }] },
+  ];
+  NAV = [{ label: 'About', menu: 'about', h: 'About.dc.html' }, { label: 'Admissions', menu: 'adm', h: 'Admissions.dc.html' }, { label: 'Academics', menu: 'aca', h: 'Academics.dc.html' }, { label: 'Tuition & Aid', h: 'Tuition and Financial Aid.dc.html' }, { label: 'Calendar', h: 'Calendar.dc.html' }, { label: 'Parent Portal', menu: 'par', h: 'Parent Portal.dc.html' }];
+  componentDidMount() {
+    this.onScroll = () => { const s = window.scrollY > 24; if (s !== this.state.scrolled) this.setState({ scrolled: s }); };
+    this.mq = window.matchMedia('(max-width: 1080px)');
+    this.onMq = () => this.setState({ mobile: this.mq.matches, open: null, mobileOpen: false });
+    this.onKey = e => { if (e.key === 'Escape') this.setState({ open: null, mobileOpen: false }); };
+    this.onDoc = e => { if (!(e.target.closest && e.target.closest('header'))) this.setState({ open: null }); };
+    window.addEventListener('scroll', this.onScroll, { passive: true });
+    this.mq.addEventListener('change', this.onMq);
+    document.addEventListener('keydown', this.onKey);
+    document.addEventListener('click', this.onDoc);
+    this.onScroll(); this.onMq();
+  }
+  componentWillUnmount() {
+    window.removeEventListener('scroll', this.onScroll); this.mq.removeEventListener('change', this.onMq);
+    document.removeEventListener('keydown', this.onKey); document.removeEventListener('click', this.onDoc); clearTimeout(this.t);
+  }
+  renderVals() {
+    const P = this.props;
+    const overlay = (P.tone ?? 'overlay') === 'overlay';
+    const utility = !!P.utility;
+    const { open, mobile, mobileOpen } = this.state;
+    const scrolled = this.state.scrolled;
+    const solid = scrolled || !!open || mobileOpen || !overlay;
+    const light = !solid;
+    const setOpen = k => { clearTimeout(this.t); if (this.state.open !== k) this.setState({ open: k }); };
+    const items = this.NAV.map(d => {
+      const isOpen = d.menu && open === d.menu;
+      return {
+        label: d.label, h: d.h, hasMenu: d.menu ? 'true' : undefined, expanded: d.menu ? String(!!isOpen) : undefined,
+        color: light ? '#ffffff' : (isOpen ? '#2D6CB5' : '#173A66'),
+        lineScale: isOpen ? 'scaleX(1)' : 'scaleX(0)',
+        onEnter: () => setOpen(d.menu || null),
+        onClick: e => { if (!d.menu) return; if (this.state.open !== d.menu) { e.preventDefault(); setOpen(d.menu); } },
+      };
+    });
+    const show = k => open === k && !mobile;
+    const menus = this.MENUS.map(m => ({ ...m, op: show(m.key) ? 1 : 0, vis: show(m.key) ? 'visible' : 'hidden', y: show(m.key) ? 'translateY(0)' : 'translateY(-6px)' }));
+    const barTop = mobile ? 72 : 88;
+    return {
+      items, menus, desktop: !mobile, mobile, utility, mobilePanel: mobile && mobileOpen, mobileOpenStr: String(mobileOpen),
+      mobileGroups: this.MENUS.map(m => ({ label: m.label, links: [{ t: m.all, h: m.h }, ...m.links] })),
+      utilH: scrolled ? '0px' : '36px',
+      outerPad: scrolled ? '14px 16px 0' : '0px 0px 0',
+      barMax: scrolled ? '1120px' : '100%',
+      barH: scrolled ? (mobile ? '60px' : '66px') : barTop + 'px',
+      barPad: scrolled ? (mobile ? '0 8px 0 16px' : '0 12px 0 22px') : '0 clamp(20px,3vw,40px)',
+      mPanelPad: scrolled ? '10px 0 0' : '10px 12px 0',
+      barBg: solid ? '#ffffff' : 'rgba(255,255,255,0)',
+      barRadius: scrolled ? '16px' : '0px',
+      barShadow: scrolled ? '0 18px 40px -18px rgba(15,39,71,.32), 0 0 0 1px rgba(15,39,71,.06)' : 'none',
+      barRule: solid && !scrolled ? '1px solid rgba(23,58,102,.08)' : '1px solid transparent',
+      logoBoxW: scrolled ? '40px' : '150px',
+      logoReverseOp: light ? 1 : 0,
+      logoPrimaryOp: solid && !scrolled ? 1 : 0,
+      logoMarkOp: scrolled ? 1 : 0,
+      btn1Bg: light ? '#ffffff' : '#2D6CB5', btn1Color: light ? '#173A66' : '#ffffff',
+      btn2Border: light ? 'rgba(255,255,255,.6)' : 'rgba(23,58,102,.3)', btn2Color: light ? '#ffffff' : '#173A66',
+      closeSoon: () => { clearTimeout(this.t); this.t = setTimeout(() => this.setState({ open: null }), 160); },
+      keepOpen: () => clearTimeout(this.t),
+      toggleMobile: () => this.setState(s => ({ mobileOpen: !s.mobileOpen })),
+      menuBtnLabel: mobileOpen ? 'Close' : 'Menu',
+      spacer: !overlay, spacerH: (barTop + (utility ? 36 : 0)) + 'px',
+    };
+  }
+}
+</script>
+</body>
+</html>

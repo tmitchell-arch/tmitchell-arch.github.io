@@ -1,0 +1,957 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+<script src="../portfolio-guard.js" defer></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@600;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet">
+<style>
+  body { margin: 0; }
+  a { color: #7A2049; }
+  a:hover { color: #C9A968; }
+  div, p, span, h1, h2, h3 { text-wrap: pretty; }
+</style>
+<script src="./image-slot.js"></script>
+<template id="__bundler_thumbnail"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><rect width="100" height="100" fill="#7A2049"></rect><text x="50" y="62" text-anchor="middle" font-family="sans-serif" font-weight="700" font-size="30" fill="#F7ECD6">NSL</text></svg></template>
+</helmet>
+<x-import component-from-global-scope="deck-stage" from="./deck-stage.js" width="1920" height="1080" hint-size="100%,100%" data-uneditable="">
+
+<section data-document-role="page" data-label="Cover" data-speaker-notes="Welcome members as they take their seats; hold on this slide until the meeting is called to order." style="position:relative;width:1920px;height:1080px;background:#3A1420;overflow:hidden;font-family:Inter,sans-serif;" data-om-slide-id="260d6a7b">
+  <div style="position:absolute;top:0;left:0;width:1920px;height:1080px;background:#3A1420;"></div>
+  <img src="assets/photo-family-backyard-cutout.png" style="position:absolute;width:1840px;height:auto;object-fit:contain;right:-260px;bottom:-110px;-webkit-mask-image:linear-gradient(to right, transparent 0%, transparent 18%, black 48%);mask-image:linear-gradient(to right, transparent 0%, transparent 18%, black 48%);">
+  <div style="position:relative;z-index:2;height:1080px;max-width:1050px;">
+    <img src="assets/logo-gold.png" style="position:absolute;top:70px;left:55px;height:600px;width:auto;">
+    <div style="position:absolute;top:560px;left:100px;max-width:900px;">
+      <div style="font-family:Inter,sans-serif;font-weight:600;font-size:24px;letter-spacing:0.18em;color:#C9A968;margin-bottom:24px;">SEPTEMBER 23, 2026 · SUITLAND, MARYLAND</div>
+      <div style="font-family:Manrope,sans-serif;font-weight:800;font-size:96px;line-height:1.02;color:#F7ECD6;white-space:nowrap;">Annual Meeting</div>
+      <div style="font-family:Inter,sans-serif;font-weight:400;font-size:28px;color:#F7ECD6;opacity:0.85;margin-top:28px;max-width:660px;line-height:1.5;">A member-owned institution, built on the same promise our name makes — stability, opportunity, and long-term growth for the people we serve.</div>
+    </div>
+  </div>
+</section>
+
+<section data-document-role="page" data-label="Agenda" data-speaker-notes="Walk through tonight's program in order, from reception through benediction." style="position:relative;width:1920px;height:1080px;background:#3A1420;overflow:hidden;font-family:Inter,sans-serif;" data-om-slide-id="5bb0d562">
+  <div style="padding:110px 220px 0 220px;">
+    <div style="font-family:Inter,sans-serif;font-weight:600;font-size:22px;letter-spacing:0.18em;color:#C9A968;margin-bottom:20px;">TONIGHT'S AGENDA</div>
+    <div style="font-family:Manrope,sans-serif;font-weight:800;font-size:56px;color:#F7ECD6;margin-bottom:52px;">Wednesday, September 23, 2026</div>
+    <div style="display:flex;flex-direction:column;max-width:1500px;">
+      <div style="display:flex;align-items:baseline;gap:36px;padding:18px 0;border-bottom:1px solid rgba(247,236,214,0.15);">
+        <span style="font-family:Manrope,sans-serif;font-weight:700;font-size:24px;color:#C9A968;width:230px;flex-shrink:0;">6:00 – 7:00 PM</span><span style="font-family:Inter,sans-serif;font-weight:500;font-size:26px;color:#F7ECD6;">Reception <span style="opacity:0.55;font-weight:400;">(survey handed out)</span></span>
+      </div>
+      <div style="display:flex;align-items:baseline;gap:36px;padding:18px 0;border-bottom:1px solid rgba(247,236,214,0.15);">
+        <span style="font-family:Manrope,sans-serif;font-weight:700;font-size:24px;color:#C9A968;width:230px;flex-shrink:0;">7:00 – 7:05 PM</span><span style="font-family:Inter,sans-serif;font-weight:500;font-size:26px;color:#F7ECD6;">Ministry of Praise <span style="opacity:0.55;font-weight:400;">— Sis. Cunningham, Sis. Cherry &amp; Sis. Wigfall</span></span>
+      </div>
+      <div style="display:flex;align-items:baseline;gap:36px;padding:18px 0;border-bottom:1px solid rgba(247,236,214,0.15);">
+        <span style="font-family:Manrope,sans-serif;font-weight:700;font-size:24px;color:#C9A968;width:230px;flex-shrink:0;">7:06 – 7:10 PM</span><span style="font-family:Inter,sans-serif;font-weight:500;font-size:26px;color:#F7ECD6;">Opening Prayer <span style="opacity:0.55;font-weight:400;">— Bro. Mitchell</span></span>
+      </div>
+      <div style="display:flex;align-items:baseline;gap:36px;padding:18px 0;border-bottom:1px solid rgba(247,236,214,0.15);">
+        <span style="font-family:Manrope,sans-serif;font-weight:700;font-size:24px;color:#C9A968;width:230px;flex-shrink:0;">7:10 – 7:30 PM</span><span style="font-family:Inter,sans-serif;font-weight:500;font-size:26px;color:#F7ECD6;">Welcome <span style="opacity:0.55;font-weight:400;">— board introductions, video clip, member survey, Through the Years presentation</span></span>
+      </div>
+      <div style="display:flex;align-items:baseline;gap:36px;padding:18px 0;border-bottom:1px solid rgba(247,236,214,0.15);">
+        <span style="font-family:Manrope,sans-serif;font-weight:700;font-size:24px;color:#C9A968;width:230px;flex-shrink:0;">7:31 – 8:00 PM</span><span style="font-family:Inter,sans-serif;font-weight:500;font-size:26px;color:#F7ECD6;">Reports <span style="opacity:0.55;font-weight:400;">— minutes, Supervisory Committee, Treasurer, Chairman, President, and updates on Premium Checking &amp; Wellness+</span></span>
+      </div>
+      <div style="display:flex;align-items:baseline;gap:36px;padding:18px 0;border-bottom:1px solid rgba(247,236,214,0.15);">
+        <span style="font-family:Manrope,sans-serif;font-weight:700;font-size:24px;color:#C9A968;width:230px;flex-shrink:0;">8:00 – 8:15 PM</span><span style="font-family:Inter,sans-serif;font-weight:500;font-size:26px;color:#F7ECD6;">Acknowledgements <span style="opacity:0.55;font-weight:400;">— Member</span></span>
+      </div>
+      <div style="display:flex;align-items:baseline;gap:36px;padding:18px 0;">
+        <span style="font-family:Manrope,sans-serif;font-weight:700;font-size:24px;color:#C9A968;width:230px;flex-shrink:0;">8:15 – 8:25 PM</span><span style="font-family:Inter,sans-serif;font-weight:500;font-size:26px;color:#F7ECD6;">Closing Remarks &amp; Benediction <span style="opacity:0.55;font-weight:400;">— Pastor Justin K. Young</span></span>
+      </div>
+    </div>
+  </div>
+  <div style="position:absolute;bottom:40px;left:220px;display:flex;align-items:center;gap:10px;">
+    <img src="assets/icon-mark.png" style="height:20px;width:auto;opacity:0.6;filter:brightness(2);">
+    <span style="font-family:Inter,sans-serif;font-size:13px;font-weight:500;color:#F7ECD6;opacity:0.5;letter-spacing:0.05em;">NSLFCU ANNUAL MEETING 2026</span>
+  </div>
+  <div style="position:absolute;bottom:40px;right:220px;font-family:Inter,sans-serif;font-size:13px;font-weight:500;color:#F7ECD6;opacity:0.5;">03</div>
+</section><section data-document-role="page" data-label="Welcome" data-speaker-notes="Chairman opens the meeting, calls it to order, confirms quorum." style="position:relative;width:1920px;height:1080px;background:#F7ECD6;overflow:hidden;font-family:Inter,sans-serif;" data-om-slide-id="32324a33">
+  <div style="position:absolute;top:0;left:0;width:14px;height:1080px;background:#C9A968;"></div>
+  <div style="padding:140px 220px 0 220px;">
+    <div style="font-family:Inter,sans-serif;font-weight:600;font-size:22px;letter-spacing:0.18em;color:#7A2049;margin-bottom:28px;">CALL TO ORDER</div>
+    <div style="font-family:Manrope,sans-serif;font-weight:700;font-size:64px;color:#241019;line-height:1.15;max-width:1300px;">Welcome, and thank you for being here.</div>
+    <div style="font-family:Inter,sans-serif;font-weight:400;font-size:30px;color:#241019;opacity:0.8;line-height:1.6;max-width:1180px;margin-top:44px;">On behalf of the Board of Directors and staff, welcome to the None Suffer Lack Federal Credit Union Annual Meeting. This evening is for you — the members who make this credit union what it is.</div>
+    <div style="margin-top:60px;display:flex;align-items:center;gap:24px;">
+      <div style="width:64px;height:2px;background:#C9A968;"></div>
+      <div style="font-family:Inter,sans-serif;font-weight:600;font-size:26px;color:#7A2049;">Sis. Patrice Elliott, Vice Chairman</div>
+    </div>
+    <div style="margin-top:28px;font-family:Inter,sans-serif;font-weight:400;font-size:20px;color:#241019;opacity:0.55;">Preceded by Opening Prayer · Bro. Thomas Mitchell &nbsp;·&nbsp; Praise &amp; Worship</div>
+  </div>
+  <div style="position:absolute;bottom:40px;left:220px;display:flex;align-items:center;gap:10px;">
+    <img src="assets/icon-mark.png" style="height:20px;width:auto;opacity:0.5;">
+    <span style="font-family:Inter,sans-serif;font-size:13px;font-weight:500;color:#7A2049;opacity:0.55;letter-spacing:0.05em;">NSLFCU ANNUAL MEETING 2026</span>
+  </div>
+  <div style="position:absolute;bottom:40px;right:220px;font-family:Inter,sans-serif;font-size:13px;font-weight:500;color:#7A2049;opacity:0.55;">02</div>
+</section>
+
+<section data-document-role="page" data-label="Welcome Program" data-speaker-notes="Placeholder — fill in once video and Through the Years content are finalized." style="position:relative;width:1920px;height:1080px;background:#F7ECD6;overflow:hidden;font-family:Inter,sans-serif;" data-om-slide-id="c91174f5">
+  <div style="position:absolute;top:0;left:0;width:14px;height:1080px;background:#C9A968;"></div>
+  <div style="padding:140px 220px 0 220px;">
+    <div style="font-family:Inter,sans-serif;font-weight:600;font-size:22px;letter-spacing:0.18em;color:#7A2049;margin-bottom:28px;">WELCOME · 7:10 – 7:30 PM</div>
+    <div style="font-family:Manrope,sans-serif;font-weight:700;font-size:56px;color:#241019;line-height:1.15;max-width:1300px;">Board Introductions &amp; Program</div>
+    <div style="display:flex;flex-direction:column;gap:20px;margin-top:56px;max-width:1200px;">
+      <div style="background:#FFFFFF;border:2px dashed rgba(122,32,73,0.35);border-radius:18px;padding:28px 36px;font-family:Inter,sans-serif;font-weight:500;font-size:24px;color:#241019;opacity:0.7;">NSLFCU Video Clip — Sis. Testify</div>
+      <div style="background:#FFFFFF;border:2px dashed rgba(122,32,73,0.35);border-radius:18px;padding:28px 36px;font-family:Inter,sans-serif;font-weight:500;font-size:24px;color:#241019;opacity:0.7;">Through the Years — Special Presentation</div>
+    </div>
+    <div style="margin-top:36px;font-family:Inter,sans-serif;font-weight:500;font-size:18px;color:#7A2049;letter-spacing:0.05em;">PLACEHOLDER — CONTENT TO BE ADDED</div>
+  </div>
+  <div style="position:absolute;bottom:40px;left:220px;display:flex;align-items:center;gap:10px;">
+    <img src="assets/icon-mark.png" style="height:20px;width:auto;opacity:0.5;">
+    <span style="font-family:Inter,sans-serif;font-size:13px;font-weight:500;color:#7A2049;opacity:0.55;letter-spacing:0.05em;">NSLFCU ANNUAL MEETING 2026</span>
+  </div>
+</section>
+
+<section data-document-role="page" data-label="Member Survey" data-speaker-notes="Invite members to take the survey; scan the QR code or use the digital banking app." style="position:relative;width:1920px;height:1080px;background:#F7ECD6;overflow:hidden;font-family:Inter,sans-serif;" data-om-slide-id="48a681d5">
+  <div style="position:absolute;top:0;left:0;width:14px;height:1080px;background:#C9A968;"></div>
+  <div style="display:grid;grid-template-columns:1fr 780px;gap:40px;height:1080px;align-items:center;padding:0 100px 0 220px;box-sizing:border-box;">
+    <div>
+      <div style="font-family:Inter,sans-serif;font-weight:600;font-size:22px;letter-spacing:0.18em;color:#7A2049;margin-bottom:24px;">MEMBER SURVEY</div>
+      <div style="font-family:Manrope,sans-serif;font-weight:700;font-size:46px;color:#241019;line-height:1.2;max-width:700px;">Your credit union belongs to you.</div>
+      <div style="font-family:Inter,sans-serif;font-weight:400;font-size:21px;color:#241019;opacity:0.8;line-height:1.55;max-width:660px;margin-top:28px;">As we plan for the year ahead, the board wants to know what would make None Suffer Lack Federal Credit Union the account you reach for first — not just the one you keep on the side.</div>
+      <div style="font-family:Inter,sans-serif;font-weight:400;font-size:21px;color:#241019;opacity:0.8;line-height:1.55;max-width:660px;margin-top:20px;">This survey takes about five minutes. Your answers are confidential and reported only as totals, never individually. Thank you for helping us serve you better.</div>
+      <div style="font-family:Inter,sans-serif;font-weight:600;font-size:20px;color:#7A2049;margin-top:40px;">Scan the QR code to get started, or open the survey right from the digital banking app.</div>
+    </div>
+    <div style="position:relative;height:1080px;display:flex;align-items:center;">
+      <img src="assets/member-survey-qr.png" style="width:750px;height:750px;">
+    </div>
+  </div>
+  <div style="position:absolute;bottom:40px;left:220px;display:flex;align-items:center;gap:10px;">
+    <img src="assets/icon-mark.png" style="height:20px;width:auto;opacity:0.5;">
+    <span style="font-family:Inter,sans-serif;font-size:13px;font-weight:500;color:#7A2049;opacity:0.55;letter-spacing:0.05em;">NSLFCU ANNUAL MEETING 2026</span>
+  </div>
+</section>
+
+<section data-document-role="page" data-label="Minutes" data-speaker-notes="Present 2025 minutes for approval; call for a motion and second." style="position:relative;width:1920px;height:1080px;background:#F7ECD6;overflow:hidden;font-family:Inter,sans-serif;" data-om-slide-id="bf845805" <div="">
+  <div style="padding:140px 220px 0 220px;">
+    <div style="font-family:Inter,sans-serif;font-weight:600;font-size:22px;letter-spacing:0.18em;color:#7A2049;margin-bottom:28px;">ORDER OF BUSINESS · 02</div>
+    <div style="font-family:Manrope,sans-serif;font-weight:700;font-size:60px;color:#241019;line-height:1.15;max-width:1300px;">Approval of the 2025 Annual Meeting Minutes</div>
+    <div style="font-family:Inter,sans-serif;font-weight:400;font-size:28px;color:#241019;opacity:0.8;line-height:1.6;max-width:1100px;margin-top:40px;">The minutes from our September 24, 2025 Annual Meeting have been made available to members for review. The Chair now calls for a motion to approve the minutes as recorded.</div>
+    <div style="margin-top:32px;display:flex;align-items:center;gap:24px;">
+      <div style="width:64px;height:2px;background:#C9A968;"></div>
+      <div style="font-family:Inter,sans-serif;font-weight:600;font-size:26px;color:#7A2049;">Sis. Renita Wigfall, Secretary</div>
+    </div>
+    <div style="display:flex;gap:60px;margin-top:64px;">
+      <div style="background:#FFFFFF;border-radius:20px;padding:36px 44px;flex:1;">
+        <div style="font-family:Inter,sans-serif;font-weight:600;font-size:20px;letter-spacing:0.1em;color:#7A2049;margin-bottom:12px;">MOTION</div>
+        <div style="font-family:Inter,sans-serif;font-weight:500;font-size:26px;color:#241019;">To approve the 2025 minutes as presented</div>
+      </div>
+      <div style="background:#FFFFFF;border-radius:20px;padding:36px 44px;flex:1;">
+        <div style="font-family:Inter,sans-serif;font-weight:600;font-size:20px;letter-spacing:0.1em;color:#7A2049;margin-bottom:12px;">SECOND</div>
+        <div style="font-family:Inter,sans-serif;font-weight:500;font-size:26px;color:#241019;">Awaiting a second from the floor</div>
+      </div>
+    </div>
+  </div>
+  <div style="position:absolute;bottom:40px;left:220px;display:flex;align-items:center;gap:10px;">
+    <img src="assets/icon-mark.png" style="height:20px;width:auto;opacity:0.5;">
+    <span style="font-family:Inter,sans-serif;font-size:13px;font-weight:500;color:#7A2049;opacity:0.55;letter-spacing:0.05em;">NSLFCU ANNUAL MEETING 2026</span>
+  </div>
+  <div style="position:absolute;bottom:40px;right:220px;font-family:Inter,sans-serif;font-size:13px;font-weight:500;color:#7A2049;opacity:0.55;">04</div>
+</section>
+
+<section data-document-role="page" data-label="President Report" data-speaker-notes="President Sis. Toni Hopkins recaps the year's milestones and reaffirms mission." style="position:relative;width:1920px;height:1080px;background:#F7ECD6;overflow:hidden;font-family:Inter,sans-serif;display:flex;" data-om-slide-id="94211005">
+  <div style="width:900px;padding:130px 100px 0 220px;">
+    <div style="font-family:Inter,sans-serif;font-weight:600;font-size:22px;letter-spacing:0.18em;color:#7A2049;margin-bottom:28px;">PRESIDENT'S REPORT</div>
+    <div style="font-family:Manrope,sans-serif;font-weight:700;font-size:52px;color:#241019;line-height:1.2;">Every decision this year carried forward one promise: none suffer lack.</div>
+    <div style="font-family:Inter,sans-serif;font-weight:400;font-size:26px;color:#241019;opacity:0.8;line-height:1.6;margin-top:36px;">From The Heart Church Ministries sponsored this credit union to serve its members and their families — and this year, that mission reached further than ever. We opened new accounts for young families, funded first cars and first homes, and stood beside members through hard seasons.</div>
+    <div style="margin-top:36px;display:flex;align-items:center;gap:24px;">
+      <div style="width:64px;height:2px;background:#C9A968;"></div>
+      <div style="font-family:Inter,sans-serif;font-weight:600;font-size:26px;color:#7A2049;">Sis. Toni Hopkins, President</div>
+    </div>
+  </div>
+  <div style="flex:1;position:relative;">
+    <img src="assets/photo-handshake.jpg" style="position:absolute;top:100px;left:60px;width:820px;height:820px;border-radius:24px;object-fit:cover;">
+  </div>
+  <div style="position:absolute;bottom:40px;left:220px;display:flex;align-items:center;gap:10px;">
+    <img src="assets/icon-mark.png" style="height:20px;width:auto;opacity:0.5;">
+    <span style="font-family:Inter,sans-serif;font-size:13px;font-weight:500;color:#7A2049;opacity:0.55;letter-spacing:0.05em;">NSLFCU ANNUAL MEETING 2026</span>
+  </div>
+  <div style="position:absolute;bottom:40px;right:220px;font-family:Inter,sans-serif;font-size:13px;font-weight:500;color:#7A2049;opacity:0.55;">05</div>
+</section>
+
+<section data-document-role="page" data-label="Staff Recognition" data-speaker-notes="Recognize staff service milestones and contributions this year; introduce the team." style="position:relative;width:1920px;height:1080px;background:#F7ECD6;overflow:hidden;font-family:Inter,sans-serif;" data-om-slide-id="f172dc68">
+  <div style="position:absolute;top:0;left:0;width:14px;height:1080px;background:#C9A968;"></div>
+  <div style="padding:90px 90px 0 220px;">
+    <div style="font-family:Inter,sans-serif;font-weight:600;font-size:20px;letter-spacing:0.18em;color:#7A2049;margin-bottom:16px;">STAFF RECOGNITION</div>
+    <div style="font-family:Manrope,sans-serif;font-weight:700;font-size:44px;color:#241019;line-height:1.2;">Thank You to Our Team</div>
+    <div style="font-family:Inter,sans-serif;font-weight:400;font-size:22px;color:#241019;opacity:0.8;line-height:1.55;max-width:1400px;margin-top:20px;">None Suffer Lack is only as strong as the people behind the counter. Tonight we recognize our staff for their service milestones and for showing up, member after member, with patience and care.</div>
+    <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:32px;max-width:1500px;margin:44px auto 0;">
+      <div style="background:#FFFFFF;border-radius:16px;padding:14px;">
+        <img src="assets/headshot-toni-hopkins.png" style="width:100%;aspect-ratio:4/5;object-fit:cover;object-position:center 12%;border-radius:10px;margin-bottom:14px;">
+        <div style="font-family:Manrope,sans-serif;font-weight:700;font-size:20px;color:#241019;">Sis. Toni Hopkins</div>
+        <div style="font-family:Inter,sans-serif;font-weight:500;font-size:16px;color:#7A2049;margin-top:4px;">President/CEO</div>
+      </div>
+      <div style="background:#FFFFFF;border-radius:16px;padding:14px;">
+        <img src="assets/headshot-noel-jordan.png" style="width:100%;aspect-ratio:4/5;object-fit:cover;object-position:center 12%;border-radius:10px;margin-bottom:14px;">
+        <div style="font-family:Manrope,sans-serif;font-weight:700;font-size:20px;color:#241019;">Sis. Noel Jordan</div>
+        <div style="font-family:Inter,sans-serif;font-weight:500;font-size:16px;color:#7A2049;margin-top:4px;">Member Services Manager</div>
+      </div>
+      <div style="background:#FFFFFF;border-radius:16px;padding:14px;">
+        <img src="assets/headshot-sesan-ogunsemowo.png" style="width:100%;aspect-ratio:4/5;object-fit:cover;object-position:center 12%;border-radius:10px;margin-bottom:14px;">
+        <div style="font-family:Manrope,sans-serif;font-weight:700;font-size:20px;color:#241019;">Bro. Sesan Ogunsemowo</div>
+        <div style="font-family:Inter,sans-serif;font-weight:500;font-size:16px;color:#7A2049;margin-top:4px;">Loan Officer</div>
+      </div>
+      <div style="background:#FFFFFF;border-radius:16px;padding:14px;">
+        <img src="assets/headshot-lashae-walker.png" style="width:100%;aspect-ratio:4/5;object-fit:cover;object-position:center 12%;border-radius:10px;margin-bottom:14px;">
+        <div style="font-family:Manrope,sans-serif;font-weight:700;font-size:20px;color:#241019;">Sis. Lashae Walker</div>
+        <div style="font-family:Inter,sans-serif;font-weight:500;font-size:16px;color:#7A2049;margin-top:4px;">Teller</div>
+      </div>
+    </div>
+  </div>
+  <div style="position:absolute;bottom:40px;left:220px;display:flex;align-items:center;gap:10px;">
+    <img src="assets/icon-mark.png" style="height:20px;width:auto;opacity:0.5;">
+    <span style="font-family:Inter,sans-serif;font-size:13px;font-weight:500;color:#7A2049;opacity:0.55;letter-spacing:0.05em;">NSLFCU ANNUAL MEETING 2026</span>
+  </div>
+</section><section data-document-role="page" data-label="Divider Financials" data-speaker-notes="Transition into financial highlights." style="position:relative;width:1920px;height:1080px;background:#3A1420;overflow:hidden;font-family:Inter,sans-serif;display:flex;align-items:center;" data-om-slide-id="0354619a">
+  <img src="assets/icon-mark.png" style="position:absolute;right:-60px;bottom:-100px;height:640px;width:auto;opacity:0.08;">
+  <div style="padding:0 220px;position:relative;z-index:2;">
+    <div style="font-family:Inter,sans-serif;font-weight:600;font-size:24px;letter-spacing:0.2em;color:#C9A968;margin-bottom:28px;">02 — FINANCIAL HIGHLIGHTS</div>
+    <div style="font-family:Manrope,sans-serif;font-weight:800;font-size:88px;color:#F7ECD6;line-height:1.05;">The Numbers Behind<br>the Mission</div>
+  </div>
+</section>
+
+<section data-document-role="page" data-label="Treasurer Report" data-speaker-notes="Treasurer certifies the financial statements and answers questions." style="position:relative;width:1920px;height:1080px;background:#3A1420;overflow:hidden;font-family:Inter,sans-serif;" data-om-slide-id="af8a5fdd">
+  <div style="padding:140px 220px 0 220px;">
+    <div style="font-family:Inter,sans-serif;font-weight:600;font-size:22px;letter-spacing:0.18em;color:#C9A968;margin-bottom:28px;">ORDER OF BUSINESS · 04</div>
+    <div style="font-family:Manrope,sans-serif;font-weight:700;font-size:60px;color:#F7ECD6;line-height:1.15;max-width:1300px;">Treasurer's Report</div>
+    <div style="font-family:Inter,sans-serif;font-weight:400;font-size:28px;color:#F7ECD6;opacity:0.8;line-height:1.6;max-width:1180px;margin-top:44px;">The Treasurer certifies that the credit union's financial statements have been reviewed and fairly represent our financial position as of fiscal year-end 2026. Full statements are available to any member upon request.</div>
+    <div style="margin-top:60px;display:flex;align-items:center;gap:24px;">
+      <div style="width:64px;height:2px;background:#C9A968;"></div>
+      <div style="font-family:Inter,sans-serif;font-weight:600;font-size:26px;color:#C9A968;">Sis. Nadine Hungerford, Treasurer</div>
+    </div>
+  </div>
+  <div style="position:absolute;bottom:40px;left:220px;display:flex;align-items:center;gap:10px;">
+    <img src="assets/icon-mark.png" style="height:20px;width:auto;opacity:0.6;filter:brightness(2);">
+    <span style="font-family:Inter,sans-serif;font-size:13px;font-weight:500;color:#F7ECD6;opacity:0.5;letter-spacing:0.05em;">NSLFCU ANNUAL MEETING 2026</span>
+  </div>
+  <div style="position:absolute;bottom:40px;right:220px;font-family:Inter,sans-serif;font-size:13px;font-weight:500;color:#F7ECD6;opacity:0.5;">10</div>
+</section><section data-document-role="page" data-label="Financial Position" data-speaker-notes="Treasurer presents the comparative Statement of Financial Position, as of August 31, 2026 vs. 2025." style="position:relative;width:1920px;height:1080px;background:#F7ECD6;overflow:hidden;font-family:Inter,sans-serif;" data-om-slide-id="57f46f37">
+  <div style="padding:88px 220px 0 220px;">
+    <div style="font-family:Inter,sans-serif;font-weight:600;font-size:22px;letter-spacing:0.18em;color:#7A2049;margin-bottom:16px;">FINANCIAL HIGHLIGHTS</div>
+    <div style="font-family:Manrope,sans-serif;font-weight:700;font-size:50px;color:#241019;margin-bottom:6px;">Statement of Financial Position</div>
+    <div style="font-family:Inter,sans-serif;font-weight:400;font-size:22px;color:#241019;opacity:0.65;margin-bottom:30px;">Comparative summary · as of August 31, 2026 and 2025</div>
+    <div style="background:#FFFFFF;border-radius:24px;padding:8px 44px 20px 44px;">
+      <div style="display:grid;grid-template-columns:1.7fr 1fr 1fr 1fr;padding:16px 0;border-bottom:2px solid #241019;">
+        <div></div>
+        <div style="font-family:Inter,sans-serif;font-weight:700;font-size:22px;color:#7A2049;text-align:right;">2026</div>
+        <div style="font-family:Inter,sans-serif;font-weight:700;font-size:22px;color:#241019;opacity:0.55;text-align:right;">2025</div>
+        <div style="font-family:Inter,sans-serif;font-weight:700;font-size:22px;color:#241019;opacity:0.55;text-align:right;">Variance</div>
+      </div>
+      <div style="padding:18px 0 6px 0;font-family:Inter,sans-serif;font-weight:700;font-size:19px;letter-spacing:0.12em;color:#7A2049;">ASSETS</div>
+      <div style="display:grid;grid-template-columns:1.7fr 1fr 1fr 1fr;padding:14px 0;border-bottom:1px solid rgba(36,16,25,0.1);align-items:center;">
+        <div style="font-family:Inter,sans-serif;font-weight:500;font-size:25px;color:#241019;">Cash</div>
+        <div style="font-family:Inter,sans-serif;font-weight:600;font-size:25px;color:#241019;text-align:right;">$1,786,522</div>
+        <div style="font-family:Inter,sans-serif;font-weight:500;font-size:25px;color:#241019;opacity:0.6;text-align:right;">$3,245,696</div>
+        <div style="font-family:Inter,sans-serif;font-weight:500;font-size:25px;color:#241019;text-align:right;">−$1,459,173</div>
+      </div>
+      <div style="display:grid;grid-template-columns:1.7fr 1fr 1fr 1fr;padding:14px 0;border-bottom:1px solid rgba(36,16,25,0.1);align-items:center;">
+        <div style="font-family:Inter,sans-serif;font-weight:500;font-size:25px;color:#241019;">Loans</div>
+        <div style="font-family:Inter,sans-serif;font-weight:600;font-size:25px;color:#241019;text-align:right;">$2,851,425</div>
+        <div style="font-family:Inter,sans-serif;font-weight:500;font-size:25px;color:#241019;opacity:0.6;text-align:right;">$2,639,932</div>
+        <div style="font-family:Inter,sans-serif;font-weight:500;font-size:25px;color:#241019;text-align:right;">+$211,492</div>
+      </div>
+      <div style="display:grid;grid-template-columns:1.7fr 1fr 1fr 1fr;padding:14px 0;border-bottom:1px solid rgba(36,16,25,0.1);align-items:center;">
+        <div style="font-family:Inter,sans-serif;font-weight:500;font-size:25px;color:#241019;">Investments</div>
+        <div style="font-family:Inter,sans-serif;font-weight:600;font-size:25px;color:#241019;text-align:right;">$23,434,682</div>
+        <div style="font-family:Inter,sans-serif;font-weight:500;font-size:25px;color:#241019;opacity:0.6;text-align:right;">$21,589,923</div>
+        <div style="font-family:Inter,sans-serif;font-weight:500;font-size:25px;color:#241019;text-align:right;">+$1,844,759</div>
+      </div>
+      <div style="display:grid;grid-template-columns:1.7fr 1fr 1fr 1fr;padding:14px 0;border-bottom:1px solid rgba(36,16,25,0.1);align-items:center;">
+        <div style="font-family:Inter,sans-serif;font-weight:500;font-size:25px;color:#241019;">Other Assets</div>
+        <div style="font-family:Inter,sans-serif;font-weight:600;font-size:25px;color:#241019;text-align:right;">$161,772</div>
+        <div style="font-family:Inter,sans-serif;font-weight:500;font-size:25px;color:#241019;opacity:0.6;text-align:right;">$141,518</div>
+        <div style="font-family:Inter,sans-serif;font-weight:500;font-size:25px;color:#241019;text-align:right;">+$20,254</div>
+      </div>
+      <div style="display:grid;grid-template-columns:1.7fr 1fr 1fr 1fr;padding:18px 0;border-bottom:3px solid #7A2049;align-items:center;">
+        <div style="font-family:Manrope,sans-serif;font-weight:800;font-size:27px;color:#7A2049;">Total Assets</div>
+        <div style="font-family:Manrope,sans-serif;font-weight:800;font-size:27px;color:#7A2049;text-align:right;">$28,234,401</div>
+        <div style="font-family:Manrope,sans-serif;font-weight:700;font-size:27px;color:#241019;opacity:0.6;text-align:right;">$27,617,069</div>
+        <div style="font-family:Manrope,sans-serif;font-weight:700;font-size:27px;color:#241019;text-align:right;">+$617,332</div>
+      </div>
+      <div style="padding:20px 0 6px 0;font-family:Inter,sans-serif;font-weight:700;font-size:19px;letter-spacing:0.12em;color:#7A2049;">LIABILITIES &amp; EQUITY</div>
+      <div style="display:grid;grid-template-columns:1.7fr 1fr 1fr 1fr;padding:14px 0;border-bottom:1px solid rgba(36,16,25,0.1);align-items:center;">
+        <div style="font-family:Inter,sans-serif;font-weight:500;font-size:25px;color:#241019;">Liabilities</div>
+        <div style="font-family:Inter,sans-serif;font-weight:600;font-size:25px;color:#241019;text-align:right;">$22,496,837</div>
+        <div style="font-family:Inter,sans-serif;font-weight:500;font-size:25px;color:#241019;opacity:0.6;text-align:right;">$22,559,571</div>
+        <div style="font-family:Inter,sans-serif;font-weight:500;font-size:25px;color:#241019;text-align:right;">−$62,734</div>
+      </div>
+      <div style="display:grid;grid-template-columns:1.7fr 1fr 1fr 1fr;padding:14px 0;border-bottom:1px solid rgba(36,16,25,0.1);align-items:center;">
+        <div style="font-family:Inter,sans-serif;font-weight:500;font-size:25px;color:#241019;">Equity</div>
+        <div style="font-family:Inter,sans-serif;font-weight:600;font-size:25px;color:#241019;text-align:right;">$5,737,564</div>
+        <div style="font-family:Inter,sans-serif;font-weight:500;font-size:25px;color:#241019;opacity:0.6;text-align:right;">$5,057,498</div>
+        <div style="font-family:Inter,sans-serif;font-weight:500;font-size:25px;color:#241019;text-align:right;">+$680,066</div>
+      </div>
+      <div style="display:grid;grid-template-columns:1.7fr 1fr 1fr 1fr;padding:18px 0;align-items:center;">
+        <div style="font-family:Manrope,sans-serif;font-weight:800;font-size:27px;color:#7A2049;">Total Liabilities &amp; Equity</div>
+        <div style="font-family:Manrope,sans-serif;font-weight:800;font-size:27px;color:#7A2049;text-align:right;">$28,234,401</div>
+        <div style="font-family:Manrope,sans-serif;font-weight:700;font-size:27px;color:#241019;opacity:0.6;text-align:right;">$27,617,069</div>
+        <div style="font-family:Manrope,sans-serif;font-weight:700;font-size:27px;color:#241019;text-align:right;">+$617,332</div>
+      </div>
+    </div>
+  </div>
+  <div style="position:absolute;bottom:40px;left:220px;display:flex;align-items:center;gap:10px;">
+    <img src="assets/icon-mark.png" style="height:20px;width:auto;opacity:0.5;">
+    <span style="font-family:Inter,sans-serif;font-size:13px;font-weight:500;color:#7A2049;opacity:0.55;letter-spacing:0.05em;">NSLFCU ANNUAL MEETING 2026</span>
+  </div>
+  <div style="position:absolute;bottom:40px;right:220px;font-family:Inter,sans-serif;font-size:13px;font-weight:500;color:#7A2049;opacity:0.55;">07</div>
+</section><section data-document-role="page" data-label="Statement of Operations" data-speaker-notes="Treasurer presents the comparative Statement of Operations, for the period ended August 31, 2026 vs. 2025." style="position:relative;width:1920px;height:1080px;background:#F7ECD6;overflow:hidden;font-family:Inter,sans-serif;" data-om-slide-id="dbddf1f5">
+  <div style="padding:74px 160px 0 160px;">
+    <div style="font-family:Inter,sans-serif;font-weight:600;font-size:22px;letter-spacing:0.18em;color:#7A2049;margin-bottom:14px;">FINANCIAL HIGHLIGHTS</div>
+    <div style="font-family:Manrope,sans-serif;font-weight:700;font-size:46px;color:#241019;margin-bottom:4px;">Statement of Operations</div>
+    <div style="font-family:Inter,sans-serif;font-weight:400;font-size:20px;color:#241019;opacity:0.65;margin-bottom:26px;">Comparative summary · period ended August 31, 2026 and 2025</div>
+    <div style="display:grid;grid-template-columns:1fr 1.3fr;gap:32px;">
+      <div style="background:#FFFFFF;border-radius:20px;padding:28px 32px;">
+        <div style="font-family:Inter,sans-serif;font-weight:700;font-size:17px;letter-spacing:0.1em;color:#7A2049;margin-bottom:10px;">OPERATING INCOME</div>
+        <div style="display:flex;flex-direction:column;gap:12px;">
+          <div style="display:flex;justify-content:space-between;align-items:baseline;border-bottom:1px solid rgba(36,16,25,0.08);padding-bottom:10px;">
+            <div><div style="font-family:Inter,sans-serif;font-weight:500;font-size:21px;color:#241019;">Income From Investments</div><div style="font-family:Inter,sans-serif;font-weight:400;font-size:15px;color:#241019;opacity:0.55;">2025: $448,165 · Var: +$153,550</div></div>
+            <div style="font-family:Inter,sans-serif;font-weight:700;font-size:22px;color:#241019;white-space:nowrap;">$601,715</div>
+          </div>
+          <div style="display:flex;justify-content:space-between;align-items:baseline;border-bottom:1px solid rgba(36,16,25,0.08);padding-bottom:10px;">
+            <div><div style="font-family:Inter,sans-serif;font-weight:500;font-size:21px;color:#241019;">Interest on Loans (net)</div><div style="font-family:Inter,sans-serif;font-weight:400;font-size:15px;color:#241019;opacity:0.55;">2025: $115,895 · Var: +$18,835</div></div>
+            <div style="font-family:Inter,sans-serif;font-weight:700;font-size:22px;color:#241019;white-space:nowrap;">$134,730</div>
+          </div>
+          <div style="display:flex;justify-content:space-between;align-items:baseline;border-bottom:1px solid rgba(36,16,25,0.08);padding-bottom:10px;">
+            <div><div style="font-family:Inter,sans-serif;font-weight:500;font-size:21px;color:#241019;">Income From Fees &amp; Charges</div><div style="font-family:Inter,sans-serif;font-weight:400;font-size:15px;color:#241019;opacity:0.55;">2025: $36,298 · Var: −$2,623</div></div>
+            <div style="font-family:Inter,sans-serif;font-weight:700;font-size:22px;color:#241019;white-space:nowrap;">$33,676</div>
+          </div>
+          <div style="display:flex;justify-content:space-between;align-items:baseline;border-bottom:1px solid rgba(36,16,25,0.08);padding-bottom:10px;">
+            <div><div style="font-family:Inter,sans-serif;font-weight:500;font-size:21px;color:#241019;">Misc. Operating Income</div><div style="font-family:Inter,sans-serif;font-weight:400;font-size:15px;color:#241019;opacity:0.55;">2025: $4,893 · Var: −$456</div></div>
+            <div style="font-family:Inter,sans-serif;font-weight:700;font-size:22px;color:#241019;white-space:nowrap;">$4,437</div>
+          </div>
+          <div style="display:flex;justify-content:space-between;align-items:baseline;padding-bottom:6px;">
+            <div><div style="font-family:Inter,sans-serif;font-weight:500;font-size:21px;color:#241019;">Non-Operating Income</div><div style="font-family:Inter,sans-serif;font-weight:400;font-size:15px;color:#241019;opacity:0.55;">2025: $152,226 · Var: −$3,146</div></div>
+            <div style="font-family:Inter,sans-serif;font-weight:700;font-size:22px;color:#241019;white-space:nowrap;">$149,080</div>
+          </div>
+        </div>
+        <div style="display:flex;justify-content:space-between;align-items:baseline;border-top:2px solid #7A2049;margin-top:16px;padding-top:14px;">
+          <div style="font-family:Manrope,sans-serif;font-weight:800;font-size:23px;color:#7A2049;">Total Income</div>
+          <div style="font-family:Manrope,sans-serif;font-weight:800;font-size:24px;color:#7A2049;">$923,637</div>
+        </div>
+      </div>
+      <div style="background:#FFFFFF;border-radius:20px;padding:28px 32px;">
+        <div style="font-family:Inter,sans-serif;font-weight:700;font-size:17px;letter-spacing:0.1em;color:#7A2049;margin-bottom:10px;">OPERATING EXPENSES</div>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px 28px;">
+          <div style="display:flex;justify-content:space-between;align-items:baseline;border-bottom:1px solid rgba(36,16,25,0.08);padding-bottom:7px;"><div style="font-family:Inter,sans-serif;font-weight:500;font-size:18px;color:#241019;">Compensation &amp; Benefits</div><div style="font-family:Inter,sans-serif;font-weight:700;font-size:18px;color:#241019;white-space:nowrap;">$108,768</div></div>
+          <div style="display:flex;justify-content:space-between;align-items:baseline;border-bottom:1px solid rgba(36,16,25,0.08);padding-bottom:7px;"><div style="font-family:Inter,sans-serif;font-weight:500;font-size:18px;color:#241019;">Depreciation Furn./Fixtures</div><div style="font-family:Inter,sans-serif;font-weight:700;font-size:18px;color:#241019;white-space:nowrap;">$8,952</div></div>
+          <div style="display:flex;justify-content:space-between;align-items:baseline;border-bottom:1px solid rgba(36,16,25,0.08);padding-bottom:7px;"><div style="font-family:Inter,sans-serif;font-weight:500;font-size:18px;color:#241019;">Rent</div><div style="font-family:Inter,sans-serif;font-weight:700;font-size:18px;color:#241019;white-space:nowrap;">$40,608</div></div>
+          <div style="display:flex;justify-content:space-between;align-items:baseline;border-bottom:1px solid rgba(36,16,25,0.08);padding-bottom:7px;"><div style="font-family:Inter,sans-serif;font-weight:500;font-size:18px;color:#241019;">Office Operations</div><div style="font-family:Inter,sans-serif;font-weight:700;font-size:18px;color:#241019;white-space:nowrap;">$138,306</div></div>
+          <div style="display:flex;justify-content:space-between;align-items:baseline;border-bottom:1px solid rgba(36,16,25,0.08);padding-bottom:7px;"><div style="font-family:Inter,sans-serif;font-weight:500;font-size:18px;color:#241019;">Advertising/Promotion/Training</div><div style="font-family:Inter,sans-serif;font-weight:700;font-size:18px;color:#241019;white-space:nowrap;">$29,028</div></div>
+          <div style="display:flex;justify-content:space-between;align-items:baseline;border-bottom:1px solid rgba(36,16,25,0.08);padding-bottom:7px;"><div style="font-family:Inter,sans-serif;font-weight:500;font-size:18px;color:#241019;">Loan Servicing</div><div style="font-family:Inter,sans-serif;font-weight:700;font-size:18px;color:#241019;white-space:nowrap;">$1,432</div></div>
+          <div style="display:flex;justify-content:space-between;align-items:baseline;border-bottom:1px solid rgba(36,16,25,0.08);padding-bottom:7px;"><div style="font-family:Inter,sans-serif;font-weight:500;font-size:18px;color:#241019;">Professional/Outside Services</div><div style="font-family:Inter,sans-serif;font-weight:700;font-size:18px;color:#241019;white-space:nowrap;">$21,200</div></div>
+          <div style="display:flex;justify-content:space-between;align-items:baseline;border-bottom:1px solid rgba(36,16,25,0.08);padding-bottom:7px;"><div style="font-family:Inter,sans-serif;font-weight:500;font-size:18px;color:#241019;">Annual Members Meeting</div><div style="font-family:Inter,sans-serif;font-weight:700;font-size:18px;color:#241019;white-space:nowrap;">$762</div></div>
+          <div style="display:flex;justify-content:space-between;align-items:baseline;border-bottom:1px solid rgba(36,16,25,0.08);padding-bottom:7px;"><div style="font-family:Inter,sans-serif;font-weight:500;font-size:18px;color:#241019;">Provision for Loan Losses</div><div style="font-family:Inter,sans-serif;font-weight:700;font-size:18px;color:#241019;white-space:nowrap;">$12,912</div></div>
+          <div style="display:flex;justify-content:space-between;align-items:baseline;border-bottom:1px solid rgba(36,16,25,0.08);padding-bottom:7px;"><div style="font-family:Inter,sans-serif;font-weight:500;font-size:18px;color:#241019;">State Operating Fee</div><div style="font-family:Inter,sans-serif;font-weight:700;font-size:18px;color:#241019;white-space:nowrap;">$2,099</div></div>
+          <div style="display:flex;justify-content:space-between;align-items:baseline;padding-bottom:3px;"><div style="font-family:Inter,sans-serif;font-weight:500;font-size:18px;color:#241019;">Dividends to Members</div><div style="font-family:Inter,sans-serif;font-weight:700;font-size:18px;color:#241019;white-space:nowrap;">$124,478</div></div>
+        </div>
+        <div style="display:flex;justify-content:space-between;align-items:baseline;border-top:2px solid #7A2049;margin-top:14px;padding-top:12px;">
+          <div style="font-family:Manrope,sans-serif;font-weight:800;font-size:23px;color:#7A2049;">Total Operating Expenses</div>
+          <div style="font-family:Manrope,sans-serif;font-weight:800;font-size:24px;color:#7A2049;">$488,544</div>
+        </div>
+      </div>
+    </div>
+    <div style="background:#3A1420;border-radius:18px;padding:22px 40px;margin-top:24px;display:flex;justify-content:space-between;align-items:center;">
+      <div style="font-family:Manrope,sans-serif;font-weight:800;font-size:26px;color:#F7ECD6;">Net Income</div>
+      <div style="display:flex;align-items:baseline;gap:28px;">
+        <div style="font-family:Inter,sans-serif;font-weight:500;font-size:19px;color:#F7ECD6;opacity:0.65;">2025: $332,167</div>
+        <div style="font-family:Manrope,sans-serif;font-weight:800;font-size:32px;color:#C9A968;">$435,093</div>
+      </div>
+    </div>
+  </div>
+  <div style="position:absolute;bottom:14px;left:220px;display:flex;align-items:center;gap:10px;">
+    <img src="assets/icon-mark.png" style="height:20px;width:auto;opacity:0.5;">
+    <span style="font-family:Inter,sans-serif;font-size:13px;font-weight:500;color:#7A2049;opacity:0.55;letter-spacing:0.05em;">NSLFCU ANNUAL MEETING 2026</span>
+  </div>
+  <div style="position:absolute;bottom:14px;right:220px;font-family:Inter,sans-serif;font-size:13px;font-weight:500;color:#7A2049;opacity:0.55;">08</div>
+</section>
+
+<section data-document-role="page" data-label="Chairman Report" data-speaker-notes="Placeholder — fill in once the Chairman's remarks are finalized." style="position:relative;width:1920px;height:1080px;background:#3A1420;overflow:hidden;font-family:Inter,sans-serif;" data-om-slide-id="843a8b7b">
+  <div style="padding:140px 220px 0 220px;">
+    <div style="font-family:Inter,sans-serif;font-weight:600;font-size:22px;letter-spacing:0.18em;color:#C9A968;margin-bottom:28px;">REPORTS</div>
+    <div style="font-family:Manrope,sans-serif;font-weight:700;font-size:60px;color:#F7ECD6;line-height:1.15;max-width:1300px;">Chairman's Report</div>
+    <div style="background:rgba(247,236,214,0.06);border:2px dashed rgba(201,169,104,0.4);border-radius:20px;padding:48px;margin-top:56px;max-width:1200px;font-family:Inter,sans-serif;font-weight:500;font-size:24px;color:#F7ECD6;opacity:0.65;">Remarks to be added.</div>
+    <div style="margin-top:60px;display:flex;align-items:center;gap:24px;">
+      <div style="width:64px;height:2px;background:#C9A968;"></div>
+      <div style="font-family:Inter,sans-serif;font-weight:600;font-size:26px;color:#C9A968;">Bro. Marvin Cherry, Chairman</div>
+    </div>
+    <div style="margin-top:36px;font-family:Inter,sans-serif;font-weight:500;font-size:18px;color:#C9A968;letter-spacing:0.05em;opacity:0.85;">PLACEHOLDER — CONTENT TO BE ADDED</div>
+  </div>
+  <div style="position:absolute;bottom:40px;left:220px;display:flex;align-items:center;gap:10px;">
+    <img src="assets/icon-mark.png" style="height:20px;width:auto;opacity:0.6;filter:brightness(2);">
+    <span style="font-family:Inter,sans-serif;font-size:13px;font-weight:500;color:#F7ECD6;opacity:0.5;letter-spacing:0.05em;">NSLFCU ANNUAL MEETING 2026</span>
+  </div>
+</section>
+
+
+
+<section data-document-role="page" data-label="Deposits to Dividends" data-speaker-notes="Explain, in plain terms, how member deposits become loans, interest income, and ultimately member dividends." style="position:relative;width:1920px;height:1080px;background:#3A1420;overflow:hidden;font-family:Inter,sans-serif;" data-om-slide-id="8d300933">
+  <img src="assets/icon-mark.png" style="position:absolute;right:-60px;bottom:-100px;height:640px;width:auto;opacity:0.08;">
+  <div style="padding:110px 160px 0 160px;position:relative;z-index:2;">
+    <div style="font-family:Inter,sans-serif;font-weight:600;font-size:22px;letter-spacing:0.18em;color:#C9A968;margin-bottom:20px;">FINANCIAL HIGHLIGHTS</div>
+    <div style="font-family:Manrope,sans-serif;font-weight:800;font-size:52px;color:#F7ECD6;line-height:1.15;max-width:1400px;">How Deposits Become Member Value</div>
+    <div style="font-family:Inter,sans-serif;font-weight:400;font-size:24px;color:#F7ECD6;opacity:0.75;max-width:1300px;margin-top:24px;line-height:1.5;">Member deposits provide the funding base for loans — creating income that can be returned to members through competitive dividends.</div>
+    <div style="display:grid;grid-template-columns:1fr 1fr 1fr 1fr;gap:28px;margin-top:64px;">
+      <div style="background:rgba(247,236,214,0.06);border:1px solid rgba(201,169,104,0.35);border-radius:20px;padding:32px 28px;position:relative;">
+        <div style="font-family:Inter,sans-serif;font-weight:700;font-size:16px;letter-spacing:0.1em;color:#C9A968;margin-bottom:14px;">1 · MEMBER DEPOSITS</div>
+        <div style="font-family:Manrope,sans-serif;font-weight:700;font-size:22px;color:#F7ECD6;">Savings · Checking · CDs</div>
+        <div style="font-family:Inter,sans-serif;font-weight:400;font-size:18px;color:#F7ECD6;opacity:0.7;margin-top:12px;line-height:1.5;">Stable funding from the membership.</div>
+      </div>
+      <div style="background:rgba(247,236,214,0.06);border:1px solid rgba(201,169,104,0.35);border-radius:20px;padding:32px 28px;">
+        <div style="font-family:Inter,sans-serif;font-weight:700;font-size:16px;letter-spacing:0.1em;color:#C9A968;margin-bottom:14px;">2 · CREDIT UNION</div>
+        <div style="font-family:Manrope,sans-serif;font-weight:700;font-size:22px;color:#F7ECD6;">Deploys funding to support member lending</div>
+        <div style="font-family:Inter,sans-serif;font-weight:400;font-size:18px;color:#F7ECD6;opacity:0.7;margin-top:12px;line-height:1.5;">Uses a portion of deposits and other funding.</div>
+      </div>
+      <div style="background:rgba(247,236,214,0.06);border:1px solid rgba(201,169,104,0.35);border-radius:20px;padding:32px 28px;">
+        <div style="font-family:Inter,sans-serif;font-weight:700;font-size:16px;letter-spacing:0.1em;color:#C9A968;margin-bottom:14px;">3 · MEMBER LOANS</div>
+        <div style="font-family:Manrope,sans-serif;font-weight:700;font-size:22px;color:#F7ECD6;">Mortgages · Auto · Personal · Cards</div>
+        <div style="font-family:Inter,sans-serif;font-weight:400;font-size:18px;color:#F7ECD6;opacity:0.7;margin-top:12px;line-height:1.5;">Interest income is generated.</div>
+      </div>
+      <div style="background:rgba(201,169,104,0.14);border:1px solid rgba(201,169,104,0.5);border-radius:20px;padding:32px 28px;">
+        <div style="font-family:Inter,sans-serif;font-weight:700;font-size:16px;letter-spacing:0.1em;color:#C9A968;margin-bottom:14px;">4 · MEMBER BENEFIT</div>
+        <div style="font-family:Manrope,sans-serif;font-weight:700;font-size:22px;color:#F7ECD6;">Interest income → dividends</div>
+        <div style="font-family:Inter,sans-serif;font-weight:400;font-size:18px;color:#F7ECD6;opacity:0.7;margin-top:12px;line-height:1.5;">After operating costs, provisions, reserves and capital needs, earnings can support stronger dividends.</div>
+      </div>
+    </div>
+    <div style="margin-top:48px;font-family:Inter,sans-serif;font-weight:600;font-size:22px;color:#C9A968;">Deposits → Lending → Interest Income → Earnings → Potentially Higher Member Dividends</div>
+  </div>
+  <div style="position:absolute;bottom:40px;left:220px;display:flex;align-items:center;gap:10px;">
+    <img src="assets/icon-mark.png" style="height:20px;width:auto;opacity:0.6;filter:brightness(2);">
+    <span style="font-family:Inter,sans-serif;font-size:13px;font-weight:500;color:#F7ECD6;opacity:0.5;letter-spacing:0.05em;">NSLFCU ANNUAL MEETING 2026</span>
+  </div>
+  <div style="position:absolute;bottom:40px;right:220px;font-family:Inter,sans-serif;font-size:13px;font-weight:500;color:#F7ECD6;opacity:0.5;">09</div>
+</section>
+
+
+
+<section data-document-role="page" data-label="Board Directors" data-speaker-notes="Introduce the Board of Directors and leadership team." style="position:relative;width:1920px;height:1080px;background:#F7ECD6;overflow:hidden;font-family:Inter,sans-serif;" data-om-slide-id="fb6ef8fa">
+  <div style="padding:90px 130px 0 130px;">
+    <div style="font-family:Inter,sans-serif;font-weight:600;font-size:18px;letter-spacing:0.18em;color:#7A2049;margin-bottom:10px;">LEADERSHIP</div>
+    <div style="font-family:Manrope,sans-serif;font-weight:700;font-size:42px;color:#241019;margin-bottom:28px;">Board of Directors</div>
+    <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:20px;">
+      <div style="background:#FFFFFF;border-radius:16px;padding:16px;">
+        <img src="assets/headshot-toni-hopkins.png" style="width:100%;aspect-ratio:5/4;object-fit:cover;object-position:center 6%;border-radius:10px;margin-bottom:12px;">
+        <div style="font-family:Manrope,sans-serif;font-weight:700;font-size:19px;color:#241019;">Sis. Toni Hopkins</div>
+        <div style="font-family:Inter,sans-serif;font-weight:500;font-size:15px;color:#7A2049;margin-top:3px;">President</div>
+      </div>
+      <div style="background:#FFFFFF;border-radius:16px;padding:16px;">
+        <img src="assets/headshot-marvin-cherry-v3.png" style="width:100%;aspect-ratio:5/4;object-fit:cover;object-position:center 15%;border-radius:10px;margin-bottom:12px;">
+        <div style="font-family:Manrope,sans-serif;font-weight:700;font-size:19px;color:#241019;">Bro. Marvin Cherry</div>
+        <div style="font-family:Inter,sans-serif;font-weight:500;font-size:15px;color:#7A2049;margin-top:3px;">Chairman</div>
+      </div>
+      <div style="background:#FFFFFF;border-radius:16px;padding:16px;">
+        <img src="assets/headshot-patrice-elliott.png" style="width:100%;aspect-ratio:5/4;object-fit:cover;object-position:center 12%;border-radius:10px;margin-bottom:12px;">
+        <div style="font-family:Manrope,sans-serif;font-weight:700;font-size:19px;color:#241019;">Sis. Patrice Elliott</div>
+        <div style="font-family:Inter,sans-serif;font-weight:500;font-size:15px;color:#7A2049;margin-top:3px;">Vice Chairman</div>
+      </div>
+      <div style="background:#FFFFFF;border-radius:16px;padding:16px;">
+        <img src="assets/headshot-nadine-hungerford.png" style="width:100%;aspect-ratio:5/4;object-fit:cover;object-position:center 12%;border-radius:10px;margin-bottom:12px;">
+        <div style="font-family:Manrope,sans-serif;font-weight:700;font-size:19px;color:#241019;">Sis. Nadine Hungerford</div>
+        <div style="font-family:Inter,sans-serif;font-weight:500;font-size:15px;color:#7A2049;margin-top:3px;">Treasurer</div>
+      </div>
+      <div style="background:#FFFFFF;border-radius:16px;padding:16px;">
+        <img src="assets/headshot-renita-wigfall.png" style="width:100%;aspect-ratio:5/4;object-fit:cover;object-position:center 12%;border-radius:10px;margin-bottom:12px;">
+        <div style="font-family:Manrope,sans-serif;font-weight:700;font-size:19px;color:#241019;">Sis. Renita Wigfall</div>
+        <div style="font-family:Inter,sans-serif;font-weight:500;font-size:15px;color:#7A2049;margin-top:3px;">Secretary</div>
+      </div>
+      <div style="background:#FFFFFF;border-radius:16px;padding:16px;">
+        <img src="assets/headshot-florenciannette-jordan.png" style="width:100%;aspect-ratio:5/4;object-fit:cover;object-position:center 12%;border-radius:10px;margin-bottom:12px;">
+        <div style="font-family:Manrope,sans-serif;font-weight:700;font-size:19px;color:#241019;">Sis. Florenciannette Jordan</div>
+        <div style="font-family:Inter,sans-serif;font-weight:500;font-size:15px;color:#7A2049;margin-top:3px;">Director</div>
+      </div>
+      <div style="background:#FFFFFF;border-radius:16px;padding:16px;">
+        <img src="assets/headshot-thomas-mitchell-2026.png" style="width:100%;aspect-ratio:5/4;object-fit:cover;object-position:center 12%;border-radius:10px;margin-bottom:12px;">
+        <div style="font-family:Manrope,sans-serif;font-weight:700;font-size:19px;color:#241019;">Bro. Thomas Mitchell</div>
+        <div style="font-family:Inter,sans-serif;font-weight:500;font-size:15px;color:#7A2049;margin-top:3px;">Marketing Liaison</div>
+      </div>
+    </div>
+  </div>
+  <div style="position:absolute;bottom:40px;left:220px;display:flex;align-items:center;gap:10px;">
+    <img src="assets/icon-mark.png" style="height:20px;width:auto;opacity:0.5;">
+    <span style="font-family:Inter,sans-serif;font-size:13px;font-weight:500;color:#7A2049;opacity:0.55;letter-spacing:0.05em;">NSLFCU ANNUAL MEETING 2026</span>
+  </div>
+  <div style="position:absolute;bottom:40px;right:220px;font-family:Inter,sans-serif;font-size:13px;font-weight:500;color:#7A2049;opacity:0.55;">23</div>
+</section><section data-document-role="page" data-label="Supervisory Report" data-speaker-notes="Supervisory Committee confirms internal controls and audit results." style="position:relative;width:1920px;height:1080px;background:#F7ECD6;overflow:hidden;font-family:Inter,sans-serif;" data-om-slide-id="e8488de8">
+  <div style="position:absolute;top:0;left:0;width:14px;height:1080px;background:#C9A968;"></div>
+  <div style="padding:140px 220px 0 220px;">
+    <div style="font-family:Inter,sans-serif;font-weight:600;font-size:22px;letter-spacing:0.18em;color:#7A2049;margin-bottom:28px;">ORDER OF BUSINESS · 05</div>
+    <div style="font-family:Manrope,sans-serif;font-weight:700;font-size:60px;color:#241019;line-height:1.15;max-width:1300px;">Supervisory Committee Report</div>
+    <div style="font-family:Inter,sans-serif;font-weight:400;font-size:28px;color:#241019;opacity:0.8;line-height:1.6;max-width:1180px;margin-top:44px;">The Supervisory Committee has completed its annual review of internal controls, policies, and the independent audit. We are pleased to report that None Suffer Lack Federal Credit Union remains in sound financial and operational standing.</div>
+    <div style="margin-top:60px;display:flex;align-items:center;gap:24px;">
+      <div style="width:64px;height:2px;background:#C9A968;"></div>
+      <div style="font-family:Inter,sans-serif;font-weight:600;font-size:26px;color:#7A2049;">Sis. Tisha Adeleke, Supervisory Committee Member</div>
+    </div>
+  </div>
+  <div style="position:absolute;bottom:40px;left:220px;display:flex;align-items:center;gap:10px;">
+    <img src="assets/icon-mark.png" style="height:20px;width:auto;opacity:0.5;">
+    <span style="font-family:Inter,sans-serif;font-size:13px;font-weight:500;color:#7A2049;opacity:0.55;letter-spacing:0.05em;">NSLFCU ANNUAL MEETING 2026</span>
+  </div>
+  <div style="position:absolute;bottom:40px;right:220px;font-family:Inter,sans-serif;font-size:13px;font-weight:500;color:#7A2049;opacity:0.55;">11</div>
+</section>
+
+<section data-document-role="page" data-label="Meet the Committee" data-speaker-notes="Introduce the Supervisory Committee members appointed by the Board of Directors." style="position:relative;width:1920px;height:1080px;background:#F7ECD6;overflow:hidden;font-family:Inter,sans-serif;" data-om-slide-id="3aed0a37">
+  <div style="position:absolute;top:0;left:0;width:14px;height:1080px;background:#C9A968;"></div>
+  <div style="padding:60px 90px 0 90px;">
+    <div style="font-family:Inter,sans-serif;font-weight:600;font-size:19px;letter-spacing:0.18em;color:#7A2049;margin-bottom:12px;">SUPERVISORY COMMITTEE</div>
+    <div style="font-family:Manrope,sans-serif;font-weight:700;font-size:40px;color:#241019;margin-bottom:10px;">Meet the Supervisory Committee</div>
+    <div style="font-family:Inter,sans-serif;font-weight:400;font-size:20px;color:#241019;opacity:0.75;max-width:1600px;line-height:1.45;margin-bottom:14px;">Appointed by the Board of Directors, the Supervisory Committee provides independent oversight on behalf of members. The Committee is part of the credit union’s governance structure — independent from day-to-day management and accountable to members.</div>
+    <div style="font-family:Inter,sans-serif;font-weight:400;font-size:18px;color:#241019;opacity:0.6;max-width:1600px;line-height:1.4;margin-bottom:28px;">Members must belong to the credit union, be bondable, and serve the same Board-established term length of one, two, or three years.</div>
+    <div style="display:grid;grid-template-columns:repeat(5,1fr);gap:20px;">
+      <div style="background:#FFFFFF;border-radius:16px;padding:14px;">
+        <img src="assets/headshot-tisha-adeleke.png" style="width:100%;aspect-ratio:4/5;object-fit:cover;object-position:center 12%;border-radius:10px;margin-bottom:14px;">
+        <div style="font-family:Manrope,sans-serif;font-weight:700;font-size:20px;color:#241019;">Sis. Tisha Adeleke</div>
+        <div style="font-family:Inter,sans-serif;font-weight:500;font-size:16px;color:#7A2049;margin-top:4px;">Committee Member</div>
+      </div>
+      <div style="background:#FFFFFF;border-radius:16px;padding:14px;">
+        <img src="assets/headshot-elizabeth-brooks.png" style="width:100%;aspect-ratio:4/5;object-fit:cover;object-position:center 12%;border-radius:10px;margin-bottom:14px;">
+        <div style="font-family:Manrope,sans-serif;font-weight:700;font-size:20px;color:#241019;">Sis. Elizabeth Brooks</div>
+        <div style="font-family:Inter,sans-serif;font-weight:500;font-size:16px;color:#7A2049;margin-top:4px;">Secretary</div>
+      </div>
+      <div style="background:#FFFFFF;border-radius:16px;padding:14px;">
+        <img src="assets/headshot-sirena-williams.png" style="width:100%;aspect-ratio:4/5;object-fit:cover;object-position:center 12%;border-radius:10px;margin-bottom:14px;">
+        <div style="font-family:Manrope,sans-serif;font-weight:700;font-size:20px;color:#241019;">Sis. Sirena Williams</div>
+        <div style="font-family:Inter,sans-serif;font-weight:500;font-size:16px;color:#7A2049;margin-top:4px;">Committee Member</div>
+      </div>
+      <div style="background:#FFFFFF;border-radius:16px;padding:14px;">
+        <img src="assets/headshot-orlando-brooks.png" style="width:100%;aspect-ratio:4/5;object-fit:cover;object-position:center 12%;border-radius:10px;margin-bottom:14px;">
+        <div style="font-family:Manrope,sans-serif;font-weight:700;font-size:20px;color:#241019;">Bro. Orlando Brooks</div>
+        <div style="font-family:Inter,sans-serif;font-weight:500;font-size:16px;color:#7A2049;margin-top:4px;">Committee Member</div>
+      </div>
+      <div style="background:#FFFFFF;border-radius:16px;padding:14px;">
+        <img src="assets/headshot-hermeta-martin-reddon.png" style="width:100%;aspect-ratio:4/5;object-fit:cover;object-position:center 12%;border-radius:10px;margin-bottom:14px;">
+        <div style="font-family:Manrope,sans-serif;font-weight:700;font-size:20px;color:#241019;">Sis. Hermeta Martin-Reddon</div>
+        <div style="font-family:Inter,sans-serif;font-weight:500;font-size:16px;color:#7A2049;margin-top:4px;">Chair</div>
+      </div>
+    </div>
+  </div>
+  <div style="position:absolute;bottom:40px;left:220px;display:flex;align-items:center;gap:10px;">
+    <img src="assets/icon-mark.png" style="height:20px;width:auto;opacity:0.5;">
+    <span style="font-family:Inter,sans-serif;font-size:13px;font-weight:500;color:#7A2049;opacity:0.55;letter-spacing:0.05em;">NSLFCU ANNUAL MEETING 2026</span>
+  </div>
+  <div style="position:absolute;bottom:40px;right:220px;font-family:Inter,sans-serif;font-size:13px;font-weight:500;color:#7A2049;opacity:0.55;">12</div>
+</section>
+
+<section data-document-role="page" data-label="Committee Role" data-speaker-notes="Explain the four areas of the Supervisory Committee's work." style="position:relative;width:1920px;height:1080px;background:#F7ECD6;overflow:hidden;font-family:Inter,sans-serif;" data-om-slide-id="64a34152">
+  <div style="padding:80px 130px 0 130px;">
+    <div style="font-family:Inter,sans-serif;font-weight:600;font-size:19px;letter-spacing:0.18em;color:#7A2049;margin-bottom:16px;">SUPERVISORY COMMITTEE</div>
+    <div style="font-family:Manrope,sans-serif;font-weight:700;font-size:44px;color:#241019;margin-bottom:12px;">What We Do</div>
+    <div style="font-family:Inter,sans-serif;font-weight:400;font-size:21px;color:#241019;opacity:0.75;max-width:1500px;line-height:1.5;margin-bottom:36px;">Our work really falls into four areas. We monitor credit union activity, check the safeguards, oversee the independent audit process, and monitor corrective action.</div>
+    <div style="display:grid;grid-template-columns:1fr 1fr 1fr 1fr;gap:24px;">
+      <div style="background:#FFFFFF;border-radius:20px;padding:30px 28px;">
+        <div style="width:48px;height:6px;background:#C9A968;border-radius:3px;margin-bottom:20px;"></div>
+        <div style="font-family:Manrope,sans-serif;font-weight:700;font-size:21px;color:#7A2049;line-height:1.25;margin-bottom:14px;">Monitor Credit Union Activity</div>
+        <div style="font-family:Inter,sans-serif;font-weight:400;font-size:17px;color:#241019;opacity:0.75;line-height:1.5;">Board and Credit Committee minutes<br><br>Financial information and selected reports<br><br>Unusual activity, exceptions, or concerns</div>
+      </div>
+      <div style="background:#FFFFFF;border-radius:20px;padding:30px 28px;">
+        <div style="width:48px;height:6px;background:#C9A968;border-radius:3px;margin-bottom:20px;"></div>
+        <div style="font-family:Manrope,sans-serif;font-weight:700;font-size:21px;color:#7A2049;line-height:1.25;margin-bottom:14px;">Check the Safeguards</div>
+        <div style="font-family:Inter,sans-serif;font-weight:400;font-size:17px;color:#241019;opacity:0.75;line-height:1.5;">Are policies and procedures being followed?<br><br>Are appropriate internal controls in place?<br><br>Are member assets, accounts, and information protected?</div>
+      </div>
+      <div style="background:#FFFFFF;border-radius:20px;padding:30px 28px;">
+        <div style="width:48px;height:6px;background:#C9A968;border-radius:3px;margin-bottom:20px;"></div>
+        <div style="font-family:Manrope,sans-serif;font-weight:700;font-size:21px;color:#7A2049;line-height:1.25;margin-bottom:14px;">Oversee the Independent Audit</div>
+        <div style="font-family:Inter,sans-serif;font-weight:400;font-size:17px;color:#241019;opacity:0.75;line-height:1.5;">Select the independent CPA and arrange the required audit<br><br>Review CPA and NCUA findings<br><br>Ask questions and request more review when needed</div>
+      </div>
+      <div style="background:#FFFFFF;border-radius:20px;padding:30px 28px;">
+        <div style="width:48px;height:6px;background:#C9A968;border-radius:3px;margin-bottom:20px;"></div>
+        <div style="font-family:Manrope,sans-serif;font-weight:700;font-size:21px;color:#7A2049;line-height:1.25;margin-bottom:14px;">Monitor Corrective Action</div>
+        <div style="font-family:Inter,sans-serif;font-weight:400;font-size:17px;color:#241019;opacity:0.75;line-height:1.5;">Recommend action to the Board<br><br>Monitor whether issues are addressed<br><br>Keep records and report to the Board</div>
+      </div>
+    </div>
+    <div style="margin-top:32px;font-family:Inter,sans-serif;font-weight:600;font-size:19px;color:#7A2049;max-width:1600px;line-height:1.5;">This is how the Committee protects member interests: we ask questions, check that safeguards are working, and make sure issues receive the attention they need.</div>
+  </div>
+  <div style="position:absolute;bottom:40px;left:220px;display:flex;align-items:center;gap:10px;">
+    <img src="assets/icon-mark.png" style="height:20px;width:auto;opacity:0.5;">
+    <span style="font-family:Inter,sans-serif;font-size:13px;font-weight:500;color:#7A2049;opacity:0.55;letter-spacing:0.05em;">NSLFCU ANNUAL MEETING 2026</span>
+  </div>
+  <div style="position:absolute;bottom:40px;right:220px;font-family:Inter,sans-serif;font-size:13px;font-weight:500;color:#7A2049;opacity:0.55;">13</div>
+</section>
+
+<section data-document-role="page" data-label="Oversight Structure" data-speaker-notes="Explain how the Supervisory Committee fits alongside the NCUA and the independent CPA firm." style="position:relative;width:1920px;height:1080px;background:#3A1420;overflow:hidden;font-family:Inter,sans-serif;" data-om-slide-id="254cee9f">
+  <img src="assets/icon-mark.png" style="position:absolute;right:-60px;bottom:-100px;height:640px;width:auto;opacity:0.08;">
+  <div style="padding:120px 220px 0 220px;position:relative;z-index:2;">
+    <div style="font-family:Inter,sans-serif;font-weight:600;font-size:22px;letter-spacing:0.18em;color:#C9A968;margin-bottom:24px;">SUPERVISORY COMMITTEE</div>
+    <div style="font-family:Manrope,sans-serif;font-weight:800;font-size:50px;color:#F7ECD6;margin-bottom:16px;">The Three-Part Oversight Structure</div>
+    <div style="font-family:Inter,sans-serif;font-weight:400;font-size:25px;color:#F7ECD6;opacity:0.75;max-width:1400px;line-height:1.5;margin-bottom:56px;">The Supervisory Committee is one part of the credit union’s broader independent and external oversight structure. Each part has a distinct role.</div>
+    <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:36px;">
+      <div style="background:rgba(247,236,214,0.06);border:1px solid rgba(201,169,104,0.35);border-radius:20px;padding:36px 32px;">
+        <div style="font-family:Manrope,sans-serif;font-weight:700;font-size:25px;color:#F7ECD6;">National Credit Union Administration (NCUA)</div>
+        <div style="font-family:Inter,sans-serif;font-weight:400;font-size:19px;color:#F7ECD6;opacity:0.7;margin-top:16px;line-height:1.5;">Provides federal regulatory examination and oversight of the credit union's safety, soundness, operations, and compliance.</div>
+      </div>
+      <div style="background:rgba(247,236,214,0.06);border:1px solid rgba(201,169,104,0.35);border-radius:20px;padding:36px 32px;">
+        <div style="font-family:Manrope,sans-serif;font-weight:700;font-size:25px;color:#F7ECD6;">Yount, Hyde &amp; Barbour, P.C. — Independent CPA Firm</div>
+        <div style="font-family:Inter,sans-serif;font-weight:400;font-size:19px;color:#F7ECD6;opacity:0.7;margin-top:16px;line-height:1.5;">Performs the detailed agreed-upon procedures — testing financial records, accounts, controls, and other required areas — and reports the findings.</div>
+      </div>
+      <div style="background:rgba(201,169,104,0.14);border:1px solid rgba(201,169,104,0.5);border-radius:20px;padding:36px 32px;">
+        <div style="font-family:Manrope,sans-serif;font-weight:700;font-size:25px;color:#F7ECD6;">NSLFCU Supervisory Committee</div>
+        <div style="font-family:Inter,sans-serif;font-weight:400;font-size:19px;color:#F7ECD6;opacity:0.7;margin-top:16px;line-height:1.5;">Appointed by the Board. Oversees the audit process, reviews results, follows up on findings, recommends action, and reports to the Board.</div>
+      </div>
+    </div>
+    <div style="margin-top:48px;font-family:Inter,sans-serif;font-weight:600;font-size:22px;color:#C9A968;">Combined effect: regulatory supervision + independent testing + member-focused oversight.</div>
+  </div>
+  <div style="position:absolute;bottom:40px;left:220px;display:flex;align-items:center;gap:10px;">
+    <img src="assets/icon-mark.png" style="height:20px;width:auto;opacity:0.6;filter:brightness(2);">
+    <span style="font-family:Inter,sans-serif;font-size:13px;font-weight:500;color:#F7ECD6;opacity:0.5;letter-spacing:0.05em;">NSLFCU ANNUAL MEETING 2026</span>
+  </div>
+  <div style="position:absolute;bottom:40px;right:220px;font-family:Inter,sans-serif;font-size:13px;font-weight:500;color:#F7ECD6;opacity:0.5;">14</div>
+</section>
+
+<section data-document-role="page" data-label="Premium Checking" data-speaker-notes="Introduce the new Premium Checking account — a higher dividend rate for members who keep a $1,000 minimum balance, plus built-in overdraft protection and a loan rate discount." style="position:relative;width:1920px;height:1080px;background:#3A1420;overflow:hidden;font-family:Inter,sans-serif;" data-om-slide-id="0303f0bb">
+  <div style="padding:100px 100px 0 220px;display:flex;gap:70px;align-items:flex-start;">
+    <div style="flex:1;">
+      <div style="font-family:Inter,sans-serif;font-weight:600;font-size:22px;letter-spacing:0.18em;color:#C9A968;margin-bottom:20px;">NEW THIS YEAR</div>
+      <div style="font-family:Manrope,sans-serif;font-weight:700;font-size:52px;color:#F7ECD6;line-height:1.2;max-width:900px;">Introducing Premium Checking</div>
+      <div style="font-family:Inter,sans-serif;font-weight:400;font-size:21px;color:#F7ECD6;opacity:0.8;line-height:1.55;max-width:820px;margin-top:24px;">A new checking option for members who keep a $1,000 minimum balance and want that balance to earn something. Dividends are compounded and credited monthly, and the account includes overdraft protection and a discount on loans.</div>
+      <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:20px;margin-top:40px;max-width:820px;">
+        <div style="background:rgba(247,236,214,0.06);border:1px solid rgba(201,169,104,0.3);border-radius:18px;padding:26px 28px;">
+          <div style="font-family:Manrope,sans-serif;font-weight:700;font-size:34px;color:#C9A968;">3.25% APY</div>
+          <div style="font-family:Inter,sans-serif;font-weight:400;font-size:17px;color:#F7ECD6;opacity:0.75;margin-top:6px;">Dividend rate, with a $1,000 minimum balance</div>
+        </div>
+        <div style="background:rgba(247,236,214,0.06);border:1px solid rgba(201,169,104,0.3);border-radius:18px;padding:26px 28px;">
+          <div style="font-family:Manrope,sans-serif;font-weight:700;font-size:34px;color:#C9A968;">$250</div>
+          <div style="font-family:Inter,sans-serif;font-weight:400;font-size:17px;color:#F7ECD6;opacity:0.75;margin-top:6px;">Overdraft protection, no credit pull</div>
+        </div>
+        <div style="background:rgba(247,236,214,0.06);border:1px solid rgba(201,169,104,0.3);border-radius:18px;padding:26px 28px;">
+          <div style="font-family:Manrope,sans-serif;font-weight:700;font-size:34px;color:#C9A968;">0.50% off</div>
+          <div style="font-family:Inter,sans-serif;font-weight:400;font-size:17px;color:#F7ECD6;opacity:0.75;margin-top:6px;">Rate discount on all loans</div>
+        </div>
+        <div style="background:rgba(247,236,214,0.06);border:1px solid rgba(201,169,104,0.3);border-radius:18px;padding:26px 28px;">
+          <div style="font-family:Manrope,sans-serif;font-weight:700;font-size:34px;color:#C9A968;">Unlimited</div>
+          <div style="font-family:Inter,sans-serif;font-weight:400;font-size:17px;color:#F7ECD6;opacity:0.75;margin-top:6px;">Transactions, with a VISA debit card</div>
+        </div>
+      </div>
+    </div>
+    <div style="width:340px;flex-shrink:0;display:flex;flex-direction:column;align-items:center;gap:24px;">
+      <img src="assets/app-checking-detail.png" style="width:310px;border-radius:28px;box-shadow:0 30px 60px rgba(0,0,0,0.4);">
+      <div style="font-family:Inter,sans-serif;font-weight:500;font-size:15px;color:#F7ECD6;opacity:0.55;text-align:center;max-width:280px;">Ask a member service representative to switch or open a Premium Checking account.</div>
+    </div>
+  </div>
+  <div style="position:absolute;bottom:40px;left:220px;display:flex;align-items:center;gap:10px;">
+    <img src="assets/icon-mark.png" style="height:20px;width:auto;opacity:0.6;filter:brightness(2);">
+    <span style="font-family:Inter,sans-serif;font-size:13px;font-weight:500;color:#F7ECD6;opacity:0.5;letter-spacing:0.05em;">NSLFCU ANNUAL MEETING 2026</span>
+  </div>
+</section><section data-document-role="page" data-label="Lower Fees, Lower Minimums" data-speaker-notes="Two account changes making membership more accessible: the minimum share value drops from $50 to $10, and the dormant account and minimum balance fees are eliminated." style="position:relative;width:1920px;height:1080px;background:#3A1420;overflow:hidden;font-family:Inter,sans-serif;" data-om-slide-id="a4f18c22">
+  <div style="padding:110px 220px 0 220px;">
+    <div style="font-family:Inter,sans-serif;font-weight:600;font-size:22px;letter-spacing:0.18em;color:#C9A968;margin-bottom:22px;">OPENING SOON</div>
+    <div style="font-family:Manrope,sans-serif;font-weight:700;font-size:56px;color:#F7ECD6;line-height:1.2;max-width:1300px;">Lower fees, lower minimums</div>
+    <div style="font-family:Inter,sans-serif;font-weight:400;font-size:26px;color:#F7ECD6;opacity:0.8;line-height:1.6;margin-top:28px;max-width:1250px;">We're lowering the minimum share value needed to open an NSLFCU account from $50 to $10, so it's easier for more members and their families to join. We're also eliminating two fees.</div>
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:56px;max-width:1480px;">
+      <div style="background:rgba(247,236,214,0.06);border:1px solid rgba(201,169,104,0.3);border-radius:20px;padding:36px 32px;">
+        <div style="font-family:Manrope,sans-serif;font-weight:700;font-size:44px;color:#C9A968;">$50 → $10</div>
+        <div style="font-family:Inter,sans-serif;font-weight:400;font-size:19px;color:#F7ECD6;opacity:0.75;margin-top:10px;">New minimum share value to open any account</div>
+      </div>
+      <div style="background:rgba(247,236,214,0.06);border:1px solid rgba(201,169,104,0.3);border-radius:20px;padding:36px 32px;">
+        <div style="font-family:Manrope,sans-serif;font-weight:700;font-size:44px;color:#C9A968;">Eliminated</div>
+        <div style="font-family:Inter,sans-serif;font-weight:400;font-size:19px;color:#F7ECD6;opacity:0.75;margin-top:10px;">Dormant account fee</div>
+      </div>
+      <div style="background:rgba(247,236,214,0.06);border:1px solid rgba(201,169,104,0.3);border-radius:20px;padding:36px 32px;">
+        <div style="font-family:Manrope,sans-serif;font-weight:700;font-size:44px;color:#C9A968;">Eliminated</div>
+        <div style="font-family:Inter,sans-serif;font-weight:400;font-size:19px;color:#F7ECD6;opacity:0.75;margin-top:10px;">Minimum balance fee</div>
+      </div>
+    </div>
+  </div>
+  <div style="position:absolute;bottom:40px;left:220px;display:flex;align-items:center;gap:10px;">
+    <img src="assets/icon-mark.png" style="height:20px;width:auto;opacity:0.6;filter:brightness(2);">
+    <span style="font-family:Inter,sans-serif;font-size:13px;font-weight:500;color:#F7ECD6;opacity:0.5;letter-spacing:0.05em;">NSLFCU ANNUAL MEETING 2026</span>
+  </div>
+</section><section data-document-role="page" data-label="Wellness Plus Intro" data-speaker-notes="Introduce Wellness+, our new financial wellness tools built into online banking." style="position:relative;width:1920px;height:1080px;background:#3A1420;overflow:hidden;font-family:Inter,sans-serif;" data-om-slide-id="670c3da5">
+  <div style="padding:110px 220px 0 220px;">
+    <div style="font-family:Inter,sans-serif;font-weight:600;font-size:22px;letter-spacing:0.18em;color:#C9A968;margin-bottom:22px;">NEW THIS YEAR</div>
+    <div style="font-family:Manrope,sans-serif;font-weight:700;font-size:56px;color:#F7ECD6;line-height:1.2;max-width:1300px;">Introducing Wellness+</div>
+    <div style="font-family:Inter,sans-serif;font-weight:400;font-size:26px;color:#F7ECD6;opacity:0.8;line-height:1.6;margin-top:28px;max-width:1200px;">A full suite of financial wellness tools built directly into our online and mobile banking — helping members budget, save, pay down debt, and track subscriptions, all without ever leaving their account.</div>
+  </div>
+  <div style="padding:60px 220px 0 220px;display:flex;justify-content:center;">
+    <img src="assets/wellness-dashboard.png" style="width:1480px;height:auto;border-radius:18px;box-shadow:0 40px 80px rgba(0,0,0,0.45);">
+  </div>
+  <div style="position:absolute;bottom:40px;left:220px;display:flex;align-items:center;gap:10px;">
+    <img src="assets/icon-mark.png" style="height:20px;width:auto;opacity:0.6;filter:brightness(2);">
+    <span style="font-family:Inter,sans-serif;font-size:13px;font-weight:500;color:#F7ECD6;opacity:0.5;letter-spacing:0.05em;">NSLFCU ANNUAL MEETING 2026</span>
+  </div>
+  <div style="position:absolute;bottom:40px;right:220px;font-family:Inter,sans-serif;font-size:13px;font-weight:500;color:#F7ECD6;opacity:0.5;">19</div>
+</section><section data-document-role="page" data-label="Wellness Plus Budgeting" data-speaker-notes="Detail the budgeting and spending insight tools inside Wellness+." style="position:relative;width:1920px;height:1080px;background:#F7ECD6;overflow:hidden;font-family:Inter,sans-serif;display:flex;align-items:center;" data-om-slide-id="a7184705">
+  <div style="padding:0 100px 0 220px;display:flex;gap:70px;align-items:center;width:100%;">
+    <div style="max-width:680px;flex-shrink:0;">
+      <div style="font-family:Inter,sans-serif;font-weight:600;font-size:22px;letter-spacing:0.18em;color:#7A2049;margin-bottom:24px;">WELLNESS+ · BUDGETING &amp; SPENDING</div>
+      <div style="font-family:Manrope,sans-serif;font-weight:700;font-size:52px;color:#241019;line-height:1.2;">Understand Every Dollar</div>
+      <div style="font-family:Inter,sans-serif;font-weight:400;font-size:26px;color:#241019;opacity:0.8;line-height:1.6;margin-top:30px;">Members can see exactly where their money goes — spending trends by month, a full category breakdown, and an AI-generated budget built from their own transaction history in a single click.</div>
+      <div style="display:flex;flex-direction:column;gap:24px;margin-top:48px;">
+        <div style="background:#FFFFFF;border-radius:18px;padding:32px 36px;">
+          <div style="width:52px;height:6px;background:#C9A968;border-radius:3px;margin-bottom:16px;"></div>
+          <div style="font-family:Manrope,sans-serif;font-weight:700;font-size:26px;color:#7A2049;">Spending Trends</div>
+          <div style="font-family:Inter,sans-serif;font-weight:400;font-size:20px;color:#241019;opacity:0.75;margin-top:8px;line-height:1.5;">Month-over-month tracking, right on the dashboard.</div>
+        </div>
+        <div style="background:#FFFFFF;border-radius:18px;padding:32px 36px;">
+          <div style="width:52px;height:6px;background:#C9A968;border-radius:3px;margin-bottom:16px;"></div>
+          <div style="font-family:Manrope,sans-serif;font-weight:700;font-size:26px;color:#7A2049;">Create a Budget in 1 Click</div>
+          <div style="font-family:Inter,sans-serif;font-weight:400;font-size:20px;color:#241019;opacity:0.75;margin-top:8px;line-height:1.5;">AI generates a personalized budget from past spending.</div>
+        </div>
+      </div>
+    </div>
+    <img src="assets/wellness-ai-budget.png" style="width:820px;height:auto;border-radius:18px;box-shadow:0 40px 80px rgba(36,16,25,0.3);">
+  </div>
+  <div style="position:absolute;bottom:40px;left:220px;display:flex;align-items:center;gap:10px;">
+    <img src="assets/icon-mark.png" style="height:20px;width:auto;opacity:0.5;">
+    <span style="font-family:Inter,sans-serif;font-size:13px;font-weight:500;color:#7A2049;opacity:0.55;letter-spacing:0.05em;">NSLFCU ANNUAL MEETING 2026</span>
+  </div>
+  <div style="position:absolute;bottom:40px;right:220px;font-family:Inter,sans-serif;font-size:13px;font-weight:500;color:#7A2049;opacity:0.55;">20</div>
+</section><section data-document-role="page" data-label="Wellness Plus Goals Debt" data-speaker-notes="Detail savings goals and debt management tools inside Wellness+." style="position:relative;width:1920px;height:1080px;background:#3A1420;overflow:hidden;font-family:Inter,sans-serif;display:flex;flex-direction:column;justify-content:center;" data-om-slide-id="11f8a248">
+  <div style="padding:0 220px;">
+    <div style="font-family:Inter,sans-serif;font-weight:600;font-size:22px;letter-spacing:0.18em;color:#C9A968;margin-bottom:20px;">WELLNESS+ · GOALS &amp; DEBT</div>
+    <div style="font-family:Manrope,sans-serif;font-weight:700;font-size:52px;color:#F7ECD6;line-height:1.2;max-width:1400px;">Save With Purpose, See Debt Clearly</div>
+  </div>
+  <div style="padding:40px 220px 0 220px;display:flex;gap:60px;">
+    <div style="flex:1;">
+      <div style="font-family:Manrope,sans-serif;font-weight:700;font-size:32px;color:#F7ECD6;margin-bottom:14px;">Savings Goals</div>
+      <div style="font-family:Inter,sans-serif;font-weight:400;font-size:23px;color:#F7ECD6;opacity:0.75;line-height:1.55;margin-bottom:28px;max-width:740px;">Members set a target, a timeline, and an automatic deposit — then watch real progress toward a car, a home, or whatever comes next.</div>
+      <img src="assets/wellness-savings-form.png" style="width:100%;height:auto;border-radius:16px;box-shadow:0 30px 60px rgba(0,0,0,0.4);">
+    </div>
+    <div style="flex:1;">
+      <div style="font-family:Manrope,sans-serif;font-weight:700;font-size:32px;color:#F7ECD6;margin-bottom:14px;">Debt Management</div>
+      <div style="font-family:Inter,sans-serif;font-weight:400;font-size:23px;color:#F7ECD6;opacity:0.75;line-height:1.55;margin-bottom:28px;max-width:740px;">Every loan and line of credit — ours and elsewhere — in one connected view, with balances, utilization, and remaining payments at a glance.</div>
+      <img src="assets/wellness-debt-mgmt.png" style="width:100%;height:auto;border-radius:16px;box-shadow:0 30px 60px rgba(0,0,0,0.4);">
+    </div>
+  </div>
+  <div style="position:absolute;bottom:40px;left:220px;display:flex;align-items:center;gap:10px;">
+    <img src="assets/icon-mark.png" style="height:20px;width:auto;opacity:0.6;filter:brightness(2);">
+    <span style="font-family:Inter,sans-serif;font-size:13px;font-weight:500;color:#F7ECD6;opacity:0.5;letter-spacing:0.05em;">NSLFCU ANNUAL MEETING 2026</span>
+  </div>
+  <div style="position:absolute;bottom:40px;right:220px;font-family:Inter,sans-serif;font-size:13px;font-weight:500;color:#F7ECD6;opacity:0.5;">21</div>
+</section><section data-document-role="page" data-label="Wellness Plus Subscriptions" data-speaker-notes="Detail subscription tracking and connected accounts inside Wellness+." style="position:relative;width:1920px;height:1080px;background:#F7ECD6;overflow:hidden;font-family:Inter,sans-serif;display:flex;align-items:center;" data-om-slide-id="759415e3">
+  <div style="padding:0 100px 0 220px;display:flex;gap:70px;align-items:center;width:100%;">
+    <div style="max-width:680px;flex-shrink:0;">
+      <div style="font-family:Inter,sans-serif;font-weight:600;font-size:22px;letter-spacing:0.18em;color:#7A2049;margin-bottom:24px;">WELLNESS+ · SUBSCRIPTIONS &amp; ACCOUNTS</div>
+      <div style="font-family:Manrope,sans-serif;font-weight:700;font-size:52px;color:#241019;line-height:1.2;">See Everything In One Place</div>
+      <div style="font-family:Inter,sans-serif;font-weight:400;font-size:26px;color:#241019;opacity:0.8;line-height:1.6;margin-top:30px;">Members link outside accounts and cards to get a complete financial picture, and Wellness+ automatically surfaces recurring subscriptions and bills before they catch anyone off guard.</div>
+      <div style="display:flex;flex-direction:column;gap:24px;margin-top:48px;">
+        <div style="background:#FFFFFF;border-radius:18px;padding:32px 36px;">
+          <div style="width:52px;height:6px;background:#C9A968;border-radius:3px;margin-bottom:16px;"></div>
+          <div style="font-family:Manrope,sans-serif;font-weight:700;font-size:26px;color:#7A2049;">Subscription Tracking</div>
+          <div style="font-family:Inter,sans-serif;font-weight:400;font-size:20px;color:#241019;opacity:0.75;margin-top:8px;line-height:1.5;">Every recurring charge, grouped and calendared automatically.</div>
+        </div>
+        <div style="background:#FFFFFF;border-radius:18px;padding:32px 36px;">
+          <div style="width:52px;height:6px;background:#C9A968;border-radius:3px;margin-bottom:16px;"></div>
+          <div style="font-family:Manrope,sans-serif;font-weight:700;font-size:26px;color:#7A2049;">Connected Accounts</div>
+          <div style="font-family:Inter,sans-serif;font-weight:400;font-size:20px;color:#241019;opacity:0.75;margin-top:8px;line-height:1.5;">Securely link outside accounts for a full financial view.</div>
+        </div>
+      </div>
+    </div>
+    <img src="assets/wellness-subscriptions.png" style="width:820px;height:auto;border-radius:18px;box-shadow:0 40px 80px rgba(36,16,25,0.3);">
+  </div>
+  <div style="position:absolute;bottom:40px;left:220px;display:flex;align-items:center;gap:10px;">
+    <img src="assets/icon-mark.png" style="height:20px;width:auto;opacity:0.5;">
+    <span style="font-family:Inter,sans-serif;font-size:13px;font-weight:500;color:#7A2049;opacity:0.55;letter-spacing:0.05em;">NSLFCU ANNUAL MEETING 2026</span>
+  </div>
+  <div style="position:absolute;bottom:40px;right:220px;font-family:Inter,sans-serif;font-size:13px;font-weight:500;color:#7A2049;opacity:0.55;">22</div>
+</section><section data-document-role="page" data-label="Community Impact" data-speaker-notes="Highlight community outreach and the From The Heart Church Ministries connection." style="position:relative;width:1920px;height:1080px;background:#F7ECD6;overflow:hidden;font-family:Inter,sans-serif;display:flex;" data-om-slide-id="cf1c3f1f">
+  <div style="flex:1;position:relative;">
+    <img src="assets/photo-meeting-signing.jpg" style="position:absolute;top:120px;left:100px;width:640px;height:750px;border-radius:24px;object-fit:cover;">
+  </div>
+  <div style="width:960px;padding:150px 220px 0 60px;">
+    <div style="font-family:Inter,sans-serif;font-weight:600;font-size:22px;letter-spacing:0.18em;color:#7A2049;margin-bottom:28px;">COMMUNITY IMPACT</div>
+    <div style="font-family:Manrope,sans-serif;font-weight:700;font-size:52px;color:#241019;line-height:1.2;">Rooted in From The Heart<br>Church Ministries</div>
+    <div style="font-family:Inter,sans-serif;font-weight:400;font-size:26px;color:#241019;opacity:0.8;line-height:1.6;margin-top:36px;">Sponsored by From The Heart Church Ministries, None Suffer Lack exists to serve a close, faith-centered community — not the general public. This year we supported member financial literacy workshops, first-time homebuyer education, and holiday assistance for families in Suitland.</div>
+  </div>
+  <div style="position:absolute;bottom:40px;left:220px;display:flex;align-items:center;gap:10px;">
+    <img src="assets/icon-mark.png" style="height:20px;width:auto;opacity:0.5;">
+    <span style="font-family:Inter,sans-serif;font-size:13px;font-weight:500;color:#7A2049;opacity:0.55;letter-spacing:0.05em;">NSLFCU ANNUAL MEETING 2026</span>
+  </div>
+  <div style="position:absolute;bottom:40px;right:220px;font-family:Inter,sans-serif;font-size:13px;font-weight:500;color:#7A2049;opacity:0.55;">15</div>
+</section>
+
+<section data-document-role="page" data-label="Accounts Services" data-speaker-notes="Recap accounts and services available to members." style="position:relative;width:1920px;height:1080px;background:#F7ECD6;overflow:hidden;font-family:Inter,sans-serif;" data-om-slide-id="56950104">
+  <div style="padding:110px 220px 0 220px;display:flex;gap:64px;align-items:flex-start;">
+    <div style="flex:1;">
+      <div style="font-family:Inter,sans-serif;font-weight:600;font-size:22px;letter-spacing:0.18em;color:#7A2049;margin-bottom:24px;">ACCOUNTS &amp; SERVICES</div>
+      <div style="font-family:Manrope,sans-serif;font-weight:700;font-size:52px;color:#241019;margin-bottom:48px;">Everyday Banking, Made Simple</div>
+      <div style="display:flex;flex-direction:column;gap:28px;">
+        <div style="background:#FFFFFF;border-radius:24px;padding:36px 40px;">
+          <div style="width:56px;height:6px;background:#C9A968;border-radius:3px;margin-bottom:20px;"></div>
+          <div style="font-family:Manrope,sans-serif;font-weight:700;font-size:28px;color:#7A2049;">Savings</div>
+          <div style="font-family:Inter,sans-serif;font-weight:400;font-size:20px;color:#241019;opacity:0.75;margin-top:10px;line-height:1.5;">Grow steadily with regular and holiday club shares.</div>
+        </div>
+        <div style="background:#FFFFFF;border-radius:24px;padding:36px 40px;">
+          <div style="width:56px;height:6px;background:#C9A968;border-radius:3px;margin-bottom:20px;"></div>
+          <div style="font-family:Manrope,sans-serif;font-weight:700;font-size:28px;color:#7A2049;">Checking</div>
+          <div style="font-family:Inter,sans-serif;font-weight:400;font-size:20px;color:#241019;opacity:0.75;margin-top:10px;line-height:1.5;">Everyday access with no hidden fees.</div>
+        </div>
+        <div style="background:#FFFFFF;border-radius:24px;padding:36px 40px;">
+          <div style="width:56px;height:6px;background:#C9A968;border-radius:3px;margin-bottom:20px;"></div>
+          <div style="font-family:Manrope,sans-serif;font-weight:700;font-size:28px;color:#7A2049;">Membership</div>
+          <div style="font-family:Inter,sans-serif;font-weight:400;font-size:20px;color:#241019;opacity:0.75;margin-top:10px;line-height:1.5;">Open to From The Heart Church Ministries members &amp; families.</div>
+        </div>
+      </div>
+    </div>
+    <div style="width:380px;flex-shrink:0;display:flex;justify-content:center;">
+      <img src="assets/app-checking-detail.png" style="width:340px;border-radius:28px;box-shadow:0 30px 60px rgba(36,16,25,0.25);">
+    </div>
+  </div>
+  <div style="position:absolute;bottom:40px;left:220px;display:flex;align-items:center;gap:10px;">
+    <img src="assets/icon-mark.png" style="height:20px;width:auto;opacity:0.5;">
+    <span style="font-family:Inter,sans-serif;font-size:13px;font-weight:500;color:#7A2049;opacity:0.55;letter-spacing:0.05em;">NSLFCU ANNUAL MEETING 2026</span>
+  </div>
+  <div style="position:absolute;bottom:40px;right:220px;font-family:Inter,sans-serif;font-size:13px;font-weight:500;color:#7A2049;opacity:0.55;">16</div>
+</section>
+
+<section data-document-role="page" data-label="Loans" data-speaker-notes="Recap loan products available to members." style="position:relative;width:1920px;height:1080px;background:#F7ECD6;overflow:hidden;font-family:Inter,sans-serif;" data-om-slide-id="2c061f7a">
+  <div style="padding:110px 220px 0 220px;display:flex;gap:64px;align-items:flex-start;">
+    <div style="flex:1;">
+      <div style="font-family:Inter,sans-serif;font-weight:600;font-size:22px;letter-spacing:0.18em;color:#7A2049;margin-bottom:24px;">LOANS</div>
+      <div style="font-family:Manrope,sans-serif;font-weight:700;font-size:52px;color:#241019;margin-bottom:48px;">Funding What Matters</div>
+      <div style="display:flex;flex-direction:column;gap:28px;">
+        <div style="background:#FFFFFF;border-radius:24px;padding:36px 40px;">
+          <div style="width:56px;height:6px;background:#C9A968;border-radius:3px;margin-bottom:20px;"></div>
+          <div style="font-family:Manrope,sans-serif;font-weight:700;font-size:28px;color:#7A2049;">Auto Loans</div>
+          <div style="font-family:Inter,sans-serif;font-weight:400;font-size:20px;color:#241019;opacity:0.75;margin-top:10px;line-height:1.5;">Competitive rates on new &amp; used vehicles.</div>
+        </div>
+        <div style="background:#FFFFFF;border-radius:24px;padding:36px 40px;">
+          <div style="width:56px;height:6px;background:#C9A968;border-radius:3px;margin-bottom:20px;"></div>
+          <div style="font-family:Manrope,sans-serif;font-weight:700;font-size:28px;color:#7A2049;">Personal Loans</div>
+          <div style="font-family:Inter,sans-serif;font-weight:400;font-size:20px;color:#241019;opacity:0.75;margin-top:10px;line-height:1.5;">Flexible funds for life's unexpected moments.</div>
+        </div>
+        <div style="background:#FFFFFF;border-radius:24px;padding:36px 40px;">
+          <div style="width:56px;height:6px;background:#C9A968;border-radius:3px;margin-bottom:20px;"></div>
+          <div style="font-family:Manrope,sans-serif;font-weight:700;font-size:28px;color:#7A2049;">And More</div>
+          <div style="font-family:Inter,sans-serif;font-weight:400;font-size:20px;color:#241019;opacity:0.75;margin-top:10px;line-height:1.5;">Ask a loan officer about what fits your goals.</div>
+        </div>
+      </div>
+    </div>
+    <div style="width:380px;flex-shrink:0;display:flex;justify-content:center;">
+      <img src="assets/app-loan-detail.png" style="width:340px;border-radius:28px;box-shadow:0 30px 60px rgba(36,16,25,0.25);">
+    </div>
+  </div>
+  <div style="position:absolute;bottom:40px;left:220px;display:flex;align-items:center;gap:10px;">
+    <img src="assets/icon-mark.png" style="height:20px;width:auto;opacity:0.5;">
+    <span style="font-family:Inter,sans-serif;font-size:13px;font-weight:500;color:#7A2049;opacity:0.55;letter-spacing:0.05em;">NSLFCU ANNUAL MEETING 2026</span>
+  </div>
+  <div style="position:absolute;bottom:40px;right:220px;font-family:Inter,sans-serif;font-size:13px;font-weight:500;color:#7A2049;opacity:0.55;">17</div>
+</section>
+
+<section data-document-role="page" data-label="Digital Banking" data-speaker-notes="Highlight digital and mobile banking convenience." style="position:relative;width:1920px;height:1080px;background:#3A1420;overflow:hidden;font-family:Inter,sans-serif;" data-om-slide-id="bbdc1f39">
+  <div style="padding:110px 100px 0 220px;display:flex;gap:60px;align-items:center;">
+    <div style="max-width:900px;">
+      <div style="font-family:Inter,sans-serif;font-weight:600;font-size:22px;letter-spacing:0.18em;color:#C9A968;margin-bottom:22px;">DIGITAL BANKING</div>
+      <div style="font-family:Manrope,sans-serif;font-weight:700;font-size:52px;color:#F7ECD6;line-height:1.2;">Banking That Meets You Where You Are</div>
+      <div style="font-family:Inter,sans-serif;font-weight:400;font-size:25px;color:#F7ECD6;opacity:0.8;line-height:1.6;margin-top:32px;">Online and mobile banking, a personal bank assistant, and 24/7 account access — so members can manage their money on their own time, wherever they are.</div>
+      <div style="display:flex;gap:24px;margin-top:44px;">
+        <div style="background:#C9A968;color:#3A1420;font-family:Inter,sans-serif;font-weight:600;font-size:22px;padding:18px 36px;border-radius:14px;">Open an Account</div>
+        <div style="border:2px solid #C9A968;color:#C9A968;font-family:Inter,sans-serif;font-weight:600;font-size:22px;padding:16px 36px;border-radius:14px;">Schedule a Visit</div>
+      </div>
+    </div>
+    <div style="display:flex;gap:20px;align-items:flex-end;flex-shrink:0;">
+      <img src="assets/app-desktop-login.jpg" style="width:340px;border-radius:14px;box-shadow:0 30px 60px rgba(0,0,0,0.4);">
+      <img src="assets/app-chatbot.png" style="width:150px;border-radius:20px;box-shadow:0 30px 60px rgba(0,0,0,0.4);margin-bottom:-30px;">
+    </div>
+  </div>
+  <div style="position:absolute;bottom:40px;left:220px;display:flex;align-items:center;gap:10px;">
+    <img src="assets/icon-mark.png" style="height:20px;width:auto;opacity:0.6;filter:brightness(2);">
+    <span style="font-family:Inter,sans-serif;font-size:13px;font-weight:500;color:#F7ECD6;opacity:0.5;letter-spacing:0.05em;">NSLFCU ANNUAL MEETING 2026</span>
+  </div>
+  <div style="position:absolute;bottom:40px;right:220px;font-family:Inter,sans-serif;font-size:13px;font-weight:500;color:#F7ECD6;opacity:0.5;">18</div>
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<section data-document-role="page" data-label="Election" data-speaker-notes="Present board nominees and open the floor for election." style="position:relative;width:1920px;height:1080px;background:#7A2049;overflow:hidden;font-family:Inter,sans-serif;" data-om-slide-id="ef00243a">
+  <div style="padding:130px 220px 0 220px;">
+    <div style="font-family:Inter,sans-serif;font-weight:600;font-size:22px;letter-spacing:0.18em;color:#C9A968;margin-bottom:24px;">ORDER OF BUSINESS · 07</div>
+    <div style="font-family:Manrope,sans-serif;font-weight:700;font-size:56px;color:#F7ECD6;margin-bottom:16px;">Election of the Board</div>
+    <div style="font-family:Inter,sans-serif;font-weight:400;font-size:26px;color:#F7ECD6;opacity:0.8;max-width:1100px;line-height:1.6;margin-bottom:56px;">Two Board seats are up for election this year. Nominees below are eligible members in good standing.</div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:44px;max-width:1300px;">
+      <div style="background:rgba(247,236,214,0.08);border:1px solid rgba(201,169,104,0.4);border-radius:20px;padding:40px;">
+        <div style="font-family:Inter,sans-serif;font-weight:600;font-size:18px;letter-spacing:0.1em;color:#C9A968;margin-bottom:12px;">SEAT ONE NOMINEE</div>
+        <div style="font-family:Manrope,sans-serif;font-weight:700;font-size:30px;color:#F7ECD6;">Nominee Name</div>
+        <div style="font-family:Inter,sans-serif;font-weight:400;font-size:20px;color:#F7ECD6;opacity:0.7;margin-top:10px;">Member since 2016 · Incumbent</div>
+      </div>
+      <div style="background:rgba(247,236,214,0.08);border:1px solid rgba(201,169,104,0.4);border-radius:20px;padding:40px;">
+        <div style="font-family:Inter,sans-serif;font-weight:600;font-size:18px;letter-spacing:0.1em;color:#C9A968;margin-bottom:12px;">SEAT TWO NOMINEE</div>
+        <div style="font-family:Manrope,sans-serif;font-weight:700;font-size:30px;color:#F7ECD6;">Nominee Name</div>
+        <div style="font-family:Inter,sans-serif;font-weight:400;font-size:20px;color:#F7ECD6;opacity:0.7;margin-top:10px;">Member since 2021 · New nominee</div>
+      </div>
+    </div>
+  </div>
+  <div style="position:absolute;bottom:40px;left:220px;display:flex;align-items:center;gap:10px;">
+    <img src="assets/icon-mark.png" style="height:20px;width:auto;opacity:0.6;filter:brightness(2);">
+    <span style="font-family:Inter,sans-serif;font-size:13px;font-weight:500;color:#F7ECD6;opacity:0.5;letter-spacing:0.05em;">NSLFCU ANNUAL MEETING 2026</span>
+  </div>
+  <div style="position:absolute;bottom:40px;right:220px;font-family:Inter,sans-serif;font-size:13px;font-weight:500;color:#F7ECD6;opacity:0.5;">25</div>
+</section>
+
+<section data-document-role="page" data-label="New Business" data-speaker-notes="Open the floor for new business from members." style="position:relative;width:1920px;height:1080px;background:#F7ECD6;overflow:hidden;font-family:Inter,sans-serif;" data-om-slide-id="14f13ccc">
+  <div style="position:absolute;top:0;left:0;width:14px;height:1080px;background:#C9A968;"></div>
+  <div style="padding:140px 220px 0 220px;">
+    <div style="font-family:Inter,sans-serif;font-weight:600;font-size:22px;letter-spacing:0.18em;color:#7A2049;margin-bottom:28px;">ORDER OF BUSINESS · 08</div>
+    <div style="font-family:Manrope,sans-serif;font-weight:700;font-size:60px;color:#241019;line-height:1.15;max-width:1300px;">New Business</div>
+    <div style="font-family:Inter,sans-serif;font-weight:400;font-size:28px;color:#241019;opacity:0.8;line-height:1.6;max-width:1150px;margin-top:44px;">The floor is now open. Members may raise any additional business for discussion before the meeting is adjourned.</div>
+  </div>
+  <div style="position:absolute;bottom:40px;left:220px;display:flex;align-items:center;gap:10px;">
+    <img src="assets/icon-mark.png" style="height:20px;width:auto;opacity:0.5;">
+    <span style="font-family:Inter,sans-serif;font-size:13px;font-weight:500;color:#7A2049;opacity:0.55;letter-spacing:0.05em;">NSLFCU ANNUAL MEETING 2026</span>
+  </div>
+  <div style="position:absolute;bottom:40px;right:220px;font-family:Inter,sans-serif;font-size:13px;font-weight:500;color:#7A2049;opacity:0.55;">26</div>
+</section>
+
+<section data-document-role="page" data-label="Looking Ahead" data-speaker-notes="Preview goals for the coming year." style="position:relative;width:1920px;height:1080px;background:#3A1420;overflow:hidden;font-family:Inter,sans-serif;" data-om-slide-id="febc75db">
+  <div style="padding:130px 220px 0 220px;">
+    <div style="font-family:Inter,sans-serif;font-weight:600;font-size:22px;letter-spacing:0.18em;color:#C9A968;margin-bottom:24px;">LOOKING AHEAD</div>
+    <div style="font-family:Manrope,sans-serif;font-weight:700;font-size:56px;color:#F7ECD6;margin-bottom:64px;">Our Focus for 2027</div>
+    <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:44px;">
+      <div style="border-top:3px solid #C9A968;padding-top:28px;">
+        <div style="font-family:Manrope,sans-serif;font-weight:700;font-size:30px;color:#F7ECD6;">Expand Digital Access</div>
+        <div style="font-family:Inter,sans-serif;font-weight:400;font-size:22px;color:#F7ECD6;opacity:0.75;margin-top:14px;line-height:1.55;">A refreshed mobile app and easier online loan applications.</div>
+      </div>
+      <div style="border-top:3px solid #C9A968;padding-top:28px;">
+        <div style="font-family:Manrope,sans-serif;font-weight:700;font-size:30px;color:#F7ECD6;">Grow Financial Wellness</div>
+        <div style="font-family:Inter,sans-serif;font-weight:400;font-size:22px;color:#F7ECD6;opacity:0.75;margin-top:14px;line-height:1.55;">More workshops on budgeting, credit, and homeownership.</div>
+      </div>
+      <div style="border-top:3px solid #C9A968;padding-top:28px;">
+        <div style="font-family:Manrope,sans-serif;font-weight:700;font-size:30px;color:#F7ECD6;">Deepen Community Ties</div>
+        <div style="font-family:Inter,sans-serif;font-weight:400;font-size:22px;color:#F7ECD6;opacity:0.75;margin-top:14px;line-height:1.55;">New partnerships across Suitland and From The Heart Church Ministries.</div>
+      </div>
+    </div>
+  </div>
+  <div style="position:absolute;bottom:40px;left:220px;display:flex;align-items:center;gap:10px;">
+    <img src="assets/icon-mark.png" style="height:20px;width:auto;opacity:0.6;filter:brightness(2);">
+    <span style="font-family:Inter,sans-serif;font-size:13px;font-weight:500;color:#F7ECD6;opacity:0.5;letter-spacing:0.05em;">NSLFCU ANNUAL MEETING 2026</span>
+  </div>
+  <div style="position:absolute;bottom:40px;right:220px;font-family:Inter,sans-serif;font-size:13px;font-weight:500;color:#F7ECD6;opacity:0.5;">27</div>
+</section>
+
+<section data-document-role="page" data-label="Acknowledgements" data-speaker-notes="Placeholder — fill in once member acknowledgements are finalized." style="position:relative;width:1920px;height:1080px;background:#F7ECD6;overflow:hidden;font-family:Inter,sans-serif;" data-om-slide-id="18db3674">
+  <div style="position:absolute;top:0;left:0;width:14px;height:1080px;background:#C9A968;"></div>
+  <div style="padding:140px 220px 0 220px;">
+    <div style="font-family:Inter,sans-serif;font-weight:600;font-size:22px;letter-spacing:0.18em;color:#7A2049;margin-bottom:28px;">8:00 – 8:15 PM</div>
+    <div style="font-family:Manrope,sans-serif;font-weight:700;font-size:60px;color:#241019;line-height:1.15;max-width:1300px;">Acknowledgements</div>
+    <div style="background:#FFFFFF;border:2px dashed rgba(122,32,73,0.35);border-radius:20px;padding:48px;margin-top:56px;max-width:1200px;font-family:Inter,sans-serif;font-weight:500;font-size:24px;color:#241019;opacity:0.7;">Member recognitions to be added.</div>
+    <div style="margin-top:36px;font-family:Inter,sans-serif;font-weight:500;font-size:18px;color:#7A2049;letter-spacing:0.05em;">PLACEHOLDER — CONTENT TO BE ADDED</div>
+  </div>
+  <div style="position:absolute;bottom:40px;left:220px;display:flex;align-items:center;gap:10px;">
+    <img src="assets/icon-mark.png" style="height:20px;width:auto;opacity:0.5;">
+    <span style="font-family:Inter,sans-serif;font-size:13px;font-weight:500;color:#7A2049;opacity:0.55;letter-spacing:0.05em;">NSLFCU ANNUAL MEETING 2026</span>
+  </div>
+</section>
+
+<section data-document-role="page" data-label="Closing" data-speaker-notes="Thank members for attending and formally adjourn the meeting." style="position:relative;width:1920px;height:1080px;background:#3A1420;overflow:hidden;font-family:Inter,sans-serif;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;" data-om-slide-id="b2fbc51d">
+  <img src="assets/icon-mark.png" style="position:absolute;left:-80px;top:-120px;height:600px;width:auto;opacity:0.06;">
+  <img src="assets/logo-gold.png" style="height:330px;width:auto;margin-bottom:56px;">
+  <div style="font-family:Manrope,sans-serif;font-weight:800;font-size:72px;color:#F7ECD6;line-height:1.1;">Thank You for Being<br>Part of This Family</div>
+  <div style="font-family:Inter,sans-serif;font-weight:400;font-size:28px;color:#F7ECD6;opacity:0.8;max-width:900px;margin-top:32px;line-height:1.5;">This meeting is now adjourned. We're grateful for every member who showed up tonight — and every day.</div>
+  <div style="margin-top:40px;font-family:Inter,sans-serif;font-weight:600;font-size:22px;color:#F7ECD6;opacity:0.85;">Sis. Toni Hopkins, President &nbsp;·&nbsp; Bro. Marvin Cherry, Chairman</div>
+  <div style="margin-top:12px;font-family:Inter,sans-serif;font-weight:400;font-size:18px;color:#F7ECD6;opacity:0.55;">Closing Remarks &amp; Benediction · Pastor Justin K. Young</div>
+  <div style="margin-top:56px;font-family:Inter,sans-serif;font-weight:500;font-size:22px;color:#C9A968;letter-spacing:0.05em;">nslfcu.org · Suitland, Maryland</div>
+</section>
+
+</x-import>
+</x-dc>
+</body>
+</html>

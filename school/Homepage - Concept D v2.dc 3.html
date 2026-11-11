@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+<script src="../portfolio-guard.js" defer></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<title>Saint&nbsp;Martin's Lutheran School | Christian PreK–8 School in Annapolis, MD</title>
+<meta name="description" content="Saint Martin's Lutheran School is a Christ-centered PreK-3 through 8th grade school in Annapolis, Maryland. Small classes, caring teachers, and strong academics since 1963. Schedule a tour.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&display=swap" rel="stylesheet">
+<style>
+body{margin:0;background:#F6F5F1;color:#1F2328;font-family:-apple-system,BlinkMacSystemFont,"SF Pro Text","Helvetica Neue",system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+a{color:#173A66;text-decoration:none}a:hover{color:#2D6CB5}
+*{box-sizing:border-box}
+@media (prefers-reduced-motion: reduce){*{transition-duration:1ms !important}}
+h1,h2,h3,h4,blockquote,div,a,button{text-wrap:balance}p,li,blockquote,figcaption,dd,span{text-wrap:pretty}</style>
+</helmet>
+<div style="min-height:100vh;">
+<dc-import name="Site Nav" tone="overlay" utility="{{ true }}" hint-size="100%,1px"></dc-import>
+
+<section data-screen-label="Hero" style="position:relative;min-height:min(920px,100vh);display:flex;flex-direction:column;justify-content:flex-end;overflow:hidden;background:#0F2747;">
+  <img src="assets/cd/07214.jpg" alt="An elementary student reading at his desk" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 30%;opacity:{{ h0 }};transform:{{ k0 }};transition:opacity 900ms ease, transform 7s cubic-bezier(.2,.6,.2,1);">
+  <img src="assets/cd/07140.jpg" alt="A middle school student working on a laptop" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 40%;opacity:{{ h1 }};transform:{{ k1 }};transition:opacity 900ms ease, transform 7s cubic-bezier(.2,.6,.2,1);">
+  <img src="assets/cd/07200.jpg" alt="A teacher helping a student with his workbook" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 40%;opacity:{{ h2 }};transform:{{ k2 }};transition:opacity 900ms ease, transform 7s cubic-bezier(.2,.6,.2,1);">
+  <img src="assets/cd/07217.jpg" alt="A middle school student writing in class" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 35%;opacity:{{ h3 }};transform:{{ k3 }};transition:opacity 900ms ease, transform 7s cubic-bezier(.2,.6,.2,1);">
+  <div style="position:absolute;inset:0;background:linear-gradient(90deg,rgba(12,26,48,0.78) 0%,rgba(12,26,48,0.35) 60%,rgba(12,26,48,0.15) 100%),linear-gradient(180deg,rgba(12,26,48,0) 50%,rgba(12,26,48,0.6) 100%);"></div>
+
+  <div style="position:relative;width:100%;max-width:1320px;margin:0 auto;padding:clamp(80px,10vw,140px) clamp(16px,3vw,32px) 0;color:#fff;">
+    <div style="display:inline-flex;align-items:center;gap:10px;padding:7px 14px 7px 8px;border-radius:999px;background:rgba(255,255,255,0.14);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border:1px solid rgba(255,255,255,0.22);font-size:14px;font-weight:600;white-space:nowrap;">
+      <img src="assets/logo/cross-26-2x.png" srcset="assets/logo/cross-26-2x.png 2x, assets/logo/cross-26-3x.png 3x" alt="" style="width:26px;height:26px;border-radius:50%;background:#fff;">Faith-filled learning since 1963
+    </div>
+    <h1 style="margin:22px 0 0;font-weight:400;">
+      <span style="display:block;font-family:Newsreader,Georgia,serif;font-style:italic;font-size:clamp(24px,2.6vw,34px);letter-spacing:-0.01em;color:#D6E3F3;">Welcome to</span>
+      <span style="display:block;margin-top:2px;font-family:Newsreader,Georgia,serif;font-size:clamp(58px,9vw,128px);line-height:0.92;letter-spacing:-0.04em;">Saint&nbsp;Martin's</span>
+      <span style="display:block;margin-top:16px;font-size:clamp(12px,1.3vw,15px);font-weight:600;letter-spacing:0.24em;text-transform:uppercase;">Lutheran School of Annapolis</span>
+    </h1>
+    <p style="margin:22px 0 0;max-width:32em;font-size:clamp(17px,1.6vw,20px);line-height:1.45;color:#E4ECF6;text-wrap:pretty;">A Christian PreK–8 school in Annapolis, Maryland, where your child grows in faith, curiosity, and&nbsp;character.</p>
+  </div>
+
+  <div style="position:relative;width:100%;max-width:1320px;margin:0 auto;padding:clamp(36px,5vw,56px) clamp(16px,3vw,32px) clamp(24px,4vw,40px);">
+    <div style="display:flex;flex-wrap:wrap;align-items:center;gap:10px 14px;padding:12px 12px 12px 26px;border-radius:28px;background:#fff;box-shadow:0 30px 80px rgba(0,0,0,0.3);">
+      <span style="font-size:clamp(18px,1.8vw,22px);font-family:Newsreader,Georgia,serif;color:#5A6270;">I'm</span>
+      <div style="position:relative;">
+        <button onClick="{{ tgAud }}" style="display:flex;align-items:center;gap:10px;padding:10px 16px;border:0;border-radius:14px;background:#EEF3F9;color:#173A66;font-family:Newsreader,Georgia,serif;font-size:clamp(20px,2vw,26px);letter-spacing:-0.015em;cursor:pointer;white-space:nowrap;transition:transform 100ms ease-out;" style-active="transform:scale(0.97);">{{ audLabel }}<span style="font-family:-apple-system,system-ui,sans-serif;font-size:11px;color:#2D6CB5;">▾</span></button>
+        <div style="position:absolute;bottom:calc(100% + 10px);left:0;z-index:5;opacity:{{ oAud }};transform:{{ tAud }};pointer-events:{{ pAud }};transform-origin:bottom left;transition:opacity 160ms ease, transform 260ms cubic-bezier(.2,.9,.3,1);">
+          <div style="min-width:260px;padding:8px;border-radius:18px;background:#fff;box-shadow:0 20px 60px rgba(15,39,71,0.28),0 0 0 1px rgba(15,39,71,0.06);display:flex;flex-direction:column;">
+            <sc-for list="{{ audOpts }}" as="o" hint-placeholder-count="3">
+              <button onClick="{{ o.pick }}" style="display:flex;justify-content:space-between;align-items:center;gap:16px;padding:12px 14px;border:0;border-radius:10px;background:{{ o.bg }};color:#173A66;font-family:inherit;font-size:16px;font-weight:500;text-align:left;cursor:pointer;" style-hover="background:#EEF3F9;">{{ o.label }}<span style="color:#2D6CB5;">{{ o.check }}</span></button>
+            </sc-for>
+          </div>
+        </div>
+      </div>
+      <span style="font-size:clamp(18px,1.8vw,22px);font-family:Newsreader,Georgia,serif;color:#5A6270;">and I want to</span>
+      <div style="position:relative;flex:1;min-width:220px;">
+        <button onClick="{{ tgGoal }}" style="width:100%;display:flex;justify-content:space-between;align-items:center;gap:10px;padding:10px 16px;border:0;border-radius:14px;background:#EEF3F9;color:#173A66;font-family:Newsreader,Georgia,serif;font-size:clamp(20px,2vw,26px);letter-spacing:-0.015em;cursor:pointer;text-align:left;transition:transform 100ms ease-out;" style-active="transform:scale(0.985);">{{ goalLabel }}<span style="font-family:-apple-system,system-ui,sans-serif;font-size:11px;color:#2D6CB5;">▾</span></button>
+        <div style="position:absolute;bottom:calc(100% + 10px);left:0;z-index:5;opacity:{{ oGoal }};transform:{{ tGoal }};pointer-events:{{ pGoal }};transform-origin:bottom left;transition:opacity 160ms ease, transform 260ms cubic-bezier(.2,.9,.3,1);">
+          <div style="min-width:300px;padding:8px;border-radius:18px;background:#fff;box-shadow:0 20px 60px rgba(15,39,71,0.28),0 0 0 1px rgba(15,39,71,0.06);display:flex;flex-direction:column;">
+            <sc-for list="{{ goalOpts }}" as="o" hint-placeholder-count="5">
+              <button onClick="{{ o.pick }}" style="display:flex;justify-content:space-between;align-items:center;gap:16px;padding:12px 14px;border:0;border-radius:10px;background:{{ o.bg }};color:#173A66;font-family:inherit;font-size:16px;font-weight:500;text-align:left;cursor:pointer;" style-hover="background:#EEF3F9;">{{ o.label }}<span style="color:#2D6CB5;">{{ o.check }}</span></button>
+            </sc-for>
+          </div>
+        </div>
+      </div>
+      <a href="{{ goHref }}" style="display:flex;align-items:center;gap:10px;padding:18px 26px;border-radius:18px;background:#173A66;color:#fff;font-size:16px;font-weight:600;white-space:nowrap;transition:transform 100ms ease-out;" style-active="transform:scale(0.96);">{{ goLabel }}<span>→</span></a>
+    </div>
+  </div>
+</section>
+
+<section data-screen-label="About" style="max-width:1320px;margin:0 auto;padding:clamp(80px,10vw,140px) clamp(16px,3vw,32px);display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,460px),1fr));gap:clamp(40px,6vw,88px);align-items:center;">
+  <div style="position:relative;">
+    <img src="assets/p5.jpg" alt="Young students choosing books in the classroom library" style="width:100%;aspect-ratio:5/6;object-fit:cover;object-position:center 60%;border-radius:28px;">
+  </div>
+  <div>
+    <div style="font-size:14px;font-weight:600;color:#2D6CB5;">About Saint&nbsp;Martin's</div>
+    <h2 style="margin:14px 0 0;font-family:Newsreader,Georgia,serif;font-weight:400;font-size:clamp(36px,4.6vw,58px);line-height:1.03;letter-spacing:-0.03em;color:#173A66;text-wrap:balance;">A Christ-centered school from PreK-3 through eighth&nbsp;grade</h2>
+    <p style="margin:22px 0 0;max-width:30em;font-size:18px;line-height:1.55;color:#4A5260;text-wrap:pretty;">Saint&nbsp;Martin's has taught Annapolis children in faith, curiosity, and character for more than 60 years. Classes are small, teachers are caring, and the campus feels like&nbsp;family.</p>
+    <figure style="margin:32px 0 0;padding:24px 26px;border-radius:20px;background:#fff;">
+      <blockquote style="margin:0;font-family:Newsreader,Georgia,serif;font-size:23px;line-height:1.3;color:#173A66;">"Every teacher here knows my child by name, and it&nbsp;shows."</blockquote>
+      <figcaption style="margin-top:10px;font-size:14px;color:#5A6270;">Parent, Grade 2</figcaption>
+    </figure>
+  </div>
+</section>
+
+<section data-screen-label="Program" style="max-width:1320px;margin:0 auto;padding:0 clamp(16px,3vw,32px) clamp(80px,10vw,140px);">
+  <div style="text-align:center;max-width:720px;margin:0 auto 44px;"><div style="font-size:14px;font-weight:600;color:#2D6CB5;">Our program</div><h2 style="margin:12px 0 0;font-family:Newsreader,Georgia,serif;font-weight:400;font-size:clamp(34px,4.2vw,52px);line-height:1.04;letter-spacing:-0.03em;color:#173A66;">Everything your child needs, from the first bell to&nbsp;pickup</h2></div>
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:20px;">
+    <a href="Academics.dc.html" style="position:relative;display:flex;flex-direction:column;justify-content:flex-end;min-height:440px;padding:28px;border-radius:28px;overflow:hidden;color:#fff;transition:transform 120ms ease-out;" style-active="transform:scale(0.985);"><img src="assets/cd/07144.jpg" alt="A teacher leading a math lesson at the smart board" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;"><div style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(12,26,48,0) 35%,rgba(12,26,48,0.88) 100%);"></div><div style="position:relative;"><div style="font-size:13px;font-weight:600;color:#BFD5F0;">Academics</div><h3 style="margin:6px 0 0;font-size:24px;font-weight:600;letter-spacing:-0.02em;">A strong academic foundation</h3><p style="margin:8px 0 0;font-size:15px;line-height:1.5;color:#E4ECF6;">Rigorous, grade-level instruction in every&nbsp;subject.</p></div></a>
+    <a href="Student Experience.dc.html" style="position:relative;display:flex;flex-direction:column;justify-content:flex-end;min-height:440px;padding:28px;border-radius:28px;overflow:hidden;color:#fff;transition:transform 120ms ease-out;" style-active="transform:scale(0.985);"><img src="assets/p7.jpg" alt="Three young students smiling on the walk to school" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 35%;"><div style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(12,26,48,0) 35%,rgba(12,26,48,0.88) 100%);"></div><div style="position:relative;"><div style="font-size:13px;font-weight:600;color:#BFD5F0;">Student experience</div><h3 style="margin:6px 0 0;font-size:24px;font-weight:600;letter-spacing:-0.02em;">A school day built around your&nbsp;child</h3><p style="margin:8px 0 0;font-size:15px;line-height:1.5;color:#E4ECF6;">Chapel, recess, specials, and real relationships with&nbsp;teachers.</p></div></a>
+    <a href="Extended Day.dc.html" style="position:relative;display:flex;flex-direction:column;justify-content:flex-end;min-height:440px;padding:28px;border-radius:28px;overflow:hidden;color:#fff;transition:transform 120ms ease-out;" style-active="transform:scale(0.985);"><img src="assets/cd/07215.jpg" alt="A smiling student at his desk" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;"><div style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(12,26,48,0) 35%,rgba(12,26,48,0.88) 100%);"></div><div style="position:relative;"><div style="font-size:13px;font-weight:600;color:#BFD5F0;">Extended Day</div><h3 style="margin:6px 0 0;font-size:24px;font-weight:600;letter-spacing:-0.02em;">Care before and after the bell</h3><p style="margin:8px 0 0;font-size:15px;line-height:1.5;color:#E4ECF6;">Supervised early drop-off and late pickup for working&nbsp;families.</p></div></a>
+  </div>
+</section>
+
+<section data-screen-label="Community banner" style="position:relative;overflow:hidden;background:#173A66;color:#fff;">
+  <img src="assets/cd/07139.jpg" alt="" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0.28;">
+  <div style="position:relative;max-width:900px;margin:0 auto;padding:clamp(80px,10vw,130px) clamp(16px,3vw,32px);text-align:center;">
+    <h2 style="margin:0;font-family:Newsreader,Georgia,serif;font-weight:400;font-size:clamp(30px,3.8vw,46px);line-height:1.15;letter-spacing:-0.02em;text-wrap:balance;">Join a school community built on faith, family, and belonging, where your child is known, not just&nbsp;enrolled.</h2>
+    <a href="Admissions.dc.html#apply" style="display:inline-flex;margin-top:32px;padding:16px 26px;border-radius:999px;background:#fff;color:#173A66;font-weight:600;font-size:16px;" style-active="transform:scale(0.97);">Start your application</a>
+  </div>
+</section>
+
+<section data-screen-label="Why families" style="max-width:1320px;margin:0 auto;padding:clamp(80px,10vw,140px) clamp(16px,3vw,32px);display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,420px),1fr));gap:56px;align-items:start;">
+  <div>
+    <div style="font-size:14px;font-weight:600;color:#2D6CB5;">A trusted choice for Christian&nbsp;education</div>
+    <h2 style="margin:14px 0 0;font-family:Newsreader,Georgia,serif;font-weight:400;font-size:clamp(36px,4.6vw,58px);line-height:1.03;letter-spacing:-0.03em;color:#173A66;">Why Annapolis families choose&nbsp;Saint&nbsp;Martin's</h2>
+    <p style="margin:20px 0 30px;max-width:28em;font-size:18px;line-height:1.5;color:#4A5260;">Warm teachers, rigorous academics, and a faith foundation that lasts well past eighth&nbsp;grade.</p>
+    <a href="Request a Tour.dc.html" style="display:inline-flex;flex:none;white-space:nowrap;padding:15px 24px;border-radius:999px;background:#2D6CB5;color:#fff;font-weight:600;font-size:15px;" style-active="transform:scale(0.97);">Schedule a visit</a>
+  </div>
+  <div style="display:flex;flex-direction:column;gap:12px;">
+    <div style="display:flex;gap:20px;padding:24px;border-radius:22px;background:#fff;"><img src="assets/cd/07193.jpg" alt="" style="width:88px;height:88px;flex-shrink:0;border-radius:16px;object-fit:cover;"><div><h3 style="margin:4px 0 0;font-size:20px;font-weight:600;letter-spacing:-0.015em;color:#173A66;">Experienced, caring faculty</h3><p style="margin:6px 0 0;font-size:16px;line-height:1.5;color:#4A5260;">Teachers who know your child's name, and their&nbsp;heart.</p></div></div>
+    <div style="display:flex;gap:20px;padding:24px;border-radius:22px;background:#fff;"><img src="assets/cd/07140.jpg" alt="" style="width:88px;height:88px;flex-shrink:0;border-radius:16px;object-fit:cover;"><div><h3 style="margin:4px 0 0;font-size:20px;font-weight:600;letter-spacing:-0.015em;color:#173A66;">Ready for high school</h3><p style="margin:6px 0 0;font-size:16px;line-height:1.5;color:#4A5260;">A curriculum that prepares students for high school and&nbsp;beyond.</p></div></div>
+    <div style="display:flex;gap:20px;padding:24px;border-radius:22px;background:#fff;"><img src="assets/cd/07200.jpg" alt="" style="width:88px;height:88px;flex-shrink:0;border-radius:16px;object-fit:cover;"><div><h3 style="margin:4px 0 0;font-size:20px;font-weight:600;letter-spacing:-0.015em;color:#173A66;">Faith at the center</h3><p style="margin:6px 0 0;font-size:16px;line-height:1.5;color:#4A5260;">Scripture is part of every school day, and no family is made to feel left&nbsp;out.</p></div></div>
+  </div>
+</section>
+
+<section data-screen-label="Steps to apply" style="background:#fff;">
+  <div style="max-width:1320px;margin:0 auto;padding:clamp(56px,7vw,88px) clamp(16px,3vw,32px);text-align:center;">
+    <div style="font-size:14px;font-weight:600;color:#2D6CB5;">Begin your journey with us</div>
+    <h2 style="margin:12px 0 0;font-family:Newsreader,Georgia,serif;font-weight:400;font-size:clamp(34px,4.4vw,56px);line-height:1.02;letter-spacing:-0.03em;color:#173A66;">How to apply to Saint&nbsp;Martin's</h2>
+    <ol style="list-style:none;margin:48px 0 0;padding:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,220px),1fr));gap:24px;text-align:left;">
+      <li style="padding-top:20px;border-top:3px solid #2D6CB5;"><div style="font-size:13px;font-weight:600;color:#2D6CB5;">Step 1</div><div style="margin-top:6px;font-size:19px;font-weight:600;letter-spacing:-0.015em;color:#173A66;">Schedule a tour</div></li>
+      <li style="padding-top:20px;border-top:3px solid #9DBDE3;"><div style="font-size:13px;font-weight:600;color:#2D6CB5;">Step 2</div><div style="margin-top:6px;font-size:19px;font-weight:600;letter-spacing:-0.015em;color:#173A66;">Submit your application</div></li>
+      <li style="padding-top:20px;border-top:3px solid #C9DBF0;"><div style="font-size:13px;font-weight:600;color:#2D6CB5;">Step 3</div><div style="margin-top:6px;font-size:19px;font-weight:600;letter-spacing:-0.015em;color:#173A66;">Visit day for your child</div></li>
+      <li style="padding-top:20px;border-top:3px solid #E6EEF8;"><div style="font-size:13px;font-weight:600;color:#2D6CB5;">Step 4</div><div style="margin-top:6px;font-size:19px;font-weight:600;letter-spacing:-0.015em;color:#173A66;">Get your enrollment decision</div></li>
+    </ol>
+    <a href="Admissions.dc.html#apply" style="display:inline-flex;margin-top:40px;white-space:nowrap;padding:15px 26px;border-radius:999px;background:#2D6CB5;color:#fff;font-weight:600;font-size:15px;" style-active="transform:scale(0.97);">Apply now</a>
+  </div>
+</section>
+
+<section data-screen-label="Campus tour" style="max-width:1320px;margin:0 auto;padding:clamp(80px,10vw,140px) clamp(16px,3vw,32px) 0;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,420px),1fr));gap:clamp(32px,5vw,72px);align-items:center;">
+  <div>
+    <div style="font-size:16px;font-weight:600;color:#2D6CB5;">Campus tour</div>
+    <h2 style="margin:14px 0 0;font-family:Newsreader,Georgia,serif;font-weight:400;font-size:clamp(44px,5.6vw,76px);line-height:0.98;letter-spacing:-0.035em;color:#173A66;text-wrap:balance;">See Saint&nbsp;Martin's for yourself</h2>
+    <ul style="list-style:none;margin:36px 0 0;padding:0;display:flex;flex-direction:column;font-family:Newsreader,Georgia,serif;font-size:clamp(24px,2.4vw,32px);letter-spacing:-0.015em;color:#173A66;">
+      <li style="display:flex;gap:18px;align-items:center;padding:18px 0;border-top:1px solid rgba(23,58,102,0.14);"><span style="flex:none;width:36px;height:36px;border-radius:50%;background:#2D6CB5;color:#fff;display:grid;place-items:center;font-family:-apple-system,system-ui,sans-serif;font-size:16px;font-weight:700;">✓</span>Classrooms</li>
+      <li style="display:flex;gap:18px;align-items:center;padding:18px 0;border-top:1px solid rgba(23,58,102,0.14);"><span style="flex:none;width:36px;height:36px;border-radius:50%;background:#2D6CB5;color:#fff;display:grid;place-items:center;font-family:-apple-system,system-ui,sans-serif;font-size:16px;font-weight:700;">✓</span>Chapel and worship life</li>
+      <li style="display:flex;gap:18px;align-items:center;padding:18px 0;border-top:1px solid rgba(23,58,102,0.14);border-bottom:1px solid rgba(23,58,102,0.14);"><span style="flex:none;width:36px;height:36px;border-radius:50%;background:#2D6CB5;color:#fff;display:grid;place-items:center;font-family:-apple-system,system-ui,sans-serif;font-size:16px;font-weight:700;">✓</span>Playground and athletics</li>
+    </ul>
+    <a href="Request a Tour.dc.html" style="display:inline-flex;margin-top:32px;padding:17px 28px;border-radius:999px;background:#2D6CB5;color:#fff;font-weight:600;font-size:17px;" style-active="transform:scale(0.97);">Request a tour</a>
+  </div>
+  <div style="position:relative;aspect-ratio:16/10;border-radius:28px;overflow:hidden;background:#173A66;">
+    <img src="assets/cd/07143.jpg" alt="A teacher leading a math game at the smart board" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0.8;">
+    <button aria-label="Play campus tour video" style="position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:80px;height:80px;border-radius:50%;border:1px solid rgba(255,255,255,0.45);background:rgba(255,255,255,0.24);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);color:#fff;font-size:22px;cursor:pointer;" style-active="transform:translate(-50%,-50%) scale(0.94);">▶</button>
+    <div style="position:absolute;left:18px;bottom:16px;padding:6px 10px;border-radius:8px;background:rgba(0,0,0,0.4);color:#fff;font-size:12px;">Video slot: content-day footage</div>
+  </div>
+</section>
+
+<section data-screen-label="Campus life" style="max-width:1320px;margin:0 auto;padding:clamp(80px,10vw,140px) clamp(16px,3vw,32px);">
+  <div style="text-align:center;max-width:760px;margin:0 auto 44px;"><div style="font-size:14px;font-weight:600;color:#2D6CB5;">Campus life</div><h2 style="margin:12px 0 0;font-family:Newsreader,Georgia,serif;font-weight:400;font-size:clamp(34px,4.2vw,52px);line-height:1.04;letter-spacing:-0.03em;color:#173A66;">Where faith, learning, and childhood come&nbsp;together</h2></div>
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,280px),1fr));gap:16px;">
+    <div style="padding:32px;border-radius:24px;background:#fff;"><img src="assets/cd/07139.jpg" alt="Two students working together on a laptop" style="width:100%;aspect-ratio:3/2;object-fit:cover;border-radius:16px;"><h3 style="margin:22px 0 0;font-size:20px;font-weight:600;letter-spacing:-0.015em;color:#173A66;">Clubs and activities</h3><p style="margin:6px 0 0;font-size:16px;line-height:1.5;color:#4A5260;">Students explore interests and make friends outside the&nbsp;classroom.</p></div>
+    <div style="padding:32px;border-radius:24px;background:#173A66;color:#fff;display:flex;flex-direction:column;"><div style="aspect-ratio:3/2;display:grid;place-items:center;border-radius:16px;background:rgba(255,255,255,0.06);"><img src="assets/logo/seal.png" alt="Saint Martin's Bulldogs seal" style="width:58%;max-width:180px;border-radius:50%;background:#fff;padding:4px;"></div><h3 style="margin:22px 0 0;font-size:20px;font-weight:600;letter-spacing:-0.015em;">Athletics and school spirit</h3><p style="margin:6px 0 0;font-size:16px;line-height:1.5;color:#D6E3F3;">Bulldog pride builds teamwork, discipline, and&nbsp;confidence.</p></div>
+    <div style="padding:32px;border-radius:24px;background:#fff;"><img src="assets/cd/07143.jpg" alt="A teacher leading a math game at the smart board" style="width:100%;aspect-ratio:3/2;object-fit:cover;border-radius:16px;"><h3 style="margin:22px 0 0;font-size:20px;font-weight:600;letter-spacing:-0.015em;color:#173A66;">Creativity and the arts</h3><p style="margin:6px 0 0;font-size:16px;line-height:1.5;color:#4A5260;">Music, art, and imagination have a place here&nbsp;too.</p></div>
+  </div>
+</section>
+
+<section data-screen-label="Testimonials" style="background:#EEF3F9;">
+  <div style="max-width:1320px;margin:0 auto;padding:clamp(80px,10vw,130px) clamp(16px,3vw,32px);">
+    <div style="font-size:14px;font-weight:600;color:#2D6CB5;">Testimonials</div>
+    <h2 style="margin:12px 0 36px;font-family:Newsreader,Georgia,serif;font-weight:400;font-size:clamp(32px,4vw,50px);letter-spacing:-0.03em;color:#173A66;">What Saint&nbsp;Martin's families&nbsp;say</h2>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,260px),1fr));gap:16px;">
+      <figure style="margin:0;padding:28px;border-radius:22px;background:#fff;"><blockquote style="margin:0;font-family:Newsreader,Georgia,serif;font-size:22px;line-height:1.3;">"My daughter looks forward to school every single day. That says&nbsp;everything."</blockquote><figcaption style="margin-top:14px;font-size:14px;color:#5A6270;">Parent, Kindergarten</figcaption></figure>
+      <figure style="margin:0;padding:28px;border-radius:22px;background:#fff;"><blockquote style="margin:0;font-family:Newsreader,Georgia,serif;font-size:22px;line-height:1.3;">"The teachers don't just teach my son, they disciple&nbsp;him."</blockquote><figcaption style="margin-top:14px;font-size:14px;color:#5A6270;">Parent, Grade 5</figcaption></figure>
+      <figure style="margin:0;padding:28px;border-radius:22px;background:#fff;"><blockquote style="margin:0;font-family:Newsreader,Georgia,serif;font-size:22px;line-height:1.3;">"Saint&nbsp;Martin's gave our family a church home and a school home at&nbsp;once."</blockquote><figcaption style="margin-top:14px;font-size:14px;color:#5A6270;">Parent, Grade 3</figcaption></figure>
+      <figure style="margin:0;padding:28px;border-radius:22px;background:#fff;"><blockquote style="margin:0;font-family:Newsreader,Georgia,serif;font-size:22px;line-height:1.3;">"Small classes meant my kids never got lost in the&nbsp;shuffle."</blockquote><figcaption style="margin-top:14px;font-size:14px;color:#5A6270;">Parent, Grade 7</figcaption></figure>
+    </div>
+    <p style="margin:20px 0 0;font-size:15px;color:#4A5260;">"I always felt like more than just a student&nbsp;here." <span style="color:#5A6270;">Alum, Class of 2019</span></p>
+  </div>
+</section>
+
+<section data-screen-label="Closing CTA" style="position:relative;overflow:hidden;background:#173A66;color:#fff;">
+  <img src="assets/p7.jpg" alt="" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 8%;opacity:0.22;">
+  <div style="position:relative;max-width:1320px;margin:0 auto;padding:clamp(80px,10vw,140px) clamp(16px,3vw,32px);text-align:center;">
+    <h2 style="margin:0 auto;max-width:12em;font-family:Newsreader,Georgia,serif;font-weight:400;font-size:clamp(40px,6vw,80px);line-height:0.98;letter-spacing:-0.04em;text-wrap:balance;">Come see what makes Saint&nbsp;Martin's&nbsp;home.</h2>
+    <a href="Request a Tour.dc.html" style="display:inline-flex;margin-top:32px;padding:17px 30px;border-radius:999px;background:#fff;color:#173A66;font-weight:600;font-size:17px;" style-active="transform:scale(0.97);">Schedule a visit</a>
+  </div>
+</section>
+
+<dc-import name="Site Footer" hint-size="100%,340px"></dc-import>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;rotateHero&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;}}">
+class Component extends DCLogic {
+  state = { menu: null, pop: null, aud: 0, goal: 0, img: 0 };
+  AUD = [
+    { label: 'a new family', img: 0, goals: [['schedule a tour', 'Request a tour', 'Request a Tour.dc.html'], ['learn about admissions', 'See admissions', 'Admissions.dc.html'], ['see tuition and financial aid', 'View tuition', 'Tuition and Financial Aid.dc.html'], ['register for open house', 'Register', 'Open House.dc.html'], ['start an application', 'Apply now', 'Admissions.dc.html#apply']] },
+    { label: 'a current family', img: 1, goals: [['open the parent portal', 'Parent portal', 'Parent Portal.dc.html'], ['check the school calendar', 'View calendar', 'Calendar.dc.html'], ['pay tuition', 'Pay tuition', '#'], ['find forms and policies', 'Find forms', 'School Forms.dc.html'], ['get ready for the school year', 'Student preparations', 'Student Preparations.dc.html']] },
+    { label: 'a church member, friend, or alum', menu: 'Church, friends & alumni', img: 2, goals: [['support our school', 'Give', 'Donate.dc.html'], ['see fundraisers and events', 'See events', 'Fundraisers and Events.dc.html'], ['become a sponsor', 'Sponsor', 'Sponsors.dc.html'], ['reconnect as an alum', 'Alumni', 'Alumni.dc.html'], ["visit Saint\u00a0Martin's Church", 'Visit church', 'https://www.stmartinsannapolis.org/']] },
+  ];
+  componentDidMount() {
+    this.onDoc = (e) => { if (this.state.pop && !(e.target.closest && e.target.closest('button,a'))) this.setState({ pop: null }); };
+    this.onR = () => { const n = window.innerWidth < 1080; if (n !== this.state.narrow) this.setState({ narrow: n, sheet: false }); };
+    this.onR(); window.addEventListener('resize', this.onR);
+    this.onKey = (e) => { if (e.key === 'Escape') this.setState({ pop: null, menu: null }); };
+    document.addEventListener('pointerdown', this.onDoc); document.addEventListener('keydown', this.onKey);
+    this.restart = (st) => { this.setState(st); clearInterval(this.timer); this.startRot(); };
+    this.startRot = () => { if (this.props.rotateHero ?? true) this.timer = setInterval(() => { this.setState(s => ({ img: (s.img + 1) % 4 })); }, 6000); };
+    this.startRot();
+  }
+  componentWillUnmount() { document.removeEventListener('pointerdown', this.onDoc); document.removeEventListener('keydown', this.onKey); clearInterval(this.timer); clearTimeout(this.lt); }
+  enter(k) { clearTimeout(this.lt); if (this.state.menu !== k) this.setState({ menu: k }); }
+  leave() { clearTimeout(this.lt); this.lt = setTimeout(() => this.setState({ menu: null }), 140); }
+  toggle(k) { clearTimeout(this.lt); this.setState(s => ({ menu: s.menu === k ? null : k })); }
+  renderVals() {
+    const s = this.state, A = this.AUD[s.aud], g = A.goals[s.goal];
+    const m = (k) => {
+      const on = s.menu === k;
+      return { o: on ? 1 : 0, t: on ? 'translateY(0) scale(1)' : 'translateY(-6px) scale(0.96)', p: on ? 'auto' : 'none', bg: on ? '#EEF3F9' : 'transparent' };
+    };
+    const ab = m('about'), ad = m('adm'), ac = m('aca'), pa = m('par');
+    const pop = (k) => { const on = s.pop === k; return { o: on ? 1 : 0, t: on ? 'translateY(0) scale(1)' : 'translateY(8px) scale(0.95)', p: on ? 'auto' : 'none' }; };
+    const pa1 = pop('aud'), pg = pop('goal');
+    const kb = (i) => s.img === i ? 'scale(1)' : 'scale(1.06)';
+    return {
+      enAbout: () => this.enter('about'), enAdm: () => this.enter('adm'), enAca: () => this.enter('aca'), enPar: () => this.enter('par'), lv: () => this.leave(),
+      tgAbout: () => this.toggle('about'), tgAdm: () => this.toggle('adm'), tgAca: () => this.toggle('aca'), tgPar: () => this.toggle('par'),
+      oAbout: ab.o, tAbout: ab.t, pAbout: ab.p, bgAbout: ab.bg,
+      oAdm: ad.o, tAdm: ad.t, pAdm: ad.p, bgAdm: ad.bg,
+      oAca: ac.o, tAca: ac.t, pAca: ac.p, bgAca: ac.bg,
+      oPar: pa.o, tPar: pa.t, pPar: pa.p, bgPar: pa.bg,
+      h0: s.img === 0 ? 1 : 0, h1: s.img === 1 ? 1 : 0, h2: s.img === 2 ? 1 : 0, h3: s.img === 3 ? 1 : 0, k0: kb(0), k1: kb(1), k2: kb(2), k3: kb(3),
+      wide: !s.narrow, narrow: !!s.narrow, sheetOpen: !!s.sheet,
+      tgSheet: () => this.setState(st => ({ sheet: !st.sheet })),
+      tq: s.q ?? 0,
+      audLabel: A.label, goalLabel: g[0], goLabel: g[1], goHref: g[2],
+      tgAud: () => this.setState(st => ({ pop: st.pop === 'aud' ? null : 'aud', menu: null })),
+      tgGoal: () => this.setState(st => ({ pop: st.pop === 'goal' ? null : 'goal', menu: null })),
+      oAud: pa1.o, tAud: pa1.t, pAud: pa1.p, oGoal: pg.o, tGoal: pg.t, pGoal: pg.p,
+      audOpts: this.AUD.map((a, i) => ({ label: a.menu || a.label.replace(/^a /, '').replace(/^./, c => c.toUpperCase()), check: i === s.aud ? '✓' : '', bg: i === s.aud ? '#F4F7FB' : 'transparent', pick: () => this.restart({ aud: i, goal: 0, img: a.img, pop: null }) })),
+      goalOpts: A.goals.map((x, i) => ({ label: x[0].replace(/^./, c => c.toUpperCase()), check: i === s.goal ? '✓' : '', bg: i === s.goal ? '#F4F7FB' : 'transparent', pick: () => this.setState({ goal: i, pop: null }) })),
+    };
+  }
+}
+</script>
+</body>
+</html>

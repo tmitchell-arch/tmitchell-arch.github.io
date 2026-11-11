@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+<script src="../portfolio-guard.js" defer></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<title>Academics | Saint&nbsp;Martin's Lutheran School, Annapolis</title>
+<meta name="description" content="Academics at Saint Martin's Lutheran School: a rigorous PreK–8 curriculum with faith woven through every day, in Annapolis, Maryland.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&display=swap" rel="stylesheet">
+<style>
+body{margin:0;background:#F6F5F1;color:#1F2328;font-family:-apple-system,BlinkMacSystemFont,"SF Pro Text","Helvetica Neue",system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+a{color:#173A66;text-decoration:none}a:hover{color:#2D6CB5}
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+h1,h2,h3,h4,blockquote,div,a,button{text-wrap:balance}p,li,blockquote,figcaption,dd,span{text-wrap:pretty}
+</style>
+</helmet>
+<div style="min-height:100vh;">
+<dc-import name="Site Nav" tone="overlay" utility="{{ true }}" hint-size="100%,1px"></dc-import>
+<section data-screen-label="Hero" style="position:relative;overflow:hidden;background:#0F2747;color:#fff;">
+  <img src="assets/cd/07139.jpg" alt="" style="position:absolute;inset:-24px;width:calc(100% + 48px);height:calc(100% + 48px);object-fit:cover;object-position:center 40%;opacity:0.3;filter:blur(6px) saturate(0.8);">
+  <div style="position:absolute;inset:0;background:linear-gradient(90deg,rgba(15,39,71,0.94) 0%,rgba(15,39,71,0.72) 50%,rgba(15,39,71,0.5) 100%);"></div>
+  <div style="position:absolute;inset:0;background:radial-gradient(60% 70% at 78% 40%,rgba(45,108,181,0.55),rgba(15,39,71,0) 70%);"></div>
+  <div style="position:relative;max-width:1320px;margin:0 auto;padding:calc(124px + clamp(24px,4vw,56px)) clamp(16px,3vw,32px) clamp(56px,7vw,96px);display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,460px),1fr));gap:clamp(48px,6vw,80px);align-items:center;">
+    <div>
+      <div style="display:flex;flex-wrap:wrap;gap:8px;font-size:14px;font-weight:600;color:#9DC0EA;"><a href="Homepage - Concept D v2.dc.html" style="color:#9DC0EA;white-space:nowrap;">Home</a><span aria-hidden="true">/</span><span style="color:#fff;white-space:nowrap;">Academics</span></div>
+      <h1 style="margin:16px 0 0;font-family:Newsreader,Georgia,serif;font-weight:400;font-size:clamp(46px,6.4vw,92px);line-height:0.96;letter-spacing:-0.04em;text-wrap:balance;">Excellence in academics and lifelong learning</h1>
+      <div style="margin-top:36px;font-size:13px;font-weight:600;color:#9DC0EA;">Choose a stage</div>
+      <div style="margin-top:10px;display:flex;flex-wrap:wrap;gap:8px;">
+        <sc-for list="{{ heroTabs }}" as="t" hint-placeholder-count="3">
+          <button aria-pressed="{{ t.sel }}" onClick="{{ t.pick }}" style="padding:11px 16px;border-radius:999px;border:1px solid {{ t.bd }};background:{{ t.bg }};color:#fff;font-family:inherit;font-size:14px;font-weight:600;line-height:1;white-space:nowrap;cursor:pointer;transition:background 200ms,border-color 200ms,transform 100ms ease-out;" style-active="transform:scale(0.96);">{{ t.label }}</button>
+        </sc-for>
+      </div>
+    </div>
+    <div style="display:flex;flex-direction:column;align-items:center;gap:18px;">
+      <div style="display:grid;width:min(100%,420px);padding-bottom:32px;">
+        <sc-for list="{{ stack }}" as="c" hint-placeholder-count="0">
+          <article onClick="{{ c.next }}" style="grid-area:1/1;position:relative;z-index:{{ c.z }};border-radius:30px;overflow:hidden;background:#fff;color:#1F2328;box-shadow:0 30px 70px rgba(0,0,0,0.35);cursor:pointer;transform:{{ c.t }};opacity:{{ c.o }};transition:transform 520ms cubic-bezier(.2,.8,.2,1), opacity 300ms ease;">
+            <div role="img" aria-label="{{ c.alt }}" style="width:100%;height:200px;background-image:{{ c.bgi }};background-size:cover;background-position:center;"></div>
+            <div style="padding:22px 24px 24px;">
+              <div style="font-size:12px;font-weight:600;letter-spacing:0.06em;text-transform:uppercase;color:#2D6CB5;">{{ c.range }}</div>
+              <h2 style="margin:8px 0 0;font-family:Newsreader,Georgia,serif;font-weight:400;font-size:32px;line-height:1.05;letter-spacing:-0.025em;color:#173A66;">{{ c.label }}</h2>
+              <ul style="list-style:none;margin:16px 0 0;padding:0;border-top:1px solid #E5E5EA;font-size:15px;line-height:1.45;color:#4A5260;">
+                <sc-for list="{{ c.pts }}" as="p" hint-placeholder-count="3"><li style="padding:10px 0;border-bottom:1px solid #E5E5EA;">{{ p }}</li></sc-for>
+              </ul>
+            </div>
+          </article>
+        </sc-for>
+      </div>
+      <div style="font-size:13px;color:#9DC0EA;">Tap the card or pick a stage</div>
+    </div>
+  </div>
+</section>
+
+<section data-screen-label="Spaces" style="max-width:1320px;margin:0 auto;padding:clamp(28px,4vw,40px) clamp(16px,3vw,32px) 0;">
+  <div style="display:flex;flex-wrap:wrap;align-items:center;gap:12px;">
+    <div style="flex:1 1 640px;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,150px),1fr));gap:12px;">
+      <div style="display:flex;align-items:center;gap:12px;padding:10px 16px 10px 10px;border-radius:18px;background:#fff;"><img src="assets/cd/07084.jpg" alt="" style="width:48px;height:48px;border-radius:12px;object-fit:cover;"><span style="font-size:16px;font-weight:600;color:#173A66;">Classrooms</span></div>
+      <div style="display:flex;align-items:center;gap:12px;padding:10px 16px 10px 10px;border-radius:18px;background:#fff;"><img src="assets/cd/07104.jpg" alt="" style="width:48px;height:48px;border-radius:12px;object-fit:cover;"><span style="font-size:16px;font-weight:600;color:#173A66;">Chapel</span></div>
+      <div style="display:flex;align-items:center;gap:12px;padding:10px 16px 10px 10px;border-radius:18px;background:#fff;"><img src="assets/cd/07137.jpg" alt="" style="width:48px;height:48px;border-radius:12px;object-fit:cover;"><span style="font-size:16px;font-weight:600;color:#173A66;">Library</span></div>
+      <div style="display:flex;align-items:center;gap:12px;padding:10px 16px 10px 10px;border-radius:18px;background:#fff;"><img src="assets/cd/06923.jpg" alt="" style="width:48px;height:48px;border-radius:12px;object-fit:cover;"><span style="font-size:16px;font-weight:600;color:#173A66;">Outdoor spaces</span></div>
+    </div>
+    <a href="#stages" style="flex:none;display:inline-flex;padding:15px 22px;border-radius:999px;background:#173A66;color:#fff;font-weight:600;font-size:15px;">Explore more ↓</a>
+  </div>
+</section>
+
+<section data-screen-label="Different" style="max-width:1320px;margin:0 auto;padding:clamp(80px,10vw,140px) clamp(16px,3vw,32px) 0;">
+  <h2 style="margin:0 0 40px;max-width:14em;font-family:Newsreader,Georgia,serif;font-weight:400;font-size:clamp(34px,4.4vw,56px);line-height:1.02;letter-spacing:-0.03em;color:#173A66;">What makes our academics different</h2>
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:0 40px;">
+    <div style="padding:24px 0;border-top:1px solid rgba(23,58,102,0.14);"><h3 style="margin:0;font-size:20px;font-weight:600;letter-spacing:-0.015em;color:#173A66;">Strong academic foundation</h3><p style="margin:8px 0 0;font-size:16px;line-height:1.5;color:#4A5260;">Rigorous instruction that builds knowledge, skill, and&nbsp;confidence.</p></div>
+    <div style="padding:24px 0;border-top:1px solid rgba(23,58,102,0.14);"><h3 style="margin:0;font-size:20px;font-weight:600;letter-spacing:-0.015em;color:#173A66;">Experienced faculty</h3><p style="margin:8px 0 0;font-size:16px;line-height:1.5;color:#4A5260;">Teachers who bring years of expertise and genuine&nbsp;care.</p></div>
+    <div style="padding:24px 0;border-top:1px solid rgba(23,58,102,0.14);"><h3 style="margin:0;font-size:20px;font-weight:600;letter-spacing:-0.015em;color:#173A66;">Faith woven through the day</h3><p style="margin:8px 0 0;font-size:16px;line-height:1.5;color:#4A5260;">Scripture and prayer aren't separate from learning, they're part of&nbsp;it.</p></div>
+    <div style="padding:24px 0;border-top:1px solid rgba(23,58,102,0.14);"><h3 style="margin:0;font-size:20px;font-weight:600;letter-spacing:-0.015em;color:#173A66;">Holistic development</h3><p style="margin:8px 0 0;font-size:16px;line-height:1.5;color:#4A5260;">We nurture mind, character, and spirit&nbsp;together.</p></div>
+    <div style="padding:24px 0;border-top:1px solid rgba(23,58,102,0.14);"><h3 style="margin:0;font-size:20px;font-weight:600;letter-spacing:-0.015em;color:#173A66;">Innovative learning methods</h3><p style="margin:8px 0 0;font-size:16px;line-height:1.5;color:#4A5260;">Modern tools paired with time-tested&nbsp;values.</p></div>
+    <div style="padding:24px 0;border-top:1px solid rgba(23,58,102,0.14);"><h3 style="margin:0;font-size:20px;font-weight:600;letter-spacing:-0.015em;color:#173A66;">Supportive environment</h3><p style="margin:8px 0 0;font-size:16px;line-height:1.5;color:#4A5260;">Every student feels known, valued, and&nbsp;challenged.</p></div>
+  </div>
+</section>
+
+<section data-screen-label="Curriculum" style="max-width:1320px;margin:0 auto;padding:clamp(80px,10vw,140px) clamp(16px,3vw,32px) 0;">
+  <div style="text-align:center;max-width:760px;margin:0 auto 44px;"><div style="font-size:14px;font-weight:600;color:#2D6CB5;">Curriculum structure</div><h2 style="margin:12px 0 0;font-family:Newsreader,Georgia,serif;font-weight:400;font-size:clamp(34px,4.2vw,52px);line-height:1.04;letter-spacing:-0.03em;color:#173A66;">Comprehensive curriculum framework</h2></div>
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:16px;">
+    <div style="padding:28px;border-radius:24px;background:#fff;"><img src="assets/cd/07144.jpg" alt="A teacher leading a math lesson on the smart board" style="width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:16px;"><h3 style="margin:20px 0 0;font-size:20px;font-weight:600;letter-spacing:-0.015em;color:#173A66;">Mathematics</h3><p style="margin:6px 0 0;font-size:16px;line-height:1.5;color:#4A5260;">Building logical thinking and problem-solving&nbsp;skills.</p></div>
+    <div style="padding:28px;border-radius:24px;background:#fff;"><img src="assets/cd/07221.jpg" alt="A colorful classroom rules board" style="width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:16px;"><h3 style="margin:20px 0 0;font-size:20px;font-weight:600;letter-spacing:-0.015em;color:#173A66;">Science</h3><p style="margin:6px 0 0;font-size:16px;line-height:1.5;color:#4A5260;">Curiosity-driven discovery and hands-on&nbsp;learning.</p></div>
+    <div style="padding:28px;border-radius:24px;background:#fff;"><img src="assets/cd/07087.jpg" alt="A classroom sign reading Teach, Love, Inspire" style="width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:16px;"><h3 style="margin:20px 0 0;font-size:20px;font-weight:600;letter-spacing:-0.015em;color:#173A66;">Bible &amp; Faith Formation</h3><p style="margin:6px 0 0;font-size:16px;line-height:1.5;color:#4A5260;">Scripture study woven into daily&nbsp;instruction.</p></div>
+    <div style="padding:28px;border-radius:24px;background:#fff;"><img src="assets/cd/07136.jpg" alt="Middle school students working on laptops in the library" style="width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:16px;"><h3 style="margin:20px 0 0;font-size:20px;font-weight:600;letter-spacing:-0.015em;color:#173A66;">Technology</h3><p style="margin:6px 0 0;font-size:16px;line-height:1.5;color:#4A5260;">Practical digital skills for the classroom and&nbsp;beyond.</p></div>
+    <div style="padding:28px;border-radius:24px;background:#fff;"><img src="assets/cd/07253.jpg" alt="A teacher leading a history lesson" style="width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:16px;"><h3 style="margin:20px 0 0;font-size:20px;font-weight:600;letter-spacing:-0.015em;color:#173A66;">Social Studies</h3><p style="margin:6px 0 0;font-size:16px;line-height:1.5;color:#4A5260;">Understanding community, history, and the wider&nbsp;world.</p></div>
+    <div style="padding:28px;border-radius:24px;background:#fff;"><img src="assets/cd/07106.jpg" alt="The art room shelves with globes and masterpieces" style="width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:16px;"><h3 style="margin:20px 0 0;font-size:20px;font-weight:600;letter-spacing:-0.015em;color:#173A66;">Arts &amp; Music</h3><p style="margin:6px 0 0;font-size:16px;line-height:1.5;color:#4A5260;">Creativity and expression through music and the&nbsp;arts.</p></div>
+  </div>
+</section>
+
+<section data-screen-label="Programs + resources" style="max-width:1320px;margin:0 auto;padding:clamp(80px,10vw,140px) clamp(16px,3vw,32px) 0;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,420px),1fr));gap:16px;align-items:stretch;">
+  <div style="padding:clamp(28px,4vw,44px);border-radius:28px;background:#173A66;color:#fff;">
+    <div style="font-size:14px;font-weight:600;color:#BFD5F0;">Programs for every learner</div>
+    <h2 style="margin:12px 0 0;font-family:Newsreader,Georgia,serif;font-weight:400;font-size:clamp(30px,3.4vw,42px);line-height:1.05;letter-spacing:-0.03em;">Challenging, engaging, and inclusive opportunities</h2>
+    <p style="margin:16px 0 8px;font-size:17px;line-height:1.55;color:#D6E3F3;">We create challenging, engaging, and inclusive learning experiences that inspire every student to grow and&nbsp;excel.</p>
+    <div style="padding:18px 0;border-top:1px solid rgba(255,255,255,0.14);"><h3 style="margin:0;font-size:18px;font-weight:600;">Enrichment for advanced learners</h3><p style="margin:4px 0 0;font-size:15px;line-height:1.5;color:#D6E3F3;">Opportunities to go deeper for students ready for a&nbsp;challenge.</p></div>
+    <div style="padding:18px 0;border-top:1px solid rgba(255,255,255,0.14);"><h3 style="margin:0;font-size:18px;font-weight:600;">Learning support</h3><p style="margin:4px 0 0;font-size:15px;line-height:1.5;color:#D6E3F3;">Extra help available for students who need&nbsp;it.</p></div>
+    <div style="padding:18px 0 0;border-top:1px solid rgba(255,255,255,0.14);"><h3 style="margin:0;font-size:18px;font-weight:600;">Clubs and activities</h3><p style="margin:4px 0 0;font-size:15px;line-height:1.5;color:#D6E3F3;">Debate, robotics, and other ways to explore beyond the&nbsp;classroom.</p></div>
+  </div>
+  <div style="padding:clamp(28px,4vw,44px);border-radius:28px;background:#fff;">
+    <div style="font-size:14px;font-weight:600;color:#2D6CB5;">Resources for students</div>
+    <h2 style="margin:12px 0 24px;font-family:Newsreader,Georgia,serif;font-weight:400;font-size:clamp(30px,3.4vw,42px);line-height:1.05;letter-spacing:-0.03em;color:#173A66;">Helping students succeed with the right&nbsp;support</h2>
+    <div style="display:flex;gap:18px;align-items:center;padding:16px 0;border-top:1px solid rgba(23,58,102,0.1);"><img src="assets/cd/07096.jpg" alt="" style="width:72px;height:72px;flex-shrink:0;border-radius:14px;object-fit:cover;"><div><h3 style="margin:0;font-size:18px;font-weight:600;color:#173A66;">Safe, supervised days</h3><p style="margin:4px 0 0;font-size:15px;line-height:1.5;color:#4A5260;">Every part of the school day is supervised by caring&nbsp;staff.</p></div></div>
+    <div style="display:flex;gap:18px;align-items:center;padding:16px 0;border-top:1px solid rgba(23,58,102,0.1);"><img src="assets/cd/07085.jpg" alt="" style="width:72px;height:72px;flex-shrink:0;border-radius:14px;object-fit:cover;"><div><h3 style="margin:0;font-size:18px;font-weight:600;color:#173A66;">School library</h3><p style="margin:4px 0 0;font-size:15px;line-height:1.5;color:#4A5260;">A space for students to read, discover, and&nbsp;explore.</p></div></div>
+    <div style="display:flex;gap:18px;align-items:center;padding:16px 0 0;border-top:1px solid rgba(23,58,102,0.1);"><img src="assets/cd/07210.jpg" alt="" style="width:72px;height:72px;flex-shrink:0;border-radius:14px;object-fit:cover;"><div><h3 style="margin:0;font-size:18px;font-weight:600;color:#173A66;">Learning support</h3><p style="margin:4px 0 0;font-size:15px;line-height:1.5;color:#4A5260;">Extra help available for students who need&nbsp;it.</p></div></div>
+  </div>
+</section>
+
+<section id="stages" data-screen-label="Stages of education" style="max-width:1320px;margin:0 auto;padding:clamp(80px,10vw,140px) clamp(16px,3vw,32px) 0;scroll-margin-top:90px;">
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,420px),1fr));gap:clamp(24px,4vw,64px);align-items:end;margin-bottom:36px;">
+    <div><div style="font-size:14px;font-weight:600;color:#2D6CB5;">Stages of education</div><h2 style="margin:12px 0 0;font-family:Newsreader,Georgia,serif;font-weight:400;font-size:clamp(34px,4.2vw,52px);line-height:1.04;letter-spacing:-0.03em;color:#173A66;">Nurturing growth through education</h2></div>
+    <p style="margin:0;max-width:30em;font-size:18px;line-height:1.55;color:#4A5260;">Each stage of learning is designed to build strong foundations, encourage curiosity, and prepare students for what's&nbsp;next.</p>
+  </div>
+  <div role="tablist" aria-label="Stages" style="display:inline-flex;flex-wrap:wrap;gap:4px;padding:5px;border-radius:999px;background:#fff;">
+    <sc-for list="{{ tabs }}" as="t" hint-placeholder-count="3">
+      <button role="tab" aria-selected="{{ t.sel }}" onClick="{{ t.pick }}" style="height:46px;padding:0 22px;border:0;border-radius:999px;background:{{ t.bg }};color:{{ t.fg }};font-family:inherit;font-size:15px;font-weight:600;cursor:pointer;transition:background 200ms, color 200ms;">{{ t.label }}</button>
+    </sc-for>
+  </div>
+  <div style="margin-top:16px;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,420px),1fr));border-radius:28px;background:#fff;overflow:hidden;">
+    <div role="img" aria-label="{{ st.alt }}" style="width:100%;height:100%;min-height:320px;background-image:{{ st.bgi }};background-size:cover;background-position:center;"></div>
+    <div style="padding:clamp(28px,4vw,48px);">
+      <div style="font-size:14px;font-weight:600;color:#2D6CB5;">{{ st.range }}</div>
+      <h3 style="margin:6px 0 0;font-family:Newsreader,Georgia,serif;font-weight:400;font-size:clamp(32px,3.4vw,44px);letter-spacing:-0.03em;color:#173A66;">{{ st.label }}</h3>
+      <ul style="list-style:none;margin:24px 0 0;padding:0;display:grid;gap:14px;">
+        <sc-for list="{{ st.pts }}" as="p" hint-placeholder-count="3">
+          <li style="display:flex;gap:14px;font-size:17px;line-height:1.5;color:#4A5260;"><span style="flex:none;width:26px;height:26px;margin-top:1px;border-radius:50%;background:#EEF3F9;color:#2D6CB5;display:grid;place-items:center;font-size:13px;font-weight:700;">✓</span>{{ p }}</li>
+        </sc-for>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<dc-import name="Story Preview" hint-size="100%,620px"></dc-import>
+<dc-import name="Closing CTA" title="Come see our classrooms for yourself." img="assets/cd/07084.jpg" hint-size="100%,460px"></dc-import>
+<dc-import name="Site Footer" hint-size="100%,340px"></dc-import>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  state = { tab: 0 };
+  ST = [
+    { label: 'Early Childhood', range: 'Ages 3–5', img: 'assets/cd/07223.jpg', alt: 'Young students gathered at the front of their classroom', pts: ['Foundational skills through play-based and structured learning', 'Introduction to letters, numbers, and the world around them', 'Teachers build a love of school from day one'] },
+    { label: 'Elementary', range: 'Grades K–5', img: 'assets/cd/07208.jpg', alt: 'A teacher reading with an elementary student', pts: ['Strong literacy and numeracy to build lifelong confidence', 'Science, social studies, arts, and technology woven throughout', 'Teachers support every learning style to help each student thrive'] },
+    { label: 'Middle School', range: 'Grades 6–8', img: 'assets/cd/07139.jpg', alt: 'Two middle school students working together on a laptop', pts: ['Advanced coursework in core subjects to strengthen the foundation', 'Elective exploration in music, art, and technology', 'Growing independence, critical thinking, and self-management'] },
+  ];
+  renderVals() {
+    const t = this.state.tab, n = this.ST.length;
+    return {
+      heroTabs: this.ST.map((s, i) => ({ label: s.label, sel: String(i === t), bg: i === t ? 'rgba(255,255,255,0.18)' : 'transparent', bd: i === t ? 'rgba(255,255,255,0.6)' : 'rgba(255,255,255,0.25)', pick: () => this.setState({ tab: i }) })),
+      stack: this.ST.map((s, i) => { const d = (i - t + n) % n; return { ...s, bgi: 'url("' + s.img + '")', z: n - d, t: d === 0 ? 'none' : 'translateY(' + d * 16 + 'px) scale(' + (1 - d * 0.05) + ')', o: d > 2 ? 0 : 1, next: () => this.setState({ tab: (t + 1) % n }) }; }),
+      tabs: this.ST.map((s, i) => ({ label: s.label, sel: String(i === t), bg: i === t ? '#173A66' : 'transparent', fg: i === t ? '#fff' : '#173A66', pick: () => this.setState({ tab: i }) })),
+      st: { ...this.ST[t], bgi: 'url("' + this.ST[t].img + '")' },
+    };
+  }
+}
+</script>
+</body>
+</html>

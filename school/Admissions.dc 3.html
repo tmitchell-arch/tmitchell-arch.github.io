@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+<script src="../portfolio-guard.js" defer></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<title>Admissions | Saint&nbsp;Martin's Lutheran School, Annapolis</title>
+<meta name="description" content="Apply to Saint Martin's Lutheran School in Annapolis. Admission steps, requirements by grade band, and how to start your application.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&display=swap" rel="stylesheet">
+<style>
+body{margin:0;background:#F6F5F1;color:#1F2328;font-family:-apple-system,BlinkMacSystemFont,"SF Pro Text","Helvetica Neue",system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+a{color:#173A66;text-decoration:none}a:hover{color:#2D6CB5}
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+h1,h2,h3,h4,blockquote,div,a,button{text-wrap:balance}p,li,blockquote,figcaption,dd,span{text-wrap:pretty}
+</style>
+</helmet>
+<div style="min-height:100vh;">
+<dc-import name="Site Nav" tone="overlay" utility="{{ true }}" hint-size="100%,1px"></dc-import>
+<section data-screen-label="Hero" style="position:relative;min-height:min(900px,100vh);display:flex;align-items:flex-end;overflow:hidden;background:#173A66;">
+  <img src="assets/cd/07202.jpg" alt="A student raising his hand in class" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 30%;">
+  <div style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(15,30,55,0.35) 0%,rgba(15,30,55,0.2) 35%,rgba(12,26,48,0.9) 100%);"></div>
+  <div style="position:relative;width:100%;max-width:1320px;margin:0 auto;padding:150px clamp(16px,3vw,32px) clamp(28px,5vw,56px);display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,440px),1fr));gap:40px;align-items:end;">
+    <div style="color:#fff;min-width:0;">
+      <div style="display:flex;flex-wrap:wrap;gap:8px;font-size:14px;font-weight:600;color:#D6E3F3;"><a href="Homepage - Concept D v2.dc.html" style="color:#D6E3F3;white-space:nowrap;">Home</a><span aria-hidden="true">/</span><span style="color:#fff;white-space:nowrap;">Admissions</span></div>
+      <h1 style="margin:16px 0 0;max-width:12em;font-family:Newsreader,Georgia,serif;font-weight:400;font-size:clamp(46px,6.4vw,92px);line-height:0.96;letter-spacing:-0.04em;text-wrap:balance;">Building character, knowledge, and lifelong curiosity</h1>
+    </div>
+    <div style="position:relative;justify-self:end;width:100%;max-width:520px;padding:11px;border-radius:28px;box-shadow:0 30px 80px rgba(0,0,0,0.35);isolation:isolate;">
+      <div aria-hidden="true" style="position:absolute;inset:0;z-index:-1;border-radius:28px;background:rgba(255,255,255,0.16);backdrop-filter:blur(28px) saturate(170%);-webkit-backdrop-filter:blur(28px) saturate(170%);border:1px solid rgba(255,255,255,0.28);"></div>
+      <div style="padding:8px 10px 10px;color:#fff;font-size:13px;font-weight:600;">I'm applying for…</div>
+      <div role="tablist" aria-label="Grade band" style="display:flex;gap:2px;padding:4px;border-radius:999px;background:rgba(0,0,0,0.22);">
+        <sc-for list="{{ bands }}" as="b" hint-placeholder-count="3">
+          <button role="tab" aria-selected="{{ b.sel }}" onClick="{{ b.pick }}" style="flex:1;border:0;cursor:pointer;padding:11px 8px;border-radius:999px;background:{{ b.bg }};box-shadow:{{ b.sh }};font-family:inherit;font-size:14px;font-weight:600;line-height:1.1;white-space:nowrap;color:{{ b.fg }};transition:background 220ms, color 220ms, transform 100ms ease-out;" style-active="transform:scale(0.96);">{{ b.label }}</button>
+        </sc-for>
+      </div>
+      <div style="padding:20px 12px 8px;color:#fff;">
+        <div style="font-size:13px;font-weight:600;color:#D6E3F3;">{{ band.range }}</div>
+        <div style="margin-top:4px;font-family:Newsreader,Georgia,serif;font-size:28px;line-height:1.1;letter-spacing:-0.02em;">{{ band.title }}</div>
+        <p style="margin:8px 0 16px;font-size:15px;line-height:1.45;color:#EEF3F9;">{{ band.body }}</p>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;">
+          <a href="Request a Tour.dc.html" style="grid-column:1 / -1;display:flex;justify-content:space-between;align-items:center;padding:16px 18px;border-radius:16px;background:#fff;color:#173A66;font-weight:600;font-size:15px;transition:transform 100ms ease-out;" style-active="transform:scale(0.98);"><span>Request a tour</span><span>→</span></a>
+          <a href="#apply" style="padding:14px 16px;border-radius:16px;background:rgba(255,255,255,0.14);color:#fff;font-weight:600;font-size:14px;" style-active="transform:scale(0.97);">Apply now</a>
+          <a href="Tuition and Financial Aid.dc.html" style="padding:14px 16px;border-radius:16px;background:rgba(255,255,255,0.14);color:#fff;font-weight:600;font-size:14px;" style-active="transform:scale(0.97);">Tuition &amp; aid</a>
+          <a href="Open House.dc.html" style="padding:14px 16px;border-radius:16px;background:rgba(255,255,255,0.14);color:#fff;font-weight:600;font-size:14px;" style-active="transform:scale(0.97);">Open house</a>
+          <a href="School Forms.dc.html" style="padding:14px 16px;border-radius:16px;background:rgba(255,255,255,0.14);color:#fff;font-weight:600;font-size:14px;" style-active="transform:scale(0.97);">School forms</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section data-screen-label="How to apply" style="background:#fff;">
+  <div style="max-width:1320px;margin:0 auto;padding:clamp(56px,7vw,88px) clamp(16px,3vw,32px);text-align:center;">
+    <div style="font-size:14px;font-weight:600;color:#2D6CB5;">How to apply</div>
+    <h2 style="margin:12px 0 0;font-family:Newsreader,Georgia,serif;font-weight:400;font-size:clamp(34px,4.4vw,56px);line-height:1.02;letter-spacing:-0.03em;color:#173A66;">Begin your journey with&nbsp;us</h2>
+    <ol style="list-style:none;margin:48px 0 0;padding:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,220px),1fr));gap:24px;text-align:left;">
+      <li style="padding-top:20px;border-top:3px solid #2D6CB5;"><div style="font-size:13px;font-weight:600;color:#2D6CB5;">Step 1</div><div style="margin-top:6px;font-size:19px;font-weight:600;letter-spacing:-0.015em;color:#173A66;">Schedule a tour</div></li>
+      <li style="padding-top:20px;border-top:3px solid #9DBDE3;"><div style="font-size:13px;font-weight:600;color:#2D6CB5;">Step 2</div><div style="margin-top:6px;font-size:19px;font-weight:600;letter-spacing:-0.015em;color:#173A66;">Submit your application</div></li>
+      <li style="padding-top:20px;border-top:3px solid #C9DBF0;"><div style="font-size:13px;font-weight:600;color:#2D6CB5;">Step 3</div><div style="margin-top:6px;font-size:19px;font-weight:600;letter-spacing:-0.015em;color:#173A66;">Visit day for your child</div></li>
+      <li style="padding-top:20px;border-top:3px solid #E6EEF8;"><div style="font-size:13px;font-weight:600;color:#2D6CB5;">Step 4</div><div style="margin-top:6px;font-size:19px;font-weight:600;letter-spacing:-0.015em;color:#173A66;">Receive your enrollment decision</div></li>
+    </ol>
+    <div style="margin-top:32px;display:inline-flex;padding:10px 14px;border-radius:12px;border:1px dashed #9DBDE3;background:#F4F7FB;font-size:14px;color:#2D6CB5;">Dates and deadlines to come from the admissions&nbsp;office</div>
+  </div>
+</section>
+
+<section data-screen-label="Requirements" style="max-width:1320px;margin:0 auto;padding:clamp(80px,10vw,140px) clamp(16px,3vw,32px);">
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,420px),1fr));gap:clamp(32px,5vw,80px);align-items:end;margin-bottom:44px;">
+    <div><div style="font-size:14px;font-weight:600;color:#2D6CB5;">Who we serve</div><h2 style="margin:12px 0 0;font-family:Newsreader,Georgia,serif;font-weight:400;font-size:clamp(34px,4.2vw,52px);line-height:1.04;letter-spacing:-0.03em;color:#173A66;">Admission requirements</h2></div>
+    <p style="margin:0;max-width:30em;font-size:18px;line-height:1.55;color:#4A5260;">We welcome families across every stage, from early childhood through middle school. Admission includes a completed application, a school visit, and a conversation with our admissions&nbsp;team.</p>
+  </div>
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:20px;">
+    <div style="position:relative;display:flex;flex-direction:column;justify-content:flex-end;min-height:400px;padding:28px;border-radius:28px;overflow:hidden;color:#fff;"><img src="assets/cd/07224.jpg" alt="A class of young students gathered at the front of their classroom" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;"><div style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(12,26,48,0) 35%,rgba(12,26,48,0.88) 100%);"></div><div style="position:relative;"><div style="font-size:13px;font-weight:600;color:#BFD5F0;">Ages 3–5</div><h3 style="margin:6px 0 0;font-size:26px;font-weight:600;letter-spacing:-0.02em;">Early Childhood</h3></div></div>
+    <div style="position:relative;display:flex;flex-direction:column;justify-content:flex-end;min-height:400px;padding:28px;border-radius:28px;overflow:hidden;color:#fff;"><img src="assets/cd/07214.jpg" alt="An elementary student reading at his desk" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;"><div style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(12,26,48,0) 35%,rgba(12,26,48,0.88) 100%);"></div><div style="position:relative;"><div style="font-size:13px;font-weight:600;color:#BFD5F0;">Grades K–5</div><h3 style="margin:6px 0 0;font-size:26px;font-weight:600;letter-spacing:-0.02em;">Elementary</h3></div></div>
+    <div style="position:relative;display:flex;flex-direction:column;justify-content:flex-end;min-height:400px;padding:28px;border-radius:28px;overflow:hidden;color:#fff;"><img src="assets/cd/07140.jpg" alt="A middle school student working on a laptop" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;"><div style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(12,26,48,0) 35%,rgba(12,26,48,0.88) 100%);"></div><div style="position:relative;"><div style="font-size:13px;font-weight:600;color:#BFD5F0;">Grades 6–8</div><h3 style="margin:6px 0 0;font-size:26px;font-weight:600;letter-spacing:-0.02em;">Middle School</h3></div></div>
+  </div>
+</section>
+
+<section id="apply" data-screen-label="Apply" style="max-width:1320px;margin:0 auto;padding:0 clamp(16px,3vw,32px);">
+  <div style="display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:28px;padding:clamp(36px,5vw,64px);border-radius:32px;background:#2D6CB5;color:#fff;">
+    <div style="max-width:620px;">
+      <h2 style="margin:0;font-family:Newsreader,Georgia,serif;font-weight:400;font-size:clamp(36px,4.6vw,60px);line-height:1;letter-spacing:-0.035em;">Ready to apply?</h2>
+      <p style="margin:16px 0 0;font-size:18px;line-height:1.5;color:#E4ECF6;">Applications are handled through MySchoolApp. Start yours today, or reach out if you have questions&nbsp;first.</p>
+    </div>
+    <div style="display:flex;flex-wrap:wrap;gap:10px;">
+      <a href="#" title="Opens MySchoolApp" style="display:inline-flex;padding:17px 28px;border-radius:999px;background:#fff;color:#173A66;font-weight:600;font-size:17px;white-space:nowrap;" style-active="transform:scale(0.97);">Apply now ↗</a>
+      <a href="Contact Us.dc.html" style="display:inline-flex;padding:17px 26px;border-radius:999px;border:1px solid rgba(255,255,255,0.55);color:#fff;font-weight:600;font-size:17px;white-space:nowrap;">Ask a question</a>
+    </div>
+  </div>
+</section>
+
+<section data-screen-label="Campus tour" style="max-width:1320px;margin:0 auto;padding:clamp(80px,10vw,140px) clamp(16px,3vw,32px) 0;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,420px),1fr));gap:clamp(32px,5vw,72px);align-items:center;">
+  <div>
+    <div style="font-size:14px;font-weight:600;color:#2D6CB5;">Campus tour</div>
+    <h2 style="margin:12px 0 0;font-family:Newsreader,Georgia,serif;font-weight:400;font-size:clamp(34px,4.6vw,60px);line-height:1;letter-spacing:-0.035em;color:#173A66;">Discover Saint&nbsp;Martin's from anywhere</h2>
+    <a href="Request a Tour.dc.html" style="display:inline-flex;margin-top:28px;padding:16px 26px;border-radius:999px;background:#2D6CB5;color:#fff;font-weight:600;font-size:16px;" style-active="transform:scale(0.97);">Or visit in person</a>
+  </div>
+  <div style="position:relative;aspect-ratio:16/10;border-radius:28px;overflow:hidden;background:#173A66;">
+    <img src="assets/cd/07094.jpg" alt="A kindergarten classroom ready to welcome students" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0.85;">
+    <button aria-label="Play campus tour video" style="position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:80px;height:80px;border-radius:50%;border:1px solid rgba(255,255,255,0.45);background:rgba(255,255,255,0.24);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);color:#fff;font-size:22px;cursor:pointer;" style-active="transform:translate(-50%,-50%) scale(0.94);">▶</button>
+    <div style="position:absolute;left:18px;bottom:16px;padding:6px 10px;border-radius:8px;background:rgba(0,0,0,0.45);color:#fff;font-size:12px;">Video slot: content-day footage</div>
+  </div>
+</section>
+
+<section data-screen-label="Resources" style="max-width:1320px;margin:0 auto;padding:clamp(80px,10vw,140px) clamp(16px,3vw,32px) 0;">
+  <div style="font-size:14px;font-weight:600;color:#2D6CB5;">Resources for students</div>
+  <h2 style="margin:12px 0 40px;font-family:Newsreader,Georgia,serif;font-weight:400;font-size:clamp(34px,4.2vw,52px);line-height:1.04;letter-spacing:-0.03em;color:#173A66;">Support for your child, from day&nbsp;one</h2>
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,280px),1fr));gap:12px;">
+    <a href="Tuition and Financial Aid.dc.html" style="display:flex;gap:20px;padding:24px;border-radius:22px;background:#fff;color:#1F2328;"><img src="assets/cd/07203.jpg" alt="" style="width:88px;height:88px;flex-shrink:0;border-radius:16px;object-fit:cover;"><div><h3 style="margin:4px 0 0;font-size:20px;font-weight:600;letter-spacing:-0.015em;color:#173A66;">Tuition assistance</h3><p style="margin:6px 0 0;font-size:16px;line-height:1.5;color:#4A5260;">Financial aid options for qualifying&nbsp;families.</p></div></a>
+    <a href="Extended Day.dc.html" style="display:flex;gap:20px;padding:24px;border-radius:22px;background:#fff;color:#1F2328;"><img src="assets/cd/07085.jpg" alt="" style="width:88px;height:88px;flex-shrink:0;border-radius:16px;object-fit:cover;"><div><h3 style="margin:4px 0 0;font-size:20px;font-weight:600;letter-spacing:-0.015em;color:#173A66;">Extended Day care</h3><p style="margin:6px 0 0;font-size:16px;line-height:1.5;color:#4A5260;">Before and after school supervision for working&nbsp;families.</p></div></a>
+    <div style="display:flex;gap:20px;padding:24px;border-radius:22px;background:#fff;"><img src="assets/cd/07146.jpg" alt="" style="width:88px;height:88px;flex-shrink:0;border-radius:16px;object-fit:cover;"><div><h3 style="margin:4px 0 0;font-size:20px;font-weight:600;letter-spacing:-0.015em;color:#173A66;">Small class sizes</h3><p style="margin:6px 0 0;font-size:16px;line-height:1.5;color:#4A5260;">Every student known by name, not lost in the&nbsp;crowd.</p></div></div>
+  </div>
+</section>
+
+<dc-import name="Story Preview" hint-size="100%,620px"></dc-import>
+<dc-import name="Closing CTA" title="Ready to see if Saint Martin's is the right fit?" img="assets/cd/07237.jpg" hint-size="100%,460px"></dc-import>
+<dc-import name="Site Footer" hint-size="100%,340px"></dc-import>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  state = { band: 1 };
+  B = [
+    { label: 'Early Childhood', range: 'Ages 3–5', title: 'A gentle, joyful first school', body: 'Play-based and structured learning that builds a love of school from day\u00a0one.' },
+    { label: 'Elementary', range: 'Grades K–5', title: 'Strong foundations, every subject', body: 'Literacy, numeracy, science, and faith, with teachers who know each child by\u00a0name.' },
+    { label: 'Middle School', range: 'Grades 6–8', title: 'Ready for high school and beyond', body: 'Advanced coursework, electives, and growing independence in a caring\u00a0community.' },
+  ];
+  renderVals() {
+    const s = this.state.band;
+    return {
+      bands: this.B.map((b, i) => { const on = i === s; return { label: b.label, sel: String(on), bg: on ? '#fff' : 'transparent', fg: on ? '#173A66' : '#fff', sh: on ? '0 2px 10px rgba(0,0,0,0.18)' : 'none', pick: () => this.setState({ band: i }) }; }),
+      band: this.B[s],
+    };
+  }
+}
+</script>
+</body>
+</html>
